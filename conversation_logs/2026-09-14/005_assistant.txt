@@ -1,0 +1,5 @@
+Timestamp: 2026-09-14 (America/Chicago; exact time not recorded)
+Role: assistant
+
+[Historical record note]
+The assistant's intermediate responses are not fully available verbatim in the active transcript. The completed user-visible summary is preserved in 006_assistant.txt.

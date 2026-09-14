@@ -1,0 +1,85 @@
+Timestamp: 2026-09-14 (America/Chicago; exact time not recorded)
+Role: user
+
+Update the DEGENERATE-1 project constitution and supporting documentation to make the project's consumer-AI constraint explicit.
+
+DEGENERATE-1 is not merely an attempt to design a small spacecraft. It is an experiment built around the question:
+
+“How far can a non-aerospace engineer get toward a physically credible spacecraft in 2026 using AI as the engineering interface?”
+
+An important part of that experiment is accessibility.
+
+The baseline AI resource for this project is a standard $20/month ChatGPT Plus subscription using the capabilities available within that subscription, including Codex/Astra where available. The project should NOT quietly evolve into an experiment dependent on enterprise AI subscriptions, expensive specialist AI platforms, large API expenditures, paid cloud compute, or professional engineering services.
+
+Use free and open-source engineering software wherever reasonably practical, including FreeCAD and other appropriate analysis/simulation tools.
+
+This constraint applies specifically to the AI/software engineering interface. It does NOT imply that the physical spacecraft, components, testing, licensing, ground station, launch integration, or launch itself must cost $20. Track those separately.
+
+Create a clear accounting distinction between:
+
+1. AI expenditure
+2. Software/tool expenditure
+3. Spacecraft hardware expenditure
+4. Ground-station expenditure
+5. Testing/verification expenditure
+6. Regulatory/licensing expenditure
+7. Launch/integration expenditure
+8. External professional/expert-review expenditure
+
+If the project reaches a point where the consumer-AI/free-software toolchain cannot credibly proceed, DO NOT hide or work around that limitation simply to preserve the experiment.
+
+Instead:
+
+- identify the limitation;
+- document why the existing toolchain is insufficient;
+- identify what additional capability would be required;
+- estimate its cost where possible;
+- mark this as a boundary encountered by the experiment;
+- ask before introducing a paid tool or service.
+
+Professional review is allowed and encouraged where safety, regulatory compliance, or engineering credibility requires it, but it must be clearly identified as external human expertise rather than attributed to AI.
+
+Likewise, physical testing is not an AI expense. Reality remains the final verification mechanism.
+
+Do not optimize the project around proving that AI can design a spacecraft. We are not trying to manufacture a predetermined conclusion.
+
+A valid outcome is:
+
+“Consumer AI got us this far, and then we hit this wall.”
+
+Failures, incorrect AI assumptions, abandoned designs, expert corrections, simulation failures, and physical test failures are valuable experimental results and should be preserved where useful.
+
+The public website should eventually communicate this constraint prominently and maintain transparent progress indicators showing:
+
+- current project success level;
+- AI/tooling cost to date;
+- physical-project cost to date;
+- what has only been proposed;
+- what has been calculated;
+- what has been simulated;
+- what has been physically built;
+- what has been tested;
+- what has received independent expert review;
+- what remains unknown.
+
+Never allow polished documentation, CAD renders, simulations, or AI confidence to imply a higher level of physical credibility than has actually been demonstrated.
+
+The goal is not:
+
+“Make AI look capable of designing a satellite.”
+
+The goal is:
+
+“Run an honest, documented experiment to discover how far an ordinary person with some technical literacy, a $20/month consumer AI subscription, free/open engineering tools, willingness to learn, and access to normal commercially available hardware can progress toward a real, physically credible spacecraft.”
+
+Preserve the existing DEGENERATE-1 mission:
+
+Capture a recognizable photograph of Earth from orbit, downlink it to our ground station, reconstruct the image, and ultimately print it.
+
+Do not expand the spacecraft mission unless expansion materially improves the probability of accomplishing that objective, improves safety/compliance/testability, or directly contributes to the AI-engineering experiment.
+
+Update PROJECT_CONSTITUTION.md accordingly and propagate this philosophy into any project README, status schema, cost tracking, and website documentation where appropriate.
+
+Before making changes, inspect the existing project structure and documents so this is integrated cleanly rather than duplicated.
+
+Afterward, summarize exactly what you changed and where.

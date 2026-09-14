@@ -1,0 +1,8 @@
+Timestamp: 2026-09-14 (America/Chicago; exact time not recorded)
+Role: assistant
+
+What mission or payload should Degen-1 support? If none is specified, I’ll assume a technology demonstrator that transmits spacecraft health telemetry with no propulsion or precision pointing.
+
+Do you have a target launch/orbit, licensing jurisdiction, or budget ceiling? If unspecified, I’ll use a US-operated spacecraft in a nominal 450–500 km circular orbit and separate spacecraft build costs from launch, licensing, and ground operations.
+
+For Earth imaging, is a low-cost demonstrator that returns occasional recognizable Earth images sufficient, or do you need images of selected locations? I’ll proceed with opportunistic imaging unless you specify a targeting or resolution requirement.

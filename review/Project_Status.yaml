@@ -1,0 +1,40 @@
+project: DEGENERATE-1
+schema_version: 0.1
+updated: 2026-09-14
+mission: Capture a recognizable photograph of Earth from orbit, downlink it, reconstruct it, and ultimately print it.
+current_success_level: 1
+current_success_label: Engineering Model (preliminary, not fully closed)
+ai_constraint:
+  baseline: ChatGPT Plus, 20 USD/month, including Codex/Astra where available
+  enterprise_ai_used: false
+  specialist_ai_used: false
+  paid_cloud_compute_used: false
+  free_open_source_tool_preference: true
+  paid_tool_boundary_requires_approval: true
+cost_to_date:
+  ai_usd: unknown
+  software_tools_usd: 0
+  spacecraft_hardware_eur: 0
+  ground_station_eur: 0
+  testing_verification_eur: 0
+  regulatory_licensing_eur: 0
+  launch_integration_eur: 0
+  external_expert_review_eur: 0
+  basis: No purchases, tests, filings, launch booking, or independent expert review are recorded in this package; confirm subscription history separately.
+evidence_state:
+  proposed: true
+  calculated: true
+  simulated: limited_scalar_screening_only
+  physically_built: false
+  tested: false
+  independently_expert_reviewed: false
+  approved: false
+  flown: false
+  unknowns: many_critical_items
+boundary_log:
+  - date: 2026-09-14
+    status: no_consumer_ai_or_free_software_boundary_encountered
+    limitation: none_claimed
+    required_capability: none
+    estimated_cost: unknown
+    approval: not_applicable

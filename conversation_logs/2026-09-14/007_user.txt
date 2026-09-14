@@ -1,0 +1,4 @@
+Timestamp: 2026-09-14 (America/Chicago; exact time not recorded)
+Role: user
+
+Start a repo to keep track of the whole project and keep a running log txt files seperated and dated in a folder on the drive D:\ inside Degen-1 of all the prompts I give you and your outputs

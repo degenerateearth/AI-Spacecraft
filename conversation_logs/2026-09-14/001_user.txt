@@ -1,0 +1,4 @@
+Timestamp: 2026-09-14 (America/Chicago; exact time not recorded)
+Role: user
+
+Design a 1U CubeSat using comercially available components, capable of surviving launch and operating in LEO for 12 months. Optimize for minimum build cost and maximum use of off the shelf hardware. Produce enough engineering documentation that an aerospace engineer could audit the design. Working title Degen-1 Files should live in a folder on drive D\ for now

@@ -1,0 +1,40 @@
+# D1-REQ-001 — Requirements and verification traceability
+
+Revision A. A=analysis, T=test, I=inspection. MODEL PASS is not hardware compliance. Tests resolve to D1-AIV-001; all executed work here is document/model verification only.
+
+| ID | Requirement | Origin | Owner | Method | Evidence | Status |
+|---|---|---|---|---|---|---|
+| R01 | Operate for 365.25 days after separation | User | System | A/T | T07,T08,T13,T16,T17 | OPEN: life evidence |
+| R02 | Return occasional recognizable Earth images; commissioning image and monthly target | User + allocation | Payload | A/T | T11,T17 | OPEN: opportunity and image test |
+| R03 | Use 1U deployer envelope, final ICD governs | User/S01 | Mechanical | I/T | T01 | OPEN: deployer |
+| R04 | Mass <=1330 g project target; actual manifest limit governs | Allocation | Mechanical | A/T | T02 | MODEL PASS:1276.2 g with growth; hardware open |
+| R05 | COM target +/-10mm in each axis | Allocation | Mechanical | T | T02 | OPEN: measured properties |
+| R06 | Minimum cost compliant total build; maximum practical purchased hardware | User | Systems | Review | Cost RFQs | OPEN: quotations |
+| R07 | Nominal orbit-energy balance positive after 20% growth | Allocation | EPS | A/T | T06,T07 | MODEL PASS:+18.4%; environment inputs open |
+| R08 | Recovery energy closes in worst intact-face attitude, camera off | Allocation | EPS/FSW | A/T | T06,T07 | MODEL PASS:+0.124Wh; assumptions open |
+| R09 | Battery routine DOD <=20% EOL capacity; >=6000-cycle evidence | Allocation | EPS | A/T | T08 | MODEL PASS DOD only; life open |
+| R10 | Never charge outside approved cell current/temperature limits | S03/project target | EPS | T | T03,T13,T15 | OPEN |
+| R11 | Three independent physical RF and release inhibits unless approved tailoring | S01 | Safety | A/T | T04 | OPEN: circuit independence |
+| R12 | No early deployment/RF; delays >=30/45min or longer ICD | S01 | Safety/FSW | T | T05 | OPEN |
+| R13 | RBF/source isolation includes solar and service paths | S01/S03 | Safety | A/T | T04 | OPEN |
+| R14 | Recover from OBC hang, bus fault and low battery autonomously | Allocation | FSW/EPS | T | T07,T15 | OPEN |
+| R15 | No downstream overvoltage or back-powering at avionics | S03/S08/S10 | Electrical | A/T | T03 | OPEN: adapter design |
+| R16 | Correct Mode 5 framing with >=3dB tested link reserve | S11/allocation | RF | A/T | T09 | MODEL PASS:6.49dB down; threshold open |
+| R17 | RF band, EIRP and sites authorized before use | User | Regulatory | Review | FCC/coordination grants | OPEN |
+| R18 | NOAA determination/license for full imaging capability | User/S24 | Regulatory | Review | NOAA evidence | OPEN |
+| R19 | Retain 30 days health and bounded image store | Allocation | FSW | T | T11,T15 | OPEN |
+| R20 | Authenticated critical commands, replay control and persistent RF stop | Allocation | FSW | T | T15,T17 | OPEN: license-compatible implementation |
+| R21 | Structure survives approved launch environment | User | Mechanical | A/T | T12,T18 | OPEN: analysis and test |
+| R22 | Thermal model closes charging/survival and energy simultaneously | User | Thermal | A/T | T13 | OPEN: screening does not close |
+| R23 | One-year radiation/SEE assurance covers every critical revision | User | EEE | A/T | T16 | OPEN |
+| R24 | No unintended debris; materials/venting meet ICD | User/S01 | Mechanical | I/A | T01,T12 | OPEN |
+| R25 | Orbit lasts mission and disposes within applicable deadline | User/S16 | Mission | A | Decay/demise analysis | OPEN |
+| R26 | End-of-mission power sources safely passivated | User | EPS/ops | A/T | T17 | OPEN: supplier capability |
+| R27 | Camera aperture retains >=1.8W guaranteed panel output | Allocation | Payload/EPS | A/T | T06 | OPEN: vendor geometry |
+| R28 | Camera exposure/optics survives uncontrolled Sun views and environment | Allocation | Payload | A/T | T11,T13,T18 | OPEN |
+| R29 | Camera <=2W peak and <=300s/day; processing within 0.02W average allocation | Allocation | Payload/FSW | T | T07,T11 | OPEN: vendor brief |
+| R30 | Fit and function unaffected after environmental tests | User | AIV | T | T01,T18 | OPEN |
+| R31 | Maintain traceable hardware/software/material configuration and raw test data | Audit requirement | QA | Review | Build records | OPEN |
+| R32 | Separate build, testing, launch, licensing and ground costs | User | Cost | Review | Program_Cost.csv | DOCUMENTED; estimates only |
+| R33 | Trackability, conjunction contacts and operating procedures ready | User | Ops | Review | T17/analyses | OPEN |
+| R34 | Each supplier replacement reopens affected budgets and evidence | Allocation | QA | Review | Change control | DEFINED; process implementation open |

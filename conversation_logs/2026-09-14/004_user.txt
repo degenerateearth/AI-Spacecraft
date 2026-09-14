@@ -1,0 +1,9 @@
+Timestamp: 2026-09-14 (America/Chicago; exact time not recorded)
+Role: user
+
+Files pasted by the user:
+
+"# DEGENERATE-1 — PROJECT CONSTITUTION Version 0.1 Status: Living document ## 1.…"
+
+My request:
+Markdown document helping explain the overall goal: Basically this is an experiment to find out and document how far a non-engineer can get in spacecraft engineering/ development using AI as its primary tool. should be kept with the other files

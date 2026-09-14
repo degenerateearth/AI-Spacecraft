@@ -1,0 +1,5 @@
+Timestamp: 2026-09-14 (America/Chicago; exact time not recorded)
+Role: user
+
+Question: For Earth imaging, is a low-cost demonstrator that returns occasional recognizable Earth images sufficient, or do you need images of selected locations? I’ll proceed with opportunistic imaging unless you specify a targeting or resolution requirement.
+Answer: Occasional recognizable Earth images

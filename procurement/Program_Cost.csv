@@ -1,0 +1,10 @@
+category,low_EUR_estimate,base_EUR_estimate,high_EUR_estimate,basis
+Spacecraft build: flight hardware,29350,46500,70100,"BOM sum; estimates, no quotes"
+Spacecraft build: engineering hardware/spares,8000,18000,30000,"Representative flat-sat, camera development article; not second flight spacecraft"
+Spacecraft build: assembly/workmanship labor,4000,8000,16000,"Controlled assembly, harness work and configuration records"
+Spacecraft build: nonrecurring engineering labor,40000,80000,180000,"Adapter, flight software, mechanical/thermal/radiation/regulatory technical inputs; facilities excluded"
+Testing: external facilities and campaign support,15000,35000,75000,Vibration/TVAC/thermal balance/EMI/RF; gap-driven radiation testing may exceed range
+Ground station: equipment and installation,4000,12000,25000,Low scenario shared infrastructure; base own modem/antenna/rotator; recurring labor excluded
+Licensing/coordination: professional support and filing allowance,5000,15000,40000,Not an official fee schedule; operator complexity and chosen route dominate
+Launch: rideshare/deployer/integration service,40000,65000,120000,Unquoted integrator allowance; no reserved slot; identify included tests to avoid double count
+Operations: 12 months recurring support,5000,12000,30000,"Part-time daily review, passes, anomalies; shared staff assumed"

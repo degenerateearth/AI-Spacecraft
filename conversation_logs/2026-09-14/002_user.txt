@@ -1,0 +1,8 @@
+Timestamp: 2026-09-14 (America/Chicago; exact time not recorded)
+Role: user
+
+Question: What mission or payload should Degen-1 support? If none is specified, I’ll assume a technology demonstrator that transmits spacecraft health telemetry with no propulsion or precision pointing.
+Answer: Earth imaging payload
+
+Question: Do you have a target launch/orbit, licensing jurisdiction, or budget ceiling? If unspecified, I’ll use a US-operated spacecraft in a nominal 450–500 km circular orbit and separate spacecraft build costs from launch, licensing, and ground operations.
+Answer: US-operated spacecraft. Assume a nominal 450-500 KM LEO unless another readily available rideshare orbit would materially reduce cost or complexity. Design for compliance with all applicable US licensing, spectrum coordination, debris mitigation, and launch provider requirements. Keep spacecraft build cost as low as reasonably achieveable using COTS hardware. Treat launch, licensing, ground station, testing, and spacecraft build as separate cost categories. Do not impose an arbitrary spacecraft budget ceiling yet- derive realistic minimum-cost estimate

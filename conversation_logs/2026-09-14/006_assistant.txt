@@ -1,0 +1,20 @@
+Timestamp: 2026-09-14 (America/Chicago; exact time not recorded)
+Role: assistant
+
+Updated the DEGENERATE-1 documentation and synchronized the changes to D:\Degen-1.
+
+Key changes:
+
+- Updated Project_Constitution.md to Version 0.2 with:
+  - explicit $20/month ChatGPT Plus baseline;
+  - free/open-source software preference;
+  - paid-AI/tool boundary and approval process;
+  - eight-category cost accounting;
+  - evidence-state and public-transparency requirements.
+
+- Added AI_Toolchain_and_Boundaries.md.
+- Added machine-readable Project_Status.yaml.
+- Added Project_Cost_Ledger.csv separating AI, software, hardware, ground station, testing, regulatory, launch, and expert-review costs.
+- Propagated the constraint into README.md, Project_Overview.md, Cost_and_Procurement.md, Configuration_Log.md, and Open_Issues.md.
+
+The package was hash-verified after synchronization. No website source directory was present, so the new YAML status schema and documentation provide the foundation for future website integration without modifying the static audit-book HTML.

@@ -1,0 +1,1441 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Degen-1 — Engineering Audit Book Rev A</title><style>
+*{box-sizing:border-box}body{margin:0;background:#eef2f6;color:#1b2c40;font:16px/1.62 system-ui,Segoe UI,sans-serif}nav{position:fixed;left:0;top:0;bottom:0;width:285px;overflow:auto;background:#13273d;color:white;padding:28px 22px}nav strong{font-size:25px;letter-spacing:.07em}nav small{display:block;color:#9fb5cc;margin-bottom:25px}nav a{display:block;color:#d7e4f1;text-decoration:none;font-size:13px;line-height:1.4;padding:9px 0;border-bottom:1px solid #294058}main{margin-left:285px;padding:38px;max-width:1450px}section{background:white;padding:38px 44px;margin-bottom:28px;border-radius:8px;scroll-margin-top:18px;box-shadow:0 2px 6px #0a24400d}h1{font-size:30px;line-height:1.2;margin-top:14px}h2{font-size:22px;color:#245574;margin-top:32px}h3{font-size:18px}p{max-width:100ch}a{color:#155b89}table{width:100%;border-collapse:collapse;font-size:13px;line-height:1.45;margin:20px 0}th,td{border:1px solid #d0dae3;padding:10px;text-align:left;vertical-align:top}th{background:#e6eef5}tr:nth-child(even){background:#f8fafc}pre{background:#edf2f6;border:1px solid #d9e3eb;padding:18px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}code{font-family:Consolas,monospace}.docpath{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:#647b90}.source{font-size:.85em}img{max-width:100%;height:auto}.cover{background:#13273d;color:white}.cover p{color:#d1dfed}.badge{display:inline-block;padding:5px 10px;background:#b77b23;color:white;border-radius:4px;font-size:12px}li{margin:8px 0}@media(max-width:900px){nav{position:relative;width:auto;max-height:270px}main{margin:0;padding:15px}section{padding:22px;overflow:auto}}@media print{nav{display:none}main{margin:0;padding:0;max-width:none}body{background:white;font-size:10pt}section{box-shadow:none;border-radius:0;padding:10mm;break-before:page}table{font-size:8pt}tr{break-inside:avoid}h1,h2,h3{break-after:avoid}.cover{background:white;color:#13273d}.cover p{color:#13273d}a{color:inherit;text-decoration:none}}
+</style></head><body><nav><strong>DEGEN-1</strong><small>1U Earth imaging demonstrator<br>Engineering audit · Rev A</small><a href="#section-0">DEGEN-1</a><a href="#section-1">D1-SYS-001 — Mission and architecture</a><a href="#section-2">D1-ANA-001 — Budgets and analytic screening</a><a href="#section-3">D1-ICD-001 — Preliminary interface control specification</a><a href="#section-4">D1-ENV-001 — Mechanical and environmental design</a><a href="#section-5">D1-SW-001 — Flight software and operations specification</a><a href="#section-6">D1-AIV-001 — Assembly, integration and verification plan</a><a href="#section-7">D1-PAY-001 — Opportunistic Earth imaging</a><a href="#section-8">D1-REG-001 — US compliance plan and release controls</a><a href="#section-9">D1-CST-001 — Cost estimate and procurement strategy</a><a href="#section-10">D1-REQ-001 — Requirements and verification traceability</a><a href="#section-11">D1-RAM-001 — Preliminary functional FMEA</a><a href="#section-12">D1-RVW-001 — Open issues and release gates</a><a href="#section-13">Model scope and independent checks</a><a href="#section-14">Degen-1 source register</a><a href="#section-15">Configuration log</a><a href="#section-16">D1-QA-001 — Issued-package verification</a></nav><main><section class="cover"><span class="badge">PRELIMINARY — FLIGHT RELEASE OPEN</span><h1>Small spacecraft.<br>Explicit engineering evidence.</h1><p>Occasional recognizable Earth images · US operator · 12-month target · COTS-first architecture</p><p>Read the budget assumptions and open-item register before relying on performance figures. No supplier quote or physical verification is represented as complete.</p></section><section><h1>Spacecraft allocation</h1><img src="drawings/D1-DWG-001_Layout.svg" alt="Dimensioned preliminary spacecraft stack and camera bay allocation"><p><a href="drawings/D1_Envelope.scad">OpenSCAD envelope model</a> · <a href="procurement/BOM.csv">Hardware BOM</a> · <a href="procurement/Program_Cost.csv">Separated program costs</a> · <a href="analysis/inputs.json">Model inputs</a> · <a href="analysis/recalculate.py">Recalculation script</a> · <a href="analysis/results.json">Results</a></p></section><section id="section-0"><div class="docpath">README.md</div><h1>DEGEN-1</h1>
+<h2>1U CubeSat preliminary engineering design — Revision A</h2>
+<p>Issued 14 September 2026. Status: <strong>AUDITABLE PRELIMINARY DESIGN / NOT RELEASED FOR FABRICATION OR FLIGHT</strong>.</p>
+<p>The design targets one year of opportunistic imaging and housekeeping telemetry in LEO at low build cost using commercially marketed CubeSat subsystems. The owner selected occasional recognizable Earth images, US operation and nominal 450–500 km LEO, with no arbitrary spacecraft budget ceiling. A CrystalSpace CS-101 camera supports opportunistic imaging without precision pointing. Selected-location imaging or mapping would require a revised baseline.</p>
+<p>The baseline uses an ISISPACE 1U chassis, six fixed solar panels, ICEPS2 Type A battery/EPS, AntS UHF antenna, and GomSpace A3200/AX100-U avionics on a DMC-3 carrier. One small custom adapter is required to resolve supply-voltage tolerance and inter-vendor routing. No propulsion, reaction wheels, GNSS receiver or deployable solar arrays are included.</p>
+<p><strong>Planning results:</strong> 1.064 kg current best estimate, 1.276 kg including 20% growth; EUR46,500 base flight-hardware allowance (EUR29,350–70,100 range). These are engineering estimates, not supplier quotations. Spacecraft build, including engineering/prototype hardware, assembly and nonrecurring engineering labor, is EUR152,500 base before contingency. Testing, ground station, licensing, launch and operations are separate categories. The cost report explains inclusions and uncertainty.</p>
+<p>The reproducible model closes nominal energy at +18.4% with a tumble-average assumption, and a separate fixed-attitude recovery mode closes at +0.124 Wh/orbit. The nominal mode does <strong>not</strong> close in the fixed-attitude case. Thermal, orbit-lifetime, radiation, inhibit independence and final mechanical/interface compliance remain open. No analysis in this package demonstrates that the assembled spacecraft has survived launch or will actually operate for twelve months.</p>
+<h3>Audit reading order</h3>
+<ol>
+<li><a href="#section-1">Mission and architecture</a></li>
+<li><a href="#section-2">System budgets and analysis rationale</a></li>
+<li><a href="#section-3">Interfaces and adapter specification</a></li>
+<li><a href="#section-4">Mechanical and environmental design</a></li>
+<li><a href="#section-5">Flight software and mission operations</a></li>
+<li><a href="#section-6">Assembly, integration and verification</a></li>
+<li><a href="#section-9">Cost and procurement trade</a></li>
+<li><a href="#section-12">Open issues and review gates</a></li>
+<li><a href="#section-7">Imaging payload</a> and <a href="#section-8">US compliance plan</a></li>
+<li><a href="#section-10">Requirements traceability</a>, <a href="#section-11">FMEA</a>, <a href="#section-14">sources</a></li>
+</ol>
+<h3>Reproduction and configuration</h3>
+<p>Run <code>python analysis/recalculate.py</code> using Python 3 (standard library only). Edit <code>analysis/inputs.json</code> for assumptions and <code>procurement/BOM.csv</code> for estimates. Outputs are <code>results.json</code>, <code>power_sensitivity.csv</code> and <code>thermal_screen.csv</code>. Assertions check model consistency and selected preliminary budget limits; they do not verify flight hardware. The HTML audit book is a generated, readable snapshot of the Markdown documents. The individual Markdown documents and model inputs are authoritative within this package.</p>
+<p>The drawing SVG is a dimensioned allocation sketch, not manufacturing CAD. The electrical diagrams specify functional interfaces, not a released pin-to-pin harness. No STEP models, PCB fabrication files, vendor proprietary ICDs, supplier quotes, hardware test reports or flight software implementation are represented as complete.</p>
+<p>All external facts carry source IDs resolved in the source register. <strong>V</strong> denotes vendor-stated information; <strong>A</strong> denotes an engineering assumption/allocation; <strong>C</strong> denotes a calculation; <strong>OPEN</strong> denotes missing evidence. Published product changes supersede older brochures. Engineering approval signatures remain blank; AI authorship is not an engineering release.</p>
+</section><section id="section-1"><div class="docpath">engineering/01_Mission_and_Architecture.md</div><h1>D1-SYS-001 — Mission and architecture</h1>
+<p>Revision A | 2026-09-14 | Preliminary</p>
+<h2>Mission definition</h2>
+<p>Demonstrate low-cost opportunistic Earth imaging and spacecraft health monitoring for 365.25 days after separation. Image requirement: return at least one recognizable Earth image during commissioning and target one useful image per month thereafter, including the final mission month. This image cadence is an allocated target, not a demonstrated coverage result. Success is at least one authenticated command and one valid health dataset during each rolling seven-day interval after commissioning, including an interval at mission day 365. The weekly criterion accommodates outages; it is not a promise of continuous ground coverage. Nominal target: daily telemetry retrieval. Minimum useful dataset: battery voltage/current/temperature, solar input power, resets, mode, uptime and radio temperature. Inertial data use sensors already on the OBC and are secondary.</p>
+<p>Assume a US private operator, a single spacecraft and no commercial communications service. US operation and low build cost are owner requirements. Noncommercial demonstration is the provisional operating model; radio-service eligibility is not yet determined. Planning orbit: circular 475 km, inclination 51.6 degrees; trade range 450–500 km. Epoch, inclination, RAAN, injection dispersions, ground location and launch provider remain unselected. Higher-inclination rideshares require new radiation, thermal, contact and lifetime analyses. Do not buy an RF variant before the radio-service decision.</p>
+<p>Functional operation for a year and remaining in orbit for a year are separate requirements. A lower orbit may decay too early; a higher orbit may not dispose quickly enough. No propulsion is provided. The launch orbit must pass both gates using appropriate atmospheric uncertainty cases.</p>
+<h2>Architecture and cost choices</h2>
+<p>The expensive items are purchased flight-oriented subsystems whose testing/documentation can reduce development effort. Ordinary commercial components are confined mainly to the interconnect/regulator adapter and ground support. A catalog product&#39;s heritage is evidence to investigate, not proof of the delivered revision&#39;s qualification.</p>
+<p>Six photovoltaic faces remove the geometric zero-power orientation of a five-face design. Opposite faces feed three MPPT inputs through vendor-approved isolation, one axis per input. Two cells in series on each face give a nominal planning MPP voltage around 5.4 V <a class="source" href="https://www.isispace.nl/product/small-satellite-solar-panels/" title="ISISPACE solar panels current product page">[S04]</a>; no opposite faces are placed in series. Cold open-circuit voltage, hot MPP voltage, shadowing and startup behavior require vendor curves. Five faces use a 2.3 W allocation; the +X camera-aperture face uses 1.8 W. The 2.3 W/face allocation is conservative relative to two current catalog cells but remains an RFQ acceptance target <a class="source" href="https://www.isispace.nl/wp-content/uploads/2016/02/ISIS-Solar-Panels-brochure-v1.pdf" title="ISISPACE legacy solar brochure">[S22]</a>.</p>
+<p>The integrated two-cell battery simplifies packaging and handling. The CPU and radio share a commercial carrier but have separate switched, regulated power branches. The radio uses CAN/CSP to the OBC; EPS and antenna commands use I2C, with branch isolation. Debug connectors cannot back-power the bus during flight integration.</p>
+<p>A 5 V AntS variant provides a deployment interface independently switched from avionics. It carries the +Z panel using the supported accommodation <a class="source" href="https://isispace.nl/product/vhf-uhf-antenna-for-1u-3u/" title="ISISPACE 1U-3U antenna current product page">[S05]</a>. A UHF turnstile is selected for broad coverage; actual pattern nulls remain. It is tuned on the assembled spacecraft. Body attitude is uncontrolled. A side-looking CrystalSpace CS-101 camera takes bursts when energy allows; the camera is disabled in recovery. No requirement relies on passive magnetic alignment, spin-axis control or a claimed detumble time. The OBC gyro characterizes rotation; excessive rotation or poor generation reduces operations.</p>
+<h2>Functional block diagram</h2>
+<pre><code class="language-text"> +/-X panels -- isolated parallel -- MPPT X --+
+ +/-Y panels -- isolated parallel -- MPPT Y --+-- ICEPS2 rail / battery / safety inhibits
+ +/-Z panels -- isolated parallel -- MPPT Z --+             |
+                      +-----------------------------------+-------------------+
+                      |                                   |                   |
+               switched 5V A                       switched 5V B        switched 5V C
+                      |                                   |                   |
+             D1-IF regulator A                  D1-IF regulator B       AntS controller
+                      |                                   |                   |
+               A3200 3.3V &lt;--------- CAN/CSP ------&gt; AX100-U 3.3V --RF--&gt; turnstile
+                      |
+               isolated I2C branches --------&gt; EPS housekeeping / AntS control
+                      |
+               temperature / health / gyro telemetry
+</code></pre>
+<h2>Operational phases</h2>
+<p>Ground storage → integrated inhibited state → separation detection → delayed commissioning → antenna release → receive/beacon acquisition → health operations → recovery as necessary → end-of-mission passivation. Commanded RF silence must persist across watchdog resets. Lost ground contact cannot cause unrestricted high-duty transmission. A battery exhausted below the restart threshold must be able to recover from solar power without OBC intervention.</p>
+<p>The three-inhibit provision and RBF are a supplier/launch-interface configuration requirement. A single software switch or a timer is not substituted for independent barriers. The EPS optional switch architecture is evaluated at system level with all solar and debug paths included <a class="source" href="https://www.isispace.nl/wp-content/uploads/2025/01/ISIS-ICEPS2-DSH-0001-ICEPS2_Datasheet-01_02.pdf" title="ICEPS2 datasheet issue 1.2, 2024-07-26">[S03]</a>. The design has no pyrotechnic devices, pressure vessels or propulsion. No new orbital debris is intentionally released.</p>
+<h2>Alternative selection rule</h2>
+<p>RFQ the component baseline and a basic EXA KRATOS or Alen 1U platform simultaneously. Prefer the offer with the lowest total delivered, integrated, verified cost that meets the requirements. The present evidence supports a cost-conscious candidate, not a mathematically proven global minimum. A turnkey quote can win even if its hardware line is higher: reduced adapter design, software integration and retest effort can dominate the difference. No order or supplier message was sent.</p>
+</section><section id="section-2"><div class="docpath">engineering/02_Budgets_and_Analyses.md</div><h1>D1-ANA-001 — Budgets and analytic screening</h1>
+<p>Revision A | All numbers below are preliminary; inputs are explicitly editable.</p>
+<h2>Mass and volume</h2>
+<p>The BOM sums to 1063.5 g (C). Uniform 20% growth gives 1276.2 g. A conservative project mass ceiling of 1330 g leaves 53.8 g after growth. This is a project target, not a statement that all modern 1U dispensers impose 1330 g. The selected deployer sets the final limit <a class="source" href="https://www.nasa.gov/wp-content/uploads/2018/01/cubesatdesignspecificationrev14_12022-02-09.pdf" title="CubeSat Design Specification Rev 14.1, 2022-02-09">[S01]</a>.</p>
+<p>The 300 g panel allocation includes six panels. AntS uses a conservative 90 g allocation, not a legacy 18 g figure. EPS mass includes its battery. Harness, thermal materials and adapter have separate allowances. The camera and its bracket are included. No extra battery, deployer, ballast or ground equipment is hidden in the mass total. Mass must be measured after each integration step and reconciled against the assembly BOM.</p>
+<p>Internal Z allocation, centered coordinates in mm: camera bay -49 to -22, with lens along +X; adapter -21 to -15; EPS/battery -12 to +14.5; carrier and its two top-side modules +20 to +36; upper service clearance +36 to +44; AntS +44 to +51; top panel provision +51 to +54. Approximate outside rail span is 100 x 100 x 113.5 mm. These intervals leave internal clearance but do not establish X/Y fit, fastener access, connector bend radii or actual mating heights. The vendor CAD and dispenser drawing are mandatory before release.</p>
+<p>With EPS at z=+1.25, avionics at z=+28, AntS at z=+47.5, adapter at z=-18 and the 70 g camera/bracket at z=-35.5, the illustrative center of mass is z=+3.8 mm when other masses are symmetric. A camera center at x=+25 mm shifts total x center of mass approximately +1.65 mm. This is not a verified mass-properties result. Require measured center of mass within a project target of +/-10 mm on all axes. Record measured inertia for separation and RF/thermal attitude modeling.</p>
+<h2>Orbit and eclipse</h2>
+<p>Two-body circular period: <code>T=2*pi*sqrt((Re+h)^3/mu)</code>. Zero-beta maximum cylindrical-shadow duration: <code>Te=T/pi*asin(Re/(Re+h))</code>. At 475 km this gives T=94.101 min, eclipse=35.833 min, sunlight=58.268 min, approximately 5589 orbits/year. Penumbra, oblateness, beta evolution and altitude decay are omitted. Adopt 38 min for environmental test eclipse segments to cover analysis uncertainty; re-evaluate at the minimum mission altitude.</p>
+<h2>Solar generation</h2>
+<p>For equal panels on all six orthogonal faces, geometric power is <code>Pface*(abs(sx)+abs(sy)+abs(sz))</code>. For a unit Sun vector the sum ranges from 1 to sqrt(3); an isotropic attitude average is 1.5. This proves a geometric lower bound only for intact, equally capable, unobstructed faces. One failed face destroys that bound. No isotropic tumble guarantee is assumed for survival. With five 2.3 W faces and a 1.8 W camera face, the isotropic mean is (5*2.3+1.8)/4=3.325 W BOL, and the geometric minimum is 1.8 W. These replace the equal-face geometry in the released model.</p>
+<p>Apply separate allocations: end-of-life factor 0.85; temperature factor 0.90; shadow/assembly factor 0.90; MPPT/harness efficiency 0.90. Thus EOL power during sunlight is 1.115 W for the camera-face lower bound and 2.060 W for the unequal-face isotropic mean. These factors require radiation/thermal/IV verification. Albedo generation is ignored. Distribution efficiency is separately 0.85, including the adapter, and battery charging efficiency is 0.90. Efficiencies are not measured vendor claims.</p>
+<h2>Load allocation at delivered load rails</h2>
+<table>
+<thead>
+<tr>
+<th>Load</th>
+<th align="right">Nominal allocation</th>
+<th align="right">Recovery allocation</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>OBC</td>
+<td align="right">0.18 W</td>
+<td align="right">0.08 W</td>
+<td>A; clock/sleep schedule to demonstrate</td>
+</tr>
+<tr>
+<td>EPS housekeeping/internal overhead</td>
+<td align="right">0.14 W</td>
+<td align="right">0.12 W</td>
+<td>A; includes published 93 mW PDU idle, not just that figure</td>
+</tr>
+<tr>
+<td>Interfaces/carrier/sensors</td>
+<td align="right">0.03 W</td>
+<td align="right">0.02 W</td>
+<td>A; USB off</td>
+</tr>
+<tr>
+<td>Radio RX</td>
+<td align="right">0.20 W continuous</td>
+<td align="right">0.396 W for 20% of time</td>
+<td>A nominal; recovery budgets datasheet max current</td>
+</tr>
+<tr>
+<td>Radio TX</td>
+<td align="right">3.3 W for 2% of orbit</td>
+<td align="right">3.3 W for 0.5%</td>
+<td>S10 maximum temperature current used; replace RX while TX nominally</td>
+</tr>
+<tr>
+<td>Camera</td>
+<td align="right">0.02 W average, 2 W peak</td>
+<td align="right">OFF</td>
+<td>A; capped daily powered time</td>
+</tr>
+<tr>
+<td>Heater</td>
+<td align="right">0.10 W average</td>
+<td align="right">0.10 W average</td>
+<td>A; 1 W at 10% duty equivalent</td>
+</tr>
+</tbody></table>
+<p>Add 20% load growth. Nominal total=0.8784 W. Recovery total=0.49884 W; recovery calculation conservatively adds TX energy without subtracting RX overlap. The onboard heater may have different instantaneous wattage: the 1 W value is an allocation requiring configuration or modulation confirmation.</p>
+<p>Energy accounting: <code>Erequired = Pload/eta_distribution * (Tsun + Teclipse/eta_charge)/3600</code>. This handles eclipse recharge explicitly. Nominal required solar energy is 1.689 Wh/orbit versus 2.001 Wh available: +0.312 Wh, or +18.4% of required energy. Fixed-attitude nominal deficit is 0.606 Wh/orbit. Recovery needs 0.959 Wh versus 1.083 Wh available: +0.124 Wh. This separation is essential: six faces do not justify permanent full-power operation.</p>
+<p>Recovery RX duty is 12 s per minute; the radio must wake and receive within the allocated window. Ground commands repeat across at least one full window cycle. Firmware transitions to recovery when generation and state-of-charge trends are inadequate, regardless of perceived attitude. Nominal heating can average at most about 0.235 W before consuming all model energy reserve. Preserve growth reserve in operations rather than deliberately operating at that bound. The sensitivity CSV includes poor generation and high heater cases, some of which fail. A thermal solution demanding sustained high heater power requires redesign.</p>
+<p>Peak bus load allocation: OBC 0.9 W, radio 3.3 W, EPS/interface 0.17 W and heater 1 W, with 20% growth, gives 6.444 W delivered. At 85% conversion this is 7.58 W battery-side, approximately 1.26 A at 6 V. Verify actual per-channel current limits, wiring drops, transients and startup. Do not deploy the antenna while transmitting; a separate 2 W deployment allocation applies.</p>
+<h2>Battery and lifetime</h2>
+<p>Use 22.5 Wh BOL, derated to 18 Wh at EOL (80%, A). A routine 20% depth-of-discharge design limit permits 3.6 Wh. Routine eclipse discharge is approximately 0.617 Wh, or 3.43% EOL DOD. A stress eclipse with 120 s TX and continuous 1 W heating, with imaging disabled uses 1.453 Wh, or 8.07%. Neither calculation proves a calendar or cycle lifetime. Require evidence for at least 6000 shallow cycles plus ground storage at actual temperature, charge voltage and current.</p>
+<p>Voltage cannot be treated as a precise SOC measurement under load. Use calibrated coulomb counting with voltage/temperature correction; trend errors and periodically reconcile during appropriate rest conditions. Reserve energy for antenna release and initial acquisition; do not spend the full DOD allowance in routine operations.</p>
+<h2>Radio link</h2>
+<p>Planning carrier 437 MHz is a calculation placeholder, not a frequency assignment. Use 1200 bit/s Mode 5/Golay framing; no coding gain is credited. Current AX100 deliveries support only Mode 5 per S11. The receiver threshold of -123 dBm is a procurement/bench-test requirement for the complete modem at packet error rate &lt;=1% with the selected packet length and configuration, not the -137 dBm/100 bit/s marketing figure.</p>
+<p>At 10 degrees elevation, circular geometry gives 1633.16 km slant range. <code>FSPL=32.44+20log10(f_MHz)+20log10(d_km)=149.51 dB</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th align="right">Downlink</th>
+<th align="right">Uplink</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Transmitter at connector</td>
+<td align="right">29 dBm</td>
+<td align="right">30 dBm</td>
+</tr>
+<tr>
+<td>Ground antenna gain</td>
+<td align="right">+16 dBi</td>
+<td align="right">+16 dBi</td>
+</tr>
+<tr>
+<td>Space antenna reference gain</td>
+<td align="right">0 dBi</td>
+<td align="right">0 dBi</td>
+</tr>
+<tr>
+<td>Space feed loss</td>
+<td align="right">-1 dB</td>
+<td align="right">-1 dB</td>
+</tr>
+<tr>
+<td>Ground feed loss</td>
+<td align="right">-1 dB</td>
+<td align="right">-1 dB</td>
+</tr>
+<tr>
+<td>Propagation allowance</td>
+<td align="right">-1 dB</td>
+<td align="right">-1 dB</td>
+</tr>
+<tr>
+<td>Polarization allowance</td>
+<td align="right">-3 dB</td>
+<td align="right">-3 dB</td>
+</tr>
+<tr>
+<td>Tumble/pattern allowance</td>
+<td align="right">-6 dB</td>
+<td align="right">-6 dB</td>
+</tr>
+<tr>
+<td>Free-space loss</td>
+<td align="right">-149.51 dB</td>
+<td align="right">-149.51 dB</td>
+</tr>
+<tr>
+<td>Received power</td>
+<td align="right">-116.51 dBm</td>
+<td align="right">-115.51 dBm</td>
+</tr>
+<tr>
+<td>Margin over -123 dBm threshold</td>
+<td align="right">6.49 dB</td>
+<td align="right">7.49 dB</td>
+</tr>
+</tbody></table>
+<p>The 6 dB fade allowance does not bound turnstile nulls. Packet repetition, pass diversity and measured full-sphere antenna coverage are required. If measured threshold is only -120 dBm, downlink margin falls to 3.49 dB. Additional losses may require a higher elevation mask or reduced data rate. Maximum orbital-speed Doppler estimate is +/-11.1 kHz; tune with predicted Doppler and acquire residual clock drift, rather than relying solely on radio AFC.</p>
+<p>64 bytes/min generates 92,160 bytes/day before framing. At 1200 bit/s and a conservative 50% net efficiency, 1229 s/day are needed. The 2% orbit-average TX allowance gives 1728 s/day, but contacts must supply the necessary visibility. Four 6-minute passes provide only 1440 s before fades and acquisition; they are an illustrative scenario, not a computed schedule. Store at least 30 days of health telemetry, downsample in recovery to a summary every 10 minutes, and never increase duty merely to empty a backlog. Exact contact coverage awaits the ground location and orbit.</p>
+</section><section id="section-3"><div class="docpath">engineering/03_Interfaces.md</div><h1>D1-ICD-001 — Preliminary interface control specification</h1>
+<p>Revision A | Functional allocation. Pin-to-pin harness release is OPEN.</p>
+<h2>Compatibility findings</h2>
+<p>An electrical PC/104-style stack is not automatically pin compatible between manufacturers. Do not mate the EPS and carrier through unreviewed stackthrough contacts. Prefer separate manufacturer-approved power/data harnesses into D1-IF; mechanically stack boards with only approved connectors and standoffs. A complete populated-contact map is required even for nominally unused pins.</p>
+<p>S03 gives EPS 3.3 V output up to 3.41 V unloaded. The OBC&#39;s normal supply range ends at 3.4 V <a class="source" href="https://gomspace.com/wp-content/uploads/2025/09/NanoMind_A3200.pdf" title="NanoMind A3200 datasheet DS1006901 rev1.17, 2021-01-29">[S08]</a>, and the radio has a 3.4 V absolute maximum <a class="source" href="https://gomspace.com/wp-content/uploads/2025/09/gs-ds-nanocom-ax100.pdf" title="NanoCom AX100 datasheet DS1013823 rev3.7, 2019-11-29">[S10]</a>. Direct connection is not accepted. D1-IF uses two independently supplied 5 V to 3.3 V conversion branches, one each for OBC and radio. Keep the radio&#39;s data pins high impedance while unpowered. Separate the EPS/AntS I2C branches from the radio CAN path so one stuck device does not jam all recovery control.</p>
+<h2>Logical connection schedule</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>From / to</th>
+<th>Interface and design allocation</th>
+<th>Closure requirement</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>H01–H03</td>
+<td>+/-X, +/-Y, +/-Z panels → EPS MPPT1–3</td>
+<td>Per-face two-series-cell strings, opposite faces parallel through blocking paths</td>
+<td>Signed hot/cold IV and reverse-current topology; no series connection between opposite faces</td>
+</tr>
+<tr>
+<td>H04</td>
+<td>EPS switched 5 V A → D1-IF A → DMC OBC supply</td>
+<td>3.30 V nominal; 1 A branch design allocation</td>
+<td>Test at load pins including all tolerances/transients</td>
+</tr>
+<tr>
+<td>H05</td>
+<td>EPS switched 5 V B → D1-IF B → DMC radio supply</td>
+<td>3.30 V nominal; 1.2 A branch design allocation</td>
+<td>Confirm startup, output discharge and backfeed isolation</td>
+</tr>
+<tr>
+<td>H06</td>
+<td>EPS switched 5 V C → AntS 5 V variant</td>
+<td>2 W deployment allocation; no simultaneous TX</td>
+<td>Independent hazard inhibits and pin map</td>
+</tr>
+<tr>
+<td>H07</td>
+<td>A3200 ↔ AX100</td>
+<td>CAN/CSP, initially 125 kbit/s, two endpoint terminations</td>
+<td>Carrier routing and firmware support; about 60 ohm unpowered bus resistance</td>
+</tr>
+<tr>
+<td>H08</td>
+<td>A3200 ↔ ICEPS2</td>
+<td>3.3 V I2C, 100 kbit/s, OBC master</td>
+<td>Supplier command protocol, address, clock stretching, pullups</td>
+</tr>
+<tr>
+<td>H09</td>
+<td>A3200 ↔ AntS</td>
+<td>Separate isolated I2C branch</td>
+<td>Address conflict check and unpowered pin behavior</td>
+</tr>
+<tr>
+<td>H10</td>
+<td>AX100 RF → AntS</td>
+<td>50 ohm coax, right-angle MCX at radio</td>
+<td>AntS connector selection; &lt;=1 dB full harness loss</td>
+</tr>
+<tr>
+<td>H11</td>
+<td>Three separation switches + RBF → EPS</td>
+<td>Hardware inhibit inputs/paths</td>
+<td>Exact wiring, independence, source isolation and switch travel</td>
+</tr>
+<tr>
+<td>H13</td>
+<td>Switched payload rail → CS-101 / serial → OBC</td>
+<td>2 W peak camera allocation; UART or RS485 by supplier option</td>
+<td>Camera voltage, logic levels, protocol and timeout OPEN; do not assume direct 5 V compatibility</td>
+</tr>
+<tr>
+<td>H12</td>
+<td>Ground service → test interfaces</td>
+<td>Current-limited, removable and keyed</td>
+<td>No dual supplies or electrical bypass during delivery</td>
+</tr>
+</tbody></table>
+<p>Connector names H01–H12 are Degen-1 harness IDs, not manufacturer connector identifiers. Freeze supplier part numbers, mating halves, cavities, contact gender, wire gauges, shields, lengths, tolerances and approved torque values in the final harness drawing. No arbitrary vendor pin numbers have been invented.</p>
+<h2>D1-IF regulator adapter concept</h2>
+<p>Two TI TPSM82823-based channels are candidates <a class="source" href="https://www.ti.com/lit/gpn/tpsm82823" title="TI TPSM8282x datasheet SLVSEP0F">[S14]</a>, each supplied by its corresponding EPS 5 V output. Use the adjustable configuration with 450 kohm top and 100 kohm bottom 0.1% resistors for 3.3 V nominal from the 0.6 V reference. Initial capacitor allocations: 10 uF input and 22 uF output, X7R, rated &gt;=10 V; effective capacitance and stable layout must satisfy the selected datasheet circuit. Place local bulk/decoupling at each module&#39;s supply and use the manufacturer&#39;s layout guidance. These are design starting values, not a released schematic/BOM.</p>
+<p>Reference tolerance +/-1%, resistor ratio tolerance, bias current, temperature, radiation drift, DC line drop and dynamic overshoot must be combined. A preliminary DC tolerance allocation of +/-1.2% gives about 3.260–3.340 V before dynamic effects. Allocate no more than 40 mV additional positive excursion at the radio pins, retaining at least 20 mV to the absolute maximum. The radio datasheet does not provide a clear guaranteed normal supply tolerance around 3.3 V; obtain written acceptance of the complete supply envelope. A bench measurement on one room-temperature unit is insufficient.</p>
+<p>Provide independent enable control from EPS branches, output discharge, power-good telemetry, and signal isolation to stop parasitic powering. Use reset supervision referenced to the delivered OBC rail, not a remote EPS measurement. The regulator&#39;s own PG upper threshold is not an adequate radio overvoltage protector. Analyze switch short and feedback-open faults; an upstream EPS current limiter may not prevent downstream overvoltage. The open interface action must select an accepted protective topology or obtain a qualified tightly regulated supplier solution. Ordinary catalog regulator radiation behavior is a major residual risk.</p>
+<p>No adapter Gerbers or manufacturing files are released. At procurement review compare this adapter&#39;s total engineering/qualification expense with a guaranteed compatible EPS output option or integrated bus. Remove the adapter only after the alternative&#39;s limits close over environment and aging.</p>
+<h2>Safety inhibit allocation</h2>
+<p>Adopt three independent physical barriers for RF energy and for antenna release until the launch provider approves a different arrangement <a class="source" href="https://www.nasa.gov/wp-content/uploads/2018/01/cubesatdesignspecificationrev14_12022-02-09.pdf" title="CubeSat Design Specification Rev 14.1, 2022-02-09">[S01]</a>. Request the ICEPS2 three-separation-switch/RBF option. Its detailed topology must be assessed from source (battery, every solar path, test port) to hazard. Three switches controlling one common unprotected device are not automatically three independent inhibits. Shared grounds, body diodes, charging paths and data-pin backfeed must be considered <a class="source" href="https://www.isispace.nl/wp-content/uploads/2025/01/ISIS-ICEPS2-DSH-0001-ICEPS2_Datasheet-01_02.pdf" title="ICEPS2 datasheet issue 1.2, 2024-07-26">[S03]</a>.</p>
+<pre><code class="language-text">BATTERY / SOLAR / TEST SOURCES
+          |   vendor-controlled source isolation network
+       Inhibit A --- Inhibit B --- Inhibit C --- hazard supply --- TX or release driver
+          ^             ^             ^
+       separate physical switch actuation / independent control as demonstrated
+
+RBF overrides the integrated ground configuration to OFF.
+Timers authorize later actions; they are not counted as physical inhibits.
+</code></pre>
+<p>This is a required functional topology, not a claim that the selected EPS already implements exactly this series circuit. Supplier evidence may implement an equivalent accepted network. In the inhibit verification fixture, exercise all eight switch states with solar power present and absent, battery present, and authorized service configurations. Inject each single failed barrier and prove the remaining barriers prevent the hazard. Record rail voltages, maximum RF leakage and release current against launch-approved limits. Battery protection exceptions need explicit ICD acceptance.</p>
+<h2>Timing and safe defaults</h2>
+<p>Use at least 30 min delay before any deployable release and at least 45 min before RF after valid separation <a class="source" href="https://www.nasa.gov/wp-content/uploads/2018/01/cubesatdesignspecificationrev14_12022-02-09.pdf" title="CubeSat Design Specification Rev 14.1, 2022-02-09">[S01]</a>; apply any longer launch requirement. Software and hardware default to RF and release disabled. A reset during initial delay conservatively restarts the delay unless independently verified retained timing proves elapsed time. Switch bounce or reassertion resets the separation-valid state. Persist a command inhibit across reboot. Antenna release requires valid separation, elapsed delay, sufficient energy, allowed temperature and an authenticated command or preapproved autonomous commissioning sequence.</p>
+<h2>Grounding and EMI</h2>
+<p>Select one intentional DC reference bond to chassis; route power returns with supply wires. Establish conductive structure bonds independently of anodized rail contact. Separate MPPT/regulator and heater current loops from radio feed and sensor wiring. Document shield termination and signal return paths. Test receiver sensitivity with EPS converters active, radio powered, maximum CPU workload and heater switching. No blanket claim of EMC compliance is made from component assembly grades.</p>
+</section><section id="section-4"><div class="docpath">engineering/04_Mechanical_Thermal_Radiation.md</div><h1>D1-ENV-001 — Mechanical and environmental design</h1>
+<p>Revision A | Analysis plans plus explicit screening; qualification remains open.</p>
+<h2>Structure and launch survival</h2>
+<p>Purchase a metal 1U flight structure and its intended rail, fastener and board-mounting system. Retain supplier materials, surface treatments and joint geometry. Flight harnesses require strain relief and positive retention. No friction-fit hobby headers, loose SD cards, consumer battery holders, adhesive-only heavy components or unapproved rework are accepted. Approved locking methods and workmanship instructions must be selected with the assembly contractor.</p>
+<p>Rails carry dispenser interface loads into frames; board standoffs carry PCB mass into frames. Battery support must use the supplied retention system. Verify cell restraint independent of electrical terminals. Solar substrates transfer loads through approved attachment points. Antenna elements must be restrained by spacecraft hardware in the stowed state; the dispenser is not the antenna hold-down mechanism.</p>
+<p>The rail drawing is governed by the selected dispenser ICD and CDS <a class="source" href="https://www.nasa.gov/wp-content/uploads/2018/01/cubesatdesignspecificationrev14_12022-02-09.pdf" title="CubeSat Design Specification Rev 14.1, 2022-02-09">[S01]</a>. Require supplier drawings, material certificates, fastener specifications, installation sequence, vent paths, mass properties and actual flight configuration CAD. Check access and serviceability with the panels and antennas installed. Outgassing evidence is required for adhesives, coatings, wire insulation and polymer components; inspect venting of every enclosed volume. Prefer already characterized material systems and minimize late finish changes.</p>
+<h3>Preliminary load screen</h3>
+<p>For scale only, assume a 20 g quasi-static limit acceleration (A; not a launch requirement). The 1.2762 kg design mass produces 250.3 N. Uniform division over four rails is 62.6 N/rail, but real restraint preload and dynamic load sharing may be highly unequal. An EPS mass of 184 g produces 36.1 N, and with an assumed 25 mm lever arm about 0.90 N m. These are input loads, not strength margins. Use the launch coupled-loads envelope for final analysis.</p>
+<p>Require a structural finite-element model including joint stiffness, dispenser boundary conditions, battery and daughterboard retention, panel supports, harness masses and material allowables. Extract modes, random vibration responses, stress, fastener preload/separation, buckling and fatigue where applicable. Compute <code>MS=allowable/(factor*applied)-1</code> using approved yield/ultimate factors and documented allowables. No positive structural margin or first-mode frequency is claimed without this model. A convenient 100 Hz target may guide early stiffness but is not adopted as a universal acceptance criterion.</p>
+<p>Qualification/acceptance profiles must be agreed with the integrator. GEVS B <a class="source" href="https://standards.nasa.gov/standard/gsfc/gsfc-std-7000" title="GSFC-STD-7000B GEVS status and document">[S15]</a> is a tailoring reference; do not expose hardware to an arbitrary generic gRMS value. Shaker-fixture dynamics, notching, force limits and battery state matter. Components with heritage still require final assembly workmanship/acceptance testing. Current EPS and AntS webpages do not identify individual shipped-unit vibration/shock testing [S02,S05].</p>
+<h2>Thermal architecture</h2>
+<p>Six dark solar faces offer limited radiator area. Put the battery toward the interior, provide a characterized conductive route to the structure, and use controlled isolation to prevent excessive cold coupling. Retain EPS heater sensing and add independent overtemperature protection if the provided architecture lacks the required failure protection. Place radio heat spreading to the frame; avoid coupling peak radio heat directly into the battery. Use qualified optical films only on available non-cell areas and preserve antenna/rail interfaces.</p>
+<p>Project targets: battery +5 to +35 C during normal operation; charge only from +5 to +40 C at &lt;=0.8 A until the vendor approves a different profile; inhibit charging below +5 C or above +40 C. Nonbattery electronics target -10 to +50 C. Deploy the antenna only from +5 to +45 C, providing margin inside the current published deployment range <a class="source" href="https://isispace.nl/product/vhf-uhf-antenna-for-1u-3u/" title="ISISPACE 1U-3U antenna current product page">[S05]</a>. These targets are allocations, not predicted temperatures. S03 distinguishes battery charge, limited-current charge and discharge ranges; the broader EPS marketing operating range is not permission to charge at subzero temperature.</p>
+<h3>Executed screening</h3>
+<p><code>thermal_screen.csv</code> uses a single isothermal node with radiating area 0.06 m2, effective Earth-view area 0.02 m2, and assumed projected areas 0.01–0.01732 m2. Solar flux 1322–1414 W/m2, albedo 0.20–0.35 and IR 200–260 W/m2 are illustrative bounding inputs. Optical absorptivity/emissivity are assumed, not measured. Electric power extraction is subtracted from absorbed solar heat, with internally dissipated power then added.</p>
+<p>The equilibrium estimates are approximately -18 C for the cold sunlight case, +19 C nominal sunlight, +50 C hot sunlight and -78 C eclipse equilibrium. Eclipse equilibrium is <strong>not</strong> an actual 36-minute eclipse temperature; thermal inertia is absent. These results demonstrate that passive survival/charging is not closed by the current screen. They must not be used as hardware qualification predictions.</p>
+<h3>Thermal closure method</h3>
+<p>Build at least a battery, avionics, structure and six-panel node network. Each node obeys <code>C_i*dT_i/dt = Q_i + sum(G_ij*(T_j-T_i)) + radiation_exchange_i</code>. Include battery internal resistance versus SOC/temperature, heater PWM, power conversion losses, operational modes, shadow transitions, cell extraction, varying beta and optical properties at end of life. Run cold startup after launch storage, long eclipse, repeated low-generation recovery, hot continuous-sun and high-beta cases, and heater-stuck-on/off cases. Model actual thermal conductances and uncertainties; correlate using thermal-balance testing and measured time constants.</p>
+<p>Close the heater budget jointly with energy. The assumed 0.10 W orbit-average heater load is restrictive. If the model needs more than the available energy reserve, change thermal paths/optical surfaces or reduce operations; do not merely increase battery capacity. A larger battery does not fix a persistent negative orbit-energy balance. A 1 W heater stuck on threatens both energy and temperature and must have a bounded shutoff path.</p>
+<h2>Radiation and other LEO exposure</h2>
+<p>Create an orbit/epoch-specific radiation environment and shielding sector model before making a twelve-month reliability claim. Run trapped particle and solar/proton/heavy-ion cases using an appropriate validated environment tool and retain all inputs/model versions. Assess total ionizing dose at the CPU, memory, EPS controller, switches, radio and adapter regulators, plus displacement damage to solar cells. Apply a preliminary radiation design margin factor 2 to the calculated mission dose when evaluating test evidence. This factor is a project allocation, not a universal standard.</p>
+<p>Obtain part-level or assembly-relevant dose/SEE evidence tied to delivered lot/revision. Destructive latchup and power MOSFET failure cannot be fixed by a watchdog; power limiting is useful only if its response prevents damage. Memory upset recovery uses CRC, independent boot images and persistent counters, but does not provide quantified mission reliability. No arbitrary aluminum thickness is presented as sufficient shielding. NASA guidance emphasizes the application-specific nature of SEE assurance <a class="source" href="https://www.nasa.gov/wp-content/uploads/2015/04/techbul_19-01-1_120321-final.pdf" title="NASA NESC SEE mitigation technical bulletin 19-01-1">[S17]</a>.</p>
+<p>Assess atomic oxygen/UV damage to exposed polymers, cell coverglass and adhesive edges; spacecraft charging and electrical bonding; vacuum effects on heat transfer and lubricant; and micrometeoroid/debris risk. Preserve material certificates and test evidence. This design accepts single-string critical hardware to control cost, so single-point failures remain. No numeric probability of one-year survival is claimed.</p>
+<h2>Orbit lifetime and disposal</h2>
+<p>Use the as-built mass and projected drag area distribution, including deployed antenna influence, to propagate atmospheric decay. A rough nominal ballistic coefficient with m=1.0635 kg, Cd=2.2 and mean area=0.015 m2 is 32.2 kg/m2; plausible areas 0.01–0.01732 m2 give approximately 48.3–27.9 kg/m2. This is not a lifetime prediction.</p>
+<p>Run launch dispersions, earliest/latest epochs, attitude cases, solar minimum and high-activity density cases. High drag must retain orbit for the operational year; low drag must meet post-mission disposal timing. Apply the applicable FCC requirements <a class="source" href="https://docs.fcc.gov/public/attachments/FCC-22-74A1_Rcd.pdf" title="FCC 22-74 Second Report and Order">[S16]</a> and integrator criteria, with reentry casualty/demise and collision analyses. NASA&#39;s deorbit overview <a class="source" href="https://www.nasa.gov/smallsat-institute/sst-soa/deorbit-systems/" title="NASA small spacecraft deorbit systems overview">[S18]</a> supports treating this as an explicit design trade. A 475 km starting altitude is only a candidate. If no interval closes, change launch orbit or add a disposal device and re-open size, mass, cost, hazards and reliability. Do not promise passive deorbit solely from altitude.</p>
+</section><section id="section-5"><div class="docpath">engineering/05_Software_and_Operations.md</div><h1>D1-SW-001 — Flight software and operations specification</h1>
+<p>Revision A | Software requirements; not executable flight code.</p>
+<h2>Runtime architecture</h2>
+<p>Use the vendor-supported A3200 BSP/RTOS and tested CSP library version. Obtain commercial software license/support terms in the hardware RFQ. Avoid Linux, SD-card root filesystems and unnecessary networking services. Separate time-critical health/recovery tasks from camera capture/compression. Use bounded allocation, queue sizes and CPU time. Camera, radio or I2C timeout cannot block a system-health task.</p>
+<p>Boot ROM/internal boot path validates a protected known-good image and a candidate image. Stage updates atomically, verify integrity/authenticity, limit boot attempts and roll back. Confirm that the physical memory map and vendor bootloader support this architecture; it is not assumed from NOR capacity alone. Store configuration in CRC-protected redundant records with monotonic generation counters. Critical RF-disable and mission-end flags survive reset. Memory scrubbing/checksums detect corruption, but no claim of hardware ECC is made.</p>
+<p>Allocate watchdog servicing from a health aggregator that requires progress from all critical tasks. Initial timing targets: health sample 10 s, scheduler 1 s, watchdog heartbeat 5 s and external recovery timeout &lt;=60 s; confirm supported EPS/OBC ranges. After three consecutive unsuccessful boots enter the minimal recovery image. EPS supervisor must restore an unresponsive OBC autonomously without depending on the OBC command bus.</p>
+<h2>State transitions</h2>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Entry / allowed activity</th>
+<th>Exit</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>INHIBITED</td>
+<td>Ground/launch configuration; hazards physically isolated</td>
+<td>Valid all-switch separation</td>
+</tr>
+<tr>
+<td>DELAY</td>
+<td>OBC health only; camera and RF off</td>
+<td>Valid elapsed release/RF timing</td>
+</tr>
+<tr>
+<td>DEPLOY</td>
+<td>Sufficient battery energy, permitted temperature; bounded release sequence</td>
+<td>Telemetry confirms release or retries exhausted</td>
+</tr>
+<tr>
+<td>COMMISSION</td>
+<td>Low duty beacon and command acquisition; no images until authorized and stable</td>
+<td>Health and link checkout approved</td>
+</tr>
+<tr>
+<td>NOMINAL</td>
+<td>Duty-budgeted health, image bursts, selective file transfer</td>
+<td>Energy/thermal/link fault or end of mission</td>
+</tr>
+<tr>
+<td>RECOVERY</td>
+<td>Camera off; RX 12 s/min; TX &lt;=0.5%; minimal OBC</td>
+<td>Sustained energy surplus and thermal conditions</td>
+</tr>
+<tr>
+<td>RF SILENT</td>
+<td>Persistent command or license condition</td>
+<td>Authorized explicit release, unless mission end</td>
+</tr>
+<tr>
+<td>PASSIVATED</td>
+<td>Mission end; suppress images/RF; safe energy management</td>
+<td>No routine return to service</td>
+</tr>
+</tbody></table>
+<p>Initial SOC thresholds (A): enter recovery below 50%, resume nominal above 70% after two positive-energy orbits, block imaging below 75%, and reserve vendor-safe voltage floor regardless of estimated SOC. Low voltage, temperature or abnormal current can independently force recovery. Validate thresholds with real battery curves and monitor sensor failures. If SOC is invalid, default to the conservative voltage/temperature recovery policy. No setpoint may override battery protection.</p>
+<h2>Command and telemetry</h2>
+<p>Commands: request health; set allowed operating mode; disable RF; request thumbnail/file segment; adjust bounded camera exposure; update approved schedule; reset camera/radio; upload staged firmware; initiate approved passivation. Hazardous commands require authenticated authorization, replay protection and two-step arm/execute with timeout. Design the link/security format around the selected license. Authentication does not imply permission to encrypt traffic in an amateur service.</p>
+<p>Each telemetry record contains protocol version, spacecraft ID, sequence, reset counter, timestamp/time validity, mode, battery/solar/rail values, temperatures, deployment status and fault flags. Packets have integrity checks and bounded lengths. Image transfers use image ID, segment index, total segments, per-segment CRC and final file hash; retransmit missing segments only. Retain health packets at highest priority.</p>
+<p>AX100 framing is Mode 5 per S11. Confirm supported forward-error options and ground firmware; no legacy AX.25/Viterbi dependency is permitted. Have an independent RF watchdog or EPS-timed radio cutoff to bound unintended TX; verify available hardware behavior. If unavailable, log as a failure-mode gap rather than relying on the main task scheduler.</p>
+<h2>Ground segment</h2>
+<p>Cost baseline: one AX100 ground modem to match flight framing, a suitable carrier/EGSE interface, PC, M2 436CP42UG circular antenna, azimuth/elevation rotator/controller, low-loss coax, bandpass/filtering and surge/weather protection [S28,S29]. The antenna is large (about 5.7 m boom); verify site and mount feasibility. Budget 16 dBi installed antenna gain and &lt;=1 dB receive feed loss, using near-antenna modem placement or an appropriate calibrated front end. Do not assume long unamplified coax meets that loss.</p>
+<p>Use 1 W ground RF power only if authorized EIRP, emission and site limits permit. 30 dBm +16 dBi -1 dB feed is a 45 dBm EIRP planning value, not an authorization. Ground model quotes must include two-way operation and the exact Mode 5 waveform. A second ground modem can serve as a development asset; do not count the same radio twice in procurement.</p>
+<p>Daily workflow: refresh orbital elements; evaluate pass geometry; check hardware/time synchronization; predict Doppler; receive health before commanding; obey energy flags; request high-priority images; archive raw packets and metadata; reconcile SOC/thermal/reset trends; review conjunction notices. No commanding based solely on unattended image-processing output. Design for remote shutdown and keep an offline command-key backup.</p>
+<p>LEOP reserves multiple days for acquisition and catalog identification. Use deployer separation predictions and transmitted unique ID; do not rely on a definitive public orbital element set immediately after launch. Partner ground sites are options subject to agreements and spectrum authority; crowdsourced reception is not guaranteed coverage.</p>
+<p>At day 365, confirm mission success evidence then execute authorized end-of-mission operations. Passivation requires supplier-confirmed control of charge sources and stored battery energy; merely turning the OBC off is not passivation. Any residual autonomous recharging or reboot beacon path must be eliminated or explicitly covered in the debris/safety assessment.</p>
+</section><section id="section-6"><div class="docpath">engineering/06_Integration_and_Verification.md</div><h1>D1-AIV-001 — Assembly, integration and verification plan</h1>
+<p>Revision A | Planned procedures; no test has been performed on hardware.</p>
+<h2>Build sequence and records</h2>
+<ol>
+<li>Freeze mission scope, RF route and candidate orbit. Obtain exact vendor revisions and controlled ICDs. Re-run all model inputs against quotes before ordering flight hardware.</li>
+<li>Receive and serialize hardware. Capture vendor CoC, acceptance data, firmware versions, battery shipping documentation and storage conditions. Inspect for damage and validate packing lists. Open nonconformances before accepting substitutions.</li>
+<li>Build an engineering flat-sat with representative EPS/OBC/radio/camera interfaces. Use a battery simulator first, then the protected engineering battery. Validate supply tolerance, inhibit paths, watchdog recovery, radio interoperability and camera file handling before flight-stack assembly.</li>
+<li>Qualify the D1-IF layout and mechanical details using engineering articles. Test dead shorts, feedback fault behavior, output overshoot and unpowered data pins. Close radiation evidence separately. Do not debug an unverified regulator using flight radio hardware.</li>
+<li>Assemble the flight structure on an ESD-controlled clean bench with approved tooling. Record fastener torque and locking method from supplier drawings; log material lot/cure records and photographs. Install EPS, adapter, avionics, camera and harnesses in the cleared sequence. Use strain relief and verified connector retention.</li>
+<li>Check camera focus and boresight, install solar panels, then antenna assembly. Measure power IV curves and complete an RF tune on the final assembly. Verify camera aperture, deployed antenna clearance and all rail envelopes.</li>
+<li>Run baseline functional, mass/property, dimensional and inhibit tests. Complete environmental testing in approved sequence, followed by repeat functional and optical/RF checks. Any rework after environmental testing receives a documented regression/retest disposition.</li>
+<li>Load final approved firmware/configuration, archive hashes, verify battery SOC, remove optical cap, install RBF and prepare clean shipping configuration. Perform final integrator fit check and delivery review with traceable closeout evidence.</li>
+</ol>
+<h2>Test matrix</h2>
+<table>
+<thead>
+<tr>
+<th>Test ID</th>
+<th>Procedure / configuration</th>
+<th>Acceptance evidence</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>T01</td>
+<td>Dimensional inspection and flight-like dispenser fit</td>
+<td>Signed measurement report, interference-free insertion/ejection per ICD, all rail/protrusion limits</td>
+</tr>
+<tr>
+<td>T02</td>
+<td>Mass, center of mass, inertia measurement</td>
+<td>&lt;=actual manifest mass; project target &lt;=1330 g; COM target +/-10 mm; measured inertia</td>
+</tr>
+<tr>
+<td>T03</td>
+<td>Every power branch across temperature, SOC and load steps</td>
+<td>Approved operating voltage at device pins; no absolute maximum exceedance; stable recovery and measured efficiency</td>
+</tr>
+<tr>
+<td>T04</td>
+<td>All eight inhibit-switch states; source permutations; single failed barriers</td>
+<td>No RF/release hazard before allowed state; RBF and debug isolation verified to launch limits</td>
+</tr>
+<tr>
+<td>T05</td>
+<td>Separation delay, reset/brownout/bounce and stuck-switch injection</td>
+<td>No early RF/release; bounded retries; stable inhibited defaults</td>
+</tr>
+<tr>
+<td>T06</td>
+<td>Solar simulator/shadow sweep, hot/cold IV and one-axis exposure</td>
+<td>2.3 W five faces, 1.8 W aperture face at agreed BOL conditions; cold startup and no reverse-current damage</td>
+</tr>
+<tr>
+<td>T07</td>
+<td>Orbit power replay: &gt;=72 hours, nominal and fixed-attitude recovery</td>
+<td>No declining SOC trend after settling; commanded load/duty and temperatures within budget</td>
+</tr>
+<tr>
+<td>T08</td>
+<td>Battery capacity and representative life evidence</td>
+<td>&gt;=18 Wh usable EOL capacity basis at specified discharge conditions; 6000-cycle mission-profile evidence plus calendar storage</td>
+</tr>
+<tr>
+<td>T09</td>
+<td>End-to-end radio attenuation/Doppler test, EPS/heater/CPU active</td>
+<td>&lt;=1% PER at -123 dBm for selected packet/waveform or reclosed link; +/-11.1 kHz Doppler tracking with residual offsets</td>
+</tr>
+<tr>
+<td>T10</td>
+<td>Full assembly antenna tuning/pattern measurement</td>
+<td>Feed loss, return loss and gain coverage meet approved RF model; stowed and deployed characterization</td>
+</tr>
+<tr>
+<td>T11</td>
+<td>Image capture, optical focus and smear replay</td>
+<td>Recognizable calibrated scene at infinity; exposure, compression and bounded memory/CPU behavior</td>
+</tr>
+<tr>
+<td>T12</td>
+<td>Random/sine vibration and shock as required, flight-like fixture</td>
+<td>Signed tailored profile, monitored response, no damage, post-test function/optics/RF within acceptance limits</td>
+</tr>
+<tr>
+<td>T13</td>
+<td>Thermal vacuum cycling + thermal balance, functional at plateaus</td>
+<td>Correlated thermal model; no charge outside allowed range; no reset/leak/optical failure; heater budget closes</td>
+</tr>
+<tr>
+<td>T14</td>
+<td>Antenna deployment at cold/hot allowed limits, vacuum where required</td>
+<td>Every element deploys and indicates status; bounded release energy; no camera or cell interference</td>
+</tr>
+<tr>
+<td>T15</td>
+<td>Fault campaign: stuck I2C, radio runaway, corrupt image, brownout, bad boot, lost contact</td>
+<td>Recovery reaches defined safe state, no boot loop or uncontrolled TX; health accessible</td>
+</tr>
+<tr>
+<td>T16</td>
+<td>Radiation evidence review and tests for uncovered parts</td>
+<td>Environment/dose/SEE assessment and accepted margin; no unsupported critical-part survivability claim</td>
+</tr>
+<tr>
+<td>T17</td>
+<td>Rehearsed LEOP, image request, ground loss and mission end</td>
+<td>Operations runbooks complete; keys/backup and source passivation verified</td>
+</tr>
+<tr>
+<td>T18</td>
+<td>Optical/EMI/functional regression after environment</td>
+<td>Before/after data comparison within signed limits and all anomalies dispositioned</td>
+</tr>
+</tbody></table>
+<h2>Environment profile tailoring</h2>
+<p>Before T12/T13 define expected flight environment, qualification/protoflight/acceptance philosophy and allowed hardware pedigree. A cost-minimum approach uses one flight model with supplier design qualification evidence, representative engineering hardware for development and a tailored flight acceptance campaign. Qualification gaps cannot be silently waived to save money. Extra qualification articles belong in the cost risk.</p>
+<p>The test readiness package specifies fixture drawings, accelerometer/thermocouple locations, calibration, command script, battery state, inhibit state, frequency/PSD/shock response levels, axis order, durations, notching/abort criteria, chamber pressure and hot/cold dwell criteria. Limits are TBD until the launch provider and analysis agree. Never use component absolute maximum ratings as test setpoints. Thermal cycling and vacuum testing are distinct evidence items; a generic vendor temperature range does not substitute for system thermal balance.</p>
+<p>For each test record article serial number, hardware/firmware revision, operator, date, calibrated equipment, setup photos, raw time series, deviations, pass/fail against each requirement and independent reviewer. A claimed pass without raw data and configuration traceability is not a closed requirement.</p>
+<h2>Procurement and review gates</h2>
+<p>PDR: mission scope and candidate architecture; budgets with assumptions; cost trade; no hidden unknowns. CDR/fabrication release: all supplier ICDs closed, full schematics/CAD, structural/thermal/radiation analyses, orbit/regulatory route and flight software architecture accepted. Test readiness: procedures/limits/fixtures approved and hazards controlled. Flight readiness: requirements matrix closed with signed evidence, licensing and manifest approvals in hand, anomalies resolved, configuration frozen. No gate is passed by issuing this document.</p>
+</section><section id="section-7"><div class="docpath">engineering/07_Imaging_Payload.md</div><h1>D1-PAY-001 — Opportunistic Earth imaging</h1>
+<p>Revision A | Owner-confirmed scope: occasional recognizable Earth images.</p>
+<h2>Hardware and optical requirements</h2>
+<p>Select CrystalSpace CS-101 Kikas, 5 MP, with an infinity-focused visible lens <a class="source" href="https://crystalspace.eu/products/cs-101-kikas/" title="CrystalSpace CS-101 Kikas current product">[S23]</a>. Published envelope is 42 x 25 x 45 mm and mass 50 g. Allocate 20 g for bracket, short baffle and harness. The current detailed product brief is gated behind a contact form; no form was submitted. Accordingly supply voltage, consumption, shutter type, image format, operating temperatures and serial protocol are unresolved. These must be confirmed before procurement release.</p>
+<p>Request a roughly 60-degree horizontal field of view lens with matching sensor orientation, calibrated infinity focus, exposure control down to &lt;=1 ms, and a JPEG or reduced-resolution output path. This FOV is an order requirement, not a claimed standard CS-101 lens. Lens acceptance includes focus and distortion through thermal vacuum, mechanical retention, solar exposure tolerance and stray-light behavior. The spacecraft has no commanded Sun avoidance; if the camera cannot tolerate incidental Sun exposure, add protection or revise the attitude architecture.</p>
+<p>At 475 km and 60-degree horizontal FOV, the flat-ground nadir swath approximation is <code>2*h*tan(FOV/2)=548 km</code>. At 640 output columns this corresponds to approximately 857 m/pixel at scene center in a nadir-like view. This is geometric sampling, not guaranteed ground resolution, optical MTF, geolocation accuracy or a targetable swath. Limb views are highly distorted. Do not infer exact full-resolution dimensions or resolution from the 5 MP label.</p>
+<p>Pixel angular pitch at 640 columns is approximately 1.64 mrad. With a 10 degree/s rotation and &lt;=1 ms exposure, rotational smear is about 0.11 output pixel. Orbital translation contributes roughly 7.6 m in 1 ms, well below a coarse output pixel. At 100 degree/s, rotational smear exceeds one pixel; reject those images or shorten exposure. Confirm rolling/global shutter timing and full-frame readout effects on the delivered camera. Gyro data are useful for selecting exposures, but a gyro alone cannot point the camera at Earth.</p>
+<h2>Accommodation</h2>
+<p>Mount the camera in a 27 mm-high lower bay, orienting its 25 mm dimension along Z and its optical depth toward +X, subject to vendor CAD confirmation. The +X panel receives a lens aperture/baffle relief with an allocated minimum face power of 1.8 W. Five other faces retain 2.3 W each. Require a detailed panel layout: an aperture cutting a series cell can lose an entire string, not just its area fraction. No aperture is authorized in a vendor panel until the supplier signs the cell routing and structural design.</p>
+<p>No lens protrusion may interfere with rail travel or the dispenser. Verify boresight clearance with all four antenna elements deployed. Camera mount alignment is referenced to spacecraft axes for image metadata; it does not create an attitude-knowledge guarantee. Keep camera optics capped through integration except controlled optical tests, and remove the cap before final fit check with a documented closeout witness.</p>
+<h2>Capture and processing concept</h2>
+<p>Allocate &lt;=2 W camera peak and &lt;=300 s powered time/day, about 0.007 W daily average for the camera alone. A total 0.02 W orbital average allocation includes OBC processing overhead. If cold-start/readout latency or actual power exceeds these limits, reduce burst count before raising the power allocation. Never capture during RF transmission or low-energy recovery.</p>
+<p>Take a small burst during each of several energy-permitted daylight opportunities. Start with up to 10 daily sessions of &lt;=30 s, maximum 20 frames/session, reduced resolution where available. Reject saturated/dark images, rank remaining frames by contrast and Earth-like color/limb features, and retain thumbnails for ground selection. An elementary heuristic is sufficient initially; do not promise Earth recognition from an unvalidated classifier. If most views are space, retain representative frames and adapt timing. Uncontrolled orientation has no deterministic monthly capture guarantee; Monte Carlo attitude/orbit sampling and ground-in-the-loop replay must demonstrate acceptable opportunity rates.</p>
+<p>Downlink 160 x 120 thumbnails first, then request selected 640 x 480 products. Budget a typical selected compressed image at 50 kB and a maximum transfer at 100 kB; enforce the cap by recompression/downsampling or reject the image. Compression ratio is scene dependent and must be measured. Do not assume full 5 MP raw images fit the routine UHF service.</p>
+<p>At 600 useful bit/s (1200 bit/s at 50% net efficiency), a 50 kB image takes 667 s before retransmissions. At one selected image/week this averages about 95 s/day. Add 1229 s/day health telemetry and a 20% retransmission/contact allowance: approximately 1589 s/day, within the 1728 s/day TX energy allocation. This needs actual contact coverage. Recovery reduces health sampling and disables imaging; it never borrows energy from survival to meet an image schedule.</p>
+<p>Store two firmware images in reserved code space and allocate at least 16 MB of existing nonvolatile storage for image/health ring buffers after verifying actual BSP layout. At 100 kB/image, 100 images consume 10 MB; 30 days of 64-byte/min health data consume 2.76 MB. Use per-record CRC, generation counters, bounded queues and discard-oldest policy. Protect boot/configuration areas from image writes. Camera interface failure or full storage must not block watchdog servicing, commands or EPS polling.</p>
+<h2>Image verification and licensing inputs</h2>
+<p>Retain factory optical data, focus/MTF measurements at infinity, flat/dark frames, color response where supplied, bad-pixel map and temperature drift. Test a moving scene/turntable with flight-like exposure and shutter timing; exercise compression, thumbnails, file segmentation and retransmission through the actual radio. After vibration and thermal vacuum, repeat optical checks and inspect for focus shifts and contamination.</p>
+<p>Provide NOAA/CRSRA the actual sensor, lens, spectral band, maximum capabilities, image modes, storage, downlink and operational description. Do not describe the system to the regulator solely by the downsampled products planned for routine use. Imaging begins only under the required authorization/conditions. Logs must preserve capture time, available orbit estimate, estimated rotation, exposure, gain, image ID and processing history. No precise ground location is asserted without an attitude/orbit solution.</p>
+</section><section id="section-8"><div class="docpath">engineering/08_US_Compliance.md</div><h1>D1-REG-001 — US compliance plan and release controls</h1>
+<p>Revision A | Design for compliance; authorizations have not been obtained.</p>
+<p>The operator is US-based by owner instruction. The exact legal entity, ownership, operating purpose, ground site, launch provider and frequency are not yet specified. Therefore a final applicability determination and compliant frequency assignment cannot be completed here. This register identifies the decisions and evidence required to close them, with a mandatory no-launch gate for all applicable authorizations.</p>
+<h2>Radio route</h2>
+<p>Treat a bona fide imaging technology experiment as a candidate for a conventional FCC Part 5 experimental authorization, subject to FCC review. If the mission is an operational/commercial remote sensing service, evaluate Part 25, including whether every streamlined small-space-station criterion can be certified. Do not use Part 97 simply because its hardware is inexpensive. FCC guidance distinguishes these paths [S25,S26].</p>
+<p>437 MHz/AX100-U is retained only as a conditional hardware/link-planning case. A Part 5 application does not automatically authorize that band, protect against interference or authorize the earth station. Freeze assigned uplink/downlink frequencies, bandwidth, emissions, power/EIRP, antenna patterns, ground sites and duty cycles before antenna tuning and RF purchase. If the approved band differs, change the radio/antenna/ground chain and reclose cost and link budgets; a programmable radio cannot transcend its filters or spectrum rules. If amateur operation is actually eligible, obtain applicable IARU coordination and FCC filings; IARU coordination is not a substitute for national authorization.</p>
+<p>Arrange ITU filings/coordination through the responsible administration under the selected service. Include earth-station transmitting authority, identification and command/control conditions. Check fees, filing-system rules and processing requirements in force at submission. Primary FCC guidance was verified, but direct current eCFR retrieval for 5.64 and 25.122 was unavailable in this session; no claim of an exhaustive clause-by-clause legal audit is made. Before CDR the regulatory lead must obtain and baseline the then-current applicable text.</p>
+<h2>Imaging authorization</h2>
+<p>Request a NOAA/Office of Space Commerce CRSRA determination using the initial contact process and obtain a Part 960 license if required <a class="source" href="https://space.commerce.gov/regulations/commercial-remote-sensing-regulatory-affairs/licensing/" title="NOAA/OSC remote sensing licensing">[S24]</a>. The owner-selected Earth imaging capability is within the scope that requires this review. Disclose full sensor/lens capabilities and all processing modes, not just the intended coarse thumbnail products. Resolve license tier, geographic/data conditions, cybersecurity/command provisions, reporting and any foreign agreements. Maintain a license modification process for material changes. No imaging operations begin before required authorization.</p>
+<h2>Debris, safety and launch</h2>
+<p>Provide orbit lifetime, collision probability, trackability, accidental release, stored energy and reentry/demise analyses. Design for disposal as soon as practicable and within the applicable five-year post-mission requirement <a class="source" href="https://docs.fcc.gov/public/attachments/FCC-22-74A1_Rcd.pdf" title="FCC 22-74 Second Report and Order">[S16]</a>. The current candidate orbit is not certified to meet that deadline. Include failed-spacecraft and early-mission-loss cases; do not depend on a functioning OBC for natural decay. Assess battery passivation and persistent solar charging after mission end.</p>
+<p>No maneuver capability is included. Obtain tracking/catalog identification arrangements, register operator contacts and support conjunction response with the relevant tracking service and partners. Coordination cannot eliminate collision risk and is not an avoidance maneuver. Submit the required object/mission information through the applicable US process; confirm registration responsibilities with the launch provider and operator counsel.</p>
+<p>The launch provider ordinarily holds the launch authorization; Degen-1 supplies payload information, safety evidence and permits for integration. FAA payload review/determination handling and exemptions are addressed through the provider under 14 CFR 450.43 <a class="source" href="https://www.faa.gov/space/licenses/payload_reviews" title="FAA payload reviews">[S27]</a>. A satellite radio or imaging license does not alone constitute manifest acceptance. The deployer ICD controls mechanical envelope, battery, switch architecture, timing, venting, environmental test levels and shipment/delivery procedures.</p>
+<p>Obtain battery cell/pack identity, safety tests including applicable transport documentation, hazards assessment, material/outgassing records and as-built configuration. Evaluate export/import classification, technical-data controls and foreign supplier transfer terms with the supplier/compliance lead. A vendor&#39;s general export claim does not determine the classification of the integrated spacecraft. Ground installation requires site permissions and applicable RF exposure, electrical, mast and local requirements.</p>
+<h2>Compliance deliverables and owners</h2>
+<table>
+<thead>
+<tr>
+<th>Deliverable</th>
+<th>Responsible role</th>
+<th>Required before</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Legal entity, mission purpose and license-path memorandum</td>
+<td>Operator/regulatory lead</td>
+<td>RF procurement</td>
+</tr>
+<tr>
+<td>FCC space and ground authority; ITU/IARU as applicable</td>
+<td>Regulatory lead</td>
+<td>Transmission/launch as applicable</td>
+</tr>
+<tr>
+<td>NOAA determination/license and full-capability description</td>
+<td>Payload/regulatory lead</td>
+<td>Authorized imaging and launch release</td>
+</tr>
+<tr>
+<td>Orbit/debris/demise/trackability evidence and end-of-life plan</td>
+<td>Mission analyst</td>
+<td>Application/CDR, updated as built</td>
+</tr>
+<tr>
+<td>Deployer/launch signed ICD and safety acceptance</td>
+<td>Systems/integrator</td>
+<td>Fabrication freeze / delivery</td>
+</tr>
+<tr>
+<td>FAA payload information and review handling</td>
+<td>Launch provider/operator</td>
+<td>Manifest acceptance</td>
+</tr>
+<tr>
+<td>Export/import and battery transport documentation</td>
+<td>Procurement/compliance</td>
+<td>Supplier transfer/shipment</td>
+</tr>
+<tr>
+<td>Operational reports, modifications and end-of-mission notices</td>
+<td>Operator</td>
+<td>Throughout mission</td>
+</tr>
+</tbody></table>
+<p>Compliance is an acceptance constraint on the cost trade. If the inexpensive UHF/imaging combination cannot obtain the necessary authorizations, select another lawful architecture instead of treating a permit waiver as an assumed cost saving.</p>
+</section><section id="section-9"><div class="docpath">procurement/Cost_and_Procurement.md</div><h1>D1-CST-001 — Cost estimate and procurement strategy</h1>
+<p>Revision A | EUR planning allowances; 2026-09-14. No arbitrary spending ceiling is imposed.</p>
+<h2>Cost result</h2>
+<p>Flight hardware has a EUR29,350 low scenario, EUR46,500 base and EUR70,100 high scenario. The <strong>realistic minimum-cost planning case for spacecraft build is about EUR81,350</strong>, including engineering hardware, assembly and engineering labor. Base spacecraft build is EUR152,500. These estimates assume an experienced small team and substantial reuse; they are not a promise that the lowest scenario can be purchased. Hardware-only price omits the work needed to make the satellite fly.</p>
+<table>
+<thead>
+<tr>
+<th>Separate cost category</th>
+<th align="right">Low EUR</th>
+<th align="right">Base EUR</th>
+<th align="right">High EUR</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Spacecraft build: flight hardware</td>
+<td align="right">29,350</td>
+<td align="right">46,500</td>
+<td align="right">70,100</td>
+</tr>
+<tr>
+<td>Spacecraft build: engineering hardware/spares</td>
+<td align="right">8,000</td>
+<td align="right">18,000</td>
+<td align="right">30,000</td>
+</tr>
+<tr>
+<td>Spacecraft build: assembly/workmanship labor</td>
+<td align="right">4,000</td>
+<td align="right">8,000</td>
+<td align="right">16,000</td>
+</tr>
+<tr>
+<td>Spacecraft build: nonrecurring engineering labor</td>
+<td align="right">40,000</td>
+<td align="right">80,000</td>
+<td align="right">180,000</td>
+</tr>
+<tr>
+<td>Testing: external facilities and campaign support</td>
+<td align="right">15,000</td>
+<td align="right">35,000</td>
+<td align="right">75,000</td>
+</tr>
+<tr>
+<td>Ground station: equipment and installation</td>
+<td align="right">4,000</td>
+<td align="right">12,000</td>
+<td align="right">25,000</td>
+</tr>
+<tr>
+<td>Licensing/coordination: professional support and filing allowance</td>
+<td align="right">5,000</td>
+<td align="right">15,000</td>
+<td align="right">40,000</td>
+</tr>
+<tr>
+<td>Launch: rideshare/deployer/integration service</td>
+<td align="right">40,000</td>
+<td align="right">65,000</td>
+<td align="right">120,000</td>
+</tr>
+<tr>
+<td>Operations: 12 months recurring support</td>
+<td align="right">5,000</td>
+<td align="right">12,000</td>
+<td align="right">30,000</td>
+</tr>
+<tr>
+<td><strong>Spacecraft build subtotal, first four rows only</strong></td>
+<td align="right"><strong>81,350</strong></td>
+<td align="right"><strong>152,500</strong></td>
+<td align="right"><strong>296,100</strong></td>
+</tr>
+<tr>
+<td><strong>All categories subtotal, do not add build subtotal again</strong></td>
+<td align="right"><strong>150,350</strong></td>
+<td align="right"><strong>291,500</strong></td>
+<td align="right"><strong>586,100</strong></td>
+</tr>
+</tbody></table>
+<p>Add 25% program contingency as a planning reserve: total authorization envelope about EUR187,938 / EUR364,375 / EUR732,625. Contingency is not a hidden markup on each BOM line. Taxes, duties, exchange-rate movement, major launch delay/reflight, insurance, extensive dedicated radiation qualification and new ground-site civil works are excluded. A targeted-imaging mission with ADCS is outside scope.</p>
+<p>The NRE allowance can be read as roughly 800 hours at EUR50/h in the unusually lean case, 1000 hours at EUR80/h base, and 1800 hours at EUR100/h high; these are explicit project assumptions, not surveyed market rates. If this is a first-time team or the adapter/camera needs major qualification, those hours may be insufficient. No donated labor is silently assumed in the build subtotal.</p>
+<h2>Price evidence versus estimates</h2>
+<p>Every selected flight item is presently budgeted using an engineering allowance. Vendors mostly require a quote. Published current comparison prices include EXA KRATOS EUR44,000–155,000 <a class="source" href="https://www.cubesatshop.com/product/kratos-1u-cubesat-platform-1-step-solution/" title="EXA KRATOS 1U vendor storefront">[S19]</a>, Crystalspace P1U EUR4,400 <a class="source" href="https://www.cubesatshop.com/product/crystalspace-p1u-vasik/" title="Crystalspace P1U Vasik storefront">[S20]</a>, and M2 ground antenna USD910.95 <a class="source" href="https://www.m2inc.com/M2FACTORYDIRECT?page=2" title="M2 manufacturer storefront">[S29]</a>. They are different configurations and currencies and are not inserted into the EUR BOM as firm quotes. No FX conversion is claimed. Competitive quotations should be normalized to delivery date, taxes, freight, software, support and acceptance-test scope.</p>
+<h2>Hardware alternatives</h2>
+<table>
+<thead>
+<tr>
+<th>Candidate</th>
+<th>Rationale</th>
+<th>Decision / required evidence</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Selected mixed COTS subsystem baseline</td>
+<td>Small low-power avionics, six-face energy recovery, compact flight-oriented camera</td>
+<td>Conditional; adapter/ICDs and DMC supply are key risks</td>
+</tr>
+<tr>
+<td>Basic EXA KRATOS 1U plus camera</td>
+<td>May eliminate inter-vendor integration and some test/NRE work</td>
+<td>RFQ against same image, lifetime, orbit and compliance requirements; advertised entry price not assumed to include chosen camera</td>
+</tr>
+<tr>
+<td>Alen 1U platform plus camera</td>
+<td>Turnkey bus potentially reduces software and AIV</td>
+<td>Quote with acceptance reports and image integration <a class="source" href="https://www.cubesatshop.com/product/platforms/" title="Alen Space platform storefront">[S21]</a></td>
+</tr>
+<tr>
+<td>CrystalSpace EPS substitution</td>
+<td>Lower published entry EPS price</td>
+<td>Do not substitute until battery/solar/inhibit/environment interfaces close</td>
+</tr>
+<tr>
+<td>Consumer camera and custom MCU/radio stack</td>
+<td>Cheapest raw parts</td>
+<td>Substantial development/qualification; no twelve-month evidence or cost advantage established</td>
+</tr>
+<tr>
+<td>Five-panel bus or active-pointing imager</td>
+<td>Fewer panels saves parts / pointing improves targeting</td>
+<td>Five-panel fixed-attitude recovery loses geometric guarantee; ADCS adds cost and qualification</td>
+</tr>
+</tbody></table>
+<p>There is no proof of global minimum cost without actual comparable offers. The procurement rule is minimum <strong>total cost of compliant delivery</strong>, including one-time engineering, test gaps and expected retest exposure. All catalog availability claims require written lead-time and supported-revision confirmation. In particular DMC-3 has an older indexed primary datasheet with a dead direct URL; do not treat it as confirmed in-stock hardware.</p>
+<h2>Request-for-quotation package (draft; not sent)</h2>
+<p>Provide these documents to candidate bus and subsystem suppliers and request:</p>
+<ol>
+<li>Firm exact part/configuration numbers, current hardware and software revisions, obsolescence status, lead time, Incoterms, validity, payment terms, warranty and export classification.</li>
+<li>As-ordered mass/STEP models, mechanical drawings, electrical pin maps, input/output tolerances, peak/idle currents, memory map and command protocols; include every adapter/harness and flight-software license needed.</li>
+<li>Mission suitability evidence for one year at 450–500 km, delivered-lot radiation/SEE evidence, battery cycle/calendar evidence and environmental qualification/acceptance reports with actual profiles.</li>
+<li>Three-inhibit/RBF configuration, isolation of solar/battery/debug power, cold battery restart and end-of-life source passivation. Request a system-level fault-tree review of inhibit independence.</li>
+<li>Five &gt;=2.3 W panels plus one &gt;=1.8 W camera-aperture panel, cell string layout, hot/cold IV curves and AntS top mounting. Request guaranteed startup/MPPT compatibility.</li>
+<li>CS-101 lens/FOV, supply, power, interface, shutter, JPEG/reduced-resolution support, Sun exposure and thermal focus data. Quote camera and aperture integration separately.</li>
+<li>Ground modem/waveform compatibility and measured Mode 5 sensitivity; supported CAN settings and rate. Confirm operating band only after licensing review.</li>
+<li>Separate flight hardware, engineering units, NRE, assembly, testing, ground support and launch services. Identify provided acceptance tests so facility costs are not double counted.</li>
+</ol>
+<p>No purchases, external messages or license filings have been made. Firm supplier and launch quotes are the next evidence needed to convert this estimate into a purchasing baseline.</p>
+</section><section id="section-10"><div class="docpath">review/Requirements.md</div><h1>D1-REQ-001 — Requirements and verification traceability</h1>
+<p>Revision A. A=analysis, T=test, I=inspection. MODEL PASS is not hardware compliance. Tests resolve to D1-AIV-001; all executed work here is document/model verification only.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Origin</th>
+<th>Owner</th>
+<th>Method</th>
+<th>Evidence</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>R01</td>
+<td>Operate for 365.25 days after separation</td>
+<td>User</td>
+<td>System</td>
+<td>A/T</td>
+<td>T07,T08,T13,T16,T17</td>
+<td>OPEN: life evidence</td>
+</tr>
+<tr>
+<td>R02</td>
+<td>Return occasional recognizable Earth images; commissioning image and monthly target</td>
+<td>User + allocation</td>
+<td>Payload</td>
+<td>A/T</td>
+<td>T11,T17</td>
+<td>OPEN: opportunity and image test</td>
+</tr>
+<tr>
+<td>R03</td>
+<td>Use 1U deployer envelope, final ICD governs</td>
+<td>User/S01</td>
+<td>Mechanical</td>
+<td>I/T</td>
+<td>T01</td>
+<td>OPEN: deployer</td>
+</tr>
+<tr>
+<td>R04</td>
+<td>Mass &lt;=1330 g project target; actual manifest limit governs</td>
+<td>Allocation</td>
+<td>Mechanical</td>
+<td>A/T</td>
+<td>T02</td>
+<td>MODEL PASS:1276.2 g with growth; hardware open</td>
+</tr>
+<tr>
+<td>R05</td>
+<td>COM target +/-10mm in each axis</td>
+<td>Allocation</td>
+<td>Mechanical</td>
+<td>T</td>
+<td>T02</td>
+<td>OPEN: measured properties</td>
+</tr>
+<tr>
+<td>R06</td>
+<td>Minimum cost compliant total build; maximum practical purchased hardware</td>
+<td>User</td>
+<td>Systems</td>
+<td>Review</td>
+<td>Cost RFQs</td>
+<td>OPEN: quotations</td>
+</tr>
+<tr>
+<td>R07</td>
+<td>Nominal orbit-energy balance positive after 20% growth</td>
+<td>Allocation</td>
+<td>EPS</td>
+<td>A/T</td>
+<td>T06,T07</td>
+<td>MODEL PASS:+18.4%; environment inputs open</td>
+</tr>
+<tr>
+<td>R08</td>
+<td>Recovery energy closes in worst intact-face attitude, camera off</td>
+<td>Allocation</td>
+<td>EPS/FSW</td>
+<td>A/T</td>
+<td>T06,T07</td>
+<td>MODEL PASS:+0.124Wh; assumptions open</td>
+</tr>
+<tr>
+<td>R09</td>
+<td>Battery routine DOD &lt;=20% EOL capacity; &gt;=6000-cycle evidence</td>
+<td>Allocation</td>
+<td>EPS</td>
+<td>A/T</td>
+<td>T08</td>
+<td>MODEL PASS DOD only; life open</td>
+</tr>
+<tr>
+<td>R10</td>
+<td>Never charge outside approved cell current/temperature limits</td>
+<td>S03/project target</td>
+<td>EPS</td>
+<td>T</td>
+<td>T03,T13,T15</td>
+<td>OPEN</td>
+</tr>
+<tr>
+<td>R11</td>
+<td>Three independent physical RF and release inhibits unless approved tailoring</td>
+<td>S01</td>
+<td>Safety</td>
+<td>A/T</td>
+<td>T04</td>
+<td>OPEN: circuit independence</td>
+</tr>
+<tr>
+<td>R12</td>
+<td>No early deployment/RF; delays &gt;=30/45min or longer ICD</td>
+<td>S01</td>
+<td>Safety/FSW</td>
+<td>T</td>
+<td>T05</td>
+<td>OPEN</td>
+</tr>
+<tr>
+<td>R13</td>
+<td>RBF/source isolation includes solar and service paths</td>
+<td>S01/S03</td>
+<td>Safety</td>
+<td>A/T</td>
+<td>T04</td>
+<td>OPEN</td>
+</tr>
+<tr>
+<td>R14</td>
+<td>Recover from OBC hang, bus fault and low battery autonomously</td>
+<td>Allocation</td>
+<td>FSW/EPS</td>
+<td>T</td>
+<td>T07,T15</td>
+<td>OPEN</td>
+</tr>
+<tr>
+<td>R15</td>
+<td>No downstream overvoltage or back-powering at avionics</td>
+<td>S03/S08/S10</td>
+<td>Electrical</td>
+<td>A/T</td>
+<td>T03</td>
+<td>OPEN: adapter design</td>
+</tr>
+<tr>
+<td>R16</td>
+<td>Correct Mode 5 framing with &gt;=3dB tested link reserve</td>
+<td>S11/allocation</td>
+<td>RF</td>
+<td>A/T</td>
+<td>T09</td>
+<td>MODEL PASS:6.49dB down; threshold open</td>
+</tr>
+<tr>
+<td>R17</td>
+<td>RF band, EIRP and sites authorized before use</td>
+<td>User</td>
+<td>Regulatory</td>
+<td>Review</td>
+<td>FCC/coordination grants</td>
+<td>OPEN</td>
+</tr>
+<tr>
+<td>R18</td>
+<td>NOAA determination/license for full imaging capability</td>
+<td>User/S24</td>
+<td>Regulatory</td>
+<td>Review</td>
+<td>NOAA evidence</td>
+<td>OPEN</td>
+</tr>
+<tr>
+<td>R19</td>
+<td>Retain 30 days health and bounded image store</td>
+<td>Allocation</td>
+<td>FSW</td>
+<td>T</td>
+<td>T11,T15</td>
+<td>OPEN</td>
+</tr>
+<tr>
+<td>R20</td>
+<td>Authenticated critical commands, replay control and persistent RF stop</td>
+<td>Allocation</td>
+<td>FSW</td>
+<td>T</td>
+<td>T15,T17</td>
+<td>OPEN: license-compatible implementation</td>
+</tr>
+<tr>
+<td>R21</td>
+<td>Structure survives approved launch environment</td>
+<td>User</td>
+<td>Mechanical</td>
+<td>A/T</td>
+<td>T12,T18</td>
+<td>OPEN: analysis and test</td>
+</tr>
+<tr>
+<td>R22</td>
+<td>Thermal model closes charging/survival and energy simultaneously</td>
+<td>User</td>
+<td>Thermal</td>
+<td>A/T</td>
+<td>T13</td>
+<td>OPEN: screening does not close</td>
+</tr>
+<tr>
+<td>R23</td>
+<td>One-year radiation/SEE assurance covers every critical revision</td>
+<td>User</td>
+<td>EEE</td>
+<td>A/T</td>
+<td>T16</td>
+<td>OPEN</td>
+</tr>
+<tr>
+<td>R24</td>
+<td>No unintended debris; materials/venting meet ICD</td>
+<td>User/S01</td>
+<td>Mechanical</td>
+<td>I/A</td>
+<td>T01,T12</td>
+<td>OPEN</td>
+</tr>
+<tr>
+<td>R25</td>
+<td>Orbit lasts mission and disposes within applicable deadline</td>
+<td>User/S16</td>
+<td>Mission</td>
+<td>A</td>
+<td>Decay/demise analysis</td>
+<td>OPEN</td>
+</tr>
+<tr>
+<td>R26</td>
+<td>End-of-mission power sources safely passivated</td>
+<td>User</td>
+<td>EPS/ops</td>
+<td>A/T</td>
+<td>T17</td>
+<td>OPEN: supplier capability</td>
+</tr>
+<tr>
+<td>R27</td>
+<td>Camera aperture retains &gt;=1.8W guaranteed panel output</td>
+<td>Allocation</td>
+<td>Payload/EPS</td>
+<td>A/T</td>
+<td>T06</td>
+<td>OPEN: vendor geometry</td>
+</tr>
+<tr>
+<td>R28</td>
+<td>Camera exposure/optics survives uncontrolled Sun views and environment</td>
+<td>Allocation</td>
+<td>Payload</td>
+<td>A/T</td>
+<td>T11,T13,T18</td>
+<td>OPEN</td>
+</tr>
+<tr>
+<td>R29</td>
+<td>Camera &lt;=2W peak and &lt;=300s/day; processing within 0.02W average allocation</td>
+<td>Allocation</td>
+<td>Payload/FSW</td>
+<td>T</td>
+<td>T07,T11</td>
+<td>OPEN: vendor brief</td>
+</tr>
+<tr>
+<td>R30</td>
+<td>Fit and function unaffected after environmental tests</td>
+<td>User</td>
+<td>AIV</td>
+<td>T</td>
+<td>T01,T18</td>
+<td>OPEN</td>
+</tr>
+<tr>
+<td>R31</td>
+<td>Maintain traceable hardware/software/material configuration and raw test data</td>
+<td>Audit requirement</td>
+<td>QA</td>
+<td>Review</td>
+<td>Build records</td>
+<td>OPEN</td>
+</tr>
+<tr>
+<td>R32</td>
+<td>Separate build, testing, launch, licensing and ground costs</td>
+<td>User</td>
+<td>Cost</td>
+<td>Review</td>
+<td>Program_Cost.csv</td>
+<td>DOCUMENTED; estimates only</td>
+</tr>
+<tr>
+<td>R33</td>
+<td>Trackability, conjunction contacts and operating procedures ready</td>
+<td>User</td>
+<td>Ops</td>
+<td>Review</td>
+<td>T17/analyses</td>
+<td>OPEN</td>
+</tr>
+<tr>
+<td>R34</td>
+<td>Each supplier replacement reopens affected budgets and evidence</td>
+<td>Allocation</td>
+<td>QA</td>
+<td>Review</td>
+<td>Change control</td>
+<td>DEFINED; process implementation open</td>
+</tr>
+</tbody></table>
+</section><section id="section-11"><div class="docpath">review/FMEA.md</div><h1>D1-RAM-001 — Preliminary functional FMEA</h1>
+<p>Qualitative screening; no unsupported failure rates or numeric mission reliability are assigned. Systematic/common-cause faults and critical single-string elements remain. This is the starting point for the detailed hardware FMECA and launch hazard fault trees.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Failure</th>
+<th>Effect</th>
+<th>Mitigation</th>
+<th>Residual / verification</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>F01</td>
+<td>Battery internal failure</td>
+<td>Loss of mission; launch hazard</td>
+<td>Pack protection/retention; supplier safety pedigree</td>
+<td>Single pack remains a single point; T08/T12</td>
+</tr>
+<tr>
+<td>F02</td>
+<td>EPS or regulator destructive SEE</td>
+<td>Loss of command/power</td>
+<td>Part evidence, limiting, independent reset paths</td>
+<td>Watchdog cannot repair damage; T16</td>
+</tr>
+<tr>
+<td>F03</td>
+<td>Adapter overvoltage/feedback fault</td>
+<td>Avionics damage</td>
+<td>Protected/guaranteed supply interface required</td>
+<td>Unclosed topology blocks release; T03</td>
+</tr>
+<tr>
+<td>F04</td>
+<td>OBC hang or memory corruption</td>
+<td>Lost commanding/unsafe schedule</td>
+<td>External watchdog, recovery boot, CRC and bounded tasks</td>
+<td>Same CPU remains critical; T15</td>
+</tr>
+<tr>
+<td>F05</td>
+<td>Camera hang/short/full buffer</td>
+<td>Potential bus/power starvation</td>
+<td>Separate switched supply, timeouts and storage partition</td>
+<td>Image loss acceptable temporarily; T11/T15</td>
+</tr>
+<tr>
+<td>F06</td>
+<td>Insufficient solar due to fixed attitude</td>
+<td>Battery depletion</td>
+<td>Six faces, reduced recovery load, SOC trends</td>
+<td>Aperture face minimum and heater assumptions critical; T06/T07</td>
+</tr>
+<tr>
+<td>F07</td>
+<td>One panel open or short</td>
+<td>Loss of geometric energy guarantee</td>
+<td>Axis blocking, branch protection, reduced duty</td>
+<td>Year mission not guaranteed after face loss; T06</td>
+</tr>
+<tr>
+<td>F08</td>
+<td>Heater stuck on/off or sensor wrong</td>
+<td>Battery freeze/overheat/depletion</td>
+<td>Independent thermal cutoff, validity checks and timeout</td>
+<td>Actual EPS implementation open; T13/T15</td>
+</tr>
+<tr>
+<td>F09</td>
+<td>Antenna fails to release</td>
+<td>No usable link or severe loss</td>
+<td>Redundant release elements, bounded retries, thermal test</td>
+<td>Common restraint/system remains critical; T14</td>
+</tr>
+<tr>
+<td>F10</td>
+<td>Inadvertent RF/release in dispenser</td>
+<td>Launch/other spacecraft hazard</td>
+<td>Independent physical inhibits, source-path analysis</td>
+<td>Three switch count alone inadequate; T04/T05</td>
+</tr>
+<tr>
+<td>F11</td>
+<td>RF stuck transmitting</td>
+<td>Energy loss/interference</td>
+<td>Independent TX duration limit/power cutoff</td>
+<td>Implementation must be shown; T09/T15</td>
+</tr>
+<tr>
+<td>F12</td>
+<td>Ground loss or key loss</td>
+<td>No image return/commands</td>
+<td>Recovery schedule, backups, alternate authorized station</td>
+<td>No assured external station agreement; T17</td>
+</tr>
+<tr>
+<td>F13</td>
+<td>Fast spin or camera facing space</td>
+<td>Unrecognizable images</td>
+<td>Exposure selection, burst diversity, thumbnails</td>
+<td>No active pointing; Monte Carlo closure O14</td>
+</tr>
+<tr>
+<td>F14</td>
+<td>Lens focus shift or contamination</td>
+<td>Image mission loss</td>
+<td>Qualified retention, cap closeout, optical tests</td>
+<td>Camera qualification evidence required; T11/T18</td>
+</tr>
+<tr>
+<td>F15</td>
+<td>Excessive orbit lifetime/early decay</td>
+<td>Disposal violation or &lt;12 month life</td>
+<td>Orbit selection under density uncertainties</td>
+<td>No propulsion remedy in current BOM; O01</td>
+</tr>
+<tr>
+<td>F16</td>
+<td>Connector/joint loosening</td>
+<td>Intermittent or permanent failure</td>
+<td>Qualified locking, strain relief, flight assembly acceptance</td>
+<td>Actual torque and preload drawing needed; T12</td>
+</tr>
+<tr>
+<td>F17</td>
+<td>Unauthorized command</td>
+<td>RF/power/payload misuse</td>
+<td>Authentication, replay prevention, bounded parameters</td>
+<td>License-compatible security configuration; T15</td>
+</tr>
+<tr>
+<td>F18</td>
+<td>Post-mission charge/reboot persists</td>
+<td>Stored energy and RF persist</td>
+<td>Verified charge/source passivation and persistent flags</td>
+<td>Supplier capability open; T17</td>
+</tr>
+</tbody></table>
+</section><section id="section-12"><div class="docpath">review/Open_Issues.md</div><h1>D1-RVW-001 — Open issues and release gates</h1>
+<p>Revision A. The package is ready for an aerospace engineer to audit its choices, assumptions and missing evidence. It is not a completed CDR or a manufacturing release. Critical and high items below block a claim of demonstrated launch survival and twelve-month capability.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Priority</th>
+<th>Issue</th>
+<th>Owner role</th>
+<th>Closure artifact</th>
+<th>Requirements</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>O01</td>
+<td>Critical</td>
+<td>Launch/deployer and orbit not selected</td>
+<td>Systems/mission</td>
+<td>Signed ICD; injection/collision/decay/demise analysis</td>
+<td>R01,R03,R21,R25</td>
+</tr>
+<tr>
+<td>O02</td>
+<td>Critical</td>
+<td>RF authorization and band unresolved; 437MHz conditional</td>
+<td>Regulatory/RF</td>
+<td>Approved service/frequency and ground authority; update hardware if needed</td>
+<td>R17</td>
+</tr>
+<tr>
+<td>O03</td>
+<td>Critical</td>
+<td>Thermal budget not closed; low recovery heater allowance</td>
+<td>Thermal/EPS</td>
+<td>Correlated transient thermal model meeting energy and charge constraints</td>
+<td>R08,R10,R22</td>
+</tr>
+<tr>
+<td>O04</td>
+<td>Critical</td>
+<td>EPS 3.3V tolerance incompatible with direct avionics connection</td>
+<td>Electrical</td>
+<td>Released adapter/protection or guaranteed supplier interface; environmental/radiation verification</td>
+<td>R15,R23</td>
+</tr>
+<tr>
+<td>O05</td>
+<td>Critical</td>
+<td>Three-inhibit independence and solar paths unproven</td>
+<td>Safety/EPS</td>
+<td>Supplier circuit review/fault tree and all-state test</td>
+<td>R11,R13</td>
+</tr>
+<tr>
+<td>O06</td>
+<td>Critical</td>
+<td>Radiation critical-part evidence missing</td>
+<td>EEE</td>
+<td>Orbit/dose/SEE assessment; lot/revision evidence or qualification</td>
+<td>R01,R23</td>
+</tr>
+<tr>
+<td>O07</td>
+<td>High</td>
+<td>Camera-aperture panel and 1U stack fit not established</td>
+<td>Mechanical/payload</td>
+<td>Vendor CAD, aperture cell layout and power guarantee; build fit</td>
+<td>R03,R27</td>
+</tr>
+<tr>
+<td>O08</td>
+<td>High</td>
+<td>DMC carrier current availability and revisions uncertain</td>
+<td>Procurement</td>
+<td>Written supply commitment plus current ICD or requalified alternative</td>
+<td>R06,R15</td>
+</tr>
+<tr>
+<td>O09</td>
+<td>High</td>
+<td>Camera electrical/power/shutter/Sun exposure/JPEG details gated</td>
+<td>Payload</td>
+<td>Current CS-101 brief and confirmed configuration plus tests</td>
+<td>R02,R28,R29</td>
+</tr>
+<tr>
+<td>O10</td>
+<td>High</td>
+<td>NOAA license/determination not obtained</td>
+<td>Regulatory</td>
+<td>Full-capability filing and required authority</td>
+<td>R18</td>
+</tr>
+<tr>
+<td>O11</td>
+<td>High</td>
+<td>One-year battery evidence and passivation behavior unknown</td>
+<td>EPS</td>
+<td>6000-cycle/calendar evidence and source passivation verification</td>
+<td>R09,R26</td>
+</tr>
+<tr>
+<td>O12</td>
+<td>High</td>
+<td>Mode5 sensitivity/pattern/contacts not demonstrated</td>
+<td>RF/ops</td>
+<td>Actual threshold, radiation pattern and pass simulation</td>
+<td>R16,R19</td>
+</tr>
+<tr>
+<td>O13</td>
+<td>High</td>
+<td>No structural FEA/environment profiles/test reports</td>
+<td>Mechanical/AIV</td>
+<td>Accepted loads model, margins and final assembly tests</td>
+<td>R21,R30</td>
+</tr>
+<tr>
+<td>O14</td>
+<td>High</td>
+<td>No quantified image opportunity rate with uncontrolled attitude</td>
+<td>Mission/payload</td>
+<td>Attitude/orbit Monte Carlo and scene replay; accept opportunity risk</td>
+<td>R02</td>
+</tr>
+<tr>
+<td>O15</td>
+<td>Medium</td>
+<td>All selected flight prices are estimates</td>
+<td>Procurement</td>
+<td>Comparable quotes with tests/software/support separated</td>
+<td>R06,R32</td>
+</tr>
+<tr>
+<td>O16</td>
+<td>High</td>
+<td>Flight firmware and boot recovery only specified</td>
+<td>Software</td>
+<td>Implemented versioned code and fault-injection/rehearsal evidence</td>
+<td>R14,R20</td>
+</tr>
+</tbody></table>
+<h2>Review disposition</h2>
+<p>PDR: candidate design, conditional budget closure. CDR: NOT PASSED. Fabrication release: NOT PASSED. Test readiness: NOT PASSED. Flight readiness: NOT PASSED.</p>
+<p>Systems reviewer: __________ Date: __________
+Electrical/safety reviewer: __________ Date: __________
+Mechanical/thermal reviewer: __________ Date: __________
+Radiation/reliability reviewer: __________ Date: __________
+RF/regulatory reviewer: __________ Date: __________
+Payload/operations reviewer: __________ Date: __________</p>
+<p>The owner approved opportunistic Earth imagery, US operation and nominal 450–500 km with flexibility for a lower-cost rideshare. No arbitrary financial ceiling applies. In-scope engineering decisions may be refined without changing those requirements. Targeted imagery or guaranteed spatial resolution requires a new mission baseline.</p>
+</section><section id="section-13"><div class="docpath">analysis/Model_Limitations.md</div><h1>Model scope and independent checks</h1>
+<p>The Python model performs scalar mass/cost addition, two-body eclipse/range/Doppler geometry, orbit energy balance with recharge losses, battery DOD and a scalar RF budget. Inputs are estimates or specified acceptance targets unless a source is stated in the engineering documents. No measured flight performance is used.</p>
+<p>The nominal geometry factor in inputs is normalized to a 2.3 W reference face; it is (5<em>2.3+1.8)/(4</em>2.3). Recovery uses the minimum aperture-face power. The reported <code>sunlight_power_EOL_W</code> is for a reference 2.3 W face; actual nominal and minimum powers are obtained from the associated geometry/aperture factors. <code>solar_energy_Wh</code> and <code>fixed_attitude_solar_Wh</code> use those factors correctly.</p>
+<p><code>power_sensitivity.csv</code> is a generic equal-face sweep, not a second representation of the released unequal-face baseline. Geometry=1 is a fixed direction and geometry=1.5 is an isotropic attitude mean. The face-power column represents all faces in that stress case. It deliberately includes failures. <code>thermal_screen.csv</code> is a single-node equilibrium illustration with assumed optical properties; it omits camera-aperture thermal detail and cannot predict component transients. It shows why a correlated thermal model is still necessary.</p>
+<p>Battery stress case disables the camera. Routine average power includes its capture and processing allowance. RF and camera operation are mutually exclusive; peak RF and peak imaging cases must be tested separately. No camera acquisition-opportunity probability, orbit decay, finite-element structural response, battery cycle aging, detailed thermal transient or radiation transport has been executed.</p>
+<p>Changing model inputs requires updating narrative budgets and generating a new release hash manifest. Script assertions test the chosen budget checks, not applicability of the input assumptions. An aerospace auditor should challenge the assumptions before relying on the positive arithmetic margins.</p>
+</section><section id="section-14"><div class="docpath">review/Source_Register.md</div><h1>Degen-1 source register</h1>
+<p>Access date: 2026-09-14. Public catalog availability is not stock confirmation. No suppliers were contacted. Page publication/crawl dates are not treated as hardware revision dates. Vendor PDFs remain at their original URLs; this package contains references and limited factual extraction, not redistributed manuals.</p>
+<p><strong>S01 — <a href="https://www.nasa.gov/wp-content/uploads/2018/01/cubesatdesignspecificationrev14_12022-02-09.pdf">CubeSat Design Specification Rev 14.1, 2022-02-09</a></strong></p>
+<p>Primary; preliminary mechanical, inhibit and deployment requirements; launch ICD supersedes.</p>
+<p><strong>S02 — <a href="https://www.isispace.nl/product/compact-electrical-power-system/">ISISPACE ICEPS2 current product page</a></strong></p>
+<p>Primary; Type A 22.5 Wh and 184 +/-5 g; catalog listing, quotation required.</p>
+<p><strong>S03 — <a href="https://www.isispace.nl/wp-content/uploads/2025/01/ISIS-ICEPS2-DSH-0001-ICEPS2_Datasheet-01_02.pdf">ICEPS2 datasheet issue 1.2, 2024-07-26</a></strong></p>
+<p>Primary; pages 5,7-9; electrical limits, battery temperature, inhibit architecture. Current page-linked PDF.</p>
+<p><strong>S04 — <a href="https://www.isispace.nl/product/small-satellite-solar-panels/">ISISPACE solar panels current product page</a></strong></p>
+<p>Primary; approximately 1.23 W and 2.7 V per cell, 50 g per 1U panel; actual configuration to quote.</p>
+<p><strong>S05 — <a href="https://isispace.nl/product/vhf-uhf-antenna-for-1u-3u/">ISISPACE 1U-3U antenna current product page</a></strong></p>
+<p>Primary; less than 90 g, 98 x 98 x 7 mm; 5 V variant selected; no assumption of shipped-unit vibration acceptance.</p>
+<p><strong>S06 — <a href="https://www.cubesatshop.com/product/1-unit-cubesat-structure/">ISISPACE 1U structure listing</a></strong></p>
+<p>Vendor storefront; catalog listing; exact rail configuration, switch kit, mass and current availability need RFQ.</p>
+<p><strong>S07 — <a href="https://gomspace.com/product/nanomind-a3200/">NanoMind A3200 current product page</a></strong></p>
+<p>Primary; commercially listed computer, firmware services and lead time need quote.</p>
+<p><strong>S08 — <a href="https://gomspace.com/wp-content/uploads/2025/09/NanoMind_A3200.pdf">NanoMind A3200 datasheet DS1006901 rev1.17, 2021-01-29</a></strong></p>
+<p>Primary; supply, power, 24 g and mechanical envelope. Linked older revision needs as-ordered confirmation.</p>
+<p><strong>S09 — <a href="https://gomspace.com/product/nanocom-ax100/">NanoCom AX100 current product page</a></strong></p>
+<p>Primary; U/UL products currently listed. RF parameters subject to firmware and hardware revision.</p>
+<p><strong>S10 — <a href="https://gomspace.com/wp-content/uploads/2025/09/gs-ds-nanocom-ax100.pdf">NanoCom AX100 datasheet DS1013823 rev3.7, 2019-11-29</a></strong></p>
+<p>Primary; electrical table p11; main connector p9; legacy framing superseded by S11.</p>
+<p><strong>S11 — <a href="https://gomspace.com/wp-content/uploads/2025/09/ProductChangeNotice_NANOCOM_AX100-U-UL.pdf">NanoCom AX100 U/UL lifetime extension PCN, 2024-02-13</a></strong></p>
+<p>Primary; U part 200315 restored to sale; only Mode 5 supported. Overrides obsolete phase-out and mode assumptions.</p>
+<p><strong>S12 — <a href="https://gomspace.com/UserFiles/Subsystems/datasheet/gs-ds-nanodock-dmc-3-111.pdf">NanoDock DMC-3 datasheet DS1012962 rev1.11, 2020-06-12</a></strong></p>
+<p>Primary indexed PDF text; direct URL returned 404 on retrieval. 51 g and envelope provisional; obtain replacement and confirm supply.</p>
+<p><strong>S13 — <a href="https://gomspace.com/UserFiles/Subsystems/datasheet/gs-ds-nanodock-dmc-3-112.pdf">NanoDock DMC-3 rev1.12, 2021-03-25</a></strong></p>
+<p>Primary indexed PDF text; CAN routing/termination information only; current controlled document required.</p>
+<p><strong>S14 — <a href="https://www.ti.com/lit/gpn/tpsm82823">TI TPSM8282x datasheet SLVSEP0F</a></strong></p>
+<p>Primary; catalog integrated-inductor regulator; adapter concept only, not a radiation-qualified assembly.</p>
+<p><strong>S15 — <a href="https://standards.nasa.gov/standard/gsfc/gsfc-std-7000">GSFC-STD-7000B GEVS status and document</a></strong></p>
+<p>Primary; active B, 2021-04-28; reference for tailoring, not a universal launch test profile.</p>
+<p><strong>S16 — <a href="https://docs.fcc.gov/public/attachments/FCC-22-74A1_Rcd.pdf">FCC 22-74 Second Report and Order</a></strong></p>
+<p>Primary; five-year post-mission disposal requirement, including relevant Part 5/97 systems; applicability to be checked for selected license.</p>
+<p><strong>S17 — <a href="https://www.nasa.gov/wp-content/uploads/2015/04/techbul_19-01-1_120321-final.pdf">NASA NESC SEE mitigation technical bulletin 19-01-1</a></strong></p>
+<p>Primary; radiation assurance must consider device, orbit, environment and application.</p>
+<p><strong>S18 — <a href="https://www.nasa.gov/smallsat-institute/sst-soa/deorbit-systems/">NASA small spacecraft deorbit systems overview</a></strong></p>
+<p>Primary; natural decay not assumed from LEO label; model selected orbit.</p>
+<p><strong>S19 — <a href="https://www.cubesatshop.com/product/kratos-1u-cubesat-platform-1-step-solution/">EXA KRATOS 1U vendor storefront</a></strong></p>
+<p>EXA seller listing; published EUR44000-155000, configuration dependent; not a received quotation.</p>
+<p><strong>S20 — <a href="https://www.cubesatshop.com/product/crystalspace-p1u-vasik/">Crystalspace P1U Vasik storefront</a></strong></p>
+<p>Published EUR4400; alternative requires current technical and qualification evidence.</p>
+<p><strong>S21 — <a href="https://www.cubesatshop.com/product/platforms/">Alen Space platform storefront</a></strong></p>
+<p>1U family listed, price on request; bundled-platform competitive RFQ alternative.</p>
+<p><strong>S22 — <a href="https://www.isispace.nl/wp-content/uploads/2016/02/ISIS-Solar-Panels-brochure-v1.pdf">ISISPACE legacy solar brochure</a></strong></p>
+<p>Primary older source; 2.3 W/face used as conservative planning allocation, not current guaranteed minimum.</p>
+<p><strong>S23 — <a href="https://crystalspace.eu/products/cs-101-kikas/">CrystalSpace CS-101 Kikas current product</a></strong></p>
+<p>Primary; 5MP, 50g, 42x25x45mm. Lens, power, voltage, shutter and data protocol require current brief; no form submitted.</p>
+<p><strong>S24 — <a href="https://space.commerce.gov/regulations/commercial-remote-sensing-regulatory-affairs/licensing/">NOAA/OSC remote sensing licensing</a></strong></p>
+<p>Primary; 15 CFR Part 960 and preapplication process; imaging mission needs determination/license.</p>
+<p><strong>S25 — <a href="https://docs.fcc.gov/public/attachments/DA-13-445A1_Rcd.pdf">FCC small satellite licensing guidance</a></strong></p>
+<p>Primary historical guidance on Part 5/25/97 pathways; confirm current procedural requirements before filing.</p>
+<p><strong>S26 — <a href="https://apps.fcc.gov/oetcf/els/help/442_License_Types.html">FCC experimental license types</a></strong></p>
+<p>Primary; experimental authorization scope, not automatic eligibility.</p>
+<p><strong>S27 — <a href="https://www.faa.gov/space/licenses/payload_reviews">FAA payload reviews</a></strong></p>
+<p>Primary; launch/payload review interface under 14 CFR 450.43.</p>
+<p><strong>S28 — <a href="https://www.m2inc.com/content/PDF%20MANUALS/70CMANTS/FGMAN436CP42UG.A.pdf">M2 436CP42UG manufacturer datasheet</a></strong></p>
+<p>Primary; 430–438MHz, 18.9dBic catalog gain; budget derates to 16dBi equivalent installed gain.</p>
+<p><strong>S29 — <a href="https://www.m2inc.com/M2FACTORYDIRECT?page=2">M2 manufacturer storefront</a></strong></p>
+<p>Primary; 436CP42UG published USD910.95 on access date; separate from EUR planning allowance.</p>
+</section><section id="section-15"><div class="docpath">review/Configuration_Log.md</div><h1>Configuration log</h1>
+<p>Rev A — 2026-09-14. Initial issued package for Degen-1. Owner scope: occasional recognizable Earth images, US-operated, nominal 450–500 km LEO, flexible rideshare if it lowers cost/complexity, lowest reasonable COTS build cost, distinct program cost categories and no arbitrary financial ceiling.</p>
+<p>Working calculations were revised before this release to add the CS-101 camera, aperture-panel derating, updated stack allocations, Mode 5 radio framing and independent regulator interface. Only the issued imaging configuration is included in the deliverable package. No hardware has been acquired, modified or tested.</p>
+<p>The package is a preliminary engineering design with formal open items. Subsequent revisions must log changed assumptions, affected requirements, budgets, vendor revisions and verification evidence. A hash manifest identifies this issue&#39;s exact files.</p>
+</section><section id="section-16"><div class="docpath">review/Package_Verification.md</div><h1>D1-QA-001 — Issued-package verification</h1>
+<p>2026-09-14. These are document and analytic-model checks, not hardware tests.</p>
+<ul>
+<li>PASS: Unique BOM IDs</li>
+<li>PASS: Six solar panels including aperture panel</li>
+<li>PASS: BOM mass reconciliation</li>
+<li>PASS: Base hardware cost reconciliation</li>
+<li>PASS: Mass with growth below project target</li>
+<li>PASS: Recovery closes after camera-face derating</li>
+<li>PASS: Fixed-attitude nominal failure explicitly preserved</li>
+<li>PASS: Nominal energy growth reserve accounted</li>
+<li>PASS: Battery stress below permitted 20 percent DOD</li>
+<li>PASS: Downlink &gt;=3dB assumed-threshold reserve</li>
+<li>PASS: Unique source IDs</li>
+<li>PASS: Markdown local links resolve</li>
+<li>PASS: HTML local links and section anchors resolve</li>
+<li>PASS: Recovery and RF screening positive across 450-500 km</li>
+<li>PASS: all source IDs used in narrative documents resolve.</li>
+<li>Drawing SVG rendered to PNG and visually inspected; coordinate-sign formatting corrected before issue.</li>
+</ul>
+<p>The executed calculation script passed its internal assertions. BOM and source identifiers, totals and local links were independently checked. This does not close assumptions about thermal, radiation, orbit decay, supplier hardware, regulatory eligibility or physical tests.</p>
+<p>Orbit sensitivity is in <code>analysis/orbit_sensitivity.csv</code>: 400 and 550 km are trade points only. No cheaper available rideshare is asserted without a quote; neither point has a qualified orbital lifetime.</p>
+</section></main></body></html>

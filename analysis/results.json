@@ -1,0 +1,62 @@
+{
+  "period_min": 94.1009159712426,
+  "eclipse_min": 35.83280418684769,
+  "sunlight_min": 58.26811178439492,
+  "orbits_per_year": 5589.318600902187,
+  "sunlight_power_EOL_W": 1.4251949999999998,
+  "average_load_with_growth_W": 0.8784,
+  "solar_energy_Wh": 2.0008650488073503,
+  "required_solar_energy_Wh": 1.6893240446622713,
+  "energy_margin_Wh": 0.311541004145079,
+  "energy_margin_pct_of_required": 18.441755158191818,
+  "routine_eclipse_Wh": 0.6171673568181766,
+  "routine_DOD_pct": 3.428707537878759,
+  "battery_EOL_Wh": 18.0,
+  "usable_battery_Wh": 3.6,
+  "stress_eclipse_Wh": 1.4527257997556218,
+  "stress_DOD_pct": 8.07069888753123,
+  "max_average_heater_for_energy_balance_W": 0.23499364775796427,
+  "fixed_attitude_solar_Wh": 1.0831750640160094,
+  "safe_load_W": 0.49884000000000006,
+  "safe_energy_required_Wh": 0.9593606630684511,
+  "safe_energy_margin_Wh": 0.12381440094755825,
+  "nominal_fixed_attitude_margin_Wh": -0.6061489806462619,
+  "mass_CBE_g": 1063.5,
+  "mass_with_growth_g": 1276.2,
+  "mass_headroom_g": 53.799999999999955,
+  "slant_range_km": 1633.1645153033164,
+  "FSPL_dB": 149.51022744320085,
+  "downlink_received_dBm": -116.51022744320085,
+  "downlink_margin_dB": 6.489772556799153,
+  "uplink_received_dBm": -115.51022744320085,
+  "uplink_margin_dB": 7.489772556799153,
+  "max_doppler_Hz": 11116.93112503606,
+  "raw_telemetry_bytes_per_day": 92160,
+  "cost_EUR": {
+    "low": 29350.0,
+    "base": 46500.0,
+    "high": 70100.0
+  },
+  "thermal_screen": [
+    {
+      "case": "cold_sun",
+      "heat_W": 12.211600000000002,
+      "isothermal_equilibrium_C": -18.233665886516803
+    },
+    {
+      "case": "nominal_sun",
+      "heat_W": 19.715500000000002,
+      "isothermal_equilibrium_C": 18.58511420883417
+    },
+    {
+      "case": "hot_sun",
+      "heat_W": 27.911932,
+      "isothermal_equilibrium_C": 50.25103986114857
+    },
+    {
+      "case": "eclipse_equilibrium",
+      "heat_W": 4.2,
+      "isothermal_equilibrium_C": -77.93335512673696
+    }
+  ]
+}
