@@ -38,3 +38,5 @@ Read the [Project Overview](Project_Overview.md) for the AI-assisted engineering
 ## Consumer-AI experiment constraint
 
 The baseline engineering interface is a standard $20/month ChatGPT Plus subscription, including Codex/Astra where available, with free/open-source engineering tools wherever practical. Paid AI or software is not introduced silently. See [AI toolchain and boundaries](review/AI_Toolchain_and_Boundaries.md), [project status](review/Project_Status.yaml), and the separate [project cost ledger](procurement/Project_Cost_Ledger.csv).
+
+Project gates and their required evidence are tracked in [MILESTONES.md](MILESTONES.md). GitHub updates are made at those review points.
