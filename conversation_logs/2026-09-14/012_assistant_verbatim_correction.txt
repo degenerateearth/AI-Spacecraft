@@ -1,0 +1,19 @@
+Role: assistant transcript correction
+Recorded date: 2026-09-14
+
+The [Final] section in 012_assistant.txt was a prewritten paraphrase, not the exact delivered response. Preserve it as historical evidence of the logging error. The actual final response follows, including Markdown:
+
+Created the model using the installed **FreeCAD 1.1.3**, saved in `D:\Degen-1\drawings\freecad`, and committed/pushed as `d2e0fbb`.
+
+- [Editable FreeCAD model](C:/Users/trace/Documents/Codex/2026-09-14/d/outputs/Degen-1/drawings/freecad/exports/Degen1_CAD001.FCStd)
+- [Generation instructions and scripts](C:/Users/trace/Documents/Codex/2026-09-14/d/outputs/Degen-1/drawings/freecad/README.md)
+- [Document review and dimensional traceability](C:/Users/trace/Documents/Codex/2026-09-14/d/outputs/Degen-1/drawings/freecad/TRACEABILITY.md)
+- [Conflicts, assumptions, and recommended corrections](C:/Users/trace/Documents/Codex/2026-09-14/d/outputs/Degen-1/drawings/freecad/FINDINGS.md)
+
+The model contains 17 named envelopes covering rails, adapter, EPS/battery, carrier, computer, radio, camera, AntS, and six solar panels. Published dimensions support EPS, avionics, and AntS; camera dimensions retain the historical project source. Rail profiles, panel geometry, and mounting placements remain explicit assumptions.
+
+**Physical fit is not established.** FreeCAD found 23 envelope overlaps, and the camera has only 1 mm nominal clearance above and below its bay. These require actual supplier contours before concluding whether physical parts collide.
+
+Mass remains the assigned **1,063.5 g BOM estimate**: 768.5 g associated with modeled components, with 295 g unlocated/unmodeled. Credible spacecraft COM remains unknown.
+
+Saved-file reopening, spreadsheet-driven editing, fresh regeneration, and STEP readback passed. Mounting drawings, connector clearances, camera aperture/cell layout, and antenna deployment geometry are the next required evidence. No success level or flight-readiness claim was upgraded.
