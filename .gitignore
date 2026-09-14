@@ -1,0 +1,10 @@
+# FreeCAD backups, recovery files and caches; retain canonical FCStd and review exports.
+*.FCStd1
+*.FCStd2
+*.FCStd.*
+*.fcstd1
+*.FCBak
+*.FCStd.autosave
+__pycache__/
+*.py[cod]
+drawings/freecad/verification_work/

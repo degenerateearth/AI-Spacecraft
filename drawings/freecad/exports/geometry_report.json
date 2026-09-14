@@ -1,0 +1,739 @@
+{
+  "evidence": "MODELED and CALCULATED envelope geometry only; no structural/thermal simulation, hardware test or expert review",
+  "fit_conclusion": "NOT ESTABLISHED: envelope overlaps and missing interfaces prevent fit release",
+  "overlaps": [
+    {
+      "a": "RailMinusXMinusY",
+      "b": "D1IFAdapterEnvelope",
+      "intersection_mm3": 24.0,
+      "interpretation": "ENVELOPE overlap; actual material intersection unproven"
+    },
+    {
+      "a": "RailMinusXMinusY",
+      "b": "ICEPS2TypeAWithBattery",
+      "intersection_mm3": 636.0,
+      "interpretation": "ENVELOPE overlap; actual material intersection unproven"
+    },
+    {
+      "a": "RailMinusXMinusY",
+      "b": "DMC3CarrierEnvelope",
+      "intersection_mm3": 6.4,
+      "interpretation": "ENVELOPE overlap; actual material intersection unproven"
+    },
+    {
+      "a": "RailMinusXMinusY",
+      "b": "AntSUHFTurnstileStowed",
+      "intersection_mm3": 343.0,
+      "interpretation": "ENVELOPE overlap; actual material intersection unproven"
+    },
+    {
+      "a": "RailMinusXPlusY",
+      "b": "D1IFAdapterEnvelope",
+      "intersection_mm3": 24.0,
+      "interpretation": "ENVELOPE overlap; actual material intersection unproven"
+    },
+    {
+      "a": "RailMinusXPlusY",
+      "b": "ICEPS2TypeAWithBattery",
+      "intersection_mm3": 636.0,
+      "interpretation": "ENVELOPE overlap; actual material intersection unproven"
+    },
+    {
+      "a": "RailMinusXPlusY",
+      "b": "DMC3CarrierEnvelope",
+      "intersection_mm3": 6.4,
+      "interpretation": "ENVELOPE overlap; actual material intersection unproven"
+    },
+    {
+      "a": "RailMinusXPlusY",
+      "b": "AntSUHFTurnstileStowed",
+      "intersection_mm3": 343.0,
+      "interpretation": "ENVELOPE overlap; actual material intersection unproven"
+    },
+    {
+      "a": "RailPlusXMinusY",
+      "b": "D1IFAdapterEnvelope",
+      "intersection_mm3": 24.0,
+      "interpretation": "ENVELOPE overlap; actual material intersection unproven"
+    },
+    {
+      "a": "RailPlusXMinusY",
+      "b": "ICEPS2TypeAWithBattery",
+      "intersection_mm3": 636.0,
+      "interpretation": "ENVELOPE overlap; actual material intersection unproven"
+    },
+    {
+      "a": "RailPlusXMinusY",
+      "b": "DMC3CarrierEnvelope",
+      "intersection_mm3": 6.4,
+      "interpretation": "ENVELOPE overlap; actual material intersection unproven"
+    },
+    {
+      "a": "RailPlusXMinusY",
+      "b": "AntSUHFTurnstileStowed",
+      "intersection_mm3": 343.0,
+      "interpretation": "ENVELOPE overlap; actual material intersection unproven"
+    },
+    {
+      "a": "RailPlusXPlusY",
+      "b": "D1IFAdapterEnvelope",
+      "intersection_mm3": 24.0,
+      "interpretation": "ENVELOPE overlap; actual material intersection unproven"
+    },
+    {
+      "a": "RailPlusXPlusY",
+      "b": "ICEPS2TypeAWithBattery",
+      "intersection_mm3": 636.0,
+      "interpretation": "ENVELOPE overlap; actual material intersection unproven"
+    },
+    {
+      "a": "RailPlusXPlusY",
+      "b": "DMC3CarrierEnvelope",
+      "intersection_mm3": 6.4,
+      "interpretation": "ENVELOPE overlap; actual material intersection unproven"
+    },
+    {
+      "a": "RailPlusXPlusY",
+      "b": "AntSUHFTurnstileStowed",
+      "intersection_mm3": 343.0,
+      "interpretation": "ENVELOPE overlap; actual material intersection unproven"
+    },
+    {
+      "a": "ICEPS2TypeAWithBattery",
+      "b": "SolarPlusXUnresolvedAperture",
+      "intersection_mm3": 2226.0,
+      "interpretation": "ENVELOPE overlap; actual material intersection unproven"
+    },
+    {
+      "a": "ICEPS2TypeAWithBattery",
+      "b": "SolarMinusX",
+      "intersection_mm3": 2226.0,
+      "interpretation": "ENVELOPE overlap; actual material intersection unproven"
+    },
+    {
+      "a": "CS101CameraEnvelope",
+      "b": "SolarPlusXUnresolvedAperture",
+      "intersection_mm3": 525.0,
+      "interpretation": "ENVELOPE overlap; actual material intersection unproven"
+    },
+    {
+      "a": "AntSUHFTurnstileStowed",
+      "b": "SolarPlusXUnresolvedAperture",
+      "intersection_mm3": 840.0,
+      "interpretation": "ENVELOPE overlap; actual material intersection unproven"
+    },
+    {
+      "a": "AntSUHFTurnstileStowed",
+      "b": "SolarMinusX",
+      "intersection_mm3": 840.0,
+      "interpretation": "ENVELOPE overlap; actual material intersection unproven"
+    },
+    {
+      "a": "AntSUHFTurnstileStowed",
+      "b": "SolarPlusY",
+      "intersection_mm3": 840.0,
+      "interpretation": "ENVELOPE overlap; actual material intersection unproven"
+    },
+    {
+      "a": "AntSUHFTurnstileStowed",
+      "b": "SolarMinusY",
+      "intersection_mm3": 840.0,
+      "interpretation": "ENVELOPE overlap; actual material intersection unproven"
+    }
+  ],
+  "near_contacts": [
+    {
+      "a": "RailMinusXMinusY",
+      "b": "SolarMinusX",
+      "distance_mm": 0.0,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    },
+    {
+      "a": "RailMinusXMinusY",
+      "b": "SolarMinusY",
+      "distance_mm": 0.0,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    },
+    {
+      "a": "RailMinusXMinusY",
+      "b": "SolarMinusZSwitchReliefsUnknown",
+      "distance_mm": 0.0,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    },
+    {
+      "a": "RailMinusXMinusY",
+      "b": "SolarPlusZAntSMounted",
+      "distance_mm": 0.0,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    },
+    {
+      "a": "RailMinusXPlusY",
+      "b": "SolarMinusX",
+      "distance_mm": 0.0,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    },
+    {
+      "a": "RailMinusXPlusY",
+      "b": "SolarPlusY",
+      "distance_mm": 0.0,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    },
+    {
+      "a": "RailMinusXPlusY",
+      "b": "SolarMinusZSwitchReliefsUnknown",
+      "distance_mm": 0.0,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    },
+    {
+      "a": "RailMinusXPlusY",
+      "b": "SolarPlusZAntSMounted",
+      "distance_mm": 0.0,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    },
+    {
+      "a": "RailPlusXMinusY",
+      "b": "SolarPlusXUnresolvedAperture",
+      "distance_mm": 0.0,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    },
+    {
+      "a": "RailPlusXMinusY",
+      "b": "SolarMinusY",
+      "distance_mm": 0.0,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    },
+    {
+      "a": "RailPlusXMinusY",
+      "b": "SolarMinusZSwitchReliefsUnknown",
+      "distance_mm": 0.0,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    },
+    {
+      "a": "RailPlusXMinusY",
+      "b": "SolarPlusZAntSMounted",
+      "distance_mm": 0.0,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    },
+    {
+      "a": "RailPlusXPlusY",
+      "b": "SolarPlusXUnresolvedAperture",
+      "distance_mm": 0.0,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    },
+    {
+      "a": "RailPlusXPlusY",
+      "b": "SolarPlusY",
+      "distance_mm": 0.0,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    },
+    {
+      "a": "RailPlusXPlusY",
+      "b": "SolarMinusZSwitchReliefsUnknown",
+      "distance_mm": 0.0,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    },
+    {
+      "a": "RailPlusXPlusY",
+      "b": "SolarPlusZAntSMounted",
+      "distance_mm": 0.0,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    },
+    {
+      "a": "D1IFAdapterEnvelope",
+      "b": "ICEPS2TypeAWithBattery",
+      "distance_mm": 3.0,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    },
+    {
+      "a": "D1IFAdapterEnvelope",
+      "b": "CS101CameraEnvelope",
+      "distance_mm": 2.0,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    },
+    {
+      "a": "D1IFAdapterEnvelope",
+      "b": "SolarPlusXUnresolvedAperture",
+      "distance_mm": 3.0,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    },
+    {
+      "a": "D1IFAdapterEnvelope",
+      "b": "SolarMinusX",
+      "distance_mm": 3.0,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    },
+    {
+      "a": "D1IFAdapterEnvelope",
+      "b": "SolarPlusY",
+      "distance_mm": 3.0,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    },
+    {
+      "a": "D1IFAdapterEnvelope",
+      "b": "SolarMinusY",
+      "distance_mm": 3.0,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    },
+    {
+      "a": "ICEPS2TypeAWithBattery",
+      "b": "SolarPlusY",
+      "distance_mm": 1.0,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    },
+    {
+      "a": "ICEPS2TypeAWithBattery",
+      "b": "SolarMinusY",
+      "distance_mm": 1.0,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    },
+    {
+      "a": "DMC3CarrierEnvelope",
+      "b": "NanoMindA3200Envelope",
+      "distance_mm": 2.85,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    },
+    {
+      "a": "DMC3CarrierEnvelope",
+      "b": "SolarPlusXUnresolvedAperture",
+      "distance_mm": 3.0,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    },
+    {
+      "a": "DMC3CarrierEnvelope",
+      "b": "SolarMinusX",
+      "distance_mm": 3.0,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    },
+    {
+      "a": "DMC3CarrierEnvelope",
+      "b": "SolarPlusY",
+      "distance_mm": 3.0,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    },
+    {
+      "a": "DMC3CarrierEnvelope",
+      "b": "SolarMinusY",
+      "distance_mm": 3.0,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    },
+    {
+      "a": "NanoMindA3200Envelope",
+      "b": "NanoComAX100UEnvelope",
+      "distance_mm": 2.0,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    },
+    {
+      "a": "CS101CameraEnvelope",
+      "b": "SolarMinusZSwitchReliefsUnknown",
+      "distance_mm": 3.0,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    },
+    {
+      "a": "AntSUHFTurnstileStowed",
+      "b": "SolarPlusZAntSMounted",
+      "distance_mm": 0.0,
+      "interpretation": "nominal envelope distance; no tolerance or connector allowance"
+    }
+  ],
+  "nominal_external_envelope_violations": [],
+  "camera_bay_z_clearance_mm": [
+    1.0,
+    1.0
+  ],
+  "signatures": {
+    "RailMinusXMinusY": {
+      "volume_mm3": 7264.0,
+      "bounds_mm": [
+        -50.0,
+        -50.0,
+        -56.75,
+        -42.0,
+        -42.0,
+        56.75
+      ],
+      "valid": true
+    },
+    "RailMinusXPlusY": {
+      "volume_mm3": 7264.0,
+      "bounds_mm": [
+        -50.0,
+        42.0,
+        -56.75,
+        -42.0,
+        50.0,
+        56.75
+      ],
+      "valid": true
+    },
+    "RailPlusXMinusY": {
+      "volume_mm3": 7264.0,
+      "bounds_mm": [
+        42.0,
+        -50.0,
+        -56.75,
+        50.0,
+        -42.0,
+        56.75
+      ],
+      "valid": true
+    },
+    "RailPlusXPlusY": {
+      "volume_mm3": 7264.0,
+      "bounds_mm": [
+        42.0,
+        42.0,
+        -56.75,
+        50.0,
+        50.0,
+        56.75
+      ],
+      "valid": true
+    },
+    "D1IFAdapterEnvelope": {
+      "volume_mm3": 46464.0,
+      "bounds_mm": [
+        -44.0,
+        -44.0,
+        -21.0,
+        44.0,
+        44.0,
+        -15.0
+      ],
+      "valid": true
+    },
+    "ICEPS2TypeAWithBattery": {
+      "volume_mm3": 234048.0,
+      "bounds_mm": [
+        -48.0,
+        -46.0,
+        -12.0,
+        48.0,
+        46.0,
+        14.5
+      ],
+      "valid": true
+    },
+    "DMC3CarrierEnvelope": {
+      "volume_mm3": 12390.4,
+      "bounds_mm": [
+        -44.0,
+        -44.0,
+        20.0,
+        44.0,
+        44.0,
+        21.6
+      ],
+      "valid": true
+    },
+    "NanoMindA3200Envelope": {
+      "volume_mm3": 18460.0,
+      "bounds_mm": [
+        -32.5,
+        -41.0,
+        24.45,
+        32.5,
+        -1.0,
+        31.55
+      ],
+      "valid": true
+    },
+    "NanoComAX100UEnvelope": {
+      "volume_mm3": 16900.0,
+      "bounds_mm": [
+        -32.5,
+        1.0,
+        24.75,
+        32.5,
+        41.0,
+        31.25
+      ],
+      "valid": true
+    },
+    "CS101CameraEnvelope": {
+      "volume_mm3": 47250.0,
+      "bounds_mm": [
+        2.5,
+        -21.0,
+        -48.0,
+        47.5,
+        21.0,
+        -23.0
+      ],
+      "valid": true
+    },
+    "AntSUHFTurnstileStowed": {
+      "volume_mm3": 67228.0,
+      "bounds_mm": [
+        -49.0,
+        -49.0,
+        44.0,
+        49.0,
+        49.0,
+        51.0
+      ],
+      "valid": true
+    },
+    "SolarPlusXUnresolvedAperture": {
+      "volume_mm3": 24696.0,
+      "bounds_mm": [
+        47.0,
+        -42.0,
+        -49.0,
+        50.0,
+        42.0,
+        49.0
+      ],
+      "valid": true
+    },
+    "SolarMinusX": {
+      "volume_mm3": 24696.0,
+      "bounds_mm": [
+        -50.0,
+        -42.0,
+        -49.0,
+        -47.0,
+        42.0,
+        49.0
+      ],
+      "valid": true
+    },
+    "SolarPlusY": {
+      "volume_mm3": 24696.0,
+      "bounds_mm": [
+        -42.0,
+        47.0,
+        -49.0,
+        42.0,
+        50.0,
+        49.0
+      ],
+      "valid": true
+    },
+    "SolarMinusY": {
+      "volume_mm3": 24696.0,
+      "bounds_mm": [
+        -42.0,
+        -50.0,
+        -49.0,
+        42.0,
+        -47.0,
+        49.0
+      ],
+      "valid": true
+    },
+    "SolarMinusZSwitchReliefsUnknown": {
+      "volume_mm3": 21168.0,
+      "bounds_mm": [
+        -42.0,
+        -42.0,
+        -54.0,
+        42.0,
+        42.0,
+        -51.0
+      ],
+      "valid": true
+    },
+    "SolarPlusZAntSMounted": {
+      "volume_mm3": 21168.0,
+      "bounds_mm": [
+        -42.0,
+        -42.0,
+        51.0,
+        42.0,
+        42.0,
+        54.0
+      ],
+      "valid": true
+    }
+  },
+  "unverified_checks": [
+    "actual rail shape",
+    "mounting/fastener access",
+    "connector mating and cable bends",
+    "antenna deployment swept volume",
+    "lens aperture/FOV",
+    "cell string routing",
+    "tolerances",
+    "deployer ICD"
+  ],
+  "freecad_version": [
+    "1",
+    "1",
+    "3",
+    "20260725 (Git shallow)",
+    "Unknown",
+    "2026/07/25 04:52:02",
+    "grafted,grafted",
+    "145529fe741292ff0b3977a01195bf0247425794"
+  ],
+  "parameters_sha256": "af40b4e729f120129a090b7254d2ea4b93186d5e7b6c6073e616604e19a65b63",
+  "mass": {
+    "method": "BOM assigned masses; no density-derived physical mass or credible spacecraft COM",
+    "bom_total_g": 1063.5,
+    "budget_g": 1063.5,
+    "with_20_percent_growth_g": 1276.2,
+    "geometry_associated_bom_mass_g": 768.5,
+    "unlocated_or_unmodeled_bom_mass_g": 295.0,
+    "credible_spacecraft_com_mm": null,
+    "breakdown": [
+      {
+        "bom": "B01",
+        "item": "1U structure, rails, fasteners, separation provisions",
+        "mass_g": 150.0,
+        "basis": "A",
+        "geometry": [],
+        "position_known": false
+      },
+      {
+        "bom": "B02",
+        "item": "ICEPS2 Type A + integrated battery + 3 separation switch/RBF option",
+        "mass_g": 184.0,
+        "basis": "V",
+        "geometry": [
+          "ICEPS2TypeAWithBattery"
+        ],
+        "position_known": false
+      },
+      {
+        "bom": "B03",
+        "item": "1U side solar panel, two cells series",
+        "mass_g": 150.0,
+        "basis": "V",
+        "geometry": [
+          "SolarMinusX",
+          "SolarPlusY",
+          "SolarMinusY"
+        ],
+        "position_known": false
+      },
+      {
+        "bom": "B04",
+        "item": "1U -Z solar panel with switch clearances",
+        "mass_g": 50.0,
+        "basis": "V",
+        "geometry": [
+          "SolarMinusZSwitchReliefsUnknown"
+        ],
+        "position_known": false
+      },
+      {
+        "bom": "B05",
+        "item": "1U +Z panel for AntS mounting",
+        "mass_g": 50.0,
+        "basis": "V",
+        "geometry": [
+          "SolarPlusZAntSMounted"
+        ],
+        "position_known": false
+      },
+      {
+        "bom": "B06",
+        "item": "NanoMind A3200 flight computer",
+        "mass_g": 24.0,
+        "basis": "V",
+        "geometry": [
+          "NanoMindA3200Envelope"
+        ],
+        "position_known": false
+      },
+      {
+        "bom": "B07",
+        "item": "NanoCom AX100-U, sales part 200315, Mode 5",
+        "mass_g": 24.5,
+        "basis": "V",
+        "geometry": [
+          "NanoComAX100UEnvelope"
+        ],
+        "position_known": false
+      },
+      {
+        "bom": "B08",
+        "item": "NanoDock DMC-3 carrier, top-side two modules",
+        "mass_g": 51.0,
+        "basis": "P",
+        "geometry": [
+          "DMC3CarrierEnvelope"
+        ],
+        "position_known": false
+      },
+      {
+        "bom": "B09",
+        "item": "AntS 1U-3U UHF turnstile, 5 V model",
+        "mass_g": 90.0,
+        "basis": "V",
+        "geometry": [
+          "AntSUHFTurnstileStowed"
+        ],
+        "position_known": false
+      },
+      {
+        "bom": "B10",
+        "item": "D1-IF adapter: two 5V to 3.3V regulators, isolation, harness routing",
+        "mass_g": 45.0,
+        "basis": "A",
+        "geometry": [
+          "D1IFAdapterEnvelope"
+        ],
+        "position_known": false
+      },
+      {
+        "bom": "B11",
+        "item": "Harness, RF coax, 3 switch hardware allowance, strain relief",
+        "mass_g": 65.0,
+        "basis": "A",
+        "geometry": [],
+        "position_known": false
+      },
+      {
+        "bom": "B12",
+        "item": "Battery thermal strap/isolation, approved films and mounting",
+        "mass_g": 35.0,
+        "basis": "A",
+        "geometry": [],
+        "position_known": false
+      },
+      {
+        "bom": "B13",
+        "item": "Integration fasteners, bonding and small brackets",
+        "mass_g": 25.0,
+        "basis": "A",
+        "geometry": [],
+        "position_known": false
+      },
+      {
+        "bom": "B14",
+        "item": "+X two-cell panel with camera aperture",
+        "mass_g": 50.0,
+        "basis": "A",
+        "geometry": [
+          "SolarPlusXUnresolvedAperture"
+        ],
+        "position_known": false
+      },
+      {
+        "bom": "B15",
+        "item": "CS-101 Kikas 5MP camera; infinity focus wide-angle lens",
+        "mass_g": 50.0,
+        "basis": "V",
+        "geometry": [
+          "CS101CameraEnvelope"
+        ],
+        "position_known": false
+      },
+      {
+        "bom": "B16",
+        "item": "Camera bracket baffle and harness",
+        "mass_g": 20.0,
+        "basis": "A",
+        "geometry": [],
+        "position_known": false
+      }
+    ]
+  },
+  "legacy_point_mass_com_mm": [
+    1.6455101081335215,
+    0,
+    3.757404795486601
+  ],
+  "legacy_com_basis": "CALCULATED using D1-ANA-001 assumed positions and symmetry; not CAD-derived/validated COM"
+}

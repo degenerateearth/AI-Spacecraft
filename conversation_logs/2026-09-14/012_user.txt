@@ -1,0 +1,216 @@
+Recorded date: 2026-09-14 (America/Chicago; exact prompt time unavailable)
+Role: user
+
+You’re not understanding. Use the software “FreeCAD” on this computer to follow these instructions: Use FreeCAD to create the first parametric mechanical CAD model of the spacecraft currently proposed by the DEGENERATE-1 / AI-Spacecraft project.
+
+Before creating any geometry, inspect the entire existing project repository and read all relevant engineering documents, requirements, architecture documents, component selections, BOMs, interface definitions, dimensional information, mass/power budgets, trade studies, assumptions, and the PROJECT_CONSTITUTION. Treat the existing project documentation as the current source of truth, subject to the evidence and confidence levels already defined by the project.
+
+GOAL
+
+Translate the spacecraft design that currently exists in documentation into an editable, reproducible FreeCAD model.
+
+This is NOT an instruction to design a generic 1U CubeSat that merely looks plausible.
+
+The CAD model must represent the artifact actually proposed by this project so far.
+
+WORKFLOW
+
+1. DOCUMENT REVIEW
+
+Before opening/building the CAD model:
+
+- Identify every document relevant to the physical spacecraft.
+- Extract all dimensions, component selections, mechanical constraints, interfaces, mounting requirements, keep-out zones, and other geometry-affecting requirements.
+- Determine which dimensions are:
+  - source-verified
+  - manufacturer/datasheet-derived
+  - calculated
+  - project decisions
+  - assumptions
+  - unknown
+
+Create a short CAD source/traceability document showing where important dimensions came from.
+
+Do not silently invent dimensions.
+
+If information is missing but a provisional value is necessary to continue, clearly label it as an ASSUMPTION and record it in the project's existing assumptions/open-questions system.
+
+If a missing value would make meaningful modeling impossible or would require an important architectural decision, stop and report the issue rather than guessing.
+
+2. FREECAD IMPLEMENTATION
+
+Use FreeCAD as the CAD environment.
+
+Prefer reproducible, script-generated, parametric geometry using FreeCAD's Python interface wherever practical.
+
+The editable parametric source is canonical.
+
+Create and retain:
+- FreeCAD source file(s)
+- FreeCAD/Python generation scripts
+- STEP export(s) for interoperability/review
+- any appropriate lightweight preview exports
+
+Do not make visual appearance the primary objective.
+
+Engineering usefulness, dimensional traceability, editability, and reproducibility are more important than making the spacecraft look impressive.
+
+3. MODEL THE ACTUAL SPACECRAFT
+
+Represent the currently proposed physical architecture as faithfully as available information allows.
+
+Where supported by the existing design, include:
+
+- external spacecraft envelope
+- structural frame
+- rails/interfaces
+- panels
+- PCB locations/envelopes
+- camera/payload
+- radio/communications hardware
+- antenna system and deployment envelopes if applicable
+- flight computer
+- power hardware
+- batteries
+- solar panels/cells at an appropriate level of detail
+- sensors
+- connectors or harness routing where mechanically relevant
+- mounting hardware
+- required clearances
+- deployment/keep-out zones
+- other currently selected physical components
+
+Do NOT add subsystems simply because CubeSats commonly have them.
+
+If the existing design does not specify something, treat that as missing engineering information rather than an invitation to invent it.
+
+For COTS components, prefer manufacturer mechanical drawings or verified dimensions already present in project documentation.
+
+Do not waste time modeling cosmetic details that have no engineering value.
+
+4. ASSEMBLY AND INTERFERENCE
+
+Organize the model so individual components/subassemblies can be identified and modified.
+
+Check for obvious:
+
+- component collisions
+- impossible mounting arrangements
+- inaccessible fasteners/connectors
+- insufficient clearances
+- envelope violations
+- antenna/deployment interference
+- unrealistic PCB stacking
+- camera obstruction
+- cable-routing problems
+- other mechanical contradictions
+
+If translating the documented design into 3D reveals a problem, DO NOT quietly modify the architecture merely to make everything fit.
+
+Record:
+
+DOCUMENTED DESIGN -> CAD CONFLICT -> PROPOSED CORRECTION
+
+and flag the correction for review.
+
+The CAD model is being used partly to test whether the existing AI-generated engineering survives translation into physical geometry.
+
+Finding that something does not fit is a successful result of this stage, not a failure to complete the model.
+
+5. MASS PROPERTIES
+
+Where component masses and materials are sufficiently supported, assign them appropriately and generate preliminary:
+
+- total modeled mass
+- center of mass
+- component/subassembly mass breakdown
+
+Compare the CAD-derived result with the project's existing mass budget.
+
+Do not fabricate densities or masses merely to produce complete-looking results.
+
+Clearly identify components represented only as geometric envelopes or with unknown mass properties.
+
+6. TRACEABILITY
+
+Important geometry should trace back to:
+
+MISSION / REQUIREMENT
+        ->
+DESIGN DECISION
+        ->
+COMPONENT OR INTERFACE
+        ->
+SOURCE / DATASHEET / ASSUMPTION
+        ->
+CAD GEOMETRY
+
+Where practical, use meaningful parameter and object names rather than arbitrary names such as Box001.
+
+A future engineer should be able to inspect the model and understand why major dimensions exist.
+
+7. EVIDENCE DISCIPLINE
+
+Remember the project constitution:
+
+A completed CAD model does NOT establish that the spacecraft is physically viable, flightworthy, structurally adequate, thermally adequate, launch-compatible, or compliant with any CubeSat/launch-provider specification.
+
+Do not upgrade the project's evidence level merely because geometry now exists.
+
+Distinguish clearly between:
+- DOCUMENTED
+- ASSUMED
+- MODELED
+- CALCULATED
+- SIMULATED
+- TESTED
+- EXPERT-REVIEWED
+
+This stage primarily moves documented mechanical concepts into MODELED status.
+
+8. VERSION CONTROL
+
+Store the CAD work inside the existing ai-spacecraft repository using a sensible structure consistent with the repository's current organization.
+
+Do not restructure unrelated project files unnecessarily.
+
+Commit:
+- parametric CAD source
+- generation scripts
+- exports
+- dimension/source traceability
+- CAD assumptions
+- discovered conflicts
+- README/instructions for regenerating the model
+
+Do not commit FreeCAD caches, temporary files, autosaves, or unnecessary generated artifacts.
+
+Update .gitignore where appropriate.
+
+9. FINAL REVIEW
+
+After generating the model, reopen/regenerate it from the saved source to verify reproducibility.
+
+Then inspect the resulting assembly and report:
+
+- what was successfully modeled
+- which project documents were used
+- which dimensions are source-backed
+- which dimensions remain assumptions
+- which components are placeholders/envelopes
+- mechanical conflicts discovered
+- missing information
+- changes you recommend
+- current modeled mass, if credible
+- whether the documented spacecraft physically fits within its intended form factor
+- what should be resolved before increasing CAD fidelity
+
+IMPORTANT
+
+Do not optimize for producing a finished-looking spacecraft.
+
+Optimize for discovering whether the spacecraft described by the existing engineering record can actually be represented as a coherent physical object.
+
+An incomplete model with explicitly documented unknowns and discovered contradictions is more valuable to this experiment than a beautiful model filled with invented dimensions.
+
+Before beginning implementation, summarize your interpretation of the existing mechanical design and identify any major information gaps. Then proceed autonomously where the evidence is sufficient. Only stop for my input when a missing decision would materially change the spacecraft architecture or make subsequent CAD work misleading.

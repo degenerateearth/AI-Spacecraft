@@ -24,6 +24,7 @@ cost_to_date:
 evidence_state:
   proposed: true
   calculated: true
+  modeled: preliminary_FreeCAD_component_envelopes_with_unresolved_interferences
   simulated: limited_scalar_screening_only
   physically_built: false
   tested: false
@@ -38,3 +39,12 @@ boundary_log:
     required_capability: none
     estimated_cost: unknown
     approval: not_applicable
+
+cad_record:
+  revision: CAD-001
+  tool: FreeCAD 1.1.3 installed locally
+  source: drawings/freecad/parameters.json and drawings/freecad/build.py
+  findings: drawings/freecad/FINDINGS.md
+  physical_fit: not_established
+  success_level_change: none
+  note: Existing level 1 label is provisional; full internal consistency required by constitution is not demonstrated.

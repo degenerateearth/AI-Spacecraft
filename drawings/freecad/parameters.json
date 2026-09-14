@@ -1,0 +1,37 @@
+{
+  "revision": "CAD-001",
+  "units": "mm",
+  "objects": [
+    {"name":"NominalRailEnvelope","group":"References","size":[100,100,113.5],"center":[0,0,0],"source":"D1-ANA-001 Mass and volume; D1_Envelope.scad","basis":"PROJECT_DECISION nominal envelope; deployer ICD UNKNOWN","requirements":"R03","role":"reference"},
+    {"name":"CameraBay","group":"References","size":[88,88,27],"center":[0,0,-35.5],"source":"D1-ANA-001; D1-PAY-001; CAD-A01","basis":"PROJECT_DECISION Z -49:-22; ASSUMPTION XY","requirements":"R02,R03","role":"reference"},
+    {"name":"AvionicsBay","group":"References","size":[88,88,16],"center":[0,0,28],"source":"D1-ANA-001; D1_Envelope.scad","basis":"PROJECT_DECISION Z 20:36; ASSUMPTION XY","requirements":"R03,R15","role":"reference"},
+    {"name":"UpperServiceClearance","group":"References","size":[88,88,8],"center":[0,0,40],"source":"D1-ANA-001; CAD-A01","basis":"PROJECT_DECISION Z 36:44; ASSUMPTION XY","requirements":"R03,R30","role":"keepout"},
+    {"name":"RailMinusXMinusY","group":"Structure","size":[8,8,113.5],"center":[-46,-46,0],"source":"D1_Envelope.scad; CAD-A01","basis":"ASSUMPTION square rail proxy; not supplier section","requirements":"R03,R21","role":"envelope"},
+    {"name":"RailMinusXPlusY","group":"Structure","size":[8,8,113.5],"center":[-46,46,0],"source":"D1_Envelope.scad; CAD-A01","basis":"ASSUMPTION square rail proxy; not supplier section","requirements":"R03,R21","role":"envelope"},
+    {"name":"RailPlusXMinusY","group":"Structure","size":[8,8,113.5],"center":[46,-46,0],"source":"D1_Envelope.scad; CAD-A01","basis":"ASSUMPTION square rail proxy; not supplier section","requirements":"R03,R21","role":"envelope"},
+    {"name":"RailPlusXPlusY","group":"Structure","size":[8,8,113.5],"center":[46,46,0],"source":"D1_Envelope.scad; CAD-A01","basis":"ASSUMPTION square rail proxy; not supplier section","requirements":"R03,R21","role":"envelope"},
+    {"name":"D1IFAdapterEnvelope","group":"Power","size":[88,88,6],"center":[0,0,-18],"source":"D1_Envelope.scad; D1-ICD-001","basis":"ASSUMPTION XY; PROJECT_DECISION Z -21:-15; PCB design UNKNOWN","requirements":"R03,R15","role":"envelope","bom":"B10"},
+    {"name":"ICEPS2TypeAWithBattery","group":"Power","size":[96,92,26.5],"center":[0,0,1.25],"source":"S03 p9 physical table; D1-ANA-001","basis":"DATASHEET_DERIVED size excludes CSKB; PROJECT_DECISION Z; ASSUMPTION centered XY/orientation CAD-A02","requirements":"R03,R09,R15","role":"envelope","bom":"B02"},
+    {"name":"DMC3CarrierEnvelope","group":"Avionics","size":[88,88,1.6],"center":[0,0,20.8],"source":"D1_Envelope.scad; CAD-A03","basis":"ASSUMPTION outline and thickness; supplier connector stack UNKNOWN","requirements":"R03,R15","role":"envelope","bom":"B08"},
+    {"name":"NanoMindA3200Envelope","group":"Avionics","size":[65,40,7.1],"center":[0,-21,28],"source":"S08 p12 physical table; CAD-A03","basis":"DATASHEET_DERIVED size; ASSUMPTION position; no mating interface claim","requirements":"R03,R14","role":"envelope","bom":"B06"},
+    {"name":"NanoComAX100UEnvelope","group":"Avionics","size":[65,40,6.5],"center":[0,21,28],"source":"S10 p4; CAD-A03","basis":"DATASHEET_DERIVED size; ASSUMPTION position; RF connector extension UNKNOWN","requirements":"R03,R16","role":"envelope","bom":"B07"},
+    {"name":"CS101CameraEnvelope","group":"Payload","size":[45,42,25],"center":[25,0,-35.5],"source":"S23 historical extraction; D1-PAY-001; D1_Envelope.scad","basis":"DOCUMENTED vendor-derived size not reconfirmed in current page text; PROJECT_DECISION placement; optical axis mapping provisional","requirements":"R02,R03,R27,R28","role":"envelope","bom":"B15"},
+    {"name":"AntSUHFTurnstileStowed","group":"Communications","size":[98,98,7],"center":[0,0,47.5],"source":"S05 product specification; D1-ANA-001","basis":"SOURCE_VERIFIED catalog envelope incl cover; PROJECT_DECISION Z; corner relief UNKNOWN","requirements":"R03,R12,R16","role":"envelope","bom":"B09"},
+    {"name":"SolarPlusXUnresolvedAperture","group":"SolarPanels","size":[3,84,98],"center":[48.5,0,0],"source":"B14; R27; CAD-A04","basis":"ASSUMPTION dimensions; aperture UNKNOWN deliberately uncut","requirements":"R03,R07,R27","role":"envelope","bom":"B14"},
+    {"name":"SolarMinusX","group":"SolarPanels","size":[3,84,98],"center":[-48.5,0,0],"source":"B03; CAD-A04","basis":"ASSUMPTION dimensions; cell routing UNKNOWN","requirements":"R03,R07","role":"envelope","bom":"B03"},
+    {"name":"SolarPlusY","group":"SolarPanels","size":[84,3,98],"center":[0,48.5,0],"source":"B03; CAD-A04","basis":"ASSUMPTION dimensions; cell routing UNKNOWN","requirements":"R03,R07","role":"envelope","bom":"B03"},
+    {"name":"SolarMinusY","group":"SolarPanels","size":[84,3,98],"center":[0,-48.5,0],"source":"B03; CAD-A04","basis":"ASSUMPTION dimensions; cell routing UNKNOWN","requirements":"R03,R07","role":"envelope","bom":"B03"},
+    {"name":"SolarMinusZSwitchReliefsUnknown","group":"SolarPanels","size":[84,84,3],"center":[0,0,-52.5],"source":"B04; CAD-A04","basis":"ASSUMPTION dimensions and position; switch reliefs UNKNOWN","requirements":"R03,R07,R11","role":"envelope","bom":"B04"},
+    {"name":"SolarPlusZAntSMounted","group":"SolarPanels","size":[84,84,3],"center":[0,0,52.5],"source":"B05; D1-ANA-001; CAD-A04","basis":"PROJECT_DECISION Z 51:54; ASSUMPTION XY; mount UNKNOWN","requirements":"R03,R07,R12","role":"envelope","bom":"B05"}
+  ],
+  "unresolved": [
+    {"name":"FrameJointsAndFasteners","bom":"B01,B13","requirements":"R03,R21,R24,R30","source":"D1-ENV-001; O01,O07,O13","reason":"Supplier frame sections, corner cutouts, joint geometry, hole patterns, fastener sizes/torques and access volumes unavailable. Rails alone are not a structural frame."},
+    {"name":"SwitchesRBFAndTravel","bom":"B02,B11","requirements":"R03,R11,R13","source":"D1-ICD-001 H11; O05","reason":"Three switch configuration required; travel, locations and RBF access unknown; EPS envelope excludes CSKB."},
+    {"name":"AntennaDeployedSweptVolume","bom":"B09","requirements":"R03,R12,R16,R28","source":"D1-SYS-001; S05; O07","reason":"Four-element turnstile selected; lengths, pivots, stowed detail and swept paths unknown. No invented lambda/4 deployment envelope."},
+    {"name":"HarnessAndRFCoaxRouting","bom":"B11","requirements":"R03,R15,R16,R30","source":"D1-ICD-001 H01-H13","reason":"Connector mating halves, bend radii, endpoints, gauges and strain relief locations unknown. No routed wires or access-pass claim."},
+    {"name":"CameraBracketBaffleAperture","bom":"B16","requirements":"R02,R03,R27,R28","source":"D1-PAY-001; O07,O09","reason":"Lens pupil, barrel diameter, bracket bolt pattern and cell string relief unknown. FOV target is horizontal 60 degrees, not circular cone definition."},
+    {"name":"ThermalStrapsAndRadioSpreader","bom":"B12","requirements":"R03,R22","source":"D1-ENV-001; O03","reason":"Conductive paths required but sections, materials and attachment endpoints not specified."},
+    {"name":"IntegratedSensorsAndBatteryRetention","bom":"B02,B06","requirements":"R09,R14,R21","source":"D1-SYS-001; D1-ENV-001","reason":"Battery cells/retention/heater inside EPS and sensors inside A3200 are included in parent envelopes/masses; internal geometry not specified."},
+    {"name":"SolarCellsAndStringRouting","bom":"B03,B04,B05,B14","requirements":"R07,R27","source":"D1-SYS-001; D1-PAY-001","reason":"Two series cells per face specified; physical cell dimensions, interconnect and aperture layout unresolved. No decorative cell geometry."}
+  ]
+}

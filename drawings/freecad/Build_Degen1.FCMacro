@@ -1,0 +1,17 @@
+# Open this macro from FreeCAD's Macro menu. Location is independent of drive.
+import os, sys
+from pathlib import Path
+cad_dir = Path(__file__).resolve().parent
+sys.path.insert(0, str(cad_dir))
+import build
+doc, report = build.build()
+Gui.activeDocument().activeView().viewAxonometric()
+Gui.activeDocument().activeView().fitAll()
+Gui.activeDocument().activeView().saveImage(str(cad_dir/'exports'/'assembly.png'),1400,1100,'White')
+for obj in doc.SolarPanels.Group:
+    obj.ViewObject.Visibility = False
+Gui.activeDocument().activeView().saveImage(str(cad_dir/'exports'/'internal.png'),1400,1100,'White')
+for obj in doc.SolarPanels.Group:
+    obj.ViewObject.Visibility = True
+doc.recompute()
+doc.save()

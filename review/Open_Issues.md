@@ -35,3 +35,16 @@ Payload/operations reviewer: __________ Date: __________
 The owner approved opportunistic Earth imagery, US operation and nominal 450–500 km with flexibility for a lower-cost rideshare. No arbitrary financial ceiling applies. In-scope engineering decisions may be refined without changing those requirements. Targeted imagery or guaranteed spatial resolution requires a new mission baseline.
 | O17 | High | Consumer-AI/free-toolchain boundary has not yet been exercised on full FEA, thermal transient, orbit-decay or radiation analysis | Experiment/toolchain | Record the first concrete boundary, required capability, cost and approval; do not silently add a paid tool | Constitution §§21–23 |
 | O18 | Medium | Actual AI subscription/tooling spend has not been reconciled against account records | Experiment/accounting | Update Project_Cost_Ledger.csv and Project_Status.yaml with verified amounts and dates | Constitution §22 |
+
+## CAD-001 accommodation findings
+
+| ID | Priority | Issue / assumptions | Owner role | Closure artifact | Requirements |
+|---|---|---|---|---|---|
+| O19 | High | Rail/board/EPS/AntS bounding envelopes intersect; CAD-A01/A02 and CAD-C01 | Mechanical | Controlled frame and selected component corner profiles, mounting and tolerance stack | R03,R21,R30 |
+| O20 | High | Provisional solar panel geometry intersects EPS/AntS/camera; CAD-A04 and CAD-C02–C05 | Mechanical/payload/EPS | Agreed panel footprint, stackup, aperture, cell string routing and camera bracket | R03,R07,R27 |
+| O21 | High | DMC carrier and module placements, mating heights, connectors, harness and deployment sweep unknown; CAD-A03/CAD-C06/C07 | Mechanical/RF | Released carrier ICD, connector access/bend radii, antenna sweep and lens pupil/FOV checks | R03,R12,R16,R28,R30 |
+| O22 | High | Assigned BOM mass is not CAD material mass; 295 g unmodeled/unlocated; COM not credible | Mechanical | As-ordered masses/COM, frame and mounting geometry, complete mass reconciliation | R04,R05 |
+
+Dimension provenance, provisional values and documented-design -> CAD-conflict ->
+proposed-correction records are in [CAD traceability](../drawings/freecad/TRACEABILITY.md)
+and [CAD findings](../drawings/freecad/FINDINGS.md). No correction changes the architecture yet.

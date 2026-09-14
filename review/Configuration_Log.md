@@ -6,3 +6,11 @@ Working calculations were revised before this release to add the CS-101 camera, 
 
 The package is a preliminary engineering design with formal open items. Subsequent revisions must log changed assumptions, affected requirements, budgets, vendor revisions and verification evidence. A hash manifest identifies this issue's exact files.
 Rev B — 2026-09-14. Updated the constitution and supporting documentation to make the consumer-AI/free-software constraint explicit. Added the eight-category cost ledger, status schema, and AI toolchain boundary procedure. No spacecraft mission, design, or success-level claim was silently changed.
+
+CAD-001 — 2026-09-14. Translated Revision A allocations into a FreeCAD 1.1.3
+parametric envelope model. Retained documented Z locations and expanded EPS/AntS
+from old sketch placeholders to published envelope dimensions. Assumptions and
+23 bounding-envelope overlaps recorded; real material interference is not proven.
+Added native/STEP exports, generation script, source traceability, mass ledger,
+software verification and O19–O22. No flight hardware, FEA, thermal simulation,
+expert review, design release or higher success level results from this work.
