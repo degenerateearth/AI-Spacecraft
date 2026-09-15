@@ -21,3 +21,32 @@ The expanded audit now contains 105 property records for ten COTS candidates or 
 
 [Commentary]
 The archive and matrix now verify cleanly: 14 exact manufacturer files match their recorded byte counts and SHA-256 hashes; all 16 required functions are represented; all 105 property records parse; and all ten COTS gate decisions are explicit failures. I’m doing one final configuration-control check before the milestone commit, including whether any configurable carrier option can be fully selected from the public option sheet instead of being left open unnecessarily.
+
+[Commentary]
+The carrier check did not justify a silent selection. Its public option sheet exposes the choices, but choosing the stack connector, power-routing matrix, CAN termination, and unused connector population requires the unreleased D1-IF pin map and harness design. I recorded that as a project design dependency rather than treating a selectable option sheet as a completed configuration. The audited milestone is committed locally as `5fa95af`; I’m pushing it now.
+
+[Final]
+Completed. The audit is saved under `D:\Degen-1`, and milestone commit `5fa95af` is pushed to the GitHub `main` branch.
+
+- The **Thermal Model Incident** is formally recorded. The earlier thermal calculation is now classified as a hypothetical parametric sensitivity. It did not test or model an identified physical part.
+- The Phase 1 evidence rule is now part of the constitution, evidence standard, requirements, status record, readiness matrix, component records, and project README.
+- All 16 required spacecraft/ground functions were audited.
+- The property matrix contains **105 records** covering eight recommended COTS candidates and two alternatives. All ten gate rows fail, so **zero physical components are currently admitted to the Phase 1 baseline**.
+- SkyFox `piCAM/FM` is the preferred camera candidate, but remains evidence incomplete. CrystalSpace CS-101 remains recorded and is unsuitable while the better-documented alternative exists.
+- GomSpace NanoDock DMC-3 is confirmed as a current quote-route product. Its exact option configuration remains open because the project must first release the D1-IF pin map and harness architecture.
+- Pumpkin’s Rev D 1U structure and fixed panels were audited as alternatives. The structure has exact public component numbers and CAD; the store currently marks selectable products unavailable. The panel family also remains unavailable and lacks exact mission-relevant electrical, mechanical, and environmental data.
+- Fourteen exact manufacturer files or page captures are retained locally with byte counts and SHA-256 hashes. Copyrighted copies remain outside Git; URLs, identities, revisions, retrieval dates, hashes, and evidence classifications are committed.
+- No hardware was purchased, received, powered, tested, or independently reviewed. The controlled BOM was not silently changed.
+
+Primary records:
+
+- [Phase 1 functional audit](C:/Users/trace/Documents/Codex/2026-09-14/d/outputs/Degen-1/Components/Phase1_Functional_Audit.md)
+- [105-row component property matrix](C:/Users/trace/Documents/Codex/2026-09-14/d/outputs/Degen-1/Components/Phase1_Component_Property_Matrix.csv)
+- [Phase 1 evidence standard](C:/Users/trace/Documents/Codex/2026-09-14/d/outputs/Degen-1/review/Phase1_Component_Evidence_Standard.md)
+- [Thermal Model Incident record](C:/Users/trace/Documents/Codex/2026-09-14/d/outputs/Degen-1/review/incidents/Thermal_Model_Incident.md)
+- [Source register](C:/Users/trace/Documents/Codex/2026-09-14/d/outputs/Degen-1/review/Source_Register.md)
+- [Local archive manifest](C:/Users/trace/Documents/Codex/2026-09-14/d/outputs/Degen-1/SOURCES/components/LOCAL_ARCHIVE_MANIFEST.csv)
+- [Verbatim interaction log](C:/Users/trace/Documents/Codex/2026-09-14/d/outputs/Degen-1/conversation_logs/2026-09-15/010_assistant.txt)
+- [GitHub repository](https://github.com/degenerateearth/AI-Spacecraft)
+
+The current experimental boundary is now explicit: public information, consumer AI, and free software have produced a traceable candidate architecture, but they have not yet produced a fully documented, internally releasable component set for a functional spacecraft.
