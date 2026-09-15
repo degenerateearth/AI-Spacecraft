@@ -42,3 +42,10 @@ one-year orbit residence. This planning decision changes no component, CAD
 geometry, launch commitment, orbit, cost estimate, licensing status or
 Constitution success level. Evidence: engineering/09, Launch_Deployer_Trade.csv,
 S33–S40, O01/O30/O31 and R03–R05/R11.
+
+PIR-001 — 2026-09-15. Defined the present public-information development phase
+and separated work that can proceed now from final closure requiring vendor,
+integrator, regulator, test-facility or expert evidence. Added the known
+downstream dependency register and reassessed the 108-row readiness matrix.
+Retained the public EXOpod Nova baseline as provisional. No external contact,
+component, requirement waiver, flight release or success-level change resulted.

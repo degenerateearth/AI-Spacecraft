@@ -528,3 +528,29 @@ evidence supports.
 Failures, incorrect AI assumptions, abandoned designs, expert corrections,
 simulation failures, and physical-test failures are valuable experimental
 results and should be preserved where useful.
+
+## 24. PUBLIC-INFORMATION DEVELOPMENT PHASE
+
+The present phase asks how far the design can be matured using the consumer-AI
+baseline, free/open engineering tools, publicly available technical
+information, published standards, datasheets, manuals and research. Direct
+contact with launch providers, deployer vendors, integrators, regulators,
+component vendors or other external organizations for information that is not
+publicly available is normally a downstream phase.
+
+Continue closing every item that can be closed credibly with public evidence.
+Use the public EXOpod Nova information as a provisional mechanical baseline
+where justified. Do not invent mission-specific, controlled or vendor-private
+requirements. When final closure requires such information, record it as a
+**KNOWN DOWNSTREAM DEPENDENCY**, state what can still be done now, and identify
+the event that makes the dependency current.
+
+Known downstream dependencies do not establish flight readiness and do not
+permit known public requirements to be ignored. Before flight-component
+purchase, final mechanical fabrication, qualification testing or launch
+integration, reconcile the design against current mission-specific ICDs,
+supplier configuration data, quotes, regulatory determinations and applicable
+expert review. Record every resulting correction.
+
+If public information, consumer AI or free/open tools cease to support credible
+progress, record that boundary as an experimental result under Section 21.

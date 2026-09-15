@@ -153,6 +153,79 @@ R("OPS-005","End of mission","Verify passivation and execute compliant disposal/
 R("OPS-006","Operations","Archive raw telemetry, images, commands, configurations and experiment lessons","Project Constitution; NASA SE Handbook","Constitution §§11, 16, 24; data management","The AI experiment values failures and auditability.","IN PROGRESS","Git documents and conversation logs; no mission data system","DOCUMENTED","Operational data schema, redundant storage, retention, privacy/license handling and public release process.","Define before ground software implementation.","GRD-004; license conditions","Data/configuration/operations","Raw-to-product provenance and all operational/configuration records remain recoverable and reviewable."),
 ]
 
+# Final closure for these items requires deliberately deferred external evidence.
+# This classification is separate from current_status: a row may still be worked
+# now with public information even when flight-release closure is downstream.
+DOWNSTREAM_BY_ID = {
+    "GOV-003": "KDD-04", "GOV-005": "KDD-01; KDD-02; KDD-06", "GOV-007": "KDD-04",
+    "GOV-009": "KDD-01; KDD-02; KDD-03; KDD-04; KDD-06", "GOV-010": "KDD-04",
+    "SYS-002": "KDD-01; KDD-03", "SYS-003": "KDD-01; KDD-03", "SYS-004": "KDD-01; KDD-05; KDD-06",
+    "SYS-006": "KDD-01; KDD-02", "SYS-007": "KDD-01; KDD-02", "SYS-008": "KDD-02; KDD-05",
+    "SYS-009": "KDD-02; KDD-05", "SYS-010": "KDD-02; KDD-04; KDD-05",
+    "MIS-001": "KDD-01", "MIS-002": "KDD-01; KDD-05", "MIS-003": "KDD-01; KDD-05",
+    "MIS-005": "KDD-01", "MIS-006": "KDD-01; KDD-02; KDD-04", "MIS-007": "KDD-01; KDD-03; KDD-05",
+    "MIS-008": "KDD-04", "MEC-001": "KDD-01; KDD-02", "MEC-002": "KDD-02; KDD-05",
+    "MEC-003": "KDD-02; KDD-05", "MEC-004": "KDD-01; KDD-05", "MEC-005": "KDD-01; KDD-06",
+    "MEC-006": "KDD-01; KDD-04; KDD-06", "MEC-007": "KDD-02; KDD-05; KDD-07",
+    "MEC-008": "KDD-02; KDD-07", "MEC-009": "KDD-01; KDD-05; KDD-06",
+    "EPS-001": "KDD-02; KDD-05", "EPS-002": "KDD-01; KDD-02; KDD-05", "EPS-003": "KDD-02",
+    "EPS-004": "KDD-01; KDD-02; KDD-05", "EPS-005": "KDD-02; KDD-04; KDD-05; KDD-07",
+    "EPS-006": "KDD-01; KDD-02; KDD-05", "EPS-007": "KDD-02; KDD-05; KDD-06",
+    "RF-001": "KDD-01; KDD-03; KDD-05", "RF-002": "KDD-03; KDD-08", "RF-003": "KDD-03; KDD-05; KDD-08",
+    "RF-004": "KDD-02; KDD-03; KDD-08", "RF-005": "KDD-05; KDD-06; KDD-08",
+    "RF-006": "KDD-03; KDD-05; KDD-08", "THM-001": "KDD-01", "THM-002": "KDD-02; KDD-05; KDD-06",
+    "THM-003": "KDD-01; KDD-05; KDD-06", "THM-004": "KDD-02; KDD-04; KDD-05",
+    "PAY-001": "KDD-02", "PAY-002": "KDD-02; KDD-05; KDD-06", "PAY-003": "KDD-02; KDD-05; KDD-07",
+    "PAY-004": "KDD-03; KDD-05", "PAY-005": "KDD-05; KDD-06", "GRD-001": "KDD-03; KDD-05; KDD-08",
+    "GRD-002": "KDD-03; KDD-08", "GRD-003": "KDD-03; KDD-05; KDD-08", "GRD-005": "KDD-01; KDD-08",
+    "GRD-006": "KDD-05; KDD-08", "AIV-001": "KDD-01; KDD-05; KDD-06", "AIV-002": "KDD-02; KDD-05",
+    "AIV-003": "KDD-02; KDD-05", "AIV-004": "KDD-05; KDD-06", "AIV-005": "KDD-05",
+    "AIV-006": "KDD-01; KDD-05; KDD-06", "AIV-007": "KDD-05", "AIV-008": "KDD-01; KDD-05; KDD-06",
+    "AIV-009": "KDD-05; KDD-06", "AIV-010": "KDD-05; KDD-06; KDD-08", "AIV-011": "KDD-05; KDD-06",
+    "REG-001": "KDD-03", "REG-002": "KDD-03", "REG-003": "KDD-03; KDD-08", "REG-004": "KDD-03",
+    "REG-005": "KDD-03", "REG-006": "KDD-01; KDD-03; KDD-05", "REG-007": "KDD-01; KDD-03",
+    "REG-008": "KDD-03", "REG-009": "KDD-01; KDD-02; KDD-03", "REG-010": "KDD-01; KDD-03",
+    "LCH-001": "KDD-01", "LCH-002": "KDD-01", "LCH-003": "KDD-01; KDD-02; KDD-03",
+    "LCH-004": "KDD-01; KDD-05", "LCH-005": "KDD-01; KDD-05; KDD-06",
+    "OPS-001": "KDD-01; KDD-03; KDD-08", "OPS-002": "KDD-03; KDD-08", "OPS-003": "KDD-05; KDD-08",
+    "OPS-004": "KDD-01; KDD-03", "OPS-005": "KDD-02; KDD-03; KDD-05", "OPS-006": "KDD-03",
+}
+
+# These rows were previously marked BLOCKED because their final evidence is
+# downstream. Public-data analysis or design work can proceed now, so their
+# present status is corrected without claiming completion.
+STATUS_REASSESSMENT = {
+    "MIS-002": "IN PROGRESS", "MIS-006": "NOT STARTED", "MIS-007": "NOT STARTED",
+    "MEC-005": "IN PROGRESS", "EPS-003": "IN PROGRESS", "EPS-004": "IN PROGRESS",
+    "EPS-005": "IN PROGRESS", "EPS-007": "NOT STARTED", "RF-002": "IN PROGRESS",
+    "RF-004": "IN PROGRESS", "THM-004": "IN PROGRESS", "PAY-002": "IN PROGRESS",
+    "PAY-003": "IN PROGRESS", "GRD-005": "IN PROGRESS",
+}
+
+PUBLIC_PHASE_ACTION = {
+    "MIS-002": "Run an open, parametric orbit-lifetime screen across candidate altitude, inclination, epoch, attitude and ballistic-coefficient cases; reserve filing-grade closure for KDD-01/KDD-05.",
+    "MIS-006": "Build a public-model radiation and shielding sensitivity case using provisional orbit and CAD sectors; retain device/lot closure under KDD-02/KDD-04.",
+    "MIS-007": "Prepare preliminary debris, collision and demise inputs from public rules and bounded orbit/material cases; identify values that remain filing-dependent.",
+    "MEC-005": "Derive a conservative preliminary load-case set from public EXOpod, CDS, GEVS and launcher references; keep mission tailoring under KDD-01/KDD-06.",
+    "EPS-003": "Model public panel/cell envelopes and hot/cold performance ranges; write configuration acceptance criteria for later supplier evidence.",
+    "EPS-004": "Create a public-data battery safety/life requirements and verification matrix; identify exact delivered/lot evidence required before procurement acceptance.",
+    "EPS-005": "Develop and simulate a testable D1-IF architecture with bounded public interface values; label supplier-private limits and expert/physical verification as downstream.",
+    "EPS-007": "Couple a provisional transient thermal model to heater and battery energy cases using public limits and bounded conductances.",
+    "RF-002": "Prepare a public-rules licensing decision tree and draft parameter set; defer agency/coordinator determinations and filing to KDD-03.",
+    "RF-004": "Build a public-data end-to-end configuration matrix and compatibility tests; reserve revision-specific approval for KDD-02/KDD-03.",
+    "THM-004": "Draft a risk-ranked COTS radiation assurance plan from public part and mission data; record unavailable die/lot/test evidence explicitly.",
+    "PAY-002": "Build a public-data optical/image simulator and define representative bench tests; keep measured camera/Sun-tolerance closure downstream.",
+    "PAY-003": "Refine parametric accommodation and tolerances from public envelopes; retain final supplier CAD, as-built fit and released fabrication under KDD-02/KDD-05/KDD-07.",
+    "GRD-005": "Run parametric pass-coverage cases for candidate US latitudes and orbit cases; reserve site-specific closure for KDD-08.",
+}
+
+for item in ROWS:
+    item["current_status"] = STATUS_REASSESSMENT.get(item["id"], item["current_status"])
+    item["next_action"] = PUBLIC_PHASE_ACTION.get(item["id"], item["next_action"])
+    dependency_ids = DOWNSTREAM_BY_ID.get(item["id"], "NONE")
+    item["dependency_class"] = "KNOWN DOWNSTREAM DEPENDENCY" if dependency_ids != "NONE" else "NONE"
+    item["downstream_dependency_ids"] = dependency_ids
+
 
 def esc(value: str) -> str:
     return value.replace("|", "\\|").replace("\n", " ")
@@ -204,19 +277,31 @@ Partially/provisionally addressed: **{partial}**
 |---|---:|
 {summary}
 
+## Public-information phase interpretation
+
+`BLOCKED` is reserved for an activity that cannot itself be performed credibly
+at this stage. `KNOWN DOWNSTREAM DEPENDENCY` is a separate field: it identifies
+external evidence needed for final closure while allowing useful public-data
+work to remain `NOT STARTED`, `IN PROGRESS` or `PROVISIONALLY ADDRESSED`. The
+dependency IDs resolve in
+[Known_Downstream_Dependencies.md](Known_Downstream_Dependencies.md).
+
+The status changes in this revision are planning corrections, not new technical
+evidence. No row moved to `COMPLETE`, and the Constitution success level remains
+Level 0 with partial evidence toward Level 1.
+
 ## Highest-priority gaps
 
-1. Select a credible launch opportunity/deployer and obtain its controlled ICD; this unblocks orbit, loads, environment, fit, safety and delivery work.
-2. Establish the legal operator and obtain expert regulatory guidance before committing to the 437 MHz radio chain or camera operating plan.
-3. Obtain current controlled supplier data/quotes, especially ICEPS2 configuration, DMC-3 availability, custom solar panels, AntS and CS-101 electrical/optical data.
-4. Resolve the D1-IF power incompatibility with a released, reviewed and testable electrical design or a supplier-guaranteed alternative.
-5. Close transient thermal/battery charging, radiation and structural analyses before fabrication release.
-6. Recruit independent aerospace reviewers and define actual project roles, authority, WBS, schedule and funding.
-7. Build executable flight/ground software and an engineering flat-sat, then use physical testing to replace paper claims.
+1. Build a reproducible transient thermal-power model with uncertainty cases; it can proceed using public data and directly affects battery survival, energy, payload and radio operations.
+2. Run public-data orbit-lifetime/debris and environment sensitivity analyses across candidate rideshare cases rather than waiting for a manifested orbit.
+3. Resolve the D1-IF power incompatibility as far as bounded public interfaces allow, with supplier-private limits and physical verification kept explicit.
+4. Refine the FreeCAD assembly, structural screens, optical accommodation and ground coverage using conservative public ranges.
+5. Prepare procurement, regulatory, test and independent-review packages without treating later external acceptance as already obtained.
+6. Before irreversible or expensive commitments, reconcile all KDD-01–KDD-08 evidence and propagate any corrections.
 
 Items that currently prevent hardware progression are GOV-010, SYS-006, SYS-009/010, MEC-002/005/006/008/009, EPS-003–007, RF-002/004, THM-002/004, CDH-001, PAY-002/003, AIV-001/003/004 and REG/LCH dependencies. Buying components before those procurement and interface gates close would create avoidable rework risk.
 
-Launch-provider/deployer/orbit selection blocks MIS-002/003/005–007, MEC-001/004/005, THM-001/003, GRD-005, AIV-006/008/009, REG-006/007/009/010 and all LCH items. Physical testing is required for RF-005/006, PAY-002/004/005, SW-003/005, EPS-004–007, MEC-004, AIV-002 and AIV-006–011. Regulatory approval is required under REG-002–007 as applicable. Independent professional review is required for GOV-010 and should cover mission analysis, structural/thermal, electrical safety, radiation, RF/regulatory and payload optics before corresponding gates close.
+Mission-specific launch selection, physical testing, regulatory action and independent professional review remain required for final closure where the KDD fields identify them. They no longer prevent preliminary public-data analyses from proceeding when orbit, component, site or environment uncertainty can be represented honestly as bounded cases.
 
 ## Use in future planning
 

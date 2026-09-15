@@ -39,11 +39,27 @@ external_readiness_audit:
   total_items: 108
   complete: 3
   provisionally_addressed: 21
-  in_progress: 27
-  not_started: 28
-  blocked: 29
+  in_progress: 38
+  not_started: 31
+  blocked: 15
   not_applicable: 0
   maturity_finding: Level 0 with partial evidence toward Level 1
+  reassessment_basis: Public-information work is separated from final closure that requires a known downstream dependency; no new technical evidence was credited.
+public_information_phase:
+  status: active
+  consumer_ai_baseline: ChatGPT Plus, 20 USD/month, including Codex/Astra where available
+  software_baseline: free/open tools wherever reasonably practical
+  provisional_mechanical_reference: EXOpod Nova public mechanical information
+  direct_external_contact: downstream unless separately authorized and needed for an applicable release gate
+  known_downstream_dependency_register: review/Known_Downstream_Dependencies.md
+  readiness_rows_with_downstream_dependencies: 88
+  public_requirements_deferred: false
+  success_level_change: none
+next_step_proposal:
+  id: D1-AN-THM-001
+  title: Preliminary transient thermal-power model
+  status: awaiting_owner_approval
+  document: engineering/10_Next_Step_Proposal_Transient_Thermal_Power.md
 launch_deployer_gate:
   revision: D1-LCH-001 Revision A
   date: 2026-09-15

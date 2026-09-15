@@ -70,3 +70,18 @@ The intended public record should show both the spacecraft's development and AI'
 The accessibility baseline is a standard $20/month ChatGPT Plus subscription, including Codex/Astra where available, plus free and open-source engineering software wherever reasonably practical. Enterprise AI, specialist AI platforms, large API expenditures, paid cloud compute and paid engineering services are not silently added. If the consumer/free toolchain reaches a credible boundary, record the limitation, required capability and estimated cost and ask before introducing a paid tool or service.
 
 Keep AI/tooling costs separate from spacecraft hardware, ground station, testing, licensing, launch/integration, and external human expert review. Physical testing is not AI expenditure, and professional review must be attributed to human expertise.
+
+## Current public-information phase
+
+The current phase deliberately uses public standards, manuals, datasheets,
+research and free/open tools to mature the design as far as they credibly allow.
+External requests for private or mission-specific information are deferred until
+they are needed for an irreversible or expensive commitment. Those needs are
+tracked as **KNOWN DOWNSTREAM DEPENDENCIES**, together with the useful analysis,
+CAD, simulation and prototype work that can continue now.
+
+This sequencing does not convert provisional public information into an
+approved interface. The public EXOpod Nova manual remains the provisional
+mechanical reference. A current mission ICD, as-procured component data,
+regulatory determinations, physical test evidence and professional review will
+still be required at their applicable release gates.

@@ -1,0 +1,14 @@
+Recorded date: 2026-09-15
+Role: assistant
+
+[Commentary]
+I’ll integrate this clarification into the project’s governing workflow, then reassess every readiness row that is blocked by launch selection, vendor-private data, external review, testing, regulatory action, or paid services. I’ll distinguish work that can continue now from **KNOWN DOWNSTREAM DEPENDENCIES**, preserve genuinely blocked items, and propose the highest-value public-information engineering step. This prompt and all outputs will be logged verbatim.
+
+[Commentary]
+The existing matrix uses `BLOCKED` for two different conditions: work that truly cannot proceed now, and final closure that will require later external evidence. That conflates present engineering progress with flight-release closure. I’m correcting the schema so downstream needs remain visible without making them excuses to defer public-information analysis. The project’s evidence level will remain unchanged.
+
+[Commentary]
+The reassessment now separates the two concepts. Fourteen rows that can advance with bounded public inputs are no longer marked blocked; none were marked complete. Fifteen activities remain genuinely blocked because the activity itself is an external review, regulatory grant, physical test, mission integration action, or end-of-life verification. Eighty-eight rows now carry explicit downstream dependency IDs, which is expected because many preliminary analyses can proceed while their eventual flight-release evidence remains external.
+
+[Commentary]
+The matrix generator is reproducible and its schema checks pass: 108 rows, 3 complete, 38 in progress, 31 not started, and 15 blocked, with 88 rows linked to the downstream register. The project still remains Level 0. The bundled Python environment lacks the optional PyYAML package, so I’m validating the status file with built-in parsing checks rather than adding software; this is a minor tooling absence, not an engineering boundary.

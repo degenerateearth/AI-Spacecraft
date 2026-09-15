@@ -46,3 +46,18 @@ AI-assisted work may produce proposals, code, calculations and documents.
 Manufacturer data, open-source software, physical tests, supplier work and
 professional review must be attributed to their actual source. Reality remains
 the final verification mechanism.
+
+## Public-information phase and downstream dependencies
+
+The present phase uses public standards, manuals, datasheets, research and
+free/open tools. Direct requests for non-public information from vendors,
+integrators, launch providers or regulators are deferred until the design is
+approaching an irreversible or expensive commitment. A deferred dependency is
+recorded as `KNOWN DOWNSTREAM DEPENDENCY`; it is not treated as a reason to stop
+public-information work that remains technically meaningful.
+
+For each dependency, the project records the missing evidence, current-phase
+work, trigger for external engagement and the eventual closure evidence. If no
+credible public-information work remains, the separate boundary procedure above
+applies. This distinction prevents both premature outreach and false claims that
+public material supplies flight-release evidence.
