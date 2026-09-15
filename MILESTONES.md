@@ -11,7 +11,7 @@ repository. Documentation quality alone does not advance physical credibility.
 | M1A | Public launch/deployer planning gate | Three-path trade, provisional mechanical reference, source archive, CAD screen, conflicts and explicit contract/ICD gaps | Complete — planning evidence only |
 | M1B | Public-information readiness reassessment | Phase rule, known downstream dependency register, matrix classification and next-step decision | Complete — governance/planning evidence only |
 | M2 | COTS architecture selection | Supplier-verifiable BOM, interface closure, mass/power/data/link budgets with margin, and procurement decision record | Proposed |
-| M3 | Analysis baseline | Reproducible structural, thermal, power, communications, orbit/debris, and radiation analyses with limitations recorded | Proposed |
+| M3 | Analysis baseline | Reproducible structural, thermal, power, communications, orbit/debris, and radiation analyses with limitations recorded | In progress — preliminary transient thermal-power model complete; central cases fail |
 | M4 | Engineering model | As-built configuration, firmware/software revision, bench procedures, and functional test results | Proposed |
 | M5 | Environmental verification | Launch-provider-compatible vibration, thermal-vacuum, deployment, battery, and end-to-end communications evidence | Proposed |
 | M6 | Regulatory and launch readiness | Licensing/coordination records, debris assessment, launch-provider acceptance, and closed critical hazards | Proposed |

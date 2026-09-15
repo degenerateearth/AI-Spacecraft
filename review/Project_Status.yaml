@@ -25,7 +25,7 @@ evidence_state:
   proposed: true
   calculated: true
   modeled: preliminary_FreeCAD_component_envelopes_with_unresolved_interferences
-  simulated: limited_scalar_screening_only
+  simulated: preliminary_uncorrelated_11_node_transient_thermal_power_model_with_failed_central_cases
   physically_built: false
   tested: false
   independently_expert_reviewed: false
@@ -39,8 +39,8 @@ external_readiness_audit:
   total_items: 108
   complete: 3
   provisionally_addressed: 21
-  in_progress: 38
-  not_started: 31
+  in_progress: 40
+  not_started: 29
   blocked: 15
   not_applicable: 0
   maturity_finding: Level 0 with partial evidence toward Level 1
@@ -58,8 +58,28 @@ public_information_phase:
 next_step_proposal:
   id: D1-AN-THM-001
   title: Preliminary transient thermal-power model
-  status: awaiting_owner_approval
+  status: approved_and_complete
   document: engineering/10_Next_Step_Proposal_Transient_Thermal_Power.md
+thermal_analysis:
+  revision: D1-AN-THM-001 Revision 0.1
+  date: 2026-09-15
+  status: simulated_preliminary_uncorrelated
+  nodes: 11
+  cases: 10
+  mass_represented_kg: 1.0635
+  nominal_475_battery_C: [-3.3, 9.5]
+  nominal_475_heater_duty_percent: 64.8
+  nominal_475_stored_energy_margin_Wh_per_orbit: -0.88
+  central_case_closed: false
+  low_conductance_sensitivity_closed: true
+  fixed_camera_recovery_closed: false
+  numerical_checks_passed: true
+  physical_correlation: false
+  independent_review: false
+  cost_increment_usd: 0
+  tool: bundled Python 3 standard library
+  report: engineering/11_Transient_Thermal_Power_Analysis.md
+  success_level_change: none
 launch_deployer_gate:
   revision: D1-LCH-001 Revision A
   date: 2026-09-15
@@ -74,6 +94,12 @@ launch_deployer_gate:
   alternatives: ISISPACE/ISILaunch commercial alternate; Voyager/NRCSD lower-orbit fallback
   evidence_change: LCH-001 BLOCKED to IN PROGRESS; project success level unchanged
 boundary_log:
+  - date: 2026-09-15
+    status: no_current_phase_ai_or_software_boundary_encountered
+    limitation: Preliminary thermal simulation completed; physical properties and correlation remain unknown downstream evidence.
+    required_capability: Representative hardware measurements, thermal balance/TVAC correlation and independent review at later gates.
+    estimated_cost: unknown; no cost incurred or authorized
+    approval: not_applicable_for_current_analysis
   - date: 2026-09-14
     status: no_consumer_ai_or_free_software_boundary_encountered
     limitation: none_claimed

@@ -11,7 +11,7 @@ The [component audit](Components/README.md) covers every existing B01–B16 BOM 
 
 **Planning results:** 1.064 kg current best estimate, 1.276 kg including 20% growth; EUR46,500 base flight-hardware allowance (EUR29,350–70,100 range). These are engineering estimates, not supplier quotations. Spacecraft build, including engineering/prototype hardware, assembly and nonrecurring engineering labor, is EUR152,500 base before contingency. Testing, ground station, licensing, launch and operations are separate categories. The cost report explains inclusions and uncertainty.
 
-The reproducible model closes nominal energy at +18.4% with a tumble-average assumption, and a separate fixed-attitude recovery mode closes at +0.124 Wh/orbit. The nominal mode does **not** close in the fixed-attitude case. Thermal, orbit-lifetime, radiation, inhibit independence and final mechanical/interface compliance remain open. No analysis in this package demonstrates that the assembled spacecraft has survived launch or will actually operate for twelve months.
+The original scalar power model closes nominal energy at +18.4% with a tumble-average assumption and reported +0.124 Wh/orbit for fixed-attitude recovery. The new coupled transient thermal-power model shows those energy-only results are insufficient: its central nominal and fixed-camera recovery cases require more heater energy than available and violate the project battery-temperature target. A low-conductance sensitivity case passes nominal, so the result identifies battery thermal isolation as a controlling unresolved design variable rather than proving flight hardware failure. Orbit lifetime, radiation, inhibit independence and final mechanical/interface compliance also remain open. No analysis in this package demonstrates launch survival or twelve-month operation.
 
 ### Audit reading order
 
@@ -25,12 +25,13 @@ The reproducible model closes nominal energy at +18.4% with a tumble-average ass
 8. [Open issues and review gates](review/Open_Issues.md)
 9. [Imaging payload](engineering/07_Imaging_Payload.md) and [US compliance plan](engineering/08_US_Compliance.md)
 10. [Launch and deployer planning baseline](engineering/09_Launch_and_Deployer_Baseline.md)
-11. [Requirements traceability](review/Requirements.md), [FMEA](review/FMEA.md), [sources](review/Source_Register.md)
-12. [Known downstream dependencies](review/Known_Downstream_Dependencies.md)
+11. [Preliminary transient thermal-power analysis](engineering/11_Transient_Thermal_Power_Analysis.md)
+12. [Requirements traceability](review/Requirements.md), [FMEA](review/FMEA.md), [sources](review/Source_Register.md)
+13. [Known downstream dependencies](review/Known_Downstream_Dependencies.md)
 
 ### Reproduction and configuration
 
-Run `python analysis/recalculate.py` using Python 3 (standard library only). Edit `analysis/inputs.json` for assumptions and `procurement/BOM.csv` for estimates. Outputs are `results.json`, `power_sensitivity.csv` and `thermal_screen.csv`. Assertions check model consistency and selected preliminary budget limits; they do not verify flight hardware. The HTML audit book is a generated, readable snapshot of the Markdown documents. The individual Markdown documents and model inputs are authoritative within this package.
+Run `python analysis/recalculate.py` for the original scalar budgets. Run `python analysis/thermal_transient.py --self-test` for the 11-node transient thermal-power model; its canonical inputs are `analysis/thermal_inputs.json` and its CSV/JSON/SVG outputs are regenerated. Both scripts use Python's standard library. Assertions and numerical checks verify model consistency, not flight hardware. The HTML audit book is an earlier generated snapshot; the individual Markdown documents and model inputs are authoritative within this package.
 
 The original SVG is an allocation sketch. [CAD-001 FreeCAD model](drawings/freecad/README.md) now provides editable parametric component envelopes and a STEP review export, with explicit assumptions and fit conflicts. It is not manufacturing CAD or supplier geometry. The electrical diagrams specify functional interfaces, not a released pin-to-pin harness. PCB fabrication files, vendor proprietary ICDs, supplier quotes, hardware test reports and flight software implementation remain incomplete.
 

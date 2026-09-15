@@ -1,14 +1,14 @@
 # D1-AN-THM-001 — Proposed preliminary transient thermal-power model
 
-Revision 0.1 · 2026-09-15 · **AWAITING OWNER APPROVAL**
+Revision 0.2 · 2026-09-15 · **APPROVED AND EXECUTED**
 
-## Decision requested
+## Decision record
 
-Approve a bounded analysis task that replaces the existing one-node equilibrium
-thermal screen with a reproducible transient thermal-power model. This is the
-recommended next engineering step. Approval authorizes analysis and
-documentation only; it does not authorize purchases, external contact,
-fabrication, testing or a flight-release decision.
+The owner approved this bounded analysis task on 2026-09-15. Execution produced
+the canonical artifacts listed below and the findings in
+`engineering/11_Transient_Thermal_Power_Analysis.md`. Approval covered analysis
+and documentation only; no purchase, external contact, fabrication, testing or
+flight-release decision was authorized or performed.
 
 ## Why this step is next
 

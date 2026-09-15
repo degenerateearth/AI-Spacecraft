@@ -6,6 +6,13 @@ The nominal geometry factor in inputs is normalized to a 2.3 W reference face; i
 
 `power_sensitivity.csv` is a generic equal-face sweep, not a second representation of the released unequal-face baseline. Geometry=1 is a fixed direction and geometry=1.5 is an isotropic attitude mean. The face-power column represents all faces in that stress case. It deliberately includes failures. `thermal_screen.csv` is a single-node equilibrium illustration with assumed optical properties; it omits camera-aperture thermal detail and cannot predict component transients. It shows why a correlated thermal model is still necessary.
 
-Battery stress case disables the camera. Routine average power includes its capture and processing allowance. RF and camera operation are mutually exclusive; peak RF and peak imaging cases must be tested separately. No camera acquisition-opportunity probability, orbit decay, finite-element structural response, battery cycle aging, detailed thermal transient or radiation transport has been executed.
+Battery stress case disables the camera. Routine average power includes its capture and processing allowance. RF and camera operation are mutually exclusive; peak RF and peak imaging cases must be tested separately. No camera acquisition-opportunity probability, orbit decay, finite-element structural response, battery cycle aging or radiation transport has been executed.
+
+`thermal_transient.py` is a separate 11-node transient thermal-power model. It
+uses explicit but unmeasured heat capacities, conductances, optical properties
+and static attitude/view factors. It includes eclipse transitions, internal mode
+loads, heater logic, charge-temperature inhibition and battery energy. Its
+numerical checks pass, but it is uncorrelated and does not replace detailed
+geometry, attitude propagation, supplier limits or thermal-vacuum testing.
 
 Changing model inputs requires updating narrative budgets and generating a new release hash manifest. Script assertions test the chosen budget checks, not applicability of the input assumptions. An aerospace auditor should challenge the assumptions before relying on the positive arithmetic margins.

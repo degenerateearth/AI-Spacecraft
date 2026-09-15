@@ -1,0 +1,26 @@
+{
+  "beta_zero_eclipse_identity_error_s": 0.0,
+  "constant_heat_ramp_error_K": 1.0231815394945443e-12,
+  "pairwise_conduction_residual_W": 0.0,
+  "time_step_comparison_s": [
+    2.0,
+    1.0
+  ],
+  "time_step_max_node_extrema_difference_C": 0.01141668904188009,
+  "time_step_node_differences_C": {
+    "panel_plus_x_camera": 0.007356942904920061,
+    "panel_minus_x": 0.0073105163002367135,
+    "panel_plus_y": 0.0073105163002367135,
+    "panel_minus_y": 0.0073105163002367135,
+    "panel_plus_z_ants": 0.0073105163002367135,
+    "panel_minus_z": 0.0073105163002367135,
+    "structure": 0.00905905725659295,
+    "battery_eps": 0.01120900685594961,
+    "avionics": 0.011361591926970505,
+    "radio_antenna": 0.010865541880264118,
+    "camera": 0.01141668904188009
+  },
+  "time_step_acceptance_C": 0.2,
+  "all_checks_pass": true,
+  "note": "Numerical verification checks implementation consistency only; it does not validate physical inputs or correlate the model."
+}

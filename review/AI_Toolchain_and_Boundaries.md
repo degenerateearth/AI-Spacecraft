@@ -35,10 +35,13 @@ Do not hide the limitation by switching tools without recording the change.
 
 No enterprise AI, specialist AI platform, paid cloud compute, paid engineering
 software, or external expert review is recorded for the current package. The
-current technical package contains scalar calculations and documentation, not
-full FEA, thermal transient, orbit-decay, radiation-transport or verified
-flight-software evidence. Those gaps are engineering boundaries/open items,
-not proof that the consumer-AI approach can or cannot close them.
+current technical package contains scalar calculations and a preliminary
+standard-library Python transient thermal-power model, but not full FEA,
+orbit-decay, radiation-transport or verified flight-software evidence. The
+thermal model exposed failed central cases and sensitivity to unmeasured
+interfaces; physical correlation remains downstream. These gaps are engineering
+boundaries/open items, not proof that the consumer-AI approach can or cannot
+close them.
 
 ## Attribution rule
 

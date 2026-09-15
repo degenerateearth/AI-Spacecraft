@@ -49,3 +49,14 @@ integrator, regulator, test-facility or expert evidence. Added the known
 downstream dependency register and reassessed the 108-row readiness matrix.
 Retained the public EXOpod Nova baseline as provisional. No external contact,
 component, requirement waiver, flight release or success-level change resulted.
+
+THM-001 — 2026-09-15. Executed the approved D1-AN-THM-001 preliminary
+transient thermal-power model using standard-library Python and public/project
+inputs. Modeled all 1.0635 kg in 11 nodes across 10 orbital, environment,
+attitude, heater-fault and conductance cases. Central nominal, cold, hot and
+fixed-camera recovery cases do not close battery temperature and stored energy;
+a deliberately low-conductance nominal sensitivity closes, making the thermal
+interface a controlling design variable. R08/R10/R22 now record simulated
+failure; O03 remains critical; THM-002 and EPS-007 moved to IN PROGRESS. No
+hardware, paid software, external contact, test, expert review, architecture
+change or success-level increase resulted.

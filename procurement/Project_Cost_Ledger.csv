@@ -1,7 +1,7 @@
 category,description,amount,currency,period,status,basis,notes
 AI expenditure,ChatGPT Plus baseline subscription,20,USD,monthly,planned,Owner-defined consumer-AI baseline,Record actual paid months and any credits separately
 AI expenditure,Enterprise or specialist AI services,0,USD,to date,not used,Project rule,Any proposed paid AI requires a documented boundary review and approval
-Software/tool expenditure,Free/open-source engineering software,0,EUR,to date,planned,Use FreeCAD and open tools where practical,Record paid licenses separately if introduced
+Software/tool expenditure,Free/open-source engineering software,0,EUR,to date,used,FreeCAD and bundled Python standard library used,Record paid licenses separately if introduced
 Spacecraft hardware expenditure,Revision A flight hardware estimate,46500,EUR,estimate,proposed,procurement/Program_Cost.csv,Estimate is not a purchase
 Ground-station expenditure,Revision A equipment and installation estimate,12000,EUR,estimate,proposed,procurement/Program_Cost.csv,Separate from spacecraft build
 Testing/verification expenditure,External campaign estimate,35000,EUR,estimate,proposed,procurement/Program_Cost.csv,Physical verification is not AI expenditure

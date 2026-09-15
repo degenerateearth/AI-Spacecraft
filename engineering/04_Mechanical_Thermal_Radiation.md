@@ -36,6 +36,15 @@ Build at least a battery, avionics, structure and six-panel node network. Each n
 
 Close the heater budget jointly with energy. The assumed 0.10 W orbit-average heater load is restrictive. If the model needs more than the available energy reserve, change thermal paths/optical surfaces or reduce operations; do not merely increase battery capacity. A larger battery does not fix a persistent negative orbit-energy balance. A 1 W heater stuck on threatens both energy and temperature and must have a bounded shutoff path.
 
+The approved preliminary transient model is now implemented in
+`analysis/thermal_transient.py` and reported in
+`engineering/11_Transient_Thermal_Power_Analysis.md`. Its central nominal 475 km
+case predicts -3.3 to +9.5 °C at the battery, 64.8% heater duty and -0.88 Wh/orbit
+stored-energy balance. The fixed camera-face recovery case also fails when
+thermal control is coupled. A low-conductance sensitivity case passes nominal,
+so no blanket failure of the eventual hardware is claimed; the current thermal
+interface and heater allocation are simply not closed.
+
 ## Radiation and other LEO exposure
 
 Create an orbit/epoch-specific radiation environment and shielding sector model before making a twelve-month reliability claim. Run trapped particle and solar/proton/heavy-ion cases using an appropriate validated environment tool and retain all inputs/model versions. Assess total ionizing dose at the CPU, memory, EPS controller, switches, radio and adapter regulators, plus displacement damage to solar cells. Apply a preliminary radiation design margin factor 2 to the calculated mission dose when evaluating test evidence. This factor is a project allocation, not a universal standard.

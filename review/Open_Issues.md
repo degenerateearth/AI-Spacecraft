@@ -6,7 +6,7 @@ Revision A. The package is ready for an aerospace engineer to audit its choices,
 |---|---|---|---|---|---|
 | O01 | Critical | EXOpod Nova is only a provisional mechanical reference; launch mission, integrator contract, target orbit and mission ICD are not selected | Systems/mission | Written offer/contract and signed ICD; injection/collision/decay/demise analysis | R01,R03,R21,R25 |
 | O02 | Critical | RF authorization and band unresolved; 437MHz conditional | Regulatory/RF | Approved service/frequency and ground authority; update hardware if needed | R17 |
-| O03 | Critical | Thermal budget not closed; low recovery heater allowance | Thermal/EPS | Correlated transient thermal model meeting energy and charge constraints | R08,R10,R22 |
+| O03 | Critical | Preliminary transient model does not close central, cold, hot or fixed-camera recovery cases; battery isolation, heater control, optical properties and attitude histories remain undefined | Thermal/EPS | Correlated transient thermal model meeting energy and charge constraints; released thermal-interface design and verified controls | R08,R10,R22 |
 | O04 | Critical | EPS 3.3V tolerance incompatible with direct avionics connection | Electrical | Released adapter/protection or guaranteed supplier interface; environmental/radiation verification | R15,R23 |
 | O05 | Critical | Three-inhibit independence and solar paths unproven | Safety/EPS | Supplier circuit review/fault tree and all-state test | R11,R13 |
 | O06 | Critical | Radiation critical-part evidence missing | EEE | Orbit/dose/SEE assessment; lot/revision evidence or qualification | R01,R23 |
@@ -33,7 +33,7 @@ RF/regulatory reviewer: __________ Date: __________
 Payload/operations reviewer: __________ Date: __________
 
 The owner approved opportunistic Earth imagery, US operation and nominal 450–500 km with flexibility for a lower-cost rideshare. No arbitrary financial ceiling applies. In-scope engineering decisions may be refined without changing those requirements. Targeted imagery or guaranteed spatial resolution requires a new mission baseline.
-| O17 | High | Consumer-AI/free-toolchain boundary has not yet been exercised on full FEA, thermal transient, orbit-decay or radiation analysis | Experiment/toolchain | Record the first concrete boundary, required capability, cost and approval; do not silently add a paid tool | Constitution §§21–23 |
+| O17 | High | Consumer AI plus standard-library Python completed a preliminary thermal transient model, but full FEA, orbit-decay and radiation analysis remain unexercised; thermal correlation still requires physical evidence | Experiment/toolchain | Record each concrete boundary, required capability, cost and approval; do not silently add a paid tool | Constitution §§21–24 |
 | O18 | Medium | Actual AI subscription/tooling spend has not been reconciled against account records | Experiment/accounting | Update Project_Cost_Ledger.csv and Project_Status.yaml with verified amounts and dates | Constitution §22 |
 
 ## CAD-001 accommodation findings

@@ -1,0 +1,105 @@
+{
+  "schema_version": "0.1",
+  "model_id": "D1-AN-THM-001",
+  "model_status": "PRELIMINARY_UNCORRELATED",
+  "field_definitions": {
+    "node.mass_kg": {"unit": "kg", "provenance": "current B01-B16 mass allocation", "evidence": "DOCUMENTED, VENDOR-DERIVED or PROJECT ALLOCATION as stated per node"},
+    "node.specific_heat_J_kgK": {"unit": "J/kg/K", "provenance": "composite screening value selected for sensitivity modeling", "evidence": "ANALYSIS ASSUMPTION"},
+    "node.external_area_m2": {"unit": "m^2", "provenance": "100 mm-class public envelope apportioned between panels and rails", "evidence": "ANALYSIS ASSUMPTION"},
+    "conductance.W_K": {"unit": "W/K", "provenance": "sensitivity anchor without released joint geometry", "evidence": "ANALYSIS ASSUMPTION"},
+    "case.altitude_km": {"unit": "km", "provenance": "owner-selected nominal 450-500 km range", "evidence": "PROJECT DECISION"},
+    "case.beta_deg": {"unit": "degree", "provenance": "zero-beta eclipse and high-beta stress cases", "evidence": "ANALYSIS CASE DEFINITION"},
+    "case.solar_flux_W_m2": {"unit": "W/m^2", "provenance": "S42 ARC-STD-8070.1", "evidence": "SOURCE-VERIFIED"},
+    "case.earth_ir_W_m2": {"unit": "W/m^2", "provenance": "S42 ARC-STD-8070.1 annual average 234 +/-7", "evidence": "SOURCE-VERIFIED"},
+    "case.albedo": {"unit": "fraction", "provenance": "existing engineering/04 screening range", "evidence": "PROJECT ANALYSIS ASSUMPTION"},
+    "case.solar_absorptivity": {"unit": "fraction", "provenance": "existing engineering/04 screening range; no selected finish", "evidence": "ANALYSIS ASSUMPTION"},
+    "case.ir_emissivity": {"unit": "fraction", "provenance": "existing engineering/04 screening range; no selected finish", "evidence": "ANALYSIS ASSUMPTION"},
+    "case.direct_factors": {"unit": "projected-area fraction per face", "provenance": "isotropic 0.25, cold 0.20, maximum three-face 1/sqrt(12), or fixed-face case", "evidence": "CALCULATED/ANALYSIS ASSUMPTION"},
+    "case.earth_view_factor": {"unit": "fraction", "provenance": "static tumble-average screen", "evidence": "ANALYSIS ASSUMPTION"},
+    "case.albedo_view_factor": {"unit": "fraction", "provenance": "static illuminated-Earth screen", "evidence": "ANALYSIS ASSUMPTION"},
+    "case.conductance_scale": {"unit": "multiplier", "provenance": "central/low/high sensitivity set", "evidence": "ANALYSIS ASSUMPTION"},
+    "case.initial_C": {"unit": "degC", "provenance": "nominal/hot/cold startup case definition", "evidence": "ANALYSIS ASSUMPTION"},
+    "electrical.power": {"unit": "W", "provenance": "engineering/02 load allocations", "evidence": "PROJECT ALLOCATION"},
+    "electrical.duration": {"unit": "s/orbit or fraction as keyed", "provenance": "engineering/02 operating allocations", "evidence": "PROJECT ALLOCATION"}
+  },
+  "constants": {
+    "earth_radius_km": {"value": 6378.137, "unit": "km", "evidence": "CALCULATED INPUT", "source": "analysis/inputs.json"},
+    "mu_km3_s2": {"value": 398600.4418, "unit": "km^3/s^2", "evidence": "CALCULATED INPUT", "source": "analysis/inputs.json"},
+    "stefan_boltzmann_W_m2_K4": {"value": 5.670374419e-8, "unit": "W/m^2/K^4", "evidence": "SOURCE-VERIFIED CONSTANT", "source": "NIST/CODATA value used by existing model"},
+    "space_sink_K": {"value": 3.0, "unit": "K", "evidence": "ANALYSIS ASSUMPTION", "source": "deep-space approximation"},
+    "distribution_efficiency": {"value": 0.85, "unit": "fraction", "evidence": "PROJECT ALLOCATION", "source": "analysis/inputs.json"},
+    "charge_efficiency": {"value": 0.90, "unit": "fraction", "evidence": "PROJECT ALLOCATION", "source": "analysis/inputs.json"},
+    "battery_EOL_capacity_Wh": {"value": 18.0, "unit": "Wh", "evidence": "CALCULATED FROM PROJECT ALLOCATIONS", "source": "22.5 Wh BOL x 0.8 EOL; analysis/inputs.json"},
+    "load_growth": {"value": 0.20, "unit": "fraction", "evidence": "PROJECT ALLOCATION", "source": "analysis/inputs.json"},
+    "radio_RF_output_W": {"value": 0.794, "unit": "W", "evidence": "CALCULATED", "source": "29 dBm project link-budget transmit power"}
+    ,"standard_face_BOL_W": {"value": 2.3, "unit": "W normal to Sun", "evidence": "PROJECT ALLOCATION", "source": "analysis/inputs.json; legacy S22 basis"}
+    ,"camera_face_BOL_W": {"value": 1.8, "unit": "W normal to Sun", "evidence": "PROJECT REQUIREMENT", "source": "analysis/inputs.json; B14"}
+    ,"solar_EOL_factor": {"value": 0.85, "unit": "fraction", "evidence": "PROJECT ALLOCATION", "source": "analysis/inputs.json"}
+    ,"solar_temperature_factor": {"value": 0.90, "unit": "fraction", "evidence": "PROJECT ALLOCATION", "source": "analysis/inputs.json"}
+    ,"solar_shadow_assembly_factor": {"value": 0.90, "unit": "fraction", "evidence": "PROJECT ALLOCATION", "source": "analysis/inputs.json"}
+    ,"solar_mppt_harness_efficiency": {"value": 0.90, "unit": "fraction", "evidence": "PROJECT ALLOCATION", "source": "analysis/inputs.json"}
+    ,"initial_battery_SOC_fraction": {"value": 0.80, "unit": "fraction", "evidence": "ANALYSIS ASSUMPTION", "source": "initial condition for screening"}
+  },
+  "temperature_targets": {
+    "battery_normal_C": {"min": 5.0, "max": 35.0, "evidence": "PROJECT ALLOCATION", "source": "engineering/04_Mechanical_Thermal_Radiation.md"},
+    "battery_charge_C": {"min": 5.0, "max": 40.0, "evidence": "PROJECT ALLOCATION", "source": "engineering/04_Mechanical_Thermal_Radiation.md; S03 distinguishes actual ranges"},
+    "electronics_C": {"min": -10.0, "max": 50.0, "evidence": "PROJECT ALLOCATION", "source": "engineering/04_Mechanical_Thermal_Radiation.md"},
+    "panel_structure_C": {"min": -40.0, "max": 85.0, "evidence": "ANALYSIS SCREENING ASSUMPTION", "source": "not a supplier limit; used only to expose extreme model behavior"}
+  },
+  "heater": {
+    "power_W": {"value": 1.0, "unit": "W", "evidence": "PROJECT ALLOCATION", "source": "engineering/02 and engineering/04"},
+    "turn_on_C": {"value": 5.0, "unit": "degC", "evidence": "PROJECT DECISION", "source": "charge inhibit/thermal target"},
+    "turn_off_C": {"value": 8.0, "unit": "degC", "evidence": "ANALYSIS ASSUMPTION", "source": "3 C hysteresis selected for numerical screening"}
+  },
+  "nodes": [
+    {"id": "panel_plus_x_camera", "mass_kg": 0.050, "specific_heat_J_kgK": 700, "external_area_m2": 0.0093, "temperature_target": "panel_structure_C", "mass_source": "B14", "property_evidence": "MASS DOCUMENTED; HEAT CAPACITY/AREA ASSUMED"},
+    {"id": "panel_minus_x", "mass_kg": 0.050, "specific_heat_J_kgK": 700, "external_area_m2": 0.0093, "temperature_target": "panel_structure_C", "mass_source": "B03 allocation", "property_evidence": "MASS DOCUMENTED; HEAT CAPACITY/AREA ASSUMED"},
+    {"id": "panel_plus_y", "mass_kg": 0.050, "specific_heat_J_kgK": 700, "external_area_m2": 0.0093, "temperature_target": "panel_structure_C", "mass_source": "B03 allocation", "property_evidence": "MASS DOCUMENTED; HEAT CAPACITY/AREA ASSUMED"},
+    {"id": "panel_minus_y", "mass_kg": 0.050, "specific_heat_J_kgK": 700, "external_area_m2": 0.0093, "temperature_target": "panel_structure_C", "mass_source": "B03 allocation", "property_evidence": "MASS DOCUMENTED; HEAT CAPACITY/AREA ASSUMED"},
+    {"id": "panel_plus_z_ants", "mass_kg": 0.050, "specific_heat_J_kgK": 700, "external_area_m2": 0.0093, "temperature_target": "panel_structure_C", "mass_source": "B05", "property_evidence": "MASS DOCUMENTED; HEAT CAPACITY/AREA ASSUMED"},
+    {"id": "panel_minus_z", "mass_kg": 0.050, "specific_heat_J_kgK": 700, "external_area_m2": 0.0093, "temperature_target": "panel_structure_C", "mass_source": "B04", "property_evidence": "MASS DOCUMENTED; HEAT CAPACITY/AREA ASSUMED"},
+    {"id": "structure", "mass_kg": 0.295, "specific_heat_J_kgK": 850, "external_area_m2": 0.0042, "temperature_target": "panel_structure_C", "mass_source": "B01+B11+B12+B13+B16", "property_evidence": "MASS DOCUMENTED; COMPOSITE HEAT CAPACITY/EXPOSED AREA ASSUMED"},
+    {"id": "battery_eps", "mass_kg": 0.184, "specific_heat_J_kgK": 800, "external_area_m2": 0.0, "temperature_target": "battery_normal_C", "mass_source": "B02", "property_evidence": "MASS VENDOR-DERIVED; COMPOSITE HEAT CAPACITY ASSUMED"},
+    {"id": "avionics", "mass_kg": 0.120, "specific_heat_J_kgK": 850, "external_area_m2": 0.0, "temperature_target": "electronics_C", "mass_source": "B06+B08+B10", "property_evidence": "MASS DOCUMENTED/ALLOCATED; COMPOSITE HEAT CAPACITY ASSUMED"},
+    {"id": "radio_antenna", "mass_kg": 0.1145, "specific_heat_J_kgK": 850, "external_area_m2": 0.0, "temperature_target": "electronics_C", "mass_source": "B07+B09", "property_evidence": "MASS DOCUMENTED/ALLOCATED; COMPOSITE HEAT CAPACITY ASSUMED"},
+    {"id": "camera", "mass_kg": 0.050, "specific_heat_J_kgK": 800, "external_area_m2": 0.0, "temperature_target": "electronics_C", "mass_source": "B15", "property_evidence": "MASS VENDOR-DERIVED; COMPOSITE HEAT CAPACITY ASSUMED"}
+  ],
+  "conductances": [
+    {"a": "panel_plus_x_camera", "b": "structure", "W_K": 0.05, "evidence": "ANALYSIS ASSUMPTION"},
+    {"a": "panel_minus_x", "b": "structure", "W_K": 0.05, "evidence": "ANALYSIS ASSUMPTION"},
+    {"a": "panel_plus_y", "b": "structure", "W_K": 0.05, "evidence": "ANALYSIS ASSUMPTION"},
+    {"a": "panel_minus_y", "b": "structure", "W_K": 0.05, "evidence": "ANALYSIS ASSUMPTION"},
+    {"a": "panel_plus_z_ants", "b": "structure", "W_K": 0.05, "evidence": "ANALYSIS ASSUMPTION"},
+    {"a": "panel_minus_z", "b": "structure", "W_K": 0.05, "evidence": "ANALYSIS ASSUMPTION"},
+    {"a": "structure", "b": "battery_eps", "W_K": 0.50, "evidence": "ANALYSIS ASSUMPTION"},
+    {"a": "structure", "b": "avionics", "W_K": 0.30, "evidence": "ANALYSIS ASSUMPTION"},
+    {"a": "structure", "b": "radio_antenna", "W_K": 0.20, "evidence": "ANALYSIS ASSUMPTION"},
+    {"a": "structure", "b": "camera", "W_K": 0.08, "evidence": "ANALYSIS ASSUMPTION"},
+    {"a": "battery_eps", "b": "avionics", "W_K": 0.10, "evidence": "ANALYSIS ASSUMPTION"},
+    {"a": "avionics", "b": "radio_antenna", "W_K": 0.10, "evidence": "ANALYSIS ASSUMPTION"}
+  ],
+  "electrical_modes": {
+    "nominal": {"base_eps_W": 0.14, "base_avionics_W": 0.21, "radio_rx_W": 0.20, "radio_tx_W": 3.30, "tx_seconds_per_orbit": 120, "camera_W": 2.0, "camera_seconds_per_orbit": 60, "rx_duty": 1.0, "evidence": "PROJECT ALLOCATION; engineering/02"},
+    "recovery": {"base_eps_W": 0.12, "base_avionics_W": 0.10, "radio_rx_W": 0.396, "radio_tx_W": 3.30, "tx_seconds_per_orbit": 28, "camera_W": 0.0, "camera_seconds_per_orbit": 0, "rx_duty": 0.20, "evidence": "PROJECT ALLOCATION; engineering/02"}
+  },
+  "cases": [
+    {"id": "nominal_450", "altitude_km": 450, "beta_deg": 0, "solar_flux_W_m2": 1367, "albedo": 0.30, "earth_ir_W_m2": 234, "solar_absorptivity": 0.75, "ir_emissivity": 0.80, "direct_factors": [0.25,0.25,0.25,0.25,0.25,0.25], "earth_view_factor": 0.25, "albedo_view_factor": 0.15, "mode": "nominal", "heater_mode": "auto", "conductance_scale": 1.0, "initial_C": 20, "evidence": "PUBLIC ENVIRONMENT + PROJECT/ANALYSIS ASSUMPTIONS"},
+    {"id": "nominal_475", "altitude_km": 475, "beta_deg": 0, "solar_flux_W_m2": 1367, "albedo": 0.30, "earth_ir_W_m2": 234, "solar_absorptivity": 0.75, "ir_emissivity": 0.80, "direct_factors": [0.25,0.25,0.25,0.25,0.25,0.25], "earth_view_factor": 0.25, "albedo_view_factor": 0.15, "mode": "nominal", "heater_mode": "auto", "conductance_scale": 1.0, "initial_C": 20, "evidence": "PUBLIC ENVIRONMENT + PROJECT/ANALYSIS ASSUMPTIONS"},
+    {"id": "nominal_500", "altitude_km": 500, "beta_deg": 0, "solar_flux_W_m2": 1367, "albedo": 0.30, "earth_ir_W_m2": 234, "solar_absorptivity": 0.75, "ir_emissivity": 0.80, "direct_factors": [0.25,0.25,0.25,0.25,0.25,0.25], "earth_view_factor": 0.25, "albedo_view_factor": 0.15, "mode": "nominal", "heater_mode": "auto", "conductance_scale": 1.0, "initial_C": 20, "evidence": "PUBLIC ENVIRONMENT + PROJECT/ANALYSIS ASSUMPTIONS"},
+    {"id": "cold_recovery_475", "altitude_km": 475, "beta_deg": 0, "solar_flux_W_m2": 1322, "albedo": 0.20, "earth_ir_W_m2": 227, "solar_absorptivity": 0.65, "ir_emissivity": 0.85, "direct_factors": [0.20,0.20,0.20,0.20,0.20,0.20], "earth_view_factor": 0.25, "albedo_view_factor": 0.10, "mode": "recovery", "heater_mode": "auto", "conductance_scale": 1.0, "initial_C": -10, "evidence": "PUBLIC ENVIRONMENT + CONSERVATIVE ANALYSIS ASSUMPTIONS"},
+    {"id": "cold_heater_off_475", "altitude_km": 475, "beta_deg": 0, "solar_flux_W_m2": 1322, "albedo": 0.20, "earth_ir_W_m2": 227, "solar_absorptivity": 0.65, "ir_emissivity": 0.85, "direct_factors": [0.20,0.20,0.20,0.20,0.20,0.20], "earth_view_factor": 0.25, "albedo_view_factor": 0.10, "mode": "recovery", "heater_mode": "off", "conductance_scale": 1.0, "initial_C": -10, "evidence": "PUBLIC ENVIRONMENT + HEATER-FAULT ASSUMPTION"},
+    {"id": "cold_heater_stuck_on_475", "altitude_km": 475, "beta_deg": 0, "solar_flux_W_m2": 1322, "albedo": 0.20, "earth_ir_W_m2": 227, "solar_absorptivity": 0.65, "ir_emissivity": 0.85, "direct_factors": [0.20,0.20,0.20,0.20,0.20,0.20], "earth_view_factor": 0.25, "albedo_view_factor": 0.10, "mode": "recovery", "heater_mode": "on", "conductance_scale": 1.0, "initial_C": -10, "evidence": "PUBLIC ENVIRONMENT + HEATER-FAULT ASSUMPTION"},
+    {"id": "hot_continuous_sun_475", "altitude_km": 475, "beta_deg": 75, "solar_flux_W_m2": 1414, "albedo": 0.35, "earth_ir_W_m2": 241, "solar_absorptivity": 0.90, "ir_emissivity": 0.75, "direct_factors": [0.288675,0.288675,0.288675,0.288675,0.288675,0.288675], "earth_view_factor": 0.25, "albedo_view_factor": 0.20, "mode": "nominal", "heater_mode": "auto", "conductance_scale": 1.0, "initial_C": 30, "evidence": "PUBLIC ENVIRONMENT + CONSERVATIVE HOT ATTITUDE/OPTICAL ASSUMPTIONS"},
+    {"id": "fixed_camera_sun_recovery_475", "altitude_km": 475, "beta_deg": 0, "solar_flux_W_m2": 1367, "albedo": 0.30, "earth_ir_W_m2": 234, "solar_absorptivity": 0.75, "ir_emissivity": 0.80, "direct_factors": [1.0,0,0,0,0,0], "earth_view_factor": 0.25, "albedo_view_factor": 0.15, "mode": "recovery", "heater_mode": "auto", "conductance_scale": 1.0, "initial_C": 20, "evidence": "PROJECT FIXED-ATTITUDE POWER CASE + THERMAL ASSUMPTIONS"},
+    {"id": "nominal_low_conductance_475", "altitude_km": 475, "beta_deg": 0, "solar_flux_W_m2": 1367, "albedo": 0.30, "earth_ir_W_m2": 234, "solar_absorptivity": 0.75, "ir_emissivity": 0.80, "direct_factors": [0.25,0.25,0.25,0.25,0.25,0.25], "earth_view_factor": 0.25, "albedo_view_factor": 0.15, "mode": "nominal", "heater_mode": "auto", "conductance_scale": 0.15, "initial_C": 20, "evidence": "CONDUCTANCE SENSITIVITY ASSUMPTION; exploratory bound, not a selected joint design"},
+    {"id": "nominal_high_conductance_475", "altitude_km": 475, "beta_deg": 0, "solar_flux_W_m2": 1367, "albedo": 0.30, "earth_ir_W_m2": 234, "solar_absorptivity": 0.75, "ir_emissivity": 0.80, "direct_factors": [0.25,0.25,0.25,0.25,0.25,0.25], "earth_view_factor": 0.25, "albedo_view_factor": 0.15, "mode": "nominal", "heater_mode": "auto", "conductance_scale": 3.0, "initial_C": 20, "evidence": "CONDUCTANCE SENSITIVITY ASSUMPTION"}
+  ],
+  "solver": {
+    "time_step_s": 2.0,
+    "maximum_orbits": 60,
+    "periodic_temperature_tolerance_C": 0.02,
+    "minimum_orbits": 8,
+    "record_interval_s": 20.0,
+    "evidence": "NUMERICAL SETTINGS; verified by time-step convergence"
+  }
+}

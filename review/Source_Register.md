@@ -162,3 +162,25 @@ NASA LSP-REQ-317.01 Revision B, 2014-01-30; retrieved 2026-09-15 and archived at
 **S40 — [NASA Small Spacecraft Systems State of the Art: Integration, Launch, and Deployment](https://www.nasa.gov/smallsat-institute/sst-soa/integration-launch-and-deployment/)**
 
 NASA Small Spacecraft Systems Virtual Institute public technology survey; retrieved 2026-09-15. Secondary government synthesis for current deployer families and ISS deployment description. It reports NRCSD deployment at about 400–420 km and 51.6 degrees; supplier/mission documents remain controlling.
+
+**S41 — [NASA Small Spacecraft Systems State of the Art: Thermal Control](https://www.nasa.gov/smallsat-institute/sst-soa/thermal-control/)**
+
+NASA Small Spacecraft Systems Virtual Institute public technology survey,
+chapter updated 2026-05-07 and retrieved 2026-09-15. Primary government
+synthesis for the spacecraft heat balance, SmallSat thermal constraints,
+surface optical properties, contact conductance and passive/active approaches.
+Product examples are not NASA-verified performance claims.
+
+**S42 — [ARC-STD-8070.1, Space Flight System Design and Environmental Test](https://www.nasa.gov/sites/default/files/atoms/files/std8070.1.pdf)**
+
+NASA Ames Technical Standard baseline dated 2018-12-18; retrieved 2026-09-15.
+Pages 37–38 provide 1322/1367/1414 W/m² direct-solar design cases and 234 ±7
+W/m² global annual-average Earth IR. It applies to specified Ames Class C/D
+projects and is used here as a public screening source, not imposed as a
+DEGENERATE-1 requirement.
+
+**S43 — [NASA Passive Thermal Control Engineering Guidebook, Revision 5.1](https://ntrs.nasa.gov/api/citations/20220006584/downloads/NASAPassiveThermalGuidebookv5%201Public.pdf)**
+
+NASA public guidebook, Revision 5.1 dated 2024-12-19; retrieved 2026-09-15.
+Used as a methodology reference for orbital heating, model construction,
+sensitivity and correlation. It does not supply as-built DEGENERATE-1 properties.

@@ -197,8 +197,8 @@ DOWNSTREAM_BY_ID = {
 STATUS_REASSESSMENT = {
     "MIS-002": "IN PROGRESS", "MIS-006": "NOT STARTED", "MIS-007": "NOT STARTED",
     "MEC-005": "IN PROGRESS", "EPS-003": "IN PROGRESS", "EPS-004": "IN PROGRESS",
-    "EPS-005": "IN PROGRESS", "EPS-007": "NOT STARTED", "RF-002": "IN PROGRESS",
-    "RF-004": "IN PROGRESS", "THM-004": "IN PROGRESS", "PAY-002": "IN PROGRESS",
+    "EPS-005": "IN PROGRESS", "EPS-007": "IN PROGRESS", "RF-002": "IN PROGRESS",
+    "RF-004": "IN PROGRESS", "THM-002": "IN PROGRESS", "THM-004": "IN PROGRESS", "PAY-002": "IN PROGRESS",
     "PAY-003": "IN PROGRESS", "GRD-005": "IN PROGRESS",
 }
 
@@ -219,12 +219,34 @@ PUBLIC_PHASE_ACTION = {
     "GRD-005": "Run parametric pass-coverage cases for candidate US latitudes and orbit cases; reserve site-specific closure for KDD-08.",
 }
 
+EVIDENCE_UPDATES = {
+    "EPS-002": {
+        "existing_evidence_or_artifact": "analysis/recalculate.py; analysis/results.json; analysis/thermal_transient.py; analysis/thermal_cases.csv; engineering/02; engineering/11",
+        "evidence_level": "CALCULATED+SIMULATED",
+        "missing_evidence": "Central coupled thermal-power cases fail; attitude/contact histories, component measurements, selected thermal interfaces and uncertainty correlation remain.",
+        "next_action": "Use the transient result to define a battery thermal-interface/control trade; later couple propagated attitude/contact histories and bench data.",
+    },
+    "EPS-007": {
+        "existing_evidence_or_artifact": "analysis/thermal_transient.py; analysis/thermal_cases.csv; engineering/11; B12 card",
+        "evidence_level": "SIMULATED",
+        "missing_evidence": "Central/cold/hot cases do not close; conductances, heater implementation, optical properties, attitude histories and correlation remain assumed.",
+        "next_action": "Trade battery isolation and heater thresholds/power against energy using bounded conductance; define coupon and TVAC correlation measurements.",
+    },
+    "THM-002": {
+        "existing_evidence_or_artifact": "analysis/thermal_inputs.json; analysis/thermal_transient.py; analysis/thermal_cases.csv; analysis/thermal_results.csv; analysis/thermal_verification.json; engineering/11",
+        "evidence_level": "SIMULATED",
+        "missing_evidence": "Uncorrelated heat capacities, conductances, surface properties and static attitude/view factors; no released thermal hardware or physical correlation.",
+        "next_action": "Refine battery-interface/control sensitivity, replace static factors with attitude/orbit histories, then correlate with representative hardware under KDD-05/KDD-06.",
+    },
+}
+
 for item in ROWS:
     item["current_status"] = STATUS_REASSESSMENT.get(item["id"], item["current_status"])
     item["next_action"] = PUBLIC_PHASE_ACTION.get(item["id"], item["next_action"])
     dependency_ids = DOWNSTREAM_BY_ID.get(item["id"], "NONE")
     item["dependency_class"] = "KNOWN DOWNSTREAM DEPENDENCY" if dependency_ids != "NONE" else "NONE"
     item["downstream_dependency_ids"] = dependency_ids
+    item.update(EVIDENCE_UPDATES.get(item["id"], {}))
 
 
 def esc(value: str) -> str:
