@@ -83,3 +83,10 @@ supplier contact, hardware test, baseline component selection or success-level
 change occurred.
 Six Pumpkin manufacturer documents/pages were then added to the local archive,
 bringing the manifest to fourteen exact files.
+
+GATE-001 — 2026-09-15. The owner directed that component evidence closure must
+be the first step. Established D1-GATE-001 as the controlling first engineering
+gate, ahead of further simulation, higher-fidelity CAD, procurement or integrated
+performance claims. Existing preliminary work remains preserved without added
+credibility. No component passed, no baseline hardware changed and no purchase or
+external contact occurred.

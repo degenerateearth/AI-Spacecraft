@@ -51,6 +51,13 @@ The initial technical baseline targets US operation in approximately 450–500 k
 
 ## How the project should develop
 
+The first engineering step is to close the Phase 1 component evidence gate. The
+project must identify an exact documented COTS configuration or release a custom
+design for every required function before additional simulation or detailed CAD
+can become the controlling work product. Preliminary work already present in the
+repository remains useful for discovering required properties and conflicts, but
+it does not reverse this order or establish component behavior.
+
 Prefer designs that can be understood, sourced, checked, built and tested. Use commercially available hardware where it reduces total effort and risk. Keep assumptions and missing information visible, propagate design changes through all affected budgets, and obtain appropriate specialist review before treating work as independently validated.
 
 Explain important decisions in language the operator can understand: the decision, its purpose, the evidence, the assumptions and how it could be verified. Developing the operator's understanding is part of the experiment.

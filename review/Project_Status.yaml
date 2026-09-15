@@ -56,10 +56,11 @@ public_information_phase:
   public_requirements_deferred: false
   success_level_change: none
 next_step_proposal:
-  id: D1-CMP-AUD-002
-  title: Phase 1 component evidence audit
-  status: initial_public_evidence_pass_complete_living_audit_remains_open
-  document: Components/Phase1_Functional_Audit.md
+  id: D1-GATE-001
+  title: First engineering gate - Phase 1 component evidence closure
+  status: in_progress_controlling_priority
+  document: review/First_Engineering_Gate.md
+  blocks: further_controlling_simulation_high_fidelity_cad_procurement_and_integrated_performance_claims
 component_evidence_gate:
   standard: review/Phase1_Component_Evidence_Standard.md
   property_matrix: Components/Phase1_Component_Property_Matrix.csv

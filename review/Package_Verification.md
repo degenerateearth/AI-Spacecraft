@@ -58,3 +58,10 @@ mass against the public EXOpod values. No tolerance, physical fit, available
 slot, orbit, price, mission ICD or acceptance is claimed.
 
 Orbit sensitivity is in `analysis/orbit_sensitivity.csv`: 400 and 550 km are trade points only. No cheaper available rideshare is asserted without a quote; neither point has a qualified orbital lifetime.
+
+2026-09-15 first-engineering-gate check: PASS for sequencing consistency.
+`review/First_Engineering_Gate.md`, the constitution, README, overview, milestone
+register, status record, requirements and configuration log all identify Phase 1
+component evidence closure as the controlling first engineering gate. M1 and M3
+retain their preliminary evidence without further advancement. The gate remains
+OPEN with 0 COTS and 0 custom components admitted.

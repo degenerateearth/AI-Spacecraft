@@ -33,3 +33,4 @@ R31,Maintain traceable hardware/software/material configuration and raw test dat
 R32,"Separate build, testing, launch, licensing and ground costs",User,Cost,Review,Program_Cost.csv,DOCUMENTED; estimates only
 R33,"Trackability, conjunction contacts and operating procedures ready",User,Ops,Review,T17/analyses,OPEN
 R34,Each supplier replacement reopens affected budgets and evidence,Allocation,QA,Review,Change control,DEFINED; process implementation open
+R35,Close Phase 1 component evidence for every required function before further simulation or high-fidelity CAD controls the project,User,Systems,Review,D1-GATE-001,OPEN: 0 components admitted

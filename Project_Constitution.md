@@ -573,3 +573,10 @@ Preserve the exact source URL, document identity/revision/date, retrieval date,
 evidence classification and, when licensing permits local archiving, a hash of
 the exact document. Documentation supports only the claims actually present in
 it. Physical testing and independent review remain separate evidence.
+
+Phase 1 component evidence closure is the project's first engineering gate. A
+complete exact component set, including released custom components where needed,
+must precede further spacecraft simulation, higher-fidelity CAD, procurement or
+claims based on integrated performance. Earlier work remains preserved at its
+actual evidence level and may identify required properties; it may not substitute
+for missing component evidence.
