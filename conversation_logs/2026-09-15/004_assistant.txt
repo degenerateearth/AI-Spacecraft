@@ -1,0 +1,33 @@
+Recorded date: 2026-09-15
+Role: assistant
+
+[Commentary]
+Approval received. I’ll execute the Launch and Deployer Constraint Gate using current public primary sources, preserve the distinction between a planning baseline and an actual launch acceptance, and record this prompt and all outputs verbatim.
+
+[Commentary]
+The public market separates the launch vehicle from the 1U deployment service. SpaceX’s direct rideshare product starts with a 50 kg plate, so DEGENERATE-1 needs an integrator and CubeSat dispenser rather than a direct 1U SpaceX booking. The three defensible public paths are EXOLAUNCH/EXOpod Nova on a rideshare, ISISPACE/ISILaunch with ISIPOD or QuadPack, and Voyager/NRCSD deployment from the ISS; the ISS path is materially weaker for the one-year mission because its published deployment orbit is only 400–420 km.
+
+[Commentary]
+I’m applying the spreadsheet skill for the two CSV audit artifacts so their schemas, controlled values, and row counts are validated rather than treated as informal text. The engineering conclusions will remain in Markdown with source-level traceability.
+
+[Commentary]
+The reference decision is clear enough to document: use a **standard 1U EXOpod Nova slot as the provisional mechanical integration baseline**, while leaving the launch mission and orbit unselected. It has the strongest current public interface manual and accepts a fully CDS-compliant 1U. ISISPACE remains the commercial alternate, and NRCSD remains a lower-orbit fallback. This does not close LCH-001 or LCH-002 because no quoted slot, mission-specific ICD, orbit, schedule, or acceptance agreement exists.
+
+[Commentary]
+The audit found two concrete limits that remain after choosing the reference: the CAD only matches Nova’s nominal envelope and mass figures, and the public manual does not include the mission-specific electrical, battery, RF, environmental, delivery, or acceptance package. I have preserved both as open issues rather than treating the reference selection as launch compatibility.
+
+[Final]
+Completed and pushed the **Launch and Deployer Constraint Gate** milestone to [GitHub](https://github.com/degenerateearth/AI-Spacecraft).
+
+- Selected a standard 1U **EXOLAUNCH EXOpod Nova** slot as the provisional mechanical integration reference. Its public manual supports 1U, a 100.0 ±0.1 mm rail span, 113.5 ±0.5 mm rail length, 2.5 kg maximum mass, ±20 mm recommended center-of-gravity offset, and formal virtual, dimensional, and physical fit checks. This remains a planning reference because no mission-specific ICD or offer exists.
+- Compared three paths in `review/Launch_Deployer_Trade.csv`: EXOLAUNCH/EXOpod Nova as the reference, ISISPACE/ISILaunch as the commercial alternate, and Voyager/NRCSD as a lower-orbit fallback. The [NASA SmallSat survey](https://www.nasa.gov/smallsat-institute/sst-soa/integration-launch-and-deployment/) reports NRCSD deployment around 400–420 km, so one-year orbital residence remains unproved.
+- Confirmed that [SpaceX direct rideshare](https://www.spacex.com/rideshare/) starts at USD 350,000 for a 50 kg SSO plate. That is not a 1U service quote. The existing EUR 40,000–120,000 launch/integration estimate remains unverified pending integrator offers.
+- Audited the existing CAD without changing geometry. The nominal 100 × 100 × 113.5 mm envelope and 1.2762 kg mass with growth screen inside the public Nova values, but rail tolerances/profile/finish, panel clearance, switches, RBF access, deployed antenna geometry, center of mass, and physical fit remain open.
+- Recorded six `DOCUMENTED DESIGN -> EXTERNAL CONSTRAINT -> CAD/DESIGN CONFLICT -> PROPOSED CORRECTION` findings in `engineering/09_Launch_and_Deployer_Baseline.md`. No proposed correction was silently applied.
+- Added O30 and O31 to `review/Open_Issues.md`, updated R03–R05 and R11 in both requirements files, and moved LCH-001 from BLOCKED to IN PROGRESS. The readiness matrix now contains 3 COMPLETE, 21 PROVISIONALLY ADDRESSED, 27 IN PROGRESS, 28 NOT STARTED, and 29 BLOCKED items.
+- Added sources S33–S40. Archived NASA LSP-REQ-317.01 Revision B in `SOURCES/launch`; commercial manuals remain citation-only where redistribution permission is absent or unclear.
+- Updated the README, milestones, project status, configuration log, package verification, CAD traceability, CAD findings, procurement evidence, source register, integrity manifest, and verbatim conversation log.
+
+The project remains **Constitution Level 0 with partial evidence toward Level 1**. No launch, orbit, component, purchase, vendor contact, quote, licensing approval, test result, or flight acceptance was added.
+
+The next evidence-producing action would be non-binding, identical inquiries to EXOLAUNCH and ISISPACE for candidate missions, budgetary pricing, current ICDs, included services, and schedule terms. Those messages were not sent because the approved scope explicitly reserved external contact for separate authorization.

@@ -28,6 +28,14 @@ The NRE allowance can be read as roughly 800 hours at EUR50/h in the unusually l
 
 Every selected flight item is presently budgeted using an engineering allowance. Vendors mostly require a quote. Published current comparison prices include EXA KRATOS EUR44,000–155,000 [S19], Crystalspace P1U EUR4,400 [S20], and M2 ground antenna USD910.95 [S29]. They are different configurations and currencies and are not inserted into the EUR BOM as firm quotes. No FX conversion is claimed. Competitive quotations should be normalized to delivery date, taxes, freight, software, support and acceptance-test scope.
 
+The 2026-09-15 launch/deployer gate found SpaceX's published direct rideshare
+entry price of USD350,000 for a 50 kg SSO plate plus USD7,000 per additional
+kilogram [S34]. That is not a 1U launch quote and does not validate or replace
+the EUR40,000–120,000 integrator allowance above. EXOLAUNCH and ISISPACE publish
+inquiry routes but no complete 1U price, orbit, schedule or included-service
+scope. The launch/integration line remains an unverified project estimate until
+comparable written offers are authorized and received.
+
 ## Hardware alternatives
 
 | Candidate | Rationale | Decision / required evidence |

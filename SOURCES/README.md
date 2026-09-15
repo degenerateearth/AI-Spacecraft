@@ -30,6 +30,10 @@ The detailed project citation metadata remains in `review/Source_Register.md`. K
 
 These agency and standards documents are referenced by official URL instead of copied here. Public access does not by itself establish redistribution permission for every embedded third-party element. The source register records title, organization, revision/date, URL, retrieval and applicability.
 
+## Launch and deployer sources
+
+The [launch source archive](launch/README.md) records the public documents used for the 2026-09-15 Launch and Deployer Constraint Gate. NASA LSP-REQ-317.01 Revision B is archived locally and in Git. Commercial manuals with restrictive or unclear redistribution terms are citation-only.
+
 ## Integrity and updates
 
 The repository hash manifest does not cover the intentionally untracked university PDF. Verify a restored or downloaded copy against the size and SHA-256 recorded above. Recheck the official online book and every primary regulatory/launch source at each major review because web content, rules and selected launch requirements can change. Preserve older cited revisions when they formed part of a decision record.

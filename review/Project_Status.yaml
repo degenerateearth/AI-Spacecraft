@@ -39,11 +39,24 @@ external_readiness_audit:
   total_items: 108
   complete: 3
   provisionally_addressed: 21
-  in_progress: 26
+  in_progress: 27
   not_started: 28
-  blocked: 30
+  blocked: 29
   not_applicable: 0
   maturity_finding: Level 0 with partial evidence toward Level 1
+launch_deployer_gate:
+  revision: D1-LCH-001 Revision A
+  date: 2026-09-15
+  planning_gate_status: complete
+  reference: standard 1U EXOLAUNCH EXOpod Nova slot
+  reference_scope: provisional mechanical integration only
+  launch_selected: false
+  orbit_selected: false
+  price_quoted: false
+  contract_or_manifest: false
+  mission_icd_obtained: false
+  alternatives: ISISPACE/ISILaunch commercial alternate; Voyager/NRCSD lower-orbit fallback
+  evidence_change: LCH-001 BLOCKED to IN PROGRESS; project success level unchanged
 boundary_log:
   - date: 2026-09-14
     status: no_consumer_ai_or_free_software_boundary_encountered
@@ -59,4 +72,4 @@ cad_record:
   findings: drawings/freecad/FINDINGS.md
   physical_fit: not_established
   success_level_change: none
-  note: Existing level 1 label is provisional; full internal consistency required by constitution is not demonstrated.
+  note: Level 0 remains current; public EXOpod screening does not demonstrate physical fit or internal design closure.

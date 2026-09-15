@@ -62,3 +62,17 @@ DMC mounting interfaces, and camera aperture/bracket. Then add hardware, routing
 tolerances and assembly sequence, and rerun interference/mass studies. Supplier
 data access is the current fidelity limit; no paid engineering tool is needed
 to generate this model. Quote any paid data/service before introducing it.
+
+## LDG-001 external-interface screen
+
+The standard 1U EXOpod Nova planning reference produces no new nominal outer
+envelope or mass violation: CAD-001 uses 100 × 100 × 113.5 mm, and the budgeted
+mass with growth is 1.2762 kg versus the public 2.5 kg limit [S33]. This is not a
+fit pass. Rail tolerances, section/radii, finish, clamping contact, assembled
+coplanarity, switch/RBF access, complete mass location, and physical insertion
+are absent.
+
+LDC-01 through LDC-06 in [D1-LCH-001](../../engineering/09_Launch_and_Deployer_Baseline.md)
+record the documented design, external constraint, CAD conflict, and proposed
+correction. CAD-C01–C07 remain open and no geometry was altered to make the
+screen appear compliant.

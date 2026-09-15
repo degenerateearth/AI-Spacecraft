@@ -32,3 +32,13 @@ blocked. Added O23–O29. Corrected project status from Level 1 to Level 0 with
 partial evidence toward Level 1 because internal design closure, hardware,
 testing, regulatory approval and expert review do not exist. No architecture or
 mission change resulted.
+
+LDG-001 — 2026-09-15. Compared three public 1U launch/deployer paths and
+selected a standard EXOpod Nova 1U slot as provisional mechanical reference.
+Retained ISISPACE/ISILaunch as the commercial alternate and Voyager/NRCSD as a
+lower-orbit fallback. Moved LCH-001 from BLOCKED to IN PROGRESS. Public sources
+do not establish an available 450–500 km slot, firm 1U price, mission ICD or
+one-year orbit residence. This planning decision changes no component, CAD
+geometry, launch commitment, orbit, cost estimate, licensing status or
+Constitution success level. Evidence: engineering/09, Launch_Deployer_Trade.csv,
+S33–S40, O01/O30/O31 and R03–R05/R11.

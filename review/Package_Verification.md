@@ -33,4 +33,13 @@ started, 30 blocked and 0 not applicable. This verifies matrix consistency only;
 it does not validate the University framework, close any row or constitute an
 independent engineering review.
 
+2026-09-15 launch/deployer gate check: PASS. The public trade contains exactly
+LD-01 through LD-03 and selects only LD-01 as the provisional mechanical
+reference. The regenerated readiness matrix contains 108 unique IDs and
+reconciles to 3 complete, 21 provisionally addressed, 27 in progress, 28 not
+started, 29 blocked and 0 not applicable. The D1-LCH-001 dimensional screen
+reconciles the CAD's nominal 100 x 100 x 113.5 mm envelope and 1.2762 kg growth
+mass against the public EXOpod values. No tolerance, physical fit, available
+slot, orbit, price, mission ICD or acceptance is claimed.
+
 Orbit sensitivity is in `analysis/orbit_sensitivity.csv`: 400 and 550 km are trade points only. No cheaper available rideshare is asserted without a quote; neither point has a qualified orbital lifetime.

@@ -4,7 +4,7 @@ Revision A. The package is ready for an aerospace engineer to audit its choices,
 
 | ID | Priority | Issue | Owner role | Closure artifact | Requirements |
 |---|---|---|---|---|---|
-| O01 | Critical | Launch/deployer and orbit not selected | Systems/mission | Signed ICD; injection/collision/decay/demise analysis | R01,R03,R21,R25 |
+| O01 | Critical | EXOpod Nova is only a provisional mechanical reference; launch mission, integrator contract, target orbit and mission ICD are not selected | Systems/mission | Written offer/contract and signed ICD; injection/collision/decay/demise analysis | R01,R03,R21,R25 |
 | O02 | Critical | RF authorization and band unresolved; 437MHz conditional | Regulatory/RF | Approved service/frequency and ground authority; update hardware if needed | R17 |
 | O03 | Critical | Thermal budget not closed; low recovery heater allowance | Thermal/EPS | Correlated transient thermal model meeting energy and charge constraints | R08,R10,R22 |
 | O04 | Critical | EPS 3.3V tolerance incompatible with direct avionics connection | Electrical | Released adapter/protection or guaranteed supplier interface; environmental/radiation verification | R15,R23 |
@@ -66,3 +66,15 @@ The complete 108-item audit and closure criteria are in
 These findings lower the honest project maturity assessment to Constitution
 Level 0 with partial progress toward Level 1; they do not alter the spacecraft
 architecture.
+
+## Launch and deployer constraint-gate findings — 2026-09-15
+
+| ID | Priority | Issue | Owner role | Closure artifact | Requirements |
+|---|---|---|---|---|---|
+| O30 | Critical | Public EXOpod Nova documentation does not supply a 1U price, available mission/orbit, customer electrical safety and battery rules, test levels, delivery schedule or signed acceptance criteria | Owner/systems/launch integration | Common mission data sheet; comparable written EXOLAUNCH/ISISPACE responses; selected offer and controlled mission ICD | R01,R03,R06,R11–R13,R21,R25 |
+| O31 | High | CAD matches nominal Nova envelope numbers but lacks rail tolerances/profile/finish, switch and RBF access, credible COG/inertia and physical fit evidence | Mechanical/AIV | Controlled B01 CAD/certificates, tolerance analysis, complete mass properties and Nova/TestPod fit/ejection report | R03–R05,R21,R30 |
+
+The three-path trade and conflict records LDC-01–LDC-06 are in
+[D1-LCH-001](../engineering/09_Launch_and_Deployer_Baseline.md). The reference
+selection changes planning evidence only. It does not close O01, O05, O13,
+LCH-001, LCH-002 or AIV-006.

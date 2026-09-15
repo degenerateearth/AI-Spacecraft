@@ -130,3 +130,35 @@ NASA CubeSat Launch Initiative, revision dated October 2017; retrieved 2026-09-1
 **S32 — [NASA Systems Engineering Handbook](https://ntrs.nasa.gov/citations/20170001761)**
 
 NASA/SP-2016-6105 Rev. 2, publication date 2017-02-17; retrieved 2026-09-15. Public-use-permitted lifecycle, requirements, verification/validation, risk and configuration-management guidance; not a Degen-1 directive by itself.
+
+**S33 — [EXOpod Nova User Manual](https://www.exolaunch.com/documents/EXOpod_Nova_User_Manual_June_2024.pdf)**
+
+EXOLAUNCH, Revision 1.2, June 2024; retrieved 2026-09-15. Primary public manufacturer manual for Nova mechanics, allowable 1U volume/mass, COG guidance, rail finish, deployment dynamics and fit checks. Copyright notice prohibits redistribution without consent, so citation metadata is stored instead of the PDF. Mission-specific customer safety, test, orbit and acceptance requirements remain required.
+
+**S34 — [SpaceX SmallSat Rideshare](https://www.spacex.com/rideshare/)**
+
+Primary current launch-provider sales page; retrieved 2026-09-15. Lists USD 350,000 for 50 kg to SSO and USD 7,000/kg additional mass, plate interfaces, online order process and rebooking terms. It does not offer or price a standalone 1U dispenser slot.
+
+**S35 — [Falcon User's Guide](https://www.spacex.com/assets/media/falcon-users-guide-2025-05-09.pdf)**
+
+SpaceX, Version 8, March 2025; retrieved 2026-09-15. Primary launch-vehicle planning source. Copyright restricts redistribution. A rideshare/integrator mission package would control the actual payload environment and verification.
+
+**S36 — [ISISPACE Launch Equipment & Services](https://www.isispace.nl/launch-equipment-services/)**
+
+Primary current supplier/service page; retrieved 2026-09-15. States end-to-end and tailored launch/integration services, regular rideshare opportunities, quote development after mission details, and current 1U–16U deployer support. No public firm 1U price or specific orbit is stated.
+
+**S37 — [ISISPACE CubeSat Deployers brochure](https://www.isispace.nl/wp-content/uploads/2016/02/CubeSat-deployers-Brochure-web-compressed.pdf)**
+
+Primary supplier brochure retrieved 2026-09-15. Lists 1U ISIPOD accommodation, 1.75 kg maximum payload mass and up to 9.0 mm side volume. Publication/revision control is unclear and redistribution permission is not granted; use only for preliminary trade screening pending a current controlled ICD.
+
+**S38 — [NanoRacks CubeSat Deployer IDD](https://s3vi.ndc.nasa.gov/ssri-kb/static/resources/Nanoracks-CubeSat-Deployer-NRCSD-IDD.pdf)**
+
+Vendor document NR-NRCSD-S0003, Revision `-`, accessed through NASA's S3VI knowledge base and retrieved 2026-09-15. Primary public NRCSD interface source for dimensions, mass, switches/inhibits, RBF access, battery review, environments, safety and verification. The revision/date state is weak and current commercial applicability requires confirmation; redistribution status is unclear, so the PDF is not copied.
+
+**S39 — [NASA LSP Program Level Dispenser and CubeSat Requirements Document](https://www.nasa.gov/pdf/627972main_LSP-REQ-317_01A.pdf)**
+
+NASA LSP-REQ-317.01 Revision B, 2014-01-30; retrieved 2026-09-15 and archived at `SOURCES/launch/NASA_LSP-REQ-317.01_Rev_B.pdf`. Primary NASA program-level requirements for NASA LSP missions; used as a conservative cross-check, not imposed on a commercial mission. The official URL suffix says `01A` while the PDF identifies Revision B.
+
+**S40 — [NASA Small Spacecraft Systems State of the Art: Integration, Launch, and Deployment](https://www.nasa.gov/smallsat-institute/sst-soa/integration-launch-and-deployment/)**
+
+NASA Small Spacecraft Systems Virtual Institute public technology survey; retrieved 2026-09-15. Secondary government synthesis for current deployer families and ISS deployment description. It reports NRCSD deployment at about 400–420 km and 51.6 degrees; supplier/mission documents remain controlling.

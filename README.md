@@ -24,7 +24,8 @@ The reproducible model closes nominal energy at +18.4% with a tumble-average ass
 7. [Cost and procurement trade](procurement/Cost_and_Procurement.md)
 8. [Open issues and review gates](review/Open_Issues.md)
 9. [Imaging payload](engineering/07_Imaging_Payload.md) and [US compliance plan](engineering/08_US_Compliance.md)
-10. [Requirements traceability](review/Requirements.md), [FMEA](review/FMEA.md), [sources](review/Source_Register.md)
+10. [Launch and deployer planning baseline](engineering/09_Launch_and_Deployer_Baseline.md)
+11. [Requirements traceability](review/Requirements.md), [FMEA](review/FMEA.md), [sources](review/Source_Register.md)
 
 ### Reproduction and configuration
 
@@ -43,6 +44,8 @@ The baseline engineering interface is a standard $20/month ChatGPT Plus subscrip
 
 Project gates and their required evidence are tracked in [MILESTONES.md](MILESTONES.md). GitHub updates are made at those review points.
 
-Before planning major engineering work, consult the [Master CubeSat Readiness Checklist](review/Master_CubeSat_Readiness_Checklist.md). It audits this repository against an independent University of Hawaiʻi CubeSat development framework plus primary launch, NASA and US regulatory sources. The 2026-09-15 audit places the project at Constitution Level 0 with partial evidence toward Level 1; it records 108 applicable activities, including 30 blocked and 28 not started.
+Before planning major engineering work, consult the [Master CubeSat Readiness Checklist](review/Master_CubeSat_Readiness_Checklist.md). It audits this repository against an independent University of Hawaiʻi CubeSat development framework plus primary launch, NASA and US regulatory sources. The 2026-09-15 launch/deployer update leaves the project at Constitution Level 0 with partial evidence toward Level 1; it records 108 applicable activities, including 29 blocked and 28 not started.
+
+The [Launch and Deployer Constraint Gate](engineering/09_Launch_and_Deployer_Baseline.md) selects a standard 1U EXOpod Nova slot as a provisional mechanical reference. No launch, orbit, price, mission ICD or acceptance is selected. EXOLAUNCH and ISISPACE require written offers; ISS/NRCSD remains a lower-orbit fallback whose one-year residence is unproved.
 
 Archived external-framework provenance and licensing are recorded in [SOURCES/README.md](SOURCES/README.md).

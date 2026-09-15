@@ -66,3 +66,22 @@ gated manuals. Values do not establish as-ordered configuration or tolerances.
 
 No numerical hole pattern was extracted from a rendered mechanical drawing;
 only the identified published envelope tables are used at this fidelity.
+
+## Launch/deployer reference screen — LDG-001
+
+The 2026-09-15 Launch and Deployer Constraint Gate selected a standard 1U
+EXOpod Nova slot as a **provisional mechanical reference** [S33]. It does not
+change CAD-001 geometry.
+
+| CAD parameter | Nova public value | CAD-001 value | Evidence result |
+|---|---:|---:|---|
+| Rail span X/Y | 100.0 ±0.1 mm | 100 × 100 mm reference | Nominal match; no tolerance or measurement |
+| Rail length Z | 113.5 ±0.5 mm | 113.5 mm | Nominal match; end geometry/coplanarity unknown |
+| Space between rails X/Y | 87.2 mm maximum | 84 mm from square proxies | Bounding screen only; supplier rail section unknown |
+| Lateral protrusion allowance | 25.0 mm from rails | No object exceeds nominal ±50 mm rail span | Nominal screen only; panel/rail conflicts remain |
+| 1U mass | 2.5 kg maximum | 1.2762 kg budget with growth | Calculated screen; not as-built mass |
+| 1U COG guidance | ±20 mm all axes | Project target ±10 mm | No credible CAD COG; 295 g unlocated |
+
+Trace: R03/R04/R05 → LDG-001 planning decision → EXOpod Nova standard 1U
+reference → S33 Rev. 1.2 Tables 1–2 → `NominalRailEnvelope`, rail proxies, BOM
+mass ledger. Mission-specific ICD and physical verification remain required.
