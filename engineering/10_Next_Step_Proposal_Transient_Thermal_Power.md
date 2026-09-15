@@ -1,5 +1,11 @@
 # D1-AN-THM-001 — Proposed preliminary transient thermal-power model
 
+> **POST-EXECUTION CORRECTION — TMI-001:** The resulting code and numbers are
+> retained only as HYPOTHETICAL PARAMETRIC SENSITIVITY — NOT COMPONENT-SPECIFIC.
+> Critical thermal properties were assumptions, no physical hardware was tested,
+> and the work did not advance THM-002 or EPS-007. See
+> `review/incidents/Thermal_Model_Incident.md`.
+
 Revision 0.2 · 2026-09-15 · **APPROVED AND EXECUTED**
 
 ## Decision record

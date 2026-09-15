@@ -1,5 +1,11 @@
 # D1-SYS-001 — Mission and architecture
 
+**Phase 1 component status, 2026-09-15:** This document describes a candidate
+architecture. Under D1-CMP-STD-001, no physical component is yet admitted to the
+Phase 1 baseline. Product names below are allocations for audit, interface work
+or trade study; `procurement/BOM.csv` and the component property matrix carry the
+current evidence status.
+
 Revision A | 2026-09-14 | Preliminary
 
 ## Mission definition

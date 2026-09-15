@@ -3,6 +3,7 @@
 Audit date: 2026-09-15  
 Evidence state: **DOCUMENTED/AUDITED; not purchased, tested, or procurement released**
 
+
 ## Identification and procurement
 
 | Field | Audited value |
@@ -10,12 +11,12 @@ Evidence state: **DOCUMENTED/AUDITED; not purchased, tested, or procurement rele
 | BOM line | B08 |
 | Supplier | GomSpace |
 | Quantity | 1 |
-| Procurement type | Named COTS carrier with unconfirmed current availability |
+| Procurement type | Named current COTS carrier; exact option configuration not selected |
 | Project unit estimate, low/base/high | €900 / €1,500 / €2,500 |
 | Public price evidence | No current public price; project planning allowance only |
-| Order/quote URL | https://gomspace.com/product/nanomind-a3200/ |
-| Ordering route | Contact GomSpace and request written confirmation that DMC-3 is orderable and supported with A3200 and AX100-U. The legacy direct datasheet URLs are not ordering routes. |
-| Availability | UNCONFIRMED. Registered S12/S13 direct PDFs returned 404; no current DMC-3 product page was verified. |
+| Order/quote URL | https://gomspace.com/product/nanodock-dmc-3/ |
+| Ordering route | Current manufacturer page offers Add to quote and links its datasheet, 2025 option sheet and qualification certificate. |
+| Availability | Current public quote route verified 2026-09-15; stock, price and lead time remain unconfirmed. |
 
 The cost range is an engineering allowance unless explicitly identified as a current published price. It excludes taxes, freight, duties, configuration NRE, spares, integration, testing and support unless a future quotation says otherwise.
 
@@ -23,14 +24,16 @@ The cost range is an engineering allowance unless explicitly identified as a cur
 
 | Attribute | Value | Evidence basis |
 |---|---|---|
-| Unit mass | 51 g | PROVISIONAL project value from older indexed source; not verified against a current controlled document |
-| Envelope | 88 × 88 × 1.6 mm used only as a CAD envelope assumption | ASSUMPTION; current A3200 page describes the broader NanoDock platform as standard PC/104 size 90 × 96 mm |
-| Electrical power / generation | Unknown independently; project allocates 0.03 W nominal for interfaces/carrier/sensors combined and 0.02 W in recovery | PROJECT ALLOCATION, not vendor requirement |
+| Unit mass | 51 g without daughterboards | S45 DS 1012962 rev 1.12, p14 |
+| Envelope | 91.9 × 88.7 × 8.6 mm | S45, pp4 and 14; replaces incorrect CAD envelope assumption |
+| Electrical power / generation | Passive carrier in flight; the only active circuit is USB-to-serial and is powered from USB | S45, pp6 and 14; daughterboard loads remain separate |
 
 ## Supplier facts retained by the project
 
-- Older project sources describe DMC-3 routing for daughter modules.
-- No current controlled mechanical/electrical specification has been obtained.
+- Current product page describes support for four daughterboards and links the manufacturer documents.
+- S45 identifies FSI, stack and breakout connectors and their pinouts.
+- S46 is OSF 1012964 rev 2.3 dated 2025-04-14.
+- S47 is qualification certificate 1028503 rev 1.0 and identifies product 200232.
 
 ## Exact project configuration
 
@@ -47,11 +50,9 @@ The cost range is an engineering allowance unless explicitly identified as a cur
 
 ## Procurement-release blockers
 
-- Whether DMC-3 can presently be purchased
-- Exact order code, revision, supported module combination and top-side orientation
-- Controlled outline, thickness, holes, connector heights and keep-outs
-- Power and signal routing, CAN termination and current rating
-- Mass, environmental evidence, price and lead time
+- Exact option-sheet selection for connector population, supply routing and CAN termination
+- Exact delivered revision, price, lead time and confirmation that certificate 1028503 applies
+- Project mapping of A3200/AX100 positions and complete harness/stack pin review
 
 ## Required quote/delivery evidence
 
@@ -67,6 +68,10 @@ The cost range is an engineering allowance unless explicitly identified as a cur
 - S07
 - S12
 - S13
+- S44
+- S45
+- S46
+- S47
 - procurement/BOM.csv
 - engineering/03_Interfaces.md
 - drawings/freecad/CAD_SOURCE_TRACEABILITY.md

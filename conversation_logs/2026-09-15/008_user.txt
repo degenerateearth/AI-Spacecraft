@@ -1,0 +1,4 @@
+Recorded date: 2026-09-15 (exact prompt time unavailable)
+Role: user
+
+Hold on where are these results coming from, you're testing an actual physical part with a vendor and part number from their stated documentation right and not some hypothetical part

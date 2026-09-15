@@ -554,3 +554,22 @@ expert review. Record every resulting correction.
 
 If public information, consumer AI or free/open tools cease to support credible
 progress, record that boundary as an experimental result under Section 21.
+
+## 25. Phase 1 component evidence
+
+Every physical component admitted to the Phase 1 spacecraft baseline must be an
+identifiable, commercially obtainable part or an explicitly documented custom-
+fabricated part. A selected COTS component requires publicly accessible primary
+manufacturer documentation whose actual contents establish every property needed
+for its DEGENERATE-1 function. A datasheet title alone is insufficient.
+
+Missing mission-relevant data may not be replaced with generic, similar-product
+or AI-generated values to pass the gate. Such a part remains **CANDIDATE /
+EVIDENCE INCOMPLETE** and cannot enter the Phase 1 baseline. When no sufficiently
+documented COTS part exists, record the function as a custom-component need with
+its own requirements, design, analysis and verification path.
+
+Preserve the exact source URL, document identity/revision/date, retrieval date,
+evidence classification and, when licensing permits local archiving, a hash of
+the exact document. Documentation supports only the claims actually present in
+it. Physical testing and independent review remain separate evidence.

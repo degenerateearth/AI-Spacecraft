@@ -2,6 +2,13 @@
 
 Revision A | Owner-confirmed scope: occasional recognizable Earth images.
 
+**Phase 1 evidence update, 2026-09-15:** The CS-101 remains the controlled BOM
+entry but is not eligible for the Phase 1 baseline because its public material
+does not establish critical electrical, protocol, thermal and optical properties.
+SkyFox Labs `piCAM/FM` is candidate C01 and is better documented, but it also
+remains **CANDIDATE / EVIDENCE INCOMPLETE** under D1-CMP-STD-001. No camera
+replacement, purchase or CAD change has occurred.
+
 ## Hardware and optical requirements
 
 Select CrystalSpace CS-101 Kikas, 5 MP, with an infinity-focused visible lens [S23]. Published envelope is 42 x 25 x 45 mm and mass 50 g. Allocate 20 g for bracket, short baffle and harness. The current detailed product brief is gated behind a contact form; no form was submitted. Accordingly supply voltage, consumption, shutter type, image format, operating temperatures and serial protocol are unresolved. These must be confirmed before procurement release.

@@ -1,22 +1,27 @@
-# D1-AN-THM-001 — Preliminary transient thermal-power analysis
+# D1-AN-THM-001 — Hypothetical parametric thermal-power sensitivity
 
-Revision 0.1 · 2026-09-15 · **SIMULATED / PRELIMINARY / UNCORRELATED**
+> **RECLASSIFIED UNDER TMI-001:** This is not a component-specific model. No
+> physical part was tested. Critical thermal inputs are assumptions. Numerical
+> outputs cannot pass or fail ICEPS2, any other component, or the spacecraft.
+> See `review/incidents/Thermal_Model_Incident.md`.
+
+Revision 0.2 · 2026-09-15 · **HYPOTHETICAL PARAMETRIC SENSITIVITY / NOT COMPONENT-SPECIFIC**
 
 ## Finding
 
-The current documented 1U design does **not** close thermal control and energy
-simultaneously under the central assumed thermal network. The nominal 475 km
-case predicts a battery range of -3.3 to +9.5 °C, approximately 64.8% heater
-duty, and -0.88 Wh of stored battery energy per orbit. The battery eventually
-reaches zero state of charge in the repeated modeled case.
+The assumed mathematical network does not close thermal control and energy in
+its central parameter case. It calculates a battery-node range of -3.3 to
++9.5 °C, approximately 64.8% heater duty, and -0.88 Wh per orbit. These values
+describe only the synthetic nodes and assumptions in `thermal_inputs.json`.
 
-This is not a prediction that flight hardware will fail. Heat capacities,
+This is not a prediction of flight hardware. Heat capacities,
 surface optical properties, panel/structure joints, battery isolation and the
 time-resolved attitude remain assumptions. A low-conductance sensitivity case
 predicts +8.3 to +12.0 °C with closed stored-energy balance. The result therefore
-shows that the undocumented thermal interfaces control feasibility and must be
-designed and measured. It invalidates the earlier claim that the fixed-attitude
-recovery energy case is closed independently of thermal behavior.
+shows that the chosen conductance assumption controls the synthetic result. It
+does not establish the controlling variable in the spacecraft. The experiment
+withdraws the earlier fixed-attitude recovery closure because component thermal
+behavior is unknown.
 
 ## Configuration modeled
 
@@ -131,9 +136,10 @@ they do not validate physical inputs.
 
 ## Evidence status and limitations
 
-This task moves the thermal concept from `CALCULATED` scalar screening to
-`SIMULATED` preliminary multi-node behavior. It does not meet R10 or R22, close
-O03, establish component survival, or verify a battery/heater design.
+This task verifies that the code executes and supports sensitivity experiments.
+It does not advance THM-002 or EPS-007, pass or fail R08/R10/R22, close O03,
+establish component survival, or verify a battery/heater design. TMI-001 removes
+the earlier hardware-readiness interpretation.
 
 Material heat capacities are composite assumptions. Conductances are not derived
 from fastener preload, contact area, interface material or measured joints.

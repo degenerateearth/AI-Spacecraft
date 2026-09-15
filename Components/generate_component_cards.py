@@ -121,17 +121,17 @@ COMPONENTS = [
     },
     {
         "id": "B08", "slug": "GomSpace_NanoDock_DMC3", "vendor": "GomSpace", "item": "NanoDock DMC-3 carrier, top-side two modules", "qty": 1,
-        "kind": "Named COTS carrier with unconfirmed current availability", "mass": "51 g", "mass_basis": "PROVISIONAL project value from older indexed source; not verified against a current controlled document",
-        "size": "88 × 88 × 1.6 mm used only as a CAD envelope assumption", "size_basis": "ASSUMPTION; current A3200 page describes the broader NanoDock platform as standard PC/104 size 90 × 96 mm",
-        "power": "Unknown independently; project allocates 0.03 W nominal for interfaces/carrier/sensors combined and 0.02 W in recovery", "power_basis": "PROJECT ALLOCATION, not vendor requirement",
+        "kind": "Named current COTS carrier; exact option configuration not selected", "mass": "51 g without daughterboards", "mass_basis": "S45 DS 1012962 rev 1.12, p14",
+        "size": "91.9 × 88.7 × 8.6 mm", "size_basis": "S45, pp4 and 14; replaces incorrect CAD envelope assumption",
+        "power": "Passive carrier in flight; the only active circuit is USB-to-serial and is powered from USB", "power_basis": "S45, pp6 and 14; daughterboard loads remain separate",
         "cost": (900, 1500, 2500), "published_price": "No current public price; project planning allowance only",
-        "order_url": "https://gomspace.com/product/nanomind-a3200/", "order_route": "Contact GomSpace and request written confirmation that DMC-3 is orderable and supported with A3200 and AX100-U. The legacy direct datasheet URLs are not ordering routes.",
-        "availability": "UNCONFIRMED. Registered S12/S13 direct PDFs returned 404; no current DMC-3 product page was verified.",
-        "vendor_facts": ["Older project sources describe DMC-3 routing for daughter modules.", "No current controlled mechanical/electrical specification has been obtained."],
+        "order_url": "https://gomspace.com/product/nanodock-dmc-3/", "order_route": "Current manufacturer page offers Add to quote and links its datasheet, 2025 option sheet and qualification certificate.",
+        "availability": "Current public quote route verified 2026-09-15; stock, price and lead time remain unconfirmed.",
+        "vendor_facts": ["Current product page describes support for four daughterboards and links the manufacturer documents.", "S45 identifies FSI, stack and breakout connectors and their pinouts.", "S46 is OSF 1012964 rev 2.3 dated 2025-04-14.", "S47 is qualification certificate 1028503 rev 1.0 and identifies product 200232."],
         "configuration": ["Carrier for two top-side modules: B06 A3200 and B07 AX100-U.", "Do not assume cross-vendor PC/104 pin compatibility to B02; route approved power/data through B10/B11.", "CAN bus must provide two endpoints and about 60 Ω unpowered bus resistance."],
         "interfaces": ["B06/B07 daughter-module connectors", "H04/H05 power routing", "H07 CAN routing", "Structure/standoff mounting"],
-        "open": ["Whether DMC-3 can presently be purchased", "Exact order code, revision, supported module combination and top-side orientation", "Controlled outline, thickness, holes, connector heights and keep-outs", "Power and signal routing, CAN termination and current rating", "Mass, environmental evidence, price and lead time"],
-        "sources": ["S07", "S12", "S13", "procurement/BOM.csv", "engineering/03_Interfaces.md", "drawings/freecad/CAD_SOURCE_TRACEABILITY.md"],
+        "open": ["Exact option-sheet selection for connector population, supply routing and CAN termination", "Exact delivered revision, price, lead time and confirmation that certificate 1028503 applies", "Project mapping of A3200/AX100 positions and complete harness/stack pin review"],
+        "sources": ["S07", "S12", "S13", "S44", "S45", "S46", "S47", "procurement/BOM.csv", "engineering/03_Interfaces.md", "drawings/freecad/CAD_SOURCE_TRACEABILITY.md"],
     },
     {
         "id": "B09", "slug": "ISISPACE_AntS_UHF_turnstile_5V", "vendor": "ISISPACE", "item": "AntS 1U–3U UHF turnstile, 5 V model", "qty": 1,
@@ -221,6 +221,7 @@ COMPONENTS = [
         "cost": (3000, 6000, 10000), "published_price": "No public price; project planning allowance only",
         "order_url": "https://crystalspace.eu/products/cs-101-kikas/", "order_route": "Use CrystalSpace contact/product-overview route and request a configured quotation; the detailed brief is gated.",
         "availability": "Current product page; exact lens, electronics, protocol, revision, lead time and acceptance scope require quote.",
+        "phase1_disposition": "UNSUITABLE while the better documented SkyFox piCAM/FM candidate is commercially available. CS-101 remains the controlled B15 entry until configuration control approves a replacement.",
         "vendor_facts": ["Current page states 5 MP, 50 g, 42 × 25 × 45 mm and TRL 9.", "Page describes multiple field-of-view lenses and communication protocols, Earth-observation use and ITAR-free status.", "No current public voltage, consumption, shutter, image-format or environmental table was obtained."],
         "configuration": ["Visible, calibrated infinity-focus lens with roughly 60° horizontal FOV.", "Exposure control down to ≤1 ms; confirm shutter/readout behavior.", "JPEG or reduced-resolution output path and UART or RS485 supplier option compatible with B06.", "Mount with 25 mm dimension along Z in the documented 27 mm bay; optical axis toward +X."],
         "interfaces": ["H13 switched payload power and serial", "B16 bracket/baffle/harness", "B14 aperture", "B06 storage/processing"],
@@ -257,6 +258,7 @@ def make_card(c: dict) -> str:
 
 Audit date: {AUDIT_DATE}  
 Evidence state: **DOCUMENTED/AUDITED; not purchased, tested, or procurement released**
+{f"Phase 1 disposition: **{c['phase1_disposition']}**" if c.get('phase1_disposition') else ""}
 
 ## Identification and procurement
 
@@ -327,11 +329,15 @@ def write_outputs() -> None:
     cards = ROOT / "cards"
     cards.mkdir(exist_ok=True)
     rows = []
+    custom_ids = {"B10", "B11", "B12", "B13", "B16"}
     for c in COMPONENTS:
         filename = f"{c['id']}_{c['slug']}.md"
         (cards / filename).write_text(make_card(c), encoding="utf-8", newline="\n")
         rows.append({
             "id": c["id"], "vendor": c["vendor"], "item": c["item"], "quantity": c["qty"],
+            "phase1_status": ("CONTROLLED LEGACY CANDIDATE / UNSUITABLE" if c["id"] == "B15" else
+                              "CUSTOM COMPONENT / DESIGN INCOMPLETE" if c["id"] in custom_ids else
+                              "CANDIDATE / EVIDENCE INCOMPLETE"),
             "unit_cost_low_EUR_estimate": c["cost"][0], "unit_cost_base_EUR_estimate": c["cost"][1], "unit_cost_high_EUR_estimate": c["cost"][2],
             "published_price": c["published_price"], "unit_mass": c["mass"], "mass_basis": c["mass_basis"],
             "dimensions": c["size"], "size_basis": c["size_basis"], "power": c["power"], "power_basis": c["power_basis"],

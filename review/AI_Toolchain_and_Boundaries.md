@@ -43,6 +43,14 @@ interfaces; physical correlation remains downstream. These gaps are engineering
 boundaries/open items, not proof that the consumer-AI approach can or cannot
 close them.
 
+On 2026-09-15, TMI-001 reclassified that calculation as **HYPOTHETICAL
+PARAMETRIC SENSITIVITY — NOT COMPONENT-SPECIFIC**. The consumer toolchain could
+write and numerically check a model, but public evidence did not supply the
+critical installed thermal properties needed to interpret its numbers as
+hardware behavior. This is an experimental boundary. Missing properties must be
+recorded; generic substitutions may not be used to create an apparently complete
+component prediction.
+
 ## Attribution rule
 
 AI-assisted work may produce proposals, code, calculations and documents.

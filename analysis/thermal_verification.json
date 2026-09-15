@@ -22,5 +22,8 @@
   },
   "time_step_acceptance_C": 0.2,
   "all_checks_pass": true,
-  "note": "Numerical verification checks implementation consistency only; it does not validate physical inputs or correlate the model."
+  "evidence_classification": "HYPOTHETICAL PARAMETRIC SENSITIVITY - NOT COMPONENT-SPECIFIC",
+  "hardware_tested": false,
+  "incident": "TMI-001",
+  "note": "Numerical verification checks implementation consistency only; it does not validate physical inputs, predict a component, or correlate the model."
 }

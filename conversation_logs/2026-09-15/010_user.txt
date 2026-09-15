@@ -1,0 +1,22 @@
+Recorded date: 2026-09-15 (exact prompt time unavailable)
+Role: user
+
+Continue. Further:
+
+Phase 1 Component Evidence Requirement
+
+Every physical component selected for the Phase 1 spacecraft baseline must correspond to an identifiable, commercially obtainable part or explicitly documented custom-fabricated part.
+
+Every selected COTS component must have publicly accessible, independently verifiable manufacturer technical documentation sufficient to establish the properties relevant to its use in DEGENERATE-1. Acceptable primary documentation may include a manufacturer datasheet, ICD, user manual, mechanical drawing, qualification report, or equivalent authoritative technical documentation.
+
+At minimum, the documentation set must establish every mission-relevant property required to analyze that component, including as applicable: exact manufacturer and part number/configuration, dimensions and mass, electrical interfaces, supply voltage/current/power, communications interfaces and protocols, connector/pinout information, operating and storage limits, thermal limits, mechanical interfaces, and any deployment or operational constraints.
+
+Missing required data may not be replaced with generic values, values from a similar product, or AI-generated assumptions in order to pass the Phase 1 gate.
+
+If a required property cannot be independently verified, the component remains CANDIDATE / EVIDENCE INCOMPLETE and cannot become part of the Phase 1 baseline. If no suitable documented COTS component exists, that function must be explicitly identified as requiring a custom component, with its own requirements, design, analysis, and eventual verification path.
+
+Archived copies or hashes of the exact documentation used should be preserved in the project record where licensing permits, along with source URL, document revision/date, retrieval date, and evidence classification.
+
+
+
+A component isn’t sufficiently documented merely because a datasheet exists. The datasheet must actually contain the information DEGENERATE-1 needs to analyze that component.

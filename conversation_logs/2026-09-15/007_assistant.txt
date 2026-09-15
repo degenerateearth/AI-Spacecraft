@@ -1,0 +1,5 @@
+Recorded date: 2026-09-15
+Role: assistant
+
+[Commentary]
+Approval received. I’ll execute a focused battery thermal-interface and heater-control trade using the existing transient model, then convert the viable region into provisional conductance, heater-control, and verification requirements plus a coupon-test specification. I’ll keep every result assumption-labeled, avoid selecting a material or flight construction without evidence, update the readiness record only where justified, and preserve this prompt and all outputs verbatim.

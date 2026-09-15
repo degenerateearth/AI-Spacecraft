@@ -1,0 +1,14 @@
+Recorded date: 2026-09-15
+Role: assistant
+
+[Commentary]
+I’ll record the **Thermal Model Incident** as a formal project incident, reclassify its outputs everywhere as a hypothetical sensitivity study, and remove any readiness credit that could be mistaken for component validation. Then I’ll rebuild the Phase 1 component baseline from the mission’s required functions, screening each candidate for an identifiable manufacturer/part number, order route, current availability evidence, mechanical/electrical interfaces, operating limits, and public documentation sufficient for independent checking. Missing critical properties will remain evidence gaps and will block selection rather than being replaced with generic values. This prompt and all outputs will be preserved verbatim.
+
+[Commentary]
+I’m correcting the record first. The thermal calculations will remain preserved as an experimental artifact, but every affected status and engineering document will state that they used assumed thermal properties and did not test or predict an identified physical component. The component audit will then apply a hard evidence gate: no Phase 1 selection when a missing property prevents independent interface, operating-limit, or mission analysis.
+
+[Commentary]
+The incident record is now explicit and the affected requirement/status language no longer treats the assumed model as a spacecraft result. I’m moving to the functional decomposition and COTS evidence screen. The first design question is whether one documented vendor ecosystem can eliminate the current custom voltage adapter and obsolete carrier while leaving enough payload volume for the camera; mixed-vendor performance is secondary to verifiable interfaces.
+
+[Commentary]
+The audit has already found one concrete correction and one prior false negative. The CrystalSpace CS-101 is poorly documented publicly for this purpose; SkyFox Labs’ current `piCAM/FM` has a named part number, public 2025 datasheet, pinout, command protocol, mechanical drawing, thermal guidance, published €4,950 single-unit price, lead time, and actual 530 km image examples, so it is the stronger Phase 1 camera candidate. Conversely, the GomSpace DMC-3 carrier is current and orderable; its active product page now links a datasheet, 2025 option sheet, and qualification certificate, so the earlier “availability unconfirmed” finding was wrong and is being corrected.

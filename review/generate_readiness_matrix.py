@@ -93,7 +93,7 @@ R("THM-003","Test readiness","Plan thermal cycling, TVAC and thermal balance","U
 R("THM-004","CDR","Establish radiation assurance program for COTS hardware","NASA SEE guidance","S17","Watchdogs do not prevent destructive SEE.","BLOCKED","engineering/04 method; O06/O17","DOCUMENTED","Part-level BOM, environment, TID/SEE evidence, derating, test/mitigation and lot control.","Obtain internal part data and engage radiation specialist where needed.","MIS-006; detailed BOM; expert capability","EEE/radiation","Accepted radiation analysis/test evidence covers all critical delivered parts."),
 R("THM-005","CDR","Assess atomic oxygen, UV, charging, contamination and MMOD","UH Guide","§3.4 space environment","External panels, optics and polymers are exposed for 12 months.","NOT STARTED","Only narrative mention in engineering/04","DOCUMENTED","Material-specific exposure analysis and mitigations tied to orbit/attitude.","Assess after material list and orbit are fixed.","MIS-005; MEC-008","Materials/environment","Reviewed analysis accepts exposed materials and contamination controls."),
 
-R("CDH-001","PDR","Select and verify flight computer/carrier architecture","UH Guide","§9.3–9.5","OBC/carrier availability and integration control all software.","PROVISIONALLY ADDRESSED","B06/B08 cards; engineering/01","DOCUMENTED","Current DMC availability/revision, compatibility, support and qualification evidence.","Resolve B08 supply or conduct controlled replacement trade.","Supplier response","Avionics/procurement","Current orderable configuration satisfies interfaces, environment and software needs."),
+R("CDH-001","PDR","Select and verify flight computer/carrier architecture","UH Guide","§9.3–9.5","OBC/carrier availability and integration control all software.","PROVISIONALLY ADDRESSED","B06/B08 cards; engineering/01","DOCUMENTED","Exact DMC option selection, compatibility, support and delivered-revision evidence.","Release the pin map and complete OSF 1012964; reconcile the later quote/delivered revision before purchase.","D1-IF/harness design; later supplier evidence","Avionics/procurement","Current orderable configuration satisfies interfaces, environment and software needs."),
 R("CDH-002","PDR/CDR","Maintain data, storage and telemetry budgets","UH Guide","§9.6","Images and health history must fit memory/downlink.","PROVISIONALLY ADDRESSED","engineering/07 storage/data calculations; engineering/05 packet concept","CALCULATED","Actual BSP memory map, camera files, CPU/write timing, wear and measured compression distributions.","Prototype pipeline and measure representative scenes.","PAY-002; hardware/software","Avionics/payload","Measured worst-case storage, CPU and downlink needs close with reserve."),
 R("SW-001","PDR/CDR","Baseline flight-software requirements and architecture","UH Guide","§10","Recovery, image handling and RF safety depend on software.","PROVISIONALLY ADDRESSED","engineering/05_Software_and_Operations.md","DOCUMENTED","Allocated software requirements, detailed design, interfaces, coding/verification standards and vendor constraints.","Create software requirements/design repository after BSP selection.","CDH-001; supplier software terms","Software/systems","Reviewed software baseline traces every function and hazard to verification."),
 R("SW-002","CDR","Implement versioned executable flight software and reproducible builds","UH Guide","§10 F´ labs adapted to selected stack","Specifications alone cannot fly.","NOT STARTED","No flight-software source or build environment; O16","UNKNOWN","Code, toolchain lockfile, CI/build records, binaries, SBOM and licenses.","Obtain BSP and implement smallest testable vertical slice.","CDH-001; hardware/BSP","Software/configuration","Clean build reproduces signed binaries and all required functions are implemented."),
@@ -197,8 +197,8 @@ DOWNSTREAM_BY_ID = {
 STATUS_REASSESSMENT = {
     "MIS-002": "IN PROGRESS", "MIS-006": "NOT STARTED", "MIS-007": "NOT STARTED",
     "MEC-005": "IN PROGRESS", "EPS-003": "IN PROGRESS", "EPS-004": "IN PROGRESS",
-    "EPS-005": "IN PROGRESS", "EPS-007": "IN PROGRESS", "RF-002": "IN PROGRESS",
-    "RF-004": "IN PROGRESS", "THM-002": "IN PROGRESS", "THM-004": "IN PROGRESS", "PAY-002": "IN PROGRESS",
+    "EPS-005": "IN PROGRESS", "RF-002": "IN PROGRESS",
+    "RF-004": "IN PROGRESS", "THM-004": "IN PROGRESS", "PAY-002": "IN PROGRESS",
     "PAY-003": "IN PROGRESS", "GRD-005": "IN PROGRESS",
 }
 
@@ -210,7 +210,7 @@ PUBLIC_PHASE_ACTION = {
     "EPS-003": "Model public panel/cell envelopes and hot/cold performance ranges; write configuration acceptance criteria for later supplier evidence.",
     "EPS-004": "Create a public-data battery safety/life requirements and verification matrix; identify exact delivered/lot evidence required before procurement acceptance.",
     "EPS-005": "Develop and simulate a testable D1-IF architecture with bounded public interface values; label supplier-private limits and expert/physical verification as downstream.",
-    "EPS-007": "Couple a provisional transient thermal model to heater and battery energy cases using public limits and bounded conductances.",
+    "EPS-007": "Select documented components and thermal interfaces first; do not substitute generic conductances or heat capacities. Then build a component-specific model and correlation plan.",
     "RF-002": "Prepare a public-rules licensing decision tree and draft parameter set; defer agency/coordinator determinations and filing to KDD-03.",
     "RF-004": "Build a public-data end-to-end configuration matrix and compatibility tests; reserve revision-specific approval for KDD-02/KDD-03.",
     "THM-004": "Draft a risk-ranked COTS radiation assurance plan from public part and mission data; record unavailable die/lot/test evidence explicitly.",
@@ -221,22 +221,22 @@ PUBLIC_PHASE_ACTION = {
 
 EVIDENCE_UPDATES = {
     "EPS-002": {
-        "existing_evidence_or_artifact": "analysis/recalculate.py; analysis/results.json; analysis/thermal_transient.py; analysis/thermal_cases.csv; engineering/02; engineering/11",
-        "evidence_level": "CALCULATED+SIMULATED",
-        "missing_evidence": "Central coupled thermal-power cases fail; attitude/contact histories, component measurements, selected thermal interfaces and uncertainty correlation remain.",
-        "next_action": "Use the transient result to define a battery thermal-interface/control trade; later couple propagated attitude/contact histories and bench data.",
+        "existing_evidence_or_artifact": "analysis/recalculate.py; analysis/results.json; engineering/02; TMI-001",
+        "evidence_level": "CALCULATED SCALAR ONLY",
+        "missing_evidence": "Component-specific thermal-power behavior, attitude/contact histories, selected component data, measured interfaces and uncertainty correlation remain unknown.",
+        "next_action": "Complete the component property audit before coupling power to a thermal model. D1-AN-THM-001 is hypothetical sensitivity and supplies no hardware-validation credit.",
     },
     "EPS-007": {
-        "existing_evidence_or_artifact": "analysis/thermal_transient.py; analysis/thermal_cases.csv; engineering/11; B12 card",
-        "evidence_level": "SIMULATED",
-        "missing_evidence": "Central/cold/hot cases do not close; conductances, heater implementation, optical properties, attitude histories and correlation remain assumed.",
-        "next_action": "Trade battery isolation and heater thresholds/power against energy using bounded conductance; define coupon and TVAC correlation measurements.",
+        "existing_evidence_or_artifact": "TMI-001; B12 is an unsupported allowance, not a component",
+        "evidence_level": "DOCUMENTED EVIDENCE GAP",
+        "missing_evidence": "Selected battery configuration, released thermal interface, heat capacities, conductances, optical properties, heater implementation, attitude histories and correlation.",
+        "next_action": "Keep blocked. Select documented components/materials and a measurable interface before any component-specific result.",
     },
     "THM-002": {
-        "existing_evidence_or_artifact": "analysis/thermal_inputs.json; analysis/thermal_transient.py; analysis/thermal_cases.csv; analysis/thermal_results.csv; analysis/thermal_verification.json; engineering/11",
-        "evidence_level": "SIMULATED",
-        "missing_evidence": "Uncorrelated heat capacities, conductances, surface properties and static attitude/view factors; no released thermal hardware or physical correlation.",
-        "next_action": "Refine battery-interface/control sensitivity, replace static factors with attitude/orbit histories, then correlate with representative hardware under KDD-05/KDD-06.",
+        "existing_evidence_or_artifact": "D1-AN-THM-001 hypothetical sensitivity code; TMI-001",
+        "evidence_level": "HYPOTHETICAL MODEL / NOT COMPONENT EVIDENCE",
+        "missing_evidence": "Component-specific heat capacities, conductances, surface properties, attitude/view factors, released thermal hardware and physical correlation.",
+        "next_action": "Do not refine assumed hardware results. First pass the component evidence gate, then construct and correlate a traceable model.",
     },
 }
 

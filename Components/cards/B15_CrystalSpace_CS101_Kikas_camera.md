@@ -2,6 +2,7 @@
 
 Audit date: 2026-09-15  
 Evidence state: **DOCUMENTED/AUDITED; not purchased, tested, or procurement released**
+Phase 1 disposition: **UNSUITABLE while the better documented SkyFox piCAM/FM candidate is commercially available. CS-101 remains the controlled B15 entry until configuration control approves a replacement.**
 
 ## Identification and procurement
 

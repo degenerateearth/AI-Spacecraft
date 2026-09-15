@@ -1,17 +1,17 @@
-id,vendor,item,quantity,unit_low_EUR_estimate,unit_base_EUR_estimate,unit_high_EUR_estimate,unit_mass_g,mass_basis_V_vendor_A_allocation_P_provisional,source,closure
-B01,ISISPACE,"1U structure, rails, fasteners, separation provisions",1,2000,3000,4500,150,A,S06,Exact order code and three-switch accommodation open
-B02,ISISPACE,ICEPS2 Type A + integrated battery + 3 separation switch/RBF option,1,4500,6500,9000,184,V,S02;S03,No double-counted battery; switch option and harness scope confirm
-B03,ISISPACE,"1U side solar panel, two cells series",3,1200,1800,2500,50,V,S04;S22,Face minimum 2.3 W procurement target
-B04,ISISPACE,1U -Z solar panel with switch clearances,1,1200,1800,2500,50,V,S04,Two-cell performance and fit confirm
-B05,ISISPACE,1U +Z panel for AntS mounting,1,1200,1800,2500,50,V,S04;S05,Panel counts separate from AntS; cover replacement mass credit not taken
-B06,GomSpace,NanoMind A3200 flight computer,1,3500,5500,8000,24,V,S07;S08,Current sales code/revision and BSP license confirm
-B07,GomSpace,"NanoCom AX100-U, sales part 200315, Mode 5",1,4500,6500,9000,24.5,V,S09;S10;S11,Frequency authority must match U variant
-B08,GomSpace,"NanoDock DMC-3 carrier, top-side two modules",1,900,1500,2500,51,P,S12;S13,Supply status and current routing drawing open
-B09,ISISPACE,"AntS 1U-3U UHF turnstile, 5 V model",1,1500,2500,4000,90,V,S05,Use 90 g upper allocation; tune on complete spacecraft
-B10,Integration vendor,"D1-IF adapter: two 5V to 3.3V regulators, isolation, harness routing",1,800,1500,3000,45,A,S14,Custom board using COTS parts; design and radiation closure required
-B11,Integration vendor,"Harness, RF coax, 3 switch hardware allowance, strain relief",1,500,900,1500,65,A,Degen-1 allocation,Subtract overlap after itemized supplier quotes
-B12,Integration vendor,"Battery thermal strap/isolation, approved films and mounting",1,200,400,800,35,A,Degen-1 allocation,Thermal balance drives exact materials
-B13,Integration vendor,"Integration fasteners, bonding and small brackets",1,150,300,600,25,A,Degen-1 allocation,No blanket shielding or ballast included
-B14,ISISPACE,+X two-cell panel with camera aperture,1,1500,2300,3500,50,A,S04,Aperture design; minimum 1.8 W at specified BOL conditions
-B15,CrystalSpace,CS-101 Kikas 5MP camera; infinity focus wide-angle lens,1,3000,6000,10000,50,V,S23,Supply/data/power/price/lens configuration RFQ required
-B16,Integration vendor,Camera bracket baffle and harness,1,300,600,1200,20,A,Degen-1 allocation,No obstruction of rail or cell string; mechanical/thermal qualification
+"id","vendor","item","quantity","unit_low_EUR_estimate","unit_base_EUR_estimate","unit_high_EUR_estimate","unit_mass_g","mass_basis_V_vendor_A_allocation_P_provisional","source","closure","phase1_status"
+"B01","ISISPACE","1U structure, rails, fasteners, separation provisions","1","2000","3000","4500","150","A","S06","Exact order code and three-switch accommodation open","CANDIDATE / EVIDENCE INCOMPLETE"
+"B02","ISISPACE","ICEPS2 Type A + integrated battery + 3 separation switch/RBF option","1","4500","6500","9000","184","V","S02;S03","No double-counted battery; switch option and harness scope confirm","CANDIDATE / EVIDENCE INCOMPLETE"
+"B03","ISISPACE","1U side solar panel, two cells series","3","1200","1800","2500","50","V","S04;S22","Face minimum 2.3 W procurement target","CANDIDATE / EVIDENCE INCOMPLETE"
+"B04","ISISPACE","1U -Z solar panel with switch clearances","1","1200","1800","2500","50","V","S04","Two-cell performance and fit confirm","CANDIDATE / EVIDENCE INCOMPLETE"
+"B05","ISISPACE","1U +Z panel for AntS mounting","1","1200","1800","2500","50","V","S04;S05","Panel counts separate from AntS; cover replacement mass credit not taken","CANDIDATE / EVIDENCE INCOMPLETE"
+"B06","GomSpace","NanoMind A3200 flight computer","1","3500","5500","8000","24","V","S07;S08","Current sales code/revision and BSP license confirm","CANDIDATE / EVIDENCE INCOMPLETE"
+"B07","GomSpace","NanoCom AX100-U, sales part 200315, Mode 5","1","4500","6500","9000","24.5","V","S09;S10;S11","Frequency authority must match U variant","CANDIDATE / EVIDENCE INCOMPLETE"
+"B08","GomSpace","NanoDock DMC-3 carrier, top-side two modules","1","900","1500","2500","51","P","S12;S13","Supply status and current routing drawing open","CANDIDATE / EVIDENCE INCOMPLETE"
+"B09","ISISPACE","AntS 1U-3U UHF turnstile, 5 V model","1","1500","2500","4000","90","V","S05","Use 90 g upper allocation; tune on complete spacecraft","CANDIDATE / EVIDENCE INCOMPLETE"
+"B10","Integration vendor","D1-IF adapter: two 5V to 3.3V regulators, isolation, harness routing","1","800","1500","3000","45","A","S14","Custom board using COTS parts; design and radiation closure required","CUSTOM COMPONENT / DESIGN INCOMPLETE"
+"B11","Integration vendor","Harness, RF coax, 3 switch hardware allowance, strain relief","1","500","900","1500","65","A","Degen-1 allocation","Subtract overlap after itemized supplier quotes","CUSTOM COMPONENT / DESIGN INCOMPLETE"
+"B12","Integration vendor","Battery thermal strap/isolation, approved films and mounting","1","200","400","800","35","A","Degen-1 allocation","Thermal balance drives exact materials","CUSTOM COMPONENT / DESIGN INCOMPLETE"
+"B13","Integration vendor","Integration fasteners, bonding and small brackets","1","150","300","600","25","A","Degen-1 allocation","No blanket shielding or ballast included","CUSTOM COMPONENT / DESIGN INCOMPLETE"
+"B14","ISISPACE","+X two-cell panel with camera aperture","1","1500","2300","3500","50","A","S04","Aperture design; minimum 1.8 W at specified BOL conditions","CANDIDATE / EVIDENCE INCOMPLETE"
+"B15","CrystalSpace","CS-101 Kikas 5MP camera; infinity focus wide-angle lens","1","3000","6000","10000","50","V","S23","Supply/data/power/price/lens configuration RFQ required","CONTROLLED LEGACY CANDIDATE / UNSUITABLE"
+"B16","Integration vendor","Camera bracket baffle and harness","1","300","600","1200","20","A","Degen-1 allocation","No obstruction of rail or cell string; mechanical/thermal qualification","CUSTOM COMPONENT / DESIGN INCOMPLETE"

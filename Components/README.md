@@ -5,6 +5,13 @@ Scope: the 16 lines B01–B16 already present in `procurement/BOM.csv`
 
 This folder answers what is currently known about the cost, order route, availability, size, mass, power, interfaces, required configuration, environmental evidence and procurement blockers for every component already supported by the project record. It does not introduce any new spacecraft component. The solar-panel family appears on four BOM lines because the documented spacecraft requires four different procurement configurations. The five integration-vendor lines remain custom assemblies/lots because their constituent designs have not been released.
 
+The later `Phase1_Functional_Audit.md` supersedes this file for Phase 1 admission.
+It tests required functions as well as BOM rows. Under D1-CMP-STD-001, no
+component currently passes the complete mission-relevant public-evidence gate.
+The sortable `Phase1_Component_Property_Matrix.csv` records 105 individual
+property findings across eight recommended candidates and two audited
+alternatives, and names the analysis blocked by each unknown.
+
 ## Audit result
 
 | Result | Count |
@@ -15,11 +22,11 @@ This folder answers what is currently known about the cost, order route, availab
 | Procurement-released lines | 0 |
 | Lines with a current public firm price for the required configuration | 0 |
 | Lines with a public indicative price | 1 (B01) |
-| Lines with unconfirmed current product availability | 1 (B08) |
+| Lines with a current product/quote route verified | 12 of 16; five lines are custom rather than catalog products |
 
 The hardware-only project estimate remains €29,350 low / €46,500 base / €70,100 high. These are quantity-extended planning estimates, not quotations. B01’s current storefront shows €3,450, €450 above its existing €3,000 base allowance. The controlled BOM has not been silently rebased.
 
-No line is ready to purchase. B01 still lacks its exact switch/deployer configuration. B02 has a current product-page versus linked-datasheet battery-energy/configuration discrepancy. B03–B05 and B14 require signed custom panel designs. B06/B07 need current sales revisions and software/support scope. B08’s current availability is unconfirmed. B09 needs authorized frequency and final mechanical/RF configuration. B10–B13 and B16 lack released drawings or complete bills of material. B15 lacks public electrical, shutter and protocol data.
+No line is ready to purchase. B01 still lacks its exact switch/deployer configuration. B02 has a current product-page versus linked-datasheet battery-energy/configuration discrepancy. B03–B05 and B14 require signed custom panel designs. B06/B07 need current sales revisions and software/support scope. B08 now has a current manufacturer quote route and document set, but its option configuration is not selected. B09 needs authorized frequency and final mechanical/RF configuration. B10–B13 and B16 lack released drawings or complete bills of material. B15 lacks public electrical, shutter and protocol data and is inferior in documentation to candidate C01.
 
 ## Files
 
@@ -27,6 +34,9 @@ No line is ready to purchase. B01 still lacks its exact switch/deployer configur
 - [`cards/`](cards/) contains one engineering/procurement card for each existing BOM line.
 - [`SOURCE_CHECK_LOG.md`](SOURCE_CHECK_LOG.md) records what was checked and distinguishes order routes from historical references.
 - [`generate_component_cards.py`](generate_component_cards.py) reproducibly generates the CSV and all 16 cards from a fixed list matching B01–B16.
+- [`Phase1_Functional_Audit.md`](Phase1_Functional_Audit.md) tests whether the required functions are covered.
+- [`Phase1_Component_Property_Matrix.csv`](Phase1_Component_Property_Matrix.csv) records property-level evidence and gaps.
+- [`candidates/`](candidates/) contains audited alternatives that have not changed the controlled BOM.
 
 Regenerate from the repository root with:
 

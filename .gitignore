@@ -11,3 +11,8 @@ drawings/freecad/verification_work/
 
 # Licensed local source archive exceeds GitHub's 100 MiB single-object limit.
 SOURCES/UH_A_Guide_to_CubeSat_Mission_and_Bus_Design_Ed1.pdf
+
+# Copyrighted vendor documents retained on the local project drive for audit.
+# Public repository keeps official URLs, revisions and hashes instead.
+SOURCES/components/**/*.pdf
+SOURCES/components/**/*.html

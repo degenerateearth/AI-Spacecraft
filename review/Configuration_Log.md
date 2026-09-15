@@ -60,3 +60,26 @@ interface a controlling design variable. R08/R10/R22 now record simulated
 failure; O03 remains critical; THM-002 and EPS-007 moved to IN PROGRESS. No
 hardware, paid software, external contact, test, expert review, architecture
 change or success-level increase resulted.
+
+TMI-001 — 2026-09-15. Recorded the **Thermal Model Incident** after the owner
+challenged whether D1-AN-THM-001 represented an actual vendor part or physical
+test. It did not. Reclassified all outputs as HYPOTHETICAL PARAMETRIC
+SENSITIVITY — NOT COMPONENT-SPECIFIC, withdrew hardware-validation readiness
+credit, reopened R08/R10/R22 interpretation, and instituted a critical-property
+evidence gate for component selection and future simulation. Original results
+remain preserved as experimental evidence. No hardware was tested and no expert
+review occurred.
+
+CMP-002 — 2026-09-15. Added D1-CMP-STD-001 and applied the owner's strict Phase
+1 evidence requirement to required spacecraft and ground functions. Generated
+an initial 86-row component/property matrix, later expanded to 105 rows after
+auditing two Pumpkin structure/panel alternatives. No physical component passed the Phase 1
+baseline gate. Corrected NanoDock DMC-3 availability using its current product
+page, 2025 option sheet and qualification certificate. Added SkyFox piCAM/FM as
+a better documented candidate and marked CS-101 unsuitable while that alternative
+exists, without changing the controlled BOM. Archived eight exact manufacturer
+documents locally with hashes; excluded copyrighted PDFs from Git. No purchase,
+supplier contact, hardware test, baseline component selection or success-level
+change occurred.
+Six Pumpkin manufacturer documents/pages were then added to the local archive,
+bringing the manifest to fourteen exact files.

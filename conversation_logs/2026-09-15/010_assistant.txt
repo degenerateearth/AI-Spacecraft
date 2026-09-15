@@ -1,0 +1,23 @@
+Recorded date: 2026-09-15
+Role: assistant
+
+[Commentary]
+Understood. I’m tightening the gate: a current product page plus a datasheet is not enough, and “REFERENCE” will no longer mean “good enough for preliminary work.” A component enters the Phase 1 baseline only when the exact selectable configuration and every property needed for its assigned mission function are independently supported. Until then it will be labeled **CANDIDATE / EVIDENCE INCOMPLETE**, with each missing property tied to the analysis or interface it blocks. I’ll also preserve exact document revisions, retrieval dates, URLs, hashes, and local archives only where redistribution or retention permits.
+
+[Commentary]
+The stricter rule is now in the constitution and evidence standard. Applying it changes the audit result: **zero components are currently admitted to the Phase 1 baseline**. Even the three best-documented candidates remain evidence incomplete because each still has a mission-relevant unresolved property or exact configuration. The audit is therefore producing a candidate set and explicit blocked analyses, not quietly declaring a working spacecraft bill of materials.
+
+[Commentary]
+The evidence matrix is complete for this pass: 86 property records across the eight named COTS candidates, with an explicit `UNKNOWN`, `CONFLICT`, or source citation for each category. It exposes the main blockers as the ICEPS2 22.5/28.8 Wh contradiction, absent six-panel configuration data, incomplete integrated 3.3 V transient limits, unselected DMC-3 options, incomplete antenna configuration, and camera radiation/environment evidence. I’m now validating the records, copying the local document archive to `D:\Degen-1`, and preparing the milestone commit.
+
+[Commentary]
+I’m continuing the evidence audit beyond the initial candidate set. The next check is whether Pumpkin’s publicly documented 1U structure and any currently documented solar-panel alternatives can replace weaker candidates without relaxing the Phase 1 gate; afterward I’ll regenerate every derived record, preserve this response verbatim in the log, and commit the milestone.
+
+[Commentary]
+Pumpkin is a real documented alternative, but the available evidence does not yet justify replacing the structure baseline: its current store exposes exact Rev D assembly part numbers and materials, while the selectable 1U configuration is shown as unavailable and the linked mass/drawing package is not exposed cleanly from the product page. Its fixed panels are similarly current and documented at family level, but the exact face configuration, current cell electrical curves, mass, connector data, and availability remain incomplete. I’m adding both as audited alternatives rather than promoting either through the gate.
+
+[Commentary]
+The expanded audit now contains 105 property records for ten COTS candidates or alternatives, and all ten gate rows fail. This is the intended evidence behavior: Pumpkin improves traceability for geometry and materials, but its unavailable selectors and missing mission-specific data prevent promotion. The Phase 1 baseline remains empty, with no procurement or architecture change.
+
+[Commentary]
+The archive and matrix now verify cleanly: 14 exact manufacturer files match their recorded byte counts and SHA-256 hashes; all 16 required functions are represented; all 105 property records parse; and all ten COTS gate decisions are explicit failures. I’m doing one final configuration-control check before the milestone commit, including whether any configurable carrier option can be fully selected from the public option sheet instead of being left open unnecessarily.

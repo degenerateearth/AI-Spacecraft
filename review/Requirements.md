@@ -11,9 +11,9 @@ Revision A. A=analysis, T=test, I=inspection. MODEL PASS is not hardware complia
 | R05 | COM target +/-10mm in each axis | Allocation/S33 | Mechanical | T | T02 | OPEN: project target is tighter than Nova +/-20 mm guidance; credible model and measurement absent |
 | R06 | Minimum cost compliant total build; maximum practical purchased hardware | User | Systems | Review | Cost RFQs | OPEN: quotations |
 | R07 | Nominal orbit-energy balance positive after 20% growth | Allocation | EPS | A/T | T06,T07 | MODEL PASS:+18.4%; environment inputs open |
-| R08 | Recovery energy closes in worst intact-face attitude, camera off | Allocation | EPS/FSW | A/T | T06,T07,T13 | SIMULATED FAIL: fixed camera-face recovery is -1.83 Wh/orbit with thermal control coupled; uncorrelated assumptions |
+| R08 | Recovery energy closes in worst intact-face attitude, camera off | Allocation | EPS/FSW | A/T | T06,T07,T13 | OPEN: scalar screen is assumption-dependent; hypothetical thermal study is not component evidence |
 | R09 | Battery routine DOD <=20% EOL capacity; >=6000-cycle evidence | Allocation | EPS | A/T | T08 | MODEL PASS DOD only; life open |
-| R10 | Never charge outside approved cell current/temperature limits | S03/project target | EPS | T | T03,T13,T15 | SIMULATED ASSUMPTION: model inhibits charge outside range; actual independent hardware control and tests remain open |
+| R10 | Never charge outside approved cell current/temperature limits | S03/project target | EPS | T | T03,T13,T15 | OPEN: public product limits are partial; exact delivered configuration, independent control and physical tests remain open |
 | R11 | Three independent physical RF and release inhibits unless approved tailoring | S01/S39; mission ICD TBD | Safety | A/T | T04 | OPEN: public Nova manual does not close circuit independence or mission safety acceptance |
 | R12 | No early deployment/RF; delays >=30/45min or longer ICD | S01 | Safety/FSW | T | T05 | OPEN |
 | R13 | RBF/source isolation includes solar and service paths | S01/S03 | Safety | A/T | T04 | OPEN |
@@ -25,7 +25,7 @@ Revision A. A=analysis, T=test, I=inspection. MODEL PASS is not hardware complia
 | R19 | Retain 30 days health and bounded image store | Allocation | FSW | T | T11,T15 | OPEN |
 | R20 | Authenticated critical commands, replay control and persistent RF stop | Allocation | FSW | T | T15,T17 | OPEN: license-compatible implementation |
 | R21 | Structure survives approved launch environment | User | Mechanical | A/T | T12,T18 | OPEN: analysis and test |
-| R22 | Thermal model closes charging/survival and energy simultaneously | User | Thermal | A/T | T13 | SIMULATED FAIL: central network does not close; low-conductance sensitivity passes nominal only; uncorrelated |
+| R22 | Thermal model closes charging/survival and energy simultaneously | User | Thermal | A/T | T13 | NOT STARTED: the existing calculation is hypothetical sensitivity only; critical component properties and correlation are absent |
 | R23 | One-year radiation/SEE assurance covers every critical revision | User | EEE | A/T | T16 | OPEN |
 | R24 | No unintended debris; materials/venting meet ICD | User/S01 | Mechanical | I/A | T01,T12 | OPEN |
 | R25 | Orbit lasts mission and disposes within applicable deadline | User/S16 | Mission | A | Decay/demise analysis | OPEN |

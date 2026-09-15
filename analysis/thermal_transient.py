@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""DEGENERATE-1 preliminary transient thermal-power screening model.
+"""DEGENERATE-1 hypothetical parametric thermal-power sensitivity model.
 
 Standard-library only. This is an uncorrelated lumped-parameter model, not a
-thermal qualification prediction. Run: python analysis/thermal_transient.py
+thermal qualification or component-specific prediction. No physical hardware was
+tested. See TMI-001. Run: python analysis/thermal_transient.py
 """
 
 from __future__ import annotations
@@ -292,7 +293,7 @@ def run_case(data, case, dt_override=None, write_plot=False):
         "energy_closed":"YES" if last_stats["stored_charge_wh"]-last_stats["discharge_wh"]>=-1e-4 and depleted_at_s is None else "NO",
         "heater_Wh_last_orbit":last_stats["heater_wh"],"heater_duty_last_orbit":last_stats["heater_on_s"]/period,
         "charge_inhibited_min_last_orbit":last_stats["charge_inhibited_s"]/60.0,
-        "max_energy_residual_J":max_residual_j,"evidence":"SIMULATED WITH ASSUMED/PROJECT/PUBLIC INPUTS; UNCORRELATED"
+        "max_energy_residual_J":max_residual_j,"evidence":"HYPOTHETICAL PARAMETRIC SENSITIVITY; NOT COMPONENT-SPECIFIC; NO HARDWARE TESTED; TMI-001"
     }
     if write_plot:
         PLOT_DIR.mkdir(exist_ok=True)
@@ -331,7 +332,10 @@ def verify(data, baseline_case, baseline_rows):
         "time_step_node_differences_C":differences,
         "time_step_acceptance_C":0.20,
         "all_checks_pass":orbit_error<1e-9 and ramp_error<1e-10 and conduction_residual<1e-12 and max_dt_difference<0.20,
-        "note":"Numerical verification checks implementation consistency only; it does not validate physical inputs or correlate the model."
+        "evidence_classification":"HYPOTHETICAL PARAMETRIC SENSITIVITY - NOT COMPONENT-SPECIFIC",
+        "hardware_tested":False,
+        "incident":"TMI-001",
+        "note":"Numerical verification checks implementation consistency only; it does not validate physical inputs, predict a component, or correlate the model."
     }
     return checks
 
@@ -361,8 +365,8 @@ def main():
     svg_range_plot(PLOT_DIR/"battery_case_ranges.svg",case_rows)
     output={"model_id":data["model_id"],"status":data["model_status"],"cases":len(case_rows),
             "numerical_checks_pass":checks["all_checks_pass"],
-            "battery_target_failures":[r["case_id"] for r in case_rows if r["battery_target_met"]=="NO"],
-            "energy_negative_cases":[r["case_id"] for r in case_rows if r["energy_closed"]=="NO"],
+            "synthetic_target_misses":[r["case_id"] for r in case_rows if r["battery_target_met"]=="NO"],
+            "synthetic_negative_energy_cases":[r["case_id"] for r in case_rows if r["energy_closed"]=="NO"],
             "nonconverged_cases":[r["case_id"] for r in case_rows if r["periodic_converged"]=="NO"]}
     print(json.dumps(output,indent=2))
     if not checks["all_checks_pass"]: raise SystemExit("Numerical self-check failed")

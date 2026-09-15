@@ -25,7 +25,7 @@ evidence_state:
   proposed: true
   calculated: true
   modeled: preliminary_FreeCAD_component_envelopes_with_unresolved_interferences
-  simulated: preliminary_uncorrelated_11_node_transient_thermal_power_model_with_failed_central_cases
+  simulated: hypothetical_parametric_sensitivity_only_not_component_specific_no_hardware_tested
   physically_built: false
   tested: false
   independently_expert_reviewed: false
@@ -39,9 +39,9 @@ external_readiness_audit:
   total_items: 108
   complete: 3
   provisionally_addressed: 21
-  in_progress: 40
-  not_started: 29
-  blocked: 15
+  in_progress: 38
+  not_started: 30
+  blocked: 16
   not_applicable: 0
   maturity_finding: Level 0 with partial evidence toward Level 1
   reassessment_basis: Public-information work is separated from final closure that requires a known downstream dependency; no new technical evidence was credited.
@@ -56,23 +56,38 @@ public_information_phase:
   public_requirements_deferred: false
   success_level_change: none
 next_step_proposal:
-  id: D1-AN-THM-001
-  title: Preliminary transient thermal-power model
-  status: approved_and_complete
-  document: engineering/10_Next_Step_Proposal_Transient_Thermal_Power.md
+  id: D1-CMP-AUD-002
+  title: Phase 1 component evidence audit
+  status: initial_public_evidence_pass_complete_living_audit_remains_open
+  document: Components/Phase1_Functional_Audit.md
+component_evidence_gate:
+  standard: review/Phase1_Component_Evidence_Standard.md
+  property_matrix: Components/Phase1_Component_Property_Matrix.csv
+  cots_phase1_baseline_count: 0
+  custom_phase1_baseline_count: 0
+  recommended_candidate_count: 8
+  audited_alternative_count: 2
+  property_records: 105
+  gate_fail_count: 10
+  state: no_component_currently_passes_complete_mission_relevant_public_evidence_gate
+  archived_document_manifest: SOURCES/components/LOCAL_ARCHIVE_MANIFEST.csv
+  local_vendor_archives_publicly_committed: false
+  reason: no_redistribution_license_established
 thermal_analysis:
   revision: D1-AN-THM-001 Revision 0.1
   date: 2026-09-15
-  status: simulated_preliminary_uncorrelated
+  status: reclassified_hypothetical_parametric_sensitivity_not_component_specific
+  incident: TMI-001
+  hardware_tested: false
   nodes: 11
   cases: 10
   mass_represented_kg: 1.0635
   nominal_475_battery_C: [-3.3, 9.5]
   nominal_475_heater_duty_percent: 64.8
   nominal_475_stored_energy_margin_Wh_per_orbit: -0.88
-  central_case_closed: false
-  low_conductance_sensitivity_closed: true
-  fixed_camera_recovery_closed: false
+  central_case_closed: unknown_for_physical_spacecraft
+  low_conductance_sensitivity_closed: hypothetical_model_only
+  fixed_camera_recovery_closed: unknown_for_physical_spacecraft
   numerical_checks_passed: true
   physical_correlation: false
   independent_review: false
@@ -95,9 +110,15 @@ launch_deployer_gate:
   evidence_change: LCH-001 BLOCKED to IN PROGRESS; project success level unchanged
 boundary_log:
   - date: 2026-09-15
+    status: boundary_encountered_component_evidence
+    limitation: No complete spacecraft component set currently passes the Phase 1 requirement for all mission-relevant properties in public primary documentation.
+    required_capability: Better documented COTS alternatives or explicit custom designs with requirements, analysis and verification; later as-ordered vendor evidence where public data cannot close the gate.
+    estimated_cost: unknown; no component purchase or external service authorized
+    approval: required before paid tools, services or hardware acquisition
+  - date: 2026-09-15
     status: no_current_phase_ai_or_software_boundary_encountered
-    limitation: Preliminary thermal simulation completed; physical properties and correlation remain unknown downstream evidence.
-    required_capability: Representative hardware measurements, thermal balance/TVAC correlation and independent review at later gates.
+    limitation: TMI-001 established that assumed critical thermal properties prevent component-specific conclusions; the calculation is sensitivity code only.
+    required_capability: Selected component property evidence, defined thermal interfaces, representative hardware measurements, thermal balance/TVAC correlation and independent review.
     estimated_cost: unknown; no cost incurred or authorized
     approval: not_applicable_for_current_analysis
   - date: 2026-09-14

@@ -6,12 +6,12 @@ Revision A. The package is ready for an aerospace engineer to audit its choices,
 |---|---|---|---|---|---|
 | O01 | Critical | EXOpod Nova is only a provisional mechanical reference; launch mission, integrator contract, target orbit and mission ICD are not selected | Systems/mission | Written offer/contract and signed ICD; injection/collision/decay/demise analysis | R01,R03,R21,R25 |
 | O02 | Critical | RF authorization and band unresolved; 437MHz conditional | Regulatory/RF | Approved service/frequency and ground authority; update hardware if needed | R17 |
-| O03 | Critical | Preliminary transient model does not close central, cold, hot or fixed-camera recovery cases; battery isolation, heater control, optical properties and attitude histories remain undefined | Thermal/EPS | Correlated transient thermal model meeting energy and charge constraints; released thermal-interface design and verified controls | R08,R10,R22 |
+| O03 | Critical | Thermal feasibility is unknown. D1-AN-THM-001 used unsupported thermal properties and is retained only as hypothetical sensitivity under TMI-001 | Thermal/EPS | Selected component property evidence, released thermal interfaces, component-specific model, correlation and verified controls | R08,R10,R22; review/incidents/Thermal_Model_Incident.md |
 | O04 | Critical | EPS 3.3V tolerance incompatible with direct avionics connection | Electrical | Released adapter/protection or guaranteed supplier interface; environmental/radiation verification | R15,R23 |
 | O05 | Critical | Three-inhibit independence and solar paths unproven | Safety/EPS | Supplier circuit review/fault tree and all-state test | R11,R13 |
 | O06 | Critical | Radiation critical-part evidence missing | EEE | Orbit/dose/SEE assessment; lot/revision evidence or qualification | R01,R23 |
 | O07 | High | Camera-aperture panel and 1U stack fit not established | Mechanical/payload | Vendor CAD, aperture cell layout and power guarantee; build fit | R03,R27 |
-| O08 | High | DMC carrier current availability and revisions uncertain | Procurement | Written supply commitment plus current ICD or requalified alternative | R06,R15 |
+| O08 | High | DMC-3 has a current quote route, but the exact option configuration, delivered revision, price and supply commitment are unresolved | Procurement | Complete OSF 1012964 from a released pin map; later reconcile quote/delivered revision before purchase | R06,R15 |
 | O09 | High | Camera electrical/power/shutter/Sun exposure/JPEG details gated | Payload | Current CS-101 brief and confirmed configuration plus tests | R02,R28,R29 |
 | O10 | High | NOAA license/determination not obtained | Regulatory | Full-capability filing and required authority | R18 |
 | O11 | High | One-year battery evidence and passivation behavior unknown | EPS | 6000-cycle/calendar evidence and source passivation verification | R09,R26 |
@@ -33,7 +33,7 @@ RF/regulatory reviewer: __________ Date: __________
 Payload/operations reviewer: __________ Date: __________
 
 The owner approved opportunistic Earth imagery, US operation and nominal 450–500 km with flexibility for a lower-cost rideshare. No arbitrary financial ceiling applies. In-scope engineering decisions may be refined without changing those requirements. Targeted imagery or guaranteed spatial resolution requires a new mission baseline.
-| O17 | High | Consumer AI plus standard-library Python completed a preliminary thermal transient model, but full FEA, orbit-decay and radiation analysis remain unexercised; thermal correlation still requires physical evidence | Experiment/toolchain | Record each concrete boundary, required capability, cost and approval; do not silently add a paid tool | Constitution §§21–24 |
+| O17 | High | Thermal Model Incident: executable calculation was mistaken for component evidence because critical inputs were assumptions; full component-specific thermal, orbit-decay and radiation analysis remain unexercised | Experiment/toolchain | Enforce source-completeness gates; record each boundary and never replace missing critical properties with generic values | Constitution §§21–24; TMI-001 |
 | O18 | Medium | Actual AI subscription/tooling spend has not been reconciled against account records | Experiment/accounting | Update Project_Cost_Ledger.csv and Project_Status.yaml with verified amounts and dates | Constitution §22 |
 
 ## CAD-001 accommodation findings
@@ -78,3 +78,12 @@ The three-path trade and conflict records LDC-01–LDC-06 are in
 [D1-LCH-001](../engineering/09_Launch_and_Deployer_Baseline.md). The reference
 selection changes planning evidence only. It does not close O01, O05, O13,
 LCH-001, LCH-002 or AIV-006.
+
+## Phase 1 component-evidence findings — 2026-09-15
+
+| ID | Priority | Issue | Owner role | Closure artifact | Requirements |
+|---|---|---|---|---|---|
+| O32 | Critical | No physical component currently passes the complete Phase 1 mission-relevant public-evidence gate; several BOM lines are allowances rather than identified parts | Systems/procurement/subsystem leads | Property matrix with no required UNKNOWN/CONFLICT rows for each admitted part; exact configurations and archived/hash-controlled primary sources | R01,R03,R06–R10,R14–R23 |
+| O33 | Critical | ICEPS2 current page and linked issue 1.2 datasheet disagree on Type A battery energy/configuration | EPS/safety | Reconciled exact Type A configuration and controlled evidence; revised energy/life analysis | R08–R10,R22 |
+| O34 | High | CS-101 lacks public mission-critical data; piCAM/FM is better documented but still lacks enough evidence for baseline admission | Payload/radiation/EPS | Selected exact camera with complete property evidence, interface design and verification plan | R14–R18,R23 |
+| O35 | High | DMC-3 availability was previously recorded incorrectly; current documents exist, but its order-option configuration is not selected | CDH/integration | Completed OSF 1012964 configuration and pin-by-pin interface review | R06,R07,R19,R21 |

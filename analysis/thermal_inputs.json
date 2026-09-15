@@ -1,7 +1,10 @@
 {
   "schema_version": "0.1",
   "model_id": "D1-AN-THM-001",
-  "model_status": "PRELIMINARY_UNCORRELATED",
+  "evidence_classification": "HYPOTHETICAL PARAMETRIC SENSITIVITY - NOT COMPONENT-SPECIFIC",
+  "incident": "TMI-001; review/incidents/Thermal_Model_Incident.md",
+  "hardware_tested": false,
+  "model_status": "HYPOTHETICAL_PARAMETRIC_SENSITIVITY_NOT_COMPONENT_SPECIFIC",
   "field_definitions": {
     "node.mass_kg": {"unit": "kg", "provenance": "current B01-B16 mass allocation", "evidence": "DOCUMENTED, VENDOR-DERIVED or PROJECT ALLOCATION as stated per node"},
     "node.specific_heat_J_kgK": {"unit": "J/kg/K", "provenance": "composite screening value selected for sensitivity modeling", "evidence": "ANALYSIS ASSUMPTION"},

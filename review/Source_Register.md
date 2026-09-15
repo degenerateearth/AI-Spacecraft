@@ -184,3 +184,118 @@ DEGENERATE-1 requirement.
 NASA public guidebook, Revision 5.1 dated 2024-12-19; retrieved 2026-09-15.
 Used as a methodology reference for orbital heating, model construction,
 sensitivity and correlation. It does not supply as-built DEGENERATE-1 properties.
+
+**S44 — [GomSpace NanoDock DMC-3 current product page](https://gomspace.com/product/nanodock-dmc-3/)**
+
+Primary manufacturer order route, retrieved 2026-09-15. It identifies the DMC-3
+as a current supporting product, offers an add-to-quote path and links the
+datasheet, option sheet and qualification certificate. This corrects the earlier
+conclusion that current availability could not be verified.
+
+**S45 — [NanoDock DMC-3 datasheet DS 1012962 rev 1.12](https://gomspace.com/wp-content/uploads/2025/12/gs-ds-nanodock-dmc-3-112.pdf)**
+
+Primary manufacturer datasheet dated 2021-03-25, retrieved 2026-09-15. It covers
+mechanics, connectors, pinouts, configurable routing, limits and a mechanical
+drawing. Hash and local custody are in `SOURCES/components/LOCAL_ARCHIVE_MANIFEST.csv`.
+Its confidentiality notice prevents public redistribution by this project.
+
+**S46 — [NanoDock DMC-3 option sheet OSF 1012964 rev 2.3](https://gomspace.com/wp-content/uploads/2025/12/gs-osf-nanodock-dmc-3-23_1.pdf)**
+
+Primary manufacturer option sheet dated 2025-04-14, retrieved 2026-09-15. It
+defines configurable connector, termination, supply and GPS choices; the project
+has not yet completed an option selection.
+
+**S47 — [NanoDock DMC-3 qualification certificate 1028503 rev 1.0](https://gomspace.com/wp-content/uploads/2025/12/Gs-Qtct-NanoDock_DMC-3.pdf)**
+
+Primary manufacturer certificate dated 2021-11-09, retrieved 2026-09-15. It
+identifies product 200232 and records sine, random vibration, quasi-static, shock,
+thermal-vacuum, thermal-stress and heritage claims. This is manufacturer evidence
+for the qualified design, not acceptance evidence for an ordered unit or the
+integrated spacecraft.
+
+**S48 — [SkyFox Labs piCAM current product/order page](https://www.skyfoxlabs.com/product/27-picam)**
+
+Primary manufacturer storefront, retrieved 2026-09-15. It lists exact variants
+including piCAM/FM, quantity-one price EUR 4,950, 2–4 week lead time, mass,
+envelope, supply, optics, output and heritage claims. It does not establish stock
+or a delivered-unit test record.
+
+**S49 — [SkyFox Labs piCAM Product Datasheet Rev A/2025](https://skyfoxlabs.com/pdf/piCAM_Datasheet_rev_A_2025.pdf)**
+
+Primary manufacturer 16-page datasheet, retrieved 2026-09-15. It covers ratings,
+power, connector/pinout, boot sequence, command protocol, JPEG output, mechanical
+drawing, optics, integration guidance, materials, screening and orbital image
+examples. It explicitly states that radiation-hardened integrated circuits are
+not used and recommends external latchup current limiting. Hash/local custody are
+recorded in the component archive manifest; no redistribution license was found.
+
+**S50 — [GomSpace NanoPower P31u end-of-life notice](https://gomspace.com/UserFiles/Subsystems/Product_Change_Notice_P31U.pdf)**
+
+Primary manufacturer lifecycle notice retrieved 2026-09-15. Product 200345 was
+to be discontinued effective 2025-10-01. P31u is unsuitable for a new Phase 1
+baseline despite the public 2023 manual.
+
+**S51 — [GomSpace NanoCam C1U current product page](https://gomspace.com/product/nanocam-c1u/)**
+
+Primary manufacturer page checked 2026-09-15. It states that NanoCam C1U is
+phased out and no longer available. It is rejected despite useful legacy
+documentation.
+
+**S52 — [EnduroSat current product catalog](https://www.endurosat.com/products/)**
+
+Primary manufacturer catalog checked 2026-09-15. Current 1U structure/panel
+products are not presented; the current OBC, UHF radio and CubeSat EPS have public
+specifications and prices but are mass/power/cost poor for the minimum-cost 1U
+candidate. This is a trade finding, not a general judgment of product quality.
+
+**S53 — [Pumpkin CubeSat Kit Design & CAD Models](https://www.cubesatkit.com/content/design.html)**
+
+Primary manufacturer CAD index checked 2026-09-15. It identifies the Rev D 1U
+skeletonized set as base plate 710-00294, chassis walls 703-00289 and cover plate
+710-00296, and identifies AntS cover 710-00784 separately. Public assembly CAD is
+licensed for integration measurement/modeling with attribution and restrictions;
+it is not fabrication data and cannot establish current commercial availability.
+
+**S54 — [Pumpkin CubeSat Kit Chassis Walls current product page](https://www.pumpkinspace.com/store/p30/CubeSat_Kit%E2%84%A2_Chassis_Walls.html)**
+
+Primary manufacturer store page retrieved 2026-09-15. It states 5052-H32
+construction, 97 × 97 mm internal cross-section, solid/skeleton choices and a
+USD 1,215–2,955 family range, but shows `Unavailable`. A local-only HTML capture
+and hash are recorded in `SOURCES/components/LOCAL_ARCHIVE_MANIFEST.csv`.
+
+**S55 — [Pumpkin CubeSat Kit structure store category](https://www.pumpkinspace.com/store/c4/CubeSat_Kit%E2%84%A2_Structures.html)**
+
+Primary current manufacturer price/category page checked 2026-09-15. It provides
+prices and separate products for chassis, base, cover, large-aperture, quad-switch
+and AntS-compatible assemblies. Individual selectors are currently marked
+unavailable, so the page is not proof that an exact set can presently be bought.
+
+**S56 — [Pumpkin CubeSat Kit FAQ](https://cubesatkit.com/content/faq.html)**
+
+Primary manufacturer integration reference checked 2026-09-15. It describes
+5052-H32 structure sheet, 6061-T6 machined feet/spacers, stainless fasteners,
+hard-anodized launcher-contact surfaces and gold-alodined remaining surfaces.
+These family statements do not replace part-level drawings or acceptance data.
+
+**S57 — [Pumpkin CubeSat Kit User Manual UM-3](https://www.cubesatkit.com/docs/cubesatkitmanual.pdf)**
+
+Primary manufacturer legacy manual retrieved 2026-09-15. It supplies assembly,
+interface, environmental and historical part information. It predates the current
+store and cannot alone establish the delivered Rev D set. A local-only copy and
+hash are in the archive manifest.
+
+**S58 — [Pumpkin CubeSat Kit Fixed Solar Panels current product page](https://www.pumpkinspace.com/store/p154/CubeSat_Kit%E2%84%A2_Fixed_Solar_Panels.html)**
+
+Primary manufacturer store page retrieved 2026-09-15. It gives 0.8 mm thickness,
+a USD 2,500–5,650 family range, greater-than-32% AM0 cell-efficiency claim and
+per-panel vacuum-bakeout/irradiance-test claims, while the selector is marked
+`Unavailable`. It does not expose the exact selectable part numbers, mass, IV
+curves, harness/pinout or environmental limits needed for this mission. A
+local-only HTML capture and hash are in the archive manifest.
+
+**S59 — [Pumpkin Solar Panel Clips Set](https://www.pumpkinspace.com/store/p157/Solar_Panel_Clips_Set_%28Set_of_8_clips%29.html)**
+
+Primary manufacturer store page checked 2026-09-15. It lists a USD 590 set of
+eight clips for mounting up to six 0.8 mm or 1.6 mm panels, but shows
+`Unavailable`. It is an integration accessory, not evidence for panel electrical
+or environmental performance.
