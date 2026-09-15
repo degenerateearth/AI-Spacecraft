@@ -1,0 +1,15 @@
+[Commentary]
+The component proposal is written and its file checks pass. It identifies 19 flight items and 10 ground items, but the evidence does **not** yet support calling the set compliant with our Phase 1 requirements. I’m finishing the project sync and checking what can be committed; I’ll make the remaining gaps explicit in the handoff.
+
+[Final]
+The proposal is saved: **19 flight items and 10 ground items**, with individual component records covering known cost, dimensions, mass, power, ordering links, sources and evidence gaps.
+
+**It does not yet satisfy our Phase 1 requirements.** Eight custom assemblies need detailed designs, five ground items lack exact selections, and the flight COTS candidates still have critical documentation gaps. No component has been admitted to the baseline.
+
+- [Full component proposal](C:/Users/trace/Documents/Codex/2026-09-14/d/outputs/Degen-1/Components/Proposed_Operating_Component_Set.md)
+- [Detailed component register](C:/Users/trace/Documents/Codex/2026-09-14/d/outputs/Degen-1/Components/Proposed_Operating_Component_Set.csv)
+- [Custom components and verification paths](C:/Users/trace/Documents/Codex/2026-09-14/d/outputs/Degen-1/Components/Custom_Component_Development_Register.md)
+
+The core candidates are the ISISPACE structure, ICEPS2 power/battery system, fixed solar panels and AntS antenna; GomSpace A3200 computer, DMC-3 carrier and AX100-U radio; and SkyFox piCAM/FM camera.
+
+The next engineering step is to close the structure, separation-switch and power-inhibit evidence gaps, or identify better-documented alternatives. The current list is a proposal for review—not proof that these parts form a working spacecraft.

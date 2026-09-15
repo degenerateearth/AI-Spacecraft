@@ -65,3 +65,10 @@ register, status record, requirements and configuration log all identify Phase 1
 component evidence closure as the controlling first engineering gate. M1 and M3
 retain their preliminary evidence without further advancement. The gate remains
 OPEN with 0 COTS and 0 custom components admitted.
+
+2026-09-15 complete-operating-set check: PASS for list consistency.
+`Components/generate_proposed_operating_set.py` produced 29 unique rows and 29
+individual component cards: 19 flight and 10 ground. No row is marked `PHASE 1 BASELINE`. Eight custom/site
+assemblies have project identifiers and development records; five functions say
+`NO COMPLIANT PART IDENTIFIED`. This verifies coverage and labeling only, not
+functional compatibility, component compliance or obtainability.

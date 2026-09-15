@@ -70,6 +70,12 @@ component_evidence_gate:
   audited_alternative_count: 2
   property_records: 105
   gate_fail_count: 10
+  proposed_operating_set: Components/Proposed_Operating_Component_Set.csv
+  proposed_operating_set_lines: 29
+  proposed_flight_lines: 19
+  proposed_ground_lines: 10
+  proposed_custom_components: 8
+  functions_with_no_compliant_exact_part_identified: 5
   state: no_component_currently_passes_complete_mission_relevant_public_evidence_gate
   archived_document_manifest: SOURCES/components/LOCAL_ARCHIVE_MANIFEST.csv
   local_vendor_archives_publicly_committed: false

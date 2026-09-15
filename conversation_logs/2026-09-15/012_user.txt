@@ -1,0 +1,4 @@
+Recorded date: 2026-09-15
+Role: user
+
+Propose all necessary components to make the spacecraft operate that meet our requirements 

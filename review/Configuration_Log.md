@@ -90,3 +90,11 @@ gate, ahead of further simulation, higher-fidelity CAD, procurement or integrate
 performance claims. Existing preliminary work remains preserved without added
 credibility. No component passed, no baseline hardware changed and no purchase or
 external contact occurred.
+
+CMP-003 — 2026-09-15. Created D1-CMP-SET-001, a complete proposed operating
+set with 19 flight and 10 ground physical-component lines. Added exact COTS
+candidates where supported, eight named custom-development assemblies, and five
+explicit `NO COMPLIANT PART IDENTIFIED` ground/integration selections. Recorded
+the piCAM substitution's bookkeeping-only mass/cost effect. The set is not a
+Phase 1 baseline; 0 components were admitted and no controlled BOM, purchase,
+hardware, external contact or evidence level changed.

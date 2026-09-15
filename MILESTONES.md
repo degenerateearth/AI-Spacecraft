@@ -7,7 +7,7 @@ repository. Documentation quality alone does not advance physical credibility.
 | ID | Milestone | Exit evidence | Status |
 |---|---|---|---|
 | M0 | Project foundation | Constitution, preliminary audit package, cost/status tracking, conversation log, and GitHub baseline | Complete |
-| G1 | **First engineering gate — Phase 1 component evidence closure** | Exact documented component or released custom design for every F01–F16 function; all mission-relevant properties and interfaces closed under D1-CMP-STD-001 | **In progress — controlling engineering priority; 0 COTS components and 0 custom components admitted** |
+| G1 | **First engineering gate — Phase 1 component evidence closure** | Exact documented component or released custom design for every F01–F16 function; all mission-relevant properties and interfaces closed under D1-CMP-STD-001 | **In progress — 29-line operating set proposed; 0 COTS components and 0 custom components admitted** |
 | M1 | Mission and requirements baseline | Mission success criteria, traceable requirements, orbit assumption, imaging concept, and open-issue review | Preliminary work preserved; further advancement waits on G1 |
 | M1A | Public launch/deployer planning gate | Three-path trade, provisional mechanical reference, source archive, CAD screen, conflicts and explicit contract/ICD gaps | Complete — planning evidence only |
 | M1B | Public-information readiness reassessment | Phase rule, known downstream dependency register, matrix classification and next-step decision | Complete — governance/planning evidence only |

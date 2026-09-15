@@ -12,6 +12,12 @@ required function before further simulation, higher-fidelity CAD, procurement or
 performance claims can control the project. Existing calculations and CAD remain
 preliminary records and do not supply missing component properties.
 
+The [complete proposed operating component set](Components/Proposed_Operating_Component_Set.md)
+now covers 19 flight and 10 ground hardware lines. It is a functionally complete
+proposal and an explicit gap register, not a Phase 1 baseline: every COTS line is
+still evidence incomplete, every custom line is unreleased, or no compliant exact
+part has yet been identified.
+
 The design targets one year of opportunistic imaging and housekeeping telemetry in LEO at low build cost using commercially marketed CubeSat subsystems. The owner selected occasional recognizable Earth images, US operation and nominal 450–500 km LEO, with no arbitrary spacecraft budget ceiling. Revision A proposed a CrystalSpace CS-101 camera; the evidence audit prefers SkyFox piCAM/FM, but neither is admitted to the Phase 1 baseline. Selected-location imaging or mapping would require a revised baseline.
 
 The pre-gate candidate architecture uses an ISISPACE 1U chassis, six fixed solar panels, ICEPS2 Type A battery/EPS, AntS UHF antenna, and GomSpace A3200/AX100-U avionics on a DMC-3 carrier. One small custom adapter is required to resolve supply-voltage tolerance and inter-vendor routing. No propulsion, reaction wheels, GNSS receiver or deployable solar arrays are included. This paragraph records the proposed architecture and is not a released component baseline.

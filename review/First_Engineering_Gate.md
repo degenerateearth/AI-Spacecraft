@@ -45,12 +45,18 @@ and properties does not close the gate.
 - Recommended COTS candidates: 8
 - Audited COTS alternatives: 2
 - Property records: 105
+- Complete proposed operating-set lines: 29 (19 flight, 10 ground)
 - COTS candidates passing: 0
 - Custom components released: 0
 - Gate status: **OPEN**
 
 The present record is a screened candidate architecture, not a Phase 1 component
 baseline.
+
+`Components/Proposed_Operating_Component_Set.md` now assigns every necessary
+flight and ground physical function to a candidate, a project custom-part number,
+or an explicit `NO COMPLIANT PART IDENTIFIED` state. Functional list completeness
+does not close this gate.
 
 ## Immediate work order
 

@@ -37,6 +37,11 @@ the recommended structure or panel candidates: the current selectable store
 entries are marked unavailable, and mission-critical configuration data remain
 missing.
 
+The complete downstream physical proposal is now enumerated in
+`Components/Proposed_Operating_Component_Set.md` and its generated CSV/cards.
+That list covers all flight and ground hardware needed by the current concept;
+it does not change any gate result in this audit.
+
 ## Changes from the previous audit
 
 1. **Camera recommendation changed.** CrystalSpace CS-101 remains a real current
