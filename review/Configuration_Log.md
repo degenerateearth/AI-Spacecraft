@@ -14,3 +14,11 @@ from old sketch placeholders to published envelope dimensions. Assumptions and
 Added native/STEP exports, generation script, source traceability, mass ledger,
 software verification and O19–O22. No flight hardware, FEA, thermal simulation,
 expert review, design release or higher success level results from this work.
+
+PA-001 — 2026-09-15. Audited exactly the existing B01–B16 BOM lines. Added one
+component card per line, a sortable master audit, source/order-route check and a
+reproducible generator that fails if BOM IDs, quantities or cost allowances drift.
+Recorded current vendor facts separately from project requirements, assumptions
+and unknowns. B01's public €3,450 listing exceeds its €3,000 base allowance; the
+controlled BOM was not rebased. B08 availability remains unconfirmed. No new
+component, purchase, supplier contact, test or procurement release resulted.

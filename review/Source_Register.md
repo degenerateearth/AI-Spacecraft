@@ -1,6 +1,6 @@
 # Degen-1 source register
 
-Access date: 2026-09-14. Public catalog availability is not stock confirmation. No suppliers were contacted. Page publication/crawl dates are not treated as hardware revision dates. Vendor PDFs remain at their original URLs; this package contains references and limited factual extraction, not redistributed manuals.
+Initial access date: 2026-09-14; selected component/order routes rechecked 2026-09-15. Public catalog availability is not stock confirmation. No suppliers were contacted. Page publication/crawl dates are not treated as hardware revision dates. Vendor PDFs remain at their original URLs; this package contains references and limited factual extraction, not redistributed manuals.
 
 **S01 — [CubeSat Design Specification Rev 14.1, 2022-02-09](https://www.nasa.gov/wp-content/uploads/2018/01/cubesatdesignspecificationrev14_12022-02-09.pdf)**
 
@@ -24,7 +24,7 @@ Primary; less than 90 g, 98 x 98 x 7 mm; 5 V variant selected; no assumption of 
 
 **S06 — [ISISPACE 1U structure listing](https://www.cubesatshop.com/product/1-unit-cubesat-structure/)**
 
-Vendor storefront; catalog listing; exact rail configuration, switch kit, mass and current availability need RFQ.
+Vendor storefront; rechecked 2026-09-15 at EUR3450, SKU 100000 and stated 4–6 week availability. These are indicative storefront values, not a received quotation. Exact rail configuration, switch kit, mass and current availability need RFQ.
 
 **S07 — [NanoMind A3200 current product page](https://gomspace.com/product/nanomind-a3200/)**
 

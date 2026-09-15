@@ -1,0 +1,4 @@
+Recorded date: 2026-09-15 (exact prompt time unavailable)
+Role: user
+
+Do a parts audit. Cost, size weight, power requirements, URL to order and everything else we need to know in a Components folder for every component in the project do not retroactively add components just the ones supported by the current files

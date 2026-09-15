@@ -21,4 +21,9 @@
 
 The executed calculation script passed its internal assertions. BOM and source identifiers, totals and local links were independently checked. This does not close assumptions about thermal, radiation, orbit decay, supplier hardware, regulatory eligibility or physical tests.
 
+2026-09-15 component-audit check: PASS. `Components/generate_component_cards.py`
+regenerated 16 cards and one 16-row CSV, with exact B01–B16 ID order and assertions
+against the controlled BOM quantities and low/base/high cost allowances. This is a
+documentation consistency test, not component verification.
+
 Orbit sensitivity is in `analysis/orbit_sensitivity.csv`: 400 and 550 km are trade points only. No cheaper available rideshare is asserted without a quote; neither point has a qualified orbital lifetime.

@@ -7,6 +7,8 @@ The design targets one year of opportunistic imaging and housekeeping telemetry 
 
 The baseline uses an ISISPACE 1U chassis, six fixed solar panels, ICEPS2 Type A battery/EPS, AntS UHF antenna, and GomSpace A3200/AX100-U avionics on a DMC-3 carrier. One small custom adapter is required to resolve supply-voltage tolerance and inter-vendor routing. No propulsion, reaction wheels, GNSS receiver or deployable solar arrays are included.
 
+The [component audit](Components/README.md) covers every existing B01–B16 BOM line with cost, order route, size, mass, power, interfaces, configuration and procurement blockers. It adds no new spacecraft hardware.
+
 **Planning results:** 1.064 kg current best estimate, 1.276 kg including 20% growth; EUR46,500 base flight-hardware allowance (EUR29,350–70,100 range). These are engineering estimates, not supplier quotations. Spacecraft build, including engineering/prototype hardware, assembly and nonrecurring engineering labor, is EUR152,500 base before contingency. Testing, ground station, licensing, launch and operations are separate categories. The cost report explains inclusions and uncertainty.
 
 The reproducible model closes nominal energy at +18.4% with a tumble-average assumption, and a separate fixed-attitude recovery mode closes at +0.124 Wh/orbit. The nominal mode does **not** close in the fixed-attitude case. Thermal, orbit-lifetime, radiation, inhibit independence and final mechanical/interface compliance remain open. No analysis in this package demonstrates that the assembled spacecraft has survived launch or will actually operate for twelve months.

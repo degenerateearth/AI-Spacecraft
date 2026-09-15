@@ -1,0 +1,47 @@
+# DEGENERATE-1 component audit
+
+Audit date: 2026-09-15  
+Scope: the 16 lines B01–B16 already present in `procurement/BOM.csv`
+
+This folder answers what is currently known about the cost, order route, availability, size, mass, power, interfaces, required configuration, environmental evidence and procurement blockers for every component already supported by the project record. It does not introduce any new spacecraft component. The solar-panel family appears on four BOM lines because the documented spacecraft requires four different procurement configurations. The five integration-vendor lines remain custom assemblies/lots because their constituent designs have not been released.
+
+## Audit result
+
+| Result | Count |
+|---|---:|
+| Existing BOM lines audited | 16 |
+| COTS or configured COTS lines | 11 |
+| Custom integration lines | 5 |
+| Procurement-released lines | 0 |
+| Lines with a current public firm price for the required configuration | 0 |
+| Lines with a public indicative price | 1 (B01) |
+| Lines with unconfirmed current product availability | 1 (B08) |
+
+The hardware-only project estimate remains €29,350 low / €46,500 base / €70,100 high. These are quantity-extended planning estimates, not quotations. B01’s current storefront shows €3,450, €450 above its existing €3,000 base allowance. The controlled BOM has not been silently rebased.
+
+No line is ready to purchase. B01 still lacks its exact switch/deployer configuration. B02 has a current product-page versus linked-datasheet battery-energy/configuration discrepancy. B03–B05 and B14 require signed custom panel designs. B06/B07 need current sales revisions and software/support scope. B08’s current availability is unconfirmed. B09 needs authorized frequency and final mechanical/RF configuration. B10–B13 and B16 lack released drawings or complete bills of material. B15 lacks public electrical, shutter and protocol data.
+
+## Files
+
+- [`component_audit.csv`](component_audit.csv) is the sortable master audit.
+- [`cards/`](cards/) contains one engineering/procurement card for each existing BOM line.
+- [`SOURCE_CHECK_LOG.md`](SOURCE_CHECK_LOG.md) records what was checked and distinguishes order routes from historical references.
+- [`generate_component_cards.py`](generate_component_cards.py) reproducibly generates the CSV and all 16 cards from a fixed list matching B01–B16.
+
+Regenerate from the repository root with:
+
+```powershell
+python Components/generate_component_cards.py
+```
+
+## Evidence rules
+
+- **VENDOR** means a current manufacturer page or registered manufacturer datasheet states the value. It does not establish that the delivered unit will have that revision.
+- **PROJECT ALLOCATION/REQUIREMENT** means the project chose or budgeted the value. It is not a vendor guarantee.
+- **CALCULATED** means the project calculation can be reproduced from stated inputs.
+- **ASSUMPTION/PROVISIONAL** means the value only permits early layout or budgeting and cannot release hardware.
+- **UNKNOWN** is preserved when the record does not support a value.
+
+Order URLs point to a current product/quote/contact route when one was found. “Not applicable” is deliberate for custom hardware that cannot honestly be ordered until its engineering definition exists. Legacy PDFs are evidence references, not purchasing links.
+
+No component has been purchased, received, inspected, measured, powered, environmentally tested, or independently expert-reviewed. This audit raises no item beyond DOCUMENTED/AUDITED status.
