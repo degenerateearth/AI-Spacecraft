@@ -48,3 +48,21 @@ The owner approved opportunistic Earth imagery, US operation and nominal 450–5
 Dimension provenance, provisional values and documented-design -> CAD-conflict ->
 proposed-correction records are in [CAD traceability](../drawings/freecad/TRACEABILITY.md)
 and [CAD findings](../drawings/freecad/FINDINGS.md). No correction changes the architecture yet.
+
+## External readiness audit findings — 2026-09-15
+
+| ID | Priority | Issue | Owner role | Closure artifact | Readiness rows |
+|---|---|---|---|---|---|
+| O23 | Critical | No independent aerospace feasibility review has occurred; current evidence is AI-generated and self-audited | Chief engineer/independent review board | Reviewer qualifications, signed review record, findings and dispositions | GOV-007,GOV-010,MIS-008 |
+| O24 | High | No named project organization, decision authority, WBS, resource-loaded schedule or committed funding plan | Owner/project manager | Accepted RACI/authority matrix, WBS, critical-path schedule and funding gate | GOV-003–005 |
+| O25 | High | Requirements and T01–T18 are preliminary but not a closed bidirectional verification baseline with executable procedures | Systems/AIV | Approved requirements baseline, verification cross-reference and detailed procedures | SYS-003,SYS-004,AIV-003 |
+| O26 | High | Ground site, station design, software, contact analysis and trained operators are absent | Ground/RF/operations | Site survey, released ground BOM/design, software, coverage analysis and rehearsal records | GRD-001–006,OPS-003 |
+| O27 | Critical | Legal operator/entity and accountable regulatory contacts are undefined, blocking defensible FCC/NOAA/FAA paths | Owner/regulatory | Operator identity/ownership record, licensing strategy and responsible contacts | REG-001–007 |
+| O28 | High | No complete materials/processes/outgassing list, detailed hazard reports or battery transport package exists | Materials/safety/QA | As-built materials/process list, hazard analyses and accepted battery/shipping evidence | MEC-008,MEC-009,LCH-003,REG-009 |
+| O29 | High | Verification article strategy, facilities, fixtures, EGSE, calibration and quality system are not baselined | AIV/QA/project manager | Approved model philosophy, facility/equipment plan, quality/AIT plan and funded schedule | AIV-001–005 |
+
+The complete 108-item audit and closure criteria are in
+[Master CubeSat Readiness Checklist](Master_CubeSat_Readiness_Checklist.md).
+These findings lower the honest project maturity assessment to Constitution
+Level 0 with partial progress toward Level 1; they do not alter the spacecraft
+architecture.

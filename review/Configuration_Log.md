@@ -22,3 +22,13 @@ Recorded current vendor facts separately from project requirements, assumptions
 and unknowns. B01's public €3,450 listing exceeds its €3,000 base allowance; the
 controlled BOM was not rebased. B08 availability remains unconfirmed. No new
 component, purchase, supplier contact, test or procurement release resulted.
+
+ERA-001 — 2026-09-15. Selected the University of Hawaiʻi *A Guide to CubeSat
+Mission and Bus Design*, Edition 1, as an external development framework and
+supplemented it with primary CubeSat, NASA, FCC, NOAA, FAA and future launch-ICD
+sources. Audited the full repository against 108 applicable readiness items:
+3 complete, 21 provisionally addressed, 26 in progress, 28 not started and 30
+blocked. Added O23–O29. Corrected project status from Level 1 to Level 0 with
+partial evidence toward Level 1 because internal design closure, hardware,
+testing, regulatory approval and expert review do not exist. No architecture or
+mission change resulted.

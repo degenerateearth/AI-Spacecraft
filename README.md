@@ -42,3 +42,7 @@ Read the [Project Overview](Project_Overview.md) for the AI-assisted engineering
 The baseline engineering interface is a standard $20/month ChatGPT Plus subscription, including Codex/Astra where available, with free/open-source engineering tools wherever practical. Paid AI or software is not introduced silently. See [AI toolchain and boundaries](review/AI_Toolchain_and_Boundaries.md), [project status](review/Project_Status.yaml), and the separate [project cost ledger](procurement/Project_Cost_Ledger.csv).
 
 Project gates and their required evidence are tracked in [MILESTONES.md](MILESTONES.md). GitHub updates are made at those review points.
+
+Before planning major engineering work, consult the [Master CubeSat Readiness Checklist](review/Master_CubeSat_Readiness_Checklist.md). It audits this repository against an independent University of Hawaiʻi CubeSat development framework plus primary launch, NASA and US regulatory sources. The 2026-09-15 audit places the project at Constitution Level 0 with partial evidence toward Level 1; it records 108 applicable activities, including 30 blocked and 28 not started.
+
+Archived external-framework provenance and licensing are recorded in [SOURCES/README.md](SOURCES/README.md).

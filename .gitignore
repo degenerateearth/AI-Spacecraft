@@ -8,3 +8,6 @@
 __pycache__/
 *.py[cod]
 drawings/freecad/verification_work/
+
+# Licensed local source archive exceeds GitHub's 100 MiB single-object limit.
+SOURCES/UH_A_Guide_to_CubeSat_Mission_and_Bus_Design_Ed1.pdf

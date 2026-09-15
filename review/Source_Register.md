@@ -118,3 +118,15 @@ Primary; 430–438MHz, 18.9dBic catalog gain; budget derates to 16dBi equivalent
 **S29 — [M2 manufacturer storefront](https://www.m2inc.com/M2FACTORYDIRECT?page=2)**
 
 Primary; 436CP42UG published USD910.95 on access date; separate from EUR planning allowance.
+
+**S30 — [A Guide to CubeSat Mission and Bus Design](https://pressbooks-dev.oer.hawaii.edu/epet302/)**
+
+University development framework; Frances Zhu, Edition 1, University of Hawaiʻi Pressbooks, 2022, ISBN 978-1-948027-11-3; retrieved 2026-09-15. CC BY 4.0 except where otherwise noted. Used to identify lifecycle and discipline work, not as controlling technical authority.
+
+**S31 — [CubeSat 101: Basic Concepts and Processes for First-Time CubeSat Developers](https://science.nasa.gov/wp-content/uploads/2023/06/nasa_csli_cubesat_101_508.pdf)**
+
+NASA CubeSat Launch Initiative, revision dated October 2017; retrieved 2026-09-15. End-to-end supplement for development, mission coordination, licensing, flight certification, integration, launch and operations. Current mission-specific requirements supersede its examples.
+
+**S32 — [NASA Systems Engineering Handbook](https://ntrs.nasa.gov/citations/20170001761)**
+
+NASA/SP-2016-6105 Rev. 2, publication date 2017-02-17; retrieved 2026-09-15. Public-use-permitted lifecycle, requirements, verification/validation, risk and configuration-management guidance; not a Degen-1 directive by itself.

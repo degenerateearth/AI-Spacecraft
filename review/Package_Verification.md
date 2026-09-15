@@ -26,4 +26,11 @@ regenerated 16 cards and one 16-row CSV, with exact B01–B16 ID order and asser
 against the controlled BOM quantities and low/base/high cost allowances. This is a
 documentation consistency test, not component verification.
 
+2026-09-15 external-readiness check: PASS. The generator produced 108 unique
+matrix IDs, accepted only the six controlled status values, and reconciled the
+summary to 3 complete, 21 provisionally addressed, 26 in progress, 28 not
+started, 30 blocked and 0 not applicable. This verifies matrix consistency only;
+it does not validate the University framework, close any row or constitute an
+independent engineering review.
+
 Orbit sensitivity is in `analysis/orbit_sensitivity.csv`: 400 and 550 km are trade points only. No cheaper available rideshare is asserted without a quote; neither point has a qualified orbital lifetime.

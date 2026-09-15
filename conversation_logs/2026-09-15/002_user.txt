@@ -1,0 +1,153 @@
+Recorded date: 2026-09-15 (exact prompt time unavailable)
+Role: user
+
+Before expanding the DEGEN-1 design further, establish an external, independent development framework against which the project can be judged.
+
+GOAL
+
+Find a credible, publicly available university CubeSat development checklist, handbook, development guide, or end-to-end project framework applicable to a 1U CubeSat intended for orbital flight.
+
+Prefer material from a university with demonstrated CubeSat/small-satellite flight experience.
+
+Do not select a source merely because it agrees with the current DEGEN-1 design.
+
+Use the university framework to identify the major activities, analyses, documentation, reviews, tests, interfaces, regulatory work, operations preparation, and launch-integration work normally required to progress a 1U CubeSat from concept toward orbit.
+
+SOURCE DISCIPLINE
+
+The university document is primarily a DEVELOPMENT FRAMEWORK, not automatically the authority for every technical requirement.
+
+Where it references or depends upon external standards or requirements, identify and prefer the appropriate primary source when publicly available, such as:
+
+- current CubeSat Design Specification or applicable deployer specification
+- selected launch-provider/deployer requirements when known
+- applicable US regulatory requirements
+- spectrum/licensing requirements
+- remote-sensing requirements if applicable
+- orbital-debris/spacecraft disposal requirements
+- environmental/test requirements applicable to the eventual launch opportunity
+- other primary standards actually relevant to DEGEN-1
+
+Record exact source title, issuing organization, revision/version, publication date when available, URL, retrieval date, and applicability.
+
+Do not claim compliance with a requirement merely because it appears in a checklist.
+
+MASTER READINESS MATRIX
+
+Create a version-controlled project file containing a master checklist/readiness matrix.
+
+For every applicable item, include at minimum:
+
+- unique ID
+- development phase
+- requirement/activity
+- source
+- source section/page when possible
+- why it applies to DEGEN-1
+- current project status
+- existing DEGEN-1 evidence/artifact
+- evidence level
+- missing evidence
+- next action
+- blocking dependencies
+- responsible discipline/role
+- completion criteria
+
+Use statuses such as:
+
+NOT STARTED
+IN PROGRESS
+PROVISIONALLY ADDRESSED
+BLOCKED
+NOT APPLICABLE
+COMPLETE
+
+Do not mark COMPLETE unless the required evidence actually exists.
+
+PROJECT GAP ANALYSIS
+
+After building the external checklist, audit the entire existing DEGEN-1 repository against it.
+
+Do not retroactively create documents simply to make checklist cells appear complete.
+
+For each checklist item:
+
+1. Determine whether the existing project addresses it.
+2. Link the exact existing artifact/evidence.
+3. Identify assumptions or unsupported claims.
+4. Identify missing work.
+5. Determine what evidence would actually close the item.
+6. Add genuine gaps to the project's existing issue/risk system where appropriate.
+
+Produce a summary showing:
+
+- total applicable checklist items
+- complete
+- partially/provisionally addressed
+- not started
+- blocked
+- not applicable
+- highest-priority gaps
+- items that currently prevent progression toward hardware
+- items that cannot be completed until a launch provider/deployer/orbit is selected
+- items requiring physical testing
+- items requiring regulatory approval
+- items requiring independent professional review
+
+PROJECT GOVERNANCE
+
+After this audit, use the readiness matrix as one of the primary planning inputs for future DEGEN-1 work.
+
+Future work should preferentially:
+
+1. close existing high-priority gaps,
+2. increase the evidence level of existing claims,
+3. resolve dependencies that block multiple checklist items,
+4. prepare for physical verification,
+
+rather than generating additional documentation simply because additional documentation is possible.
+
+Do not redesign DEGEN-1 merely to resemble the reference university spacecraft.
+
+The reference tells us WHAT DEVELOPMENT WORK MUST BE CONSIDERED, not WHAT OUR SPACECRAFT MUST LOOK LIKE.
+
+Preserve the existing Project Constitution as the project's governing statement.
+
+If an external requirement conflicts with the current design, record:
+
+CURRENT DESIGN
+→ EXTERNAL REQUIREMENT
+→ CONFLICT
+→ REQUIRED DECISION
+
+Do not silently modify the architecture.
+
+ARCHIVAL
+
+Save local copies of the publicly redistributable source documents when licensing permits.
+
+When redistribution is uncertain, save citation metadata and the official source URL instead of copying the document into the public repository.
+
+Create a SOURCES/README or equivalent explaining provenance and licensing.
+
+Store the master readiness matrix in an obvious location such as:
+
+review/Master_CubeSat_Readiness_Checklist.md
+
+or another location consistent with the existing repository structure.
+
+Update the README so future contributors and AI sessions know this checklist exists and should be consulted when planning major work.
+
+IMPORTANT EXPERIMENTAL PRINCIPLE
+
+This checklist must function as an external reality check on the AI-generated project.
+
+Do not optimize the checklist or interpretation to make DEGEN-1 appear more mature.
+
+If the external framework reveals that the project is substantially less mature than its current documentation suggests, report that explicitly.
+
+The objective is not to obtain a good score.
+
+The objective is to discover what actually remains between the current project and an orbit-capable spacecraft.
+
+Before making changes, report which university framework you selected, why you selected it, its limitations, and which primary standards will supplement it.
