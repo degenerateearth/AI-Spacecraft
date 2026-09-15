@@ -174,8 +174,10 @@ def write_outputs():
     header = "| " + " | ".join(fields) + " |\n|" + "|".join("---" for _ in fields) + "|"
     OUT_MD.write_text(f"""# DEGENERATE-1 master CubeSat readiness checklist
 
-Audit baseline: {DATE}  
-External development framework: *A Guide to CubeSat Mission and Bus Design*, Edition 1, Frances Zhu, University of Hawaiʻi at Mānoa / Hawaiʻi Space Flight Laboratory, 2022, CC BY 4.0  
+Audit baseline: {DATE}
+
+External development framework: *A Guide to CubeSat Mission and Bus Design*, Edition 1, Frances Zhu, University of Hawaiʻi at Mānoa / Hawaiʻi Space Flight Laboratory, 2022, CC BY 4.0
+
 Machine-readable matrix: [Master_CubeSat_Readiness_Checklist.csv](Master_CubeSat_Readiness_Checklist.csv)
 
 ## Independent maturity finding
@@ -192,8 +194,10 @@ Limitations: Edition 1 is an educational text rather than a consensus or launch 
 
 ## Status summary
 
-Total items: **{len(ROWS)}**  
-Applicable items: **{applicable}**  
+Total items: **{len(ROWS)}**
+
+Applicable items: **{applicable}**
+
 Partially/provisionally addressed: **{partial}**
 
 | Status | Count |

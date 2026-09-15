@@ -1,7 +1,9 @@
 # DEGENERATE-1 master CubeSat readiness checklist
 
-Audit baseline: 2026-09-15  
-External development framework: *A Guide to CubeSat Mission and Bus Design*, Edition 1, Frances Zhu, University of Hawaiʻi at Mānoa / Hawaiʻi Space Flight Laboratory, 2022, CC BY 4.0  
+Audit baseline: 2026-09-15
+
+External development framework: *A Guide to CubeSat Mission and Bus Design*, Edition 1, Frances Zhu, University of Hawaiʻi at Mānoa / Hawaiʻi Space Flight Laboratory, 2022, CC BY 4.0
+
 Machine-readable matrix: [Master_CubeSat_Readiness_Checklist.csv](Master_CubeSat_Readiness_Checklist.csv)
 
 ## Independent maturity finding
@@ -18,8 +20,10 @@ Limitations: Edition 1 is an educational text rather than a consensus or launch 
 
 ## Status summary
 
-Total items: **108**  
-Applicable items: **108**  
+Total items: **108**
+
+Applicable items: **108**
+
 Partially/provisionally addressed: **47**
 
 | Status | Count |
