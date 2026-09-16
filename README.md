@@ -3,6 +3,11 @@
 
 Issued 14 September 2026. Status: **AUDITABLE PRELIMINARY DESIGN / NOT RELEASED FOR FABRICATION OR FLIGHT**.
 
+The current goal is an [education-grade, theoretically buildable design](review/Theoretical_Buildability_Standard.md).
+It requires exact verifiable parts, released custom designs, reconciled interfaces
+and reproducible engineering analyses. Purchasing and physical testing are later
+validation stages and are not required to complete the theoretical design.
+
 ## First engineering step
 
 The controlling first engineering gate is [Phase 1 component evidence
@@ -12,11 +17,12 @@ required function before further simulation, higher-fidelity CAD, procurement or
 performance claims can control the project. Existing calculations and CAD remain
 preliminary records and do not supply missing component properties.
 
-The [complete proposed operating component set](Components/Proposed_Operating_Component_Set.md)
-now covers 19 flight and 10 ground hardware lines. It is a functionally complete
-proposal and an explicit gap register, not a Phase 1 baseline: every COTS line is
-still evidence incomplete, every custom line is unreleased, or no compliant exact
-part has yet been identified.
+The [Phase 1 closure review package](Components/phase1_closure/README.md) now
+supersedes the earlier 29-line operating proposal for review. Its consolidated
+register contains 52 flight, ground and support records: 5 bounded component-level
+SUPPORTED records, 25 genuine custom work packages and 22 explicit COTS or
+configuration evidence exceptions. No flight component is newly admitted, and
+no custom work package is a released design. G1 therefore remains open.
 
 The design targets one year of opportunistic imaging and housekeeping telemetry in LEO at low build cost using commercially marketed CubeSat subsystems. The owner selected occasional recognizable Earth images, US operation and nominal 450–500 km LEO, with no arbitrary spacecraft budget ceiling. Revision A proposed a CrystalSpace CS-101 camera; the evidence audit prefers SkyFox piCAM/FM, but neither is admitted to the Phase 1 baseline. Selected-location imaging or mapping would require a revised baseline.
 
@@ -44,6 +50,7 @@ The original scalar power model closes nominal energy at +18.4% with a tumble-av
 12. [Preliminary transient thermal-power analysis](engineering/11_Transient_Thermal_Power_Analysis.md)
 13. [Requirements traceability](review/Requirements.md), [FMEA](review/FMEA.md), [sources](review/Source_Register.md)
 14. [Known downstream dependencies](review/Known_Downstream_Dependencies.md)
+15. [Phase 1 consolidated component register](Components/phase1_closure/component_register.md), [alternatives](Components/phase1_closure/alternative_review.md), and [build-and-operate completeness audit](Components/phase1_closure/completeness_audit.md)
 
 ### Reproduction and configuration
 

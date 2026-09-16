@@ -1,0 +1,14 @@
+Recorded date: 2026-09-15
+Role: assistant
+
+[Commentary]
+I’ll work through the full flight and ground register, search for better-documented alternatives where needed, and define the custom assemblies and their verification paths. I’ll keep “SUPPORTED” tied to the evidence actually available, then audit the consolidated register for anything missing from a build-and-operate perspective. I’ll also maintain the verbatim transcript and commit the work.
+
+[Commentary]
+Public web research is working again. One alternative already has a material drawback: GomSpace has issued an end-of-life notice for the P31u power system, so its detailed documentation alone does not make it a good replacement. I’m checking availability alongside technical evidence and keeping component documentation separate from the later work needed to establish 12-month mission suitability.
+
+[Commentary]
+The comparison is finding useful alternatives, but also new contradictions. Spacemanic publishes prices and specifications for its Eddie computer, Murgas radio and Amun power system; those are worth checking against the original selections. Its older solar-panel sheet and current page give different masses, so I’m checking the current revision before using either value. On the ground side, I’ve found manufacturer manuals for a specific rotator, power supply and photo printer, which can replace several unnamed placeholders.
+
+[Commentary]
+The detailed checks have exposed a build-critical omission: M2 requires the ground antenna to use a **nonconductive mast or crossboom**, with clearance from nearby conductors and a prescribed coax loop. That was missing from the earlier list. I’m adding it, along with control cables, mating connectors, ground power protection, printing consumables and service fixtures. I also found that Amun’s documented shutdown procedure requires a ground-service reset after the inhibit inputs are deactivated, so it cannot be treated as a drop-in substitute for the existing safety design.

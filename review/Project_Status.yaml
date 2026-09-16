@@ -1,6 +1,6 @@
 project: DEGENERATE-1
 schema_version: 0.1
-updated: 2026-09-15
+updated: 2026-09-16
 mission: Capture a recognizable photograph of Earth from orbit, downlink it, reconstruct it, and ultimately print it.
 current_success_level: 0
 current_success_label: Concept; partial evidence toward Engineering Model
@@ -55,6 +55,17 @@ public_information_phase:
   readiness_rows_with_downstream_dependencies: 88
   public_requirements_deferred: false
   success_level_change: none
+design_completion_standard:
+  id: D1-DES-STD-001
+  document: review/Theoretical_Buildability_Standard.md
+  target: education_grade_theoretically_buildable_design
+  purchase_required: false
+  fabrication_required: false
+  physical_testing_required: false
+  exact_verifiable_parts_required: true
+  custom_design_release_required: true
+  reproducible_analysis_required: true
+  tested_or_flightworthy_claim_permitted: false
 next_step_proposal:
   id: D1-GATE-001
   title: First engineering gate - Phase 1 component evidence closure
@@ -77,6 +88,14 @@ component_evidence_gate:
   proposed_custom_components: 8
   functions_with_no_compliant_exact_part_identified: 5
   state: no_component_currently_passes_complete_mission_relevant_public_evidence_gate
+  closure_register: Components/phase1_closure/component_register.json
+  closure_register_records: 52
+  bounded_component_level_supported: 5
+  closure_custom_work_packages: 25
+  closure_evidence_incomplete_exceptions: 22
+  closure_verification_errors: 0
+  flight_components_admitted: 0
+  gate_state_after_closure_review: open
   archived_document_manifest: SOURCES/components/LOCAL_ARCHIVE_MANIFEST.csv
   local_vendor_archives_publicly_committed: false
   reason: no_redistribution_license_established

@@ -1,6 +1,6 @@
 # D1-GATE-001 — First engineering gate: Phase 1 component evidence closure
 
-Revision A · 2026-09-15  
+Revision B · 2026-09-16  
 Status: **IN PROGRESS — 0 COMPONENTS ADMITTED**
 
 ## Required outcome
@@ -24,7 +24,8 @@ This gate closes only when:
 2. every COTS selection passes D1-CMP-STD-001 with no mission-relevant property
    recorded as unknown, conflicting, similar-product-derived or assumed;
 3. every custom component has requirements, constituent part numbers, released
-   interfaces, analysis inputs and a verification path;
+   interfaces, analysis inputs and a verification path; purchase, fabrication and
+   physical test records are not required for the theoretical baseline;
 4. the selected set has a pin-to-pin electrical/data/RF interface matrix and a
    mechanically consistent mounting/keep-out definition derived from the selected
    documentation;
@@ -35,7 +36,8 @@ This gate closes only when:
 7. contradictions are resolved or the affected component remains outside the
    baseline.
 
-Commercial availability must be independently supportable. A storefront,
+Commercial availability must be independently supportable. Purchase is not a
+gate criterion. A storefront,
 datasheet or option sheet that does not establish the exact required configuration
 and properties does not close the gate.
 
@@ -49,6 +51,17 @@ and properties does not close the gate.
 - COTS candidates passing: 0
 - Custom components released: 0
 - Gate status: **OPEN**
+
+The Revision A [consolidated closure register](../Components/phase1_closure/component_register.md)
+extends the earlier proposal to 52 flight, ground and support records. It records
+5 bounded component-level `SUPPORTED` ground items, 25 `CUSTOM/TO BE VERIFIED`
+work packages and 22 `CANDIDATE / EVIDENCE INCOMPLETE` exceptions. The custom
+records now state required release artifacts and verification paths, but none has
+a released constituent BOM, drawing/schematic and acceptance record. The
+[completeness audit](../Components/phase1_closure/completeness_audit.md) found and
+added previously implicit power, rotator, antenna-support, RF-protection,
+consumable and support-equipment functions. This improves list completeness; it
+does not admit an integrated baseline.
 
 The present record is a screened candidate architecture, not a Phase 1 component
 baseline.
@@ -76,3 +89,6 @@ When public evidence cannot close a property, record the boundary and the
 specific analysis it blocks. Do not skip to simulation with an invented value.
 Direct vendor contact and paid services remain downstream unless separately
 authorized.
+
+This gate now operates under D1-DES-STD-001. It closes an education-grade
+theoretical component baseline, not an as-built or flight-qualified configuration.

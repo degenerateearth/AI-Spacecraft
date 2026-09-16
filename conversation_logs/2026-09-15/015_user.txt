@@ -1,0 +1,16 @@
+Recorded date: 2026-09-15
+Role: user
+
+Continue Phase 1 Component Evidence Closure autonomously. Do not stop after identifying evidence gaps. Work through them one by one until you have produced the most complete, plausible, evidence-supported full component baseline possible.
+For every required spacecraft and ground-segment function, identify an exact component, assembly, or explicitly defined custom part. Prefer commercially available components with authoritative manufacturer documentation. Every COTS component must have a manufacturer, exact model/part number, function, interfaces, dimensions, mass, power requirements where applicable, and a verifiable manufacturer datasheet, manual, drawing, or equivalent primary source.
+If a proposed component lacks sufficient documentation, actively search for a better-documented alternative rather than simply leaving the gap open. You may replace earlier candidate components when a better-supported choice exists. Do not preserve previous selections merely because they were selected earlier.
+For custom assemblies that cannot reasonably have manufacturer datasheets—such as harnesses, brackets, interface boards, mounting hardware, or thermal interfaces—define exactly what must be designed and create a verification path identifying its requirements, interfaces, materials/components, and what evidence or analysis will eventually be required. Do not pretend a custom assembly has evidence that does not exist.
+Continue iterating across the entire spacecraft and ground segment until every required function is in one of only two states:
+**SUPPORTED** — exact selection with sufficient primary-source evidence for independent review.
+**CUSTOM/TO BE VERIFIED** — genuinely custom hardware with a defined design and verification path.
+Do not classify an item as supported merely because it is plausible or commonly used. Do not invent specifications, part numbers, datasheets, URLs, compatibility, or performance.
+When the iteration is complete, produce a single consolidated proposed Phase 1 BOM/component register containing **every flight and ground item**, its status, evidence sources, remaining uncertainty, and rationale for selection. Then perform a final completeness audit asking: **“If someone were given only this register and its referenced evidence, what physical component, interface, mounting item, harness, ground item, or supporting hardware would still be missing if they attempted to build and operate Degen-1?”**
+Fix anything discovered by that audit before stopping.
+**Do not proceed into higher-fidelity CAD, simulation, or new performance claims. The objective of this run is solely to produce the full evidence-supported component baseline for us to review.**
+
+Make sure all progress and transcripts are up to date and committed as well

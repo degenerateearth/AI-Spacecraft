@@ -98,3 +98,25 @@ explicit `NO COMPLIANT PART IDENTIFIED` ground/integration selections. Recorded
 the piCAM substitution's bookkeeping-only mass/cost effect. The set is not a
 Phase 1 baseline; 0 components were admitted and no controlled BOM, purchase,
 hardware, external contact or evidence level changed.
+
+CMP-004 — 2026-09-16. Completed Revision A of the Phase 1 closure review package.
+Expanded the earlier 29-line proposal to a 52-record flight, ground and support
+register after reviewing 50 additional manufacturer-document URLs and archiving
+27 exact retrieved files with hashes. Replaced the proposed AntS family with the
+better-documented SAM-S candidate without admitting it; selected bounded ground
+components for bench power, antenna, printing, LNA and surge protection; defined
+25 custom work packages; and retained 22 evidence-incomplete COTS/configuration
+exceptions. Added missing rotator cables/control, nonconductive antenna support,
+RF interlock/filtering, protected power, media/consumables, closeout, EGSE,
+handling and verification fixtures. Internal register/hash verification passed
+with zero errors. G1 remains open: no flight component or custom design was
+admitted, no hardware was purchased or tested, and no new CAD, simulation,
+performance or flight-readiness claim resulted.
+
+DES-001 — 2026-09-16. The owner clarified that purchase is not a design
+requirement and set a viable theoretical spacecraft design meeting educational
+standards as the goal. Established D1-DES-STD-001. The completion standard now
+requires exact verifiable COTS selections, released custom designs, reconciled
+interfaces and reproducible analyses, but does not require purchase, fabrication
+or physical testing. Evidence labels remain unchanged: theoretical completion
+cannot imply tested, qualified, independently reviewed or flight-ready status.

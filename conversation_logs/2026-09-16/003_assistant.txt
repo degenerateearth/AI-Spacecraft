@@ -1,0 +1,2 @@
+[Commentary]
+Understood. I’m changing the release criterion: “buildable” means a theoretically viable, education-grade design using exact verifiable parts and fully defined custom hardware. Purchasing, fabrication and physical testing are later validation stages, not prerequisites for completing the design. The documentation will still distinguish calculated/modelled viability from tested or flight-qualified evidence.
