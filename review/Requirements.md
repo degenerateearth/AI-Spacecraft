@@ -9,7 +9,7 @@ Revision A. A=analysis, T=test, I=inspection. MODEL PASS is not hardware complia
 | R03 | Use standard 1U rail-deployer envelope; EXOpod Nova is provisional mechanical reference and final ICD governs | User/S01/S33 | Mechanical | I/T | T01 | PROVISIONAL MODEL SCREEN: nominal 100 x 100 x 113.5 mm; tolerances and fit open |
 | R04 | Mass <=1330 g project target; actual manifest limit governs | Allocation/S33 | Mechanical | A/T | T02 | MODEL PASS:1276.2 g with growth versus 2.5 kg public Nova reference; hardware/manifest open |
 | R05 | COM target +/-10mm in each axis | Allocation/S33 | Mechanical | T | T02 | OPEN: project target is tighter than Nova +/-20 mm guidance; credible model and measurement absent |
-| R06 | Minimum cost compliant total build; maximum practical purchased hardware | User | Systems | Review | Cost RFQs | OPEN: quotations |
+| R06 | Minimum-cost viable theoretical design; maximize practical use of documented COTS hardware and define every necessary custom item | User | Systems | Review | Cost model and design register | OPEN: detailed baseline and estimates |
 | R07 | Nominal orbit-energy balance positive after 20% growth | Allocation | EPS | A/T | T06,T07 | MODEL PASS:+18.4%; environment inputs open |
 | R08 | Recovery energy closes in worst intact-face attitude, camera off | Allocation | EPS/FSW | A/T | T06,T07,T13 | OPEN: scalar screen is assumption-dependent; hypothetical thermal study is not component evidence |
 | R09 | Battery routine DOD <=20% EOL capacity; >=6000-cycle evidence | Allocation | EPS | A/T | T08 | MODEL PASS DOD only; life open |

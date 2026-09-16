@@ -26,7 +26,13 @@ no custom work package is a released design. G1 therefore remains open.
 
 The design targets one year of opportunistic imaging and housekeeping telemetry in LEO at low build cost using commercially marketed CubeSat subsystems. The owner selected occasional recognizable Earth images, US operation and nominal 450–500 km LEO, with no arbitrary spacecraft budget ceiling. Revision A proposed a CrystalSpace CS-101 camera; the evidence audit prefers SkyFox piCAM/FM, but neither is admitted to the Phase 1 baseline. Selected-location imaging or mapping would require a revised baseline.
 
-The pre-gate candidate architecture uses an ISISPACE 1U chassis, six fixed solar panels, ICEPS2 Type A battery/EPS, AntS UHF antenna, and GomSpace A3200/AX100-U avionics on a DMC-3 carrier. One small custom adapter is required to resolve supply-voltage tolerance and inter-vendor routing. No propulsion, reaction wheels, GNSS receiver or deployable solar arrays are included. This paragraph records the proposed architecture and is not a released component baseline.
+The original pre-gate candidate architecture used an ISISPACE 1U chassis,
+ICEPS2 power, and GomSpace avionics. The [open-bus architecture
+trade](engineering/12_Open_Bus_Architecture_Trade.md) now rejects that mixed
+commercial set as the design-development baseline because necessary public
+interfaces do not close. Degen-1 will develop a BIRDS-derived 1U architecture
+with project-released custom avionics and current exact BOMs. This is an
+architecture direction, not an admitted component baseline; G1 remains open.
 
 The original [component audit](Components/README.md) covers every existing B01–B16 BOM line. The stricter [Phase 1 functional audit](Components/Phase1_Functional_Audit.md), [105-row property matrix](Components/Phase1_Component_Property_Matrix.csv) and [evidence standard](review/Phase1_Component_Evidence_Standard.md) find that **no physical component has yet passed into the Phase 1 baseline**. Named products remain candidates until public primary evidence establishes every mission-relevant property. The audit identifies SkyFox `piCAM/FM` as a better documented camera candidate, corrects NanoDock DMC-3 availability, and records Pumpkin structure/panel alternatives without promoting them. None of these findings silently changes the controlled BOM.
 
@@ -51,6 +57,7 @@ The original scalar power model closes nominal energy at +18.4% with a tumble-av
 13. [Requirements traceability](review/Requirements.md), [FMEA](review/FMEA.md), [sources](review/Source_Register.md)
 14. [Known downstream dependencies](review/Known_Downstream_Dependencies.md)
 15. [Phase 1 consolidated component register](Components/phase1_closure/component_register.md), [alternatives](Components/phase1_closure/alternative_review.md), and [build-and-operate completeness audit](Components/phase1_closure/completeness_audit.md)
+16. [Open-bus architecture trade](engineering/12_Open_Bus_Architecture_Trade.md) and [upstream revision register](review/Open_Source_Upstream_Register.md)
 
 ### Reproduction and configuration
 

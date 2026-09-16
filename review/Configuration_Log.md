@@ -120,3 +120,13 @@ requires exact verifiable COTS selections, released custom designs, reconciled
 interfaces and reproducible analyses, but does not require purchase, fabrication
 or physical testing. Evidence labels remain unchanged: theoretical completion
 cannot imply tested, qualified, independently reviewed or flight-ready status.
+
+ARCH-001 — 2026-09-16. Compared the mixed commercial baseline with BIRDS,
+PyCubed, OreSat, VST104-Sierra, OpenLST and UPSat using public primary design
+records. Selected a BIRDS-derived 1U architecture as the design-development
+reference because it best matches the mission and exposes the complete spacecraft
+concept. Degen-1 will release its own current avionics layouts and exact BOMs;
+unpublished BIRDS core layouts and obsolete parts are not treated as evidence.
+OreSat, VST104, OpenLST and UPSat remain subsystem references. This decision
+does not close G1, admit a component, validate a performance claim or transfer
+flight heritage to Degen-1.

@@ -1,7 +1,12 @@
 # D1-CMP-SET-001 — Complete proposed operating component set
 
 Revision 0 · 2026-09-15  
-Status: **PROPOSED / NOT PHASE 1 BASELINE / NOT PROCUREMENT-RELEASED**
+Status: **SUPERSEDED HISTORICAL PROPOSAL / NOT PHASE 1 BASELINE / NOT PROCUREMENT-RELEASED**
+
+This file preserves the 2026-09-15 mixed ISISPACE/GomSpace proposal and its
+evidence gaps. D1-TRD-ARCH-001 subsequently rejected that combination as the
+design-development baseline. The active design is controlled by
+`Components/design_baseline/README.md` and `COMPLETENESS_MATRIX.md`.
 
 ## Decision
 

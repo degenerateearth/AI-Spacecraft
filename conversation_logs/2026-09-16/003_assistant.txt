@@ -1,2 +1,68 @@
 [Commentary]
 Understood. I’m changing the release criterion: “buildable” means a theoretically viable, education-grade design using exact verifiable parts and fully defined custom hardware. Purchasing, fabrication and physical testing are later validation stages, not prerequisites for completing the design. The documentation will still distinguish calculated/modelled viability from tested or flight-qualified evidence.
+
+[Commentary]
+The goalpost is now formalized as an education-grade theoretical release. That lets the work advance without waiting for purchases while keeping connector data, command definitions and other build-critical facts as real blockers. I’ve also completed the first internal consistency check of the 52-record component package; I’m checkpointing that work before moving into exact interface and custom-design release.
+
+[Commentary]
+The first closure milestone is now committed and pushed as `de83b24`. I’m moving from “component survey” to “design release.” The next dependency is the system architecture: I need to freeze which functions stay COTS and which become custom, then produce the exact interface-control matrix that drives schematics, harnesses and mechanical drawings.
+
+[Commentary]
+I found a potentially better baseline for the project’s actual goal: Kyutech’s BIRDS open-source educational 1U bus has flight heritage plus public CAD drawings, PCB files, parts lists, firmware and an English platform ICD. It may solve several documentation walls in the current mixed-vendor architecture. I’m auditing it as a replacement candidate before changing the baseline. I’m using the spreadsheet skill to inspect its BOM workbooks without corrupting or misreading them.
+
+[Commentary]
+The open-bus comparison is narrowing the choice. BIRDS is the strongest educational reference: it flew multiple 1U spacecraft, publishes an English ICD, detailed safety logic, schematics, firmware, CAD and test procedures. It is not directly reproducible because the core board layout is proprietary and several 2018 parts are obsolete or unidentified. I’m comparing it against PyCubed, which has fabrication files but a documented processor radiation failure mode, before freezing the architecture.
+
+[Commentary]
+I’m continuing toward the education-grade theoretical release. The immediate gate is architecture selection: I’m auditing open, reproducible OBC/EPS/radio options against BIRDS and PyCubed, then I’ll freeze the baseline only where exact interfaces and fabrication evidence can be traced. I’ll keep purchasing and physical validation as downstream evidence states.
+
+[Commentary]
+The evidence now points toward a coherent open bus rather than patching together undocumented commercial modules. OreSat is the strongest candidate so far because its 1U flight article, OBC/radio, battery, solar, backplane, structure and software are published as one architecture. I’m checking whether the released files are complete enough to reproduce the actual 1U configuration and whether its known radio faults and larger card-cage approach can support the camera mission without hidden interfaces.
+
+[Commentary]
+The OreSat audit found a decisive limitation: its architecture is coherent and unusually transparent, but the current public repositories are not a single released flight configuration. The flown battery design is an older Eagle revision, the current KiCad battery layout is explicitly still in progress, and the C3 v6 radio/OBC is a post-flight redesign. I’m recording this as a strong reference architecture rather than presenting it as a drop-in proven baseline. The selected Degen-1 design will therefore need controlled custom revisions and its own verification plan.
+
+[Commentary]
+The architecture is now frozen around a BIRDS-derived 1U bus, but individual hardware is still being admitted cautiously. The first exact modern selection is promising: Panasonic’s current `BK120AAHU` industrial NiMH cell has manufacturer dimensions, mass, capacity, temperature ranges and IEC 62133-1 certification. A six-cell 3S2P pack preserves the BIRDS safety topology while avoiding an undocumented legacy Eneloop substitution. I’m documenting the pack as a custom design input, with screening and launch acceptance still downstream.
+
+[Commentary]
+Understood. “Buildable” now means a viable education-grade theoretical design: every required function has an exact, verifiable COTS part or a fully specified custom design, and the interfaces and analyses are reproducible. Purchase, fabrication, and physical testing are downstream evidence stages, not prerequisites for completing this design package. I’m applying that standard to the architecture and component baseline now.
+
+[Commentary]
+The architecture trade contained one stale statement that still called the battery an open decision. I’m correcting that and now closing the electrical backbone first: the EPS, deployment inhibits, regulated rails, battery interfaces, and 50-pin backplane must be internally consistent before the radio, camera, or ground link can be admitted.
+
+[Commentary]
+The battery-charge path now has a stronger modern basis than the historical BIRDS constant-voltage circuit. TI’s active `BQ25172DSGR` is specifically documented for one-to-six-cell NiMH packs, supports intermittent charging, programs 10–800 mA charge current and 4–22 hour safety time, and includes thermistor, overvoltage, overcurrent, short-circuit, and thermal protections. I’m using it as the charger controller, with a BIRDS-derived solar front end and three independent launch inhibits. The eclipse restart behavior remains an explicit analysis item because it can change cumulative charge exposure.
+
+[Commentary]
+The clarification was already captured in the controlling design-completion standard, so I’m not weakening the component evidence gate. I found one older requirement that still framed success around “purchased hardware”; I’m changing it to documented COTS use. The next controlling selections are the camera and radio because they determine the 5 V rail, storage rate, antenna, link budget, and ground equipment.
+
+[Commentary]
+I’m continuing from the architecture and power selections. I’m closing the camera record against the archived manufacturer datasheet, correcting the project requirement that still ties progress to purchasing, and then I’ll resolve the radio and its electrical/ground interfaces before updating the consolidated buildability record and logs.
+
+[Commentary]
+I’m applying the PDF inspection workflow to the radio and camera manufacturer documents so the design records cite what the documents actually establish. The immediate radio question is whether the ADDNICS unit exposes enough power, connector, command, and packet detail to be an auditable exact selection; flight heritage by itself is insufficient.
+
+[Commentary]
+The camera documentation is sufficient for a detailed design selection: it identifies the flight configuration, geometry, mass, supply range, nominal current, connector family and pinout, complete one-byte command set, boot behavior, and image packet format. Its main unresolved interface is the exact PicoBlade header suffix fitted to the delivered unit, which controls the mating contact plating; that will remain a configuration-reconciliation item rather than an invented part number.
+
+[Commentary]
+The ADDNICS evidence closes most electrical and protocol interfaces, but it does not close the exact baseline: the public ICD is for `ADD1397B`, the current BIRDS page names `ADD1397CF`, the manufacturer’s current product page lists only a generic “UHF com,” and the ICD leaves mass blank. That prevents a coherent mass-controlled exact COTS selection. I’m therefore preserving it as a documented heritage reference and evaluating a released custom radio built from a current, manufacturer-documented transceiver IC.
+
+[Commentary]
+A current, exact radio module closes the identity and mass gap without requiring a new RF matching network: Ebyte `E22-400M22S` is orderable, uses the active Semtech SX1268, covers 410–493 MHz, exposes the documented SPI/control interface, includes a TCXO and RF switch, specifies 14 × 20 mm and 1.5 ± 0.1 g, and bounds transmit current at 105 mA. I’m selecting it as a COTS module on a custom Degen-1 carrier; the waveform, framing, antenna network, and ground terminal remain project-controlled designs.
+
+[Commentary]
+The detailed baseline now has six controlled records, but the older mixed-vendor “proposed operating set” still describes the rejected ISISPACE/GomSpace architecture. I’m leaving that file as historical evidence and will mark it superseded rather than rewriting history. The live completeness matrix will track the BIRDS-derived design and expose the remaining flight and ground functions in one place. Solar generation and antenna deployment are the next coupled selections because they determine external geometry and the energy/link budgets.
+
+[Commentary]
+The solar baseline is now geometrically and electrically specific: five custom panels, two series-connected AZUR `81442` covered assemblies per panel, with published BOL and irradiated performance. The camera occupies one end face; generation is credited only on the opposite end and four side faces. This avoids an invented camera cutout through a solar cell and gives the energy model an exact ten-cell source.
+
+[Commentary]
+I’m using the spreadsheet audit workflow on the published BIRDS fabrication BOM because the antenna-release and front-access circuits are embedded there. I’ll reuse exact documented parts where they still make sense, but any obsolete or ambiguous line will be replaced explicitly rather than inherited by association.
+
+[Commentary]
+This is a coherent checkpoint: camera, radio, solar generation, EPS branches, backplane mappings, requirement wording, and the active completeness matrix now agree. I’m validating the records and preserving this milestone in both the local repository and GitHub before continuing into structure, antenna deployment, and attitude hardware.
+
+[Commentary]
+The first archive check exposed a checker bug, not a design-file failure: the manifest uses capitalized column names while my validation command assumed lowercase. I’m correcting the validator and rerunning the hash check before the commit.

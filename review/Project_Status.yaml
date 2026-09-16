@@ -66,6 +66,46 @@ design_completion_standard:
   custom_design_release_required: true
   reproducible_analysis_required: true
   tested_or_flightworthy_claim_permitted: false
+architecture_trade:
+  id: D1-TRD-ARCH-001
+  document: engineering/12_Open_Bus_Architecture_Trade.md
+  date: 2026-09-16
+  selected_direction: BIRDS_derived_1U_with_project_released_custom_avionics
+  architecture_frozen: true
+  component_baseline_frozen: false
+  rationale: strongest_public_whole_spacecraft_record_matching_1U_educational_imaging_mission
+  rejected_unchanged:
+    - mixed_ISISPACE_GomSpace_SkyFox_due_to_private_or_incomplete_interfaces
+    - PyCubed_v05_due_to_documented_ATSAMD51_proton_sensitivity_and_unsafe_example_commands
+  reference_only:
+    - OreSat
+    - VST104_Sierra
+    - OpenLST
+    - UPSat
+  upstream_register: review/Open_Source_Upstream_Register.md
+  flight_heritage_transferred_to_Degen1: false
+detailed_design_baseline:
+  control_register: Components/design_baseline/COMPLETENESS_MATRIX.md
+  detailed_component_records: 7
+  exact_selections_frozen:
+    - Panasonic_BK120AAHU_3S2P_cells
+    - SkyFox_piCAM_FM_default_60deg_IR_cut_infinity
+    - Ebyte_E22_400M22S_UHF_module
+    - AZUR_SPACE_81442_3G30A_Advanced_SCA_x10
+    - Hirose_A3C_50pin_stack_pair
+    - principal_EPS_semiconductors_and_deployment_switches
+  records_still_open:
+    - D1_STR_001
+    - D1_FAB_001
+    - D1_ANT_001
+    - D1_ADCS_001
+    - D1_HAR_001
+    - D1_MECH_HW_001
+    - D1_THM_001
+    - D1_FSW_001
+    - ground_segment_chain
+  theoretical_design_complete: false
+  hardware_purchased_required_for_completion: false
 next_step_proposal:
   id: D1-GATE-001
   title: First engineering gate - Phase 1 component evidence closure
