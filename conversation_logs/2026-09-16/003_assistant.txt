@@ -66,3 +66,6 @@ This is a coherent checkpoint: camera, radio, solar generation, EPS branches, ba
 
 [Commentary]
 The first archive check exposed a checker bug, not a design-file failure: the manifest uses capitalized column names while my validation command assumed lowercase. I’m correcting the validator and rerunning the hash check before the commit.
+
+[Commentary]
+The checkpoint is pushed as `ffc5214`. The next unresolved system-level choice is passive attitude stabilization. It must give the camera some Earth-viewing opportunities without adding reaction wheels or pretending to provide precise pointing. I’m now selecting exact magnetic hardware and will quantify its limits before allowing it into the baseline.
