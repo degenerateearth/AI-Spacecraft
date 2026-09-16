@@ -72,3 +72,11 @@ individual component cards: 19 flight and 10 ground. No row is marked `PHASE 1 B
 assemblies have project identifiers and development records; five functions say
 `NO COMPLIANT PART IDENTIFIED`. This verifies coverage and labeling only, not
 functional compatibility, component compliance or obtainability.
+
+2026-09-16 detailed-baseline ADCS check: PASS for source custody and record
+consistency. `D1-ADCS-001` selects the exact K&J `D84` magnet and defines two
+custom 95 mm × 1 mm HyMu 80 rods from the published Quetzal-1 flight
+architecture. The local archive manifest now contains 23 files; all 23 local
+files match their recorded byte counts and SHA-256 hashes. The ADCS remains
+`CUSTOM/TO BE VERIFIED`: no Degen-1 magnet moment, rod minor loop, integrated
+magnetic survey, cage test or attitude simulation result exists.

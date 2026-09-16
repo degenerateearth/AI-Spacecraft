@@ -17,7 +17,7 @@ Revision A. The package is ready for an aerospace engineer to audit its choices,
 | O11 | High | One-year battery evidence and passivation behavior unknown | EPS | 6000-cycle/calendar evidence and source passivation verification | R09,R26 |
 | O12 | High | Mode5 sensitivity/pattern/contacts not demonstrated | RF/ops | Actual threshold, radiation pattern and pass simulation | R16,R19 |
 | O13 | High | No structural FEA/environment profiles/test reports | Mechanical/AIV | Accepted loads model, margins and final assembly tests | R21,R30 |
-| O14 | High | No quantified image opportunity rate with uncontrolled attitude | Mission/payload | Attitude/orbit Monte Carlo and scene replay; accept opportunity risk | R02 |
+| O14 | High | No quantified image opportunity rate with the selected passive magnetic attitude architecture; roll about the magnet axis remains weakly controlled | Mission/payload/GNC | Attitude/orbit Monte Carlo using measured D84/rod/residual-dipole data and final inertia, followed by scene replay; accept opportunity risk | R02 |
 | O15 | Medium | All selected flight prices are estimates | Procurement | Comparable quotes with tests/software/support separated | R06,R32 |
 | O16 | High | Flight firmware and boot recovery only specified | Software | Implemented versioned code and fault-injection/rehearsal evidence | R14,R20 |
 

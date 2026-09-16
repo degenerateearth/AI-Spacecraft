@@ -299,3 +299,45 @@ Primary manufacturer store page checked 2026-09-15. It lists a USD 590 set of
 eight clips for mounting up to six 0.8 mm or 1.6 mm panels, but shows
 `Unavailable`. It is an integration accessory, not evidence for panel electrical
 or environmental performance.
+
+**S60 — [K&J Magnetics D84 current product page](https://www.kjmagnetics.com/d84-neodymium-disc-magnet)**
+
+Primary manufacturer catalog and download index retrieved 2026-09-16. It fixes
+the exact `D84` identity, dimensions, tolerance, mass, material/grade,
+magnetization direction, coating, temperature limit, maximum residual flux
+density, surface field and current quantity-one price. The linked drawing,
+generated specification, compliance certificate and STEP model are archived
+locally with hashes. The page does not guarantee a delivered unit's dipole
+moment or qualify the magnet for vacuum or radiation.
+
+**S61 — [MuShield HyMu 80 / ASTM A753 Alloy 4](https://www.mushield.com/material-sales/hymu-80-magnetic-shielding-alloy-astm-a753-alloy-4/)**
+
+Primary manufacturer material page retrieved 2026-09-16. It establishes the
+commercial HyMu 80 material family, approximate composition, ASTM identity,
+saturation induction and maximum-permeability claim. It does not establish the
+minor B-H loop of a cut, annealed and mounted Degen-1 rod.
+
+**S62 — [Quetzal-1 passive ADCS design and flight results](https://jossonline.com/storage/2023/05/Final-Alvarez-Design-and-On-Orbit-Performance-of-the-Attitude-Determination-and-Passive-Control-System-for-the-Quetzal-1-CubeSat.pdf)**
+
+Peer-reviewed 2023 flight-reference paper retrieved 2026-09-16. The 1U imaging
+CubeSat used one K&J `D84` magnet with measured 0.7363 A·m² moment and two
+orthogonal 95 mm × 1 mm HyMu 80 rods. It reports detumbling, field alignment,
+payload imaging, later roll-rate growth and magnetic-bias limitations. The
+results justify architecture selection but do not assign Quetzal-1 test values
+to Degen-1 hardware.
+
+**S63 — [Quetzal-1 open hardware repository](https://github.com/Quetzal-1-CubeSat-Team/quetzal1-hardware)**
+
+Official project repository inspected at commit
+`d4d1b59de384701a016a6e17353aff3c8ba64853` on 2026-09-16. Its ADCS README and
+released design files corroborate the D84 selection and passive-control layout.
+The repository is licensed CC BY-SA 4.0. It is reference evidence, not a
+Degen-1 fabrication release.
+
+**S64 — [BIRDS General Documentation](https://github.com/BIRDSOpenSource/BIRDS-GeneralDocumentation)**
+
+Official open platform documentation already used by the architecture trade.
+Revision F §6.6 states that the platform has no built-in ADCS and permits the
+user to install a permanent magnet and hysteresis damper for passive
+stabilization. It establishes compatibility of the architecture class, not its
+performance in Degen-1.

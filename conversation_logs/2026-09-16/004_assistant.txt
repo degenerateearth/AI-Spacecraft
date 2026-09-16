@@ -20,3 +20,15 @@ All 66 transcript files now match the authoritative workspace copies byte for by
 Yes. All 66 transcript files are synchronized byte for byte between the workspace and `D:\Degen-1`, including this response, and pushed to GitHub.
 
 The unreadable `D:` log directory was preserved at `D:\Degen-1-conversation_logs-corrupt-backup-20260916`; the active log directory was rebuilt from the verified workspace copies.
+
+[Commentary]
+The transcript repair changed authoritative state and the repository is clean at `84afe3c`. I’m resuming the buildable-design work from the current evidence register, beginning with the unresolved passive attitude-control architecture and its mechanical interfaces. I’ll keep each selection at `SUPPORTED` or `CUSTOM/TO BE VERIFIED` and reject anything that depends on unstated properties.
+
+[Commentary]
+The evidence supports a conservative passive magnetic subsystem, but it does not support a pointing claim. I’m adopting the flight-demonstrated architecture class: two axial permanent magnets plus two orthogonal sets of hysteresis elements. Exact magnet hardware can be sourced with drawings and certificates; the hysteresis elements must remain a controlled custom fabrication because their installed minor-loop behavior must be measured after cutting, annealing, mounting, and exposure to the permanent magnets.
+
+[Commentary]
+The passive subsystem is now an auditable selection rather than an open placeholder: one exact K&J `D84` magnet and two custom 95 × 1 mm HyMu 80 rods, matching the published Quetzal-1 1U flight architecture. I preserved the useful precedent and its failure modes: Quetzal-1 acquired images and initially stabilized, but its uncontrolled-axis rate later rose to 16.65°/s. Degen-1 therefore gains a credible build path without inheriting a pointing or lifetime claim.
+
+[Commentary]
+The new baseline verifier passes: 8 detailed component records, 64 unique source IDs, and all 23 archived source files present with matching byte counts and SHA-256 hashes. The ADCS remains explicitly `CUSTOM/TO BE VERIFIED`; the pass covers traceability and custody only. I’m checkpointing this state, then moving to the antenna and deployment assembly, which is the next major unresolved flight function.

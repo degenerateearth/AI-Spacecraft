@@ -16,3 +16,6 @@ SOURCES/UH_A_Guide_to_CubeSat_Mission_and_Bus_Design_Ed1.pdf
 # Public repository keeps official URLs, revisions and hashes instead.
 SOURCES/components/**/*.pdf
 SOURCES/components/**/*.html
+
+# Manufacturer CAD retained locally pending redistribution-license review.
+SOURCES/components/KJ_D84/D84.step

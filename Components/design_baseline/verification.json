@@ -1,0 +1,13 @@
+{
+  "document": "D1-DD-VERIFY-001",
+  "record_count": 8,
+  "status_record_count": 8,
+  "matrix_id_count": 24,
+  "source_id_count": 64,
+  "archive_manifest_rows": 23,
+  "archive_files_verified": 23,
+  "archive_files_missing": 0,
+  "warnings": [],
+  "errors": [],
+  "result": "PASS"
+}

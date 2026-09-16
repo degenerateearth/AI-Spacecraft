@@ -26,7 +26,7 @@ complete.
 | UHF transceiver | D1-COM-001 | CUSTOM carrier; Ebyte `E22-400M22S` selected | carrier, RF network, waveform, protocol, link and EMC closure |
 | UHF antenna and deployment | D1-ANT-001 | OPEN | exact antenna, balun/feed, retention/release design and RF/deployment analysis |
 | Earth camera | D1-CAM-001 | SkyFox `piCAM/FM` selected | connector suffix, current limit, STEP/configuration and carrier release |
-| Passive attitude stabilization | D1-ADCS-001 | OPEN | magnet/hysteresis material, quantities, placement and probability/dynamics analysis |
+| Passive attitude stabilization | D1-ADCS-001 | CUSTOM/TO BE VERIFIED; K&J `D84` plus two 95 mm × 1 mm HyMu 80 rods selected | release rod/retainer drawings; characterize magnet, rod loops and integrated residual dipole; cage test and probability/dynamics analysis |
 | Harnesses | D1-HAR-001 | OPEN | exact wire, contacts, connectors, lengths, routing and assembly/inspection data |
 | Mounting/bonding hardware | D1-MECH-HW-001 | OPEN | itemized fasteners, locking, torque, bonding and access sequence |
 | Thermal materials/interfaces | D1-THM-001 | OPEN | exact surface finishes, interface materials, heater decision and thermal-node evidence |
@@ -48,8 +48,9 @@ complete.
 
 ## Current result
 
-Seven detailed component records exist. Exact selections now control the battery
-cell, camera, UHF module, solar-cell assembly, stack connectors and principal EPS
-parts. The design is not yet buildable under D1-DES-STD-001 because structure,
-antenna, attitude hardware, harnesses, released avionics and the ground chain are
+Eight detailed component records exist. Exact selections now control the battery
+cell, camera, UHF module, solar-cell assembly, stack connectors, principal EPS
+parts and passive-ADCS magnet/material geometry. The design is not yet buildable
+under D1-DES-STD-001 because structure, antenna, ADCS retainers and measured
+magnetic properties, harnesses, released avionics and the ground chain are
 incomplete. No entry in this matrix is physical test evidence.
