@@ -26,6 +26,7 @@ Current states:
 | D1-COM-001 | Ebyte E22-400M22S UHF radio and custom carrier | CUSTOM/TO BE VERIFIED | [Radio record](D1-COM-001.md) |
 | D1-SOL-001 | Five custom panels with ten AZUR SPACE 81442 SCAs | CUSTOM/TO BE VERIFIED | [Solar-panel record](D1-SOL-001.md) |
 | D1-ADCS-001 | K&J D84 magnet, two custom HyMu 80 rods and retainers | CUSTOM/TO BE VERIFIED | [Passive ADCS record](D1-ADCS-001.md) |
+| D1-ANT-001 | Custom 436.5 MHz canted-turnstile and four-channel release assembly | CUSTOM/TO BE VERIFIED | [Antenna/deployment record](D1-ANT-001.md) |
 
 This register will replace the earlier mixed-vendor component proposal only
 after all required functions have equivalent detailed records and the generated

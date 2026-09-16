@@ -24,7 +24,7 @@ complete.
 | OBC and safe-state control | D1-OBC-001 | CUSTOM; architecture under revision | freeze current MCU, memory, clocks, supervisors and full board release |
 | Passive backplane | D1-BPB-001 | CUSTOM; exact Hirose pair and logical map selected | geometry, slot tables, current/return analysis and fabrication release |
 | UHF transceiver | D1-COM-001 | CUSTOM carrier; Ebyte `E22-400M22S` selected | carrier, RF network, waveform, protocol, link and EMC closure |
-| UHF antenna and deployment | D1-ANT-001 | OPEN | exact antenna, balun/feed, retention/release design and RF/deployment analysis |
+| UHF antenna and deployment | D1-ANT-001 | CUSTOM/TO BE VERIFIED; OreSat-derived 436.5 MHz canted turnstile and Quetzal-derived four-channel release selected | release RF/end-panel PCB, elements, pivots, line, complete BOM, harness interface, EM/structural analyses and RF/deployment verification |
 | Earth camera | D1-CAM-001 | SkyFox `piCAM/FM` selected | connector suffix, current limit, STEP/configuration and carrier release |
 | Passive attitude stabilization | D1-ADCS-001 | CUSTOM/TO BE VERIFIED; K&J `D84` plus two 95 mm × 1 mm HyMu 80 rods selected | release rod/retainer drawings; characterize magnet, rod loops and integrated residual dipole; cage test and probability/dynamics analysis |
 | Harnesses | D1-HAR-001 | OPEN | exact wire, contacts, connectors, lengths, routing and assembly/inspection data |
@@ -48,9 +48,10 @@ complete.
 
 ## Current result
 
-Eight detailed component records exist. Exact selections now control the battery
+Nine detailed component records exist. Exact selections now control the battery
 cell, camera, UHF module, solar-cell assembly, stack connectors, principal EPS
-parts and passive-ADCS magnet/material geometry. The design is not yet buildable
-under D1-DES-STD-001 because structure, antenna, ADCS retainers and measured
+parts, passive-ADCS magnet/material geometry, and the principal antenna feed and
+release parts. The design is not yet buildable under D1-DES-STD-001 because
+structure, released antenna fabrication data, ADCS retainers and measured
 magnetic properties, harnesses, released avionics and the ground chain are
 incomplete. No entry in this matrix is physical test evidence.

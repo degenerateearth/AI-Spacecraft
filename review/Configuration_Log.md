@@ -130,3 +130,23 @@ unpublished BIRDS core layouts and obsolete parts are not treated as evidence.
 OreSat, VST104, OpenLST and UPSat remain subsystem references. This decision
 does not close G1, admit a component, validate a performance claim or transfer
 flight heritage to Degen-1.
+
+DD-001 — 2026-09-16. Opened the BIRDS-derived detailed-design selection
+register and selected exact battery, camera, radio-module, solar-cell,
+backplane-connector and principal EPS parts. Added custom OBC, EPS, backplane,
+radio-carrier, panel and pack records with explicit release paths. Selected a
+passive magnetic-control assembly using one K&J `D84` and two custom 95 mm ×
+1 mm HyMu 80 rods based on Quetzal-1 geometry and flight evidence. The magnet
+is exact COTS; the rods and retainers remain custom. No Degen-1 dynamics result,
+pointing claim, hardware test or transferred flight heritage was created.
+
+DD-002 — 2026-09-16. Selected the D1-ANT-001 architecture: a custom four-element
+436.5 MHz canted turnstile based on the tested OreSat feed record and a
+four-channel resistor-release system based on Quetzal-1 flight hardware.
+Selected exact principal feed, termination, connector, load-switch, burn-
+resistor, indication-switch and I/O-expander parts. Defined custom element,
+line, mechanism and PCB work packages, prototype geometry, electrical bounds,
+interfaces, rejected alternatives and the RF/deployment verification path.
+Pinned and archived open-source evidence with license files and hashes. This
+selects a custom design direction; it does not establish integrated RF
+performance, release reliability, launch compliance or physical test evidence.

@@ -341,3 +341,33 @@ Revision F §6.6 states that the platform has no built-in ADCS and permits the
 user to install a permanent magnet and hysteresis damper for passive
 stabilization. It establishes compatibility of the architecture class, not its
 performance in Degen-1.
+
+**S65 — [OreSat 70 cm canted-turnstile antenna](https://github.com/oresat/oresat-antenna/tree/2f34667e775fc1f36366555dfce7e86039de1d9e/turnstile)**
+
+Official open-source antenna repository inspected at commit
+`2f34667e775fc1f36366555dfce7e86039de1d9e` on 2026-09-16. The GPL-3.0 design
+record describes a 436.5 MHz four-monopole canted turnstile using three
+Mini-Circuits `QBA-07+` hybrids and one quarter-wave phase section. It reports
+VNA and anechoic-chamber testing and final 140/190 mm element lengths. It does
+not publish element material/section, exact cant angle, flight release hardware
+or a Degen-1 integrated pattern. The PDF and repository license are archived
+with hashes.
+
+**S66 — [Mini-Circuits QBA-07+](https://www.minicircuits.com/WebStore/dashboard.html?model=QBA-07%2B)**
+
+Primary current manufacturer record retrieved 2026-09-16. It identifies the
+exact orderable 340–680 MHz, 50-ohm, 90-degree hybrid and provides its RF,
+temperature, power, mass, package, pin and land-pattern data. The manufacturer
+datasheet is retained locally with a hash. It supports the selected feed part;
+it does not establish performance of the custom four-way board.
+
+**S67 — [Quetzal-1 antenna deployment mechanism](https://github.com/Quetzal-1-CubeSat-Team/quetzal1-hardware/tree/d4d1b59de384701a016a6e17353aff3c8ba64853/ADM)**
+
+Official CC BY-SA 4.0 flight-hardware repository inspected at pinned commit on
+2026-09-16. The README, schematic, mechanical drawing, BOM and retention-knot
+record define a four-channel mechanism using 0.3 mm nylon line, Yageo
+`MFR50SFTE52-5R6` burn resistors, TI `TPS22965` load switches, Panasonic
+`ESE18L11C` indication switches and TI `TCA9539QPWRQ1` I/O expansion. Those
+files are retained under the upstream license. Degen-1 changes the antenna,
+battery, PCB and mechanics, so the record provides precedent rather than
+transferred deployment verification.

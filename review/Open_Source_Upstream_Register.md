@@ -18,6 +18,7 @@ Upstream source is not copied into this repository by this register.
 | OpenLST firmware/tools | `b996935a516967936859634887fdf7b4d48dcc7c` | UHF protocol, firmware and ground-tool reference | GPLv3; 2018 public release |
 | OpenLST hardware | `c977b8c4f6b4cf8d0b82d946cea9dd22c405342f` | UHF schematic/layout/BOM reference | CC BY-SA 4.0; rev 2.1 Gerbers present; RFFM6403 discontinued |
 | Quetzal-1 hardware | `d4d1b59de384701a016a6e17353aff3c8ba64853` | Flight-reference passive ADCS layout and exact D84 selection | CC BY-SA 4.0; flight results are separately evidenced by the 2023 JoSS paper |
+| OreSat antenna | `2f34667e775fc1f36366555dfce7e86039de1d9e` | Tested 436.5 MHz canted-turnstile feed and element-length reference | GPL-3.0; RF prototype evidence only; no flight deployment mechanism is defined |
 
 ## Rules for reuse
 

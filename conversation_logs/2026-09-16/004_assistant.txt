@@ -32,3 +32,9 @@ The passive subsystem is now an auditable selection rather than an open placehol
 
 [Commentary]
 The new baseline verifier passes: 8 detailed component records, 64 unique source IDs, and all 23 archived source files present with matching byte counts and SHA-256 hashes. The ADCS remains explicitly `CUSTOM/TO BE VERIFIED`; the pass covers traceability and custody only. I’m checkpointing this state, then moving to the antenna and deployment assembly, which is the next major unresolved flight function.
+
+Yes. I’m continuing from the verified transcript checkpoint. I’m now resolving the antenna and deployment assembly with exact public evidence, while preserving legacy or unavailable parts as rejected candidates rather than treating them as buildable selections.
+
+The OreSat record confirms a real, tested 436.5 MHz canted-turnstile design, including exact element lengths and a Mini-Circuits QBA-07+ phasing network. It does not define a flight deployment mechanism. I’m separating those two evidence chains: OreSat for RF geometry and test provenance, Quetzal-1 for the flown burn-wire release architecture. The combined assembly will remain custom and must pass RF, deployment, vibration, and thermal-vacuum verification.
+
+The antenna architecture is now selected without hiding its custom status. The repository has a nine-part detailed baseline, a pinned OreSat RF reference, a pinned Quetzal release reference, exact feed/release components, explicit prototype geometry, and a verification path. The evidence verifier passes all 32 archived-source custody checks; I’m now reconciling the configuration hash and Git checkpoint before moving to the flight structure.

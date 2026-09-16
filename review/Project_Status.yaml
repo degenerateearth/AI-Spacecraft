@@ -86,7 +86,7 @@ architecture_trade:
   flight_heritage_transferred_to_Degen1: false
 detailed_design_baseline:
   control_register: Components/design_baseline/COMPLETENESS_MATRIX.md
-  detailed_component_records: 8
+  detailed_component_records: 9
   exact_selections_frozen:
     - Panasonic_BK120AAHU_3S2P_cells
     - SkyFox_piCAM_FM_default_60deg_IR_cut_infinity
@@ -95,10 +95,10 @@ detailed_design_baseline:
     - Hirose_A3C_50pin_stack_pair
     - principal_EPS_semiconductors_and_deployment_switches
     - KJ_D84_magnet_and_Quetzal_geometry_HyMu80_rods
+    - OreSat_derived_436_5_MHz_turnstile_and_Quetzal_derived_release_architecture
   records_still_open:
     - D1_STR_001
     - D1_FAB_001
-    - D1_ANT_001
     - D1_HAR_001
     - D1_MECH_HW_001
     - D1_THM_001
@@ -106,6 +106,7 @@ detailed_design_baseline:
     - ground_segment_chain
   custom_records_requiring_release_and_verification:
     - D1_ADCS_001_passive_magnetic_assembly
+    - D1_ANT_001_UHF_antenna_and_deployment_assembly
   theoretical_design_complete: false
   hardware_purchased_required_for_completion: false
 next_step_proposal:
