@@ -1,0 +1,11 @@
+I’m checking the repository and synchronization state so I can distinguish completed milestones from the structure work that is still uncommitted.
+
+DEGENERATE-1 remains at **Success Level 0**: a documented concept with partial evidence toward an engineering model.
+
+- **Committed:** consumer-AI constitution; verbatim transcripts; evidence rules; BIRDS-derived 1U architecture; and detailed records for the battery, OBC, EPS, backplane, camera, radio, solar panels, passive ADCS, and antenna/deployment assembly.
+- **Latest engineering checkpoint:** `2787848`, pushed to GitHub.
+- **In progress locally:** `D1-STR-001`. The BIRDS-4 frame resolves to 22 structural instances in a nominal 100 × 100 × 113.5 mm envelope. Material and frame architecture are selected, but drawings, tolerances, fasteners, and structural analysis are unfinished and not yet committed.
+- **Major remaining work:** flight-access/inhibit hardware, harnesses, fasteners/bonding, thermal interfaces, flight software, complete ground station, integrated mass/power/link/thermal/structural closure, and regenerated full CAD.
+- **Reality state:** no hardware purchased, built, or tested; no independent review; no licensing approval; and no launch booking.
+
+The design is more coherent and traceable, but it is not yet theoretically buildable under our own completion standard.
