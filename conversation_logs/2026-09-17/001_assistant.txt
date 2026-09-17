@@ -15,3 +15,20 @@ The last turn made verified progress by synchronizing the exact status exchange 
 We are at **Success Level 0**: the design exists on paper and in models, with no physical build or test evidence yet. Ten subsystem records now have traceable selections or defined custom verification paths; the BIRDS-derived 1U structure package is undergoing its final reproducibility check before commit. The largest remaining gap is the flight-access board: launch inhibits, remove-before-flight isolation, service access, and their fault-tolerant wiring. After that, the design still needs full interface closure, budgets, analyses, CAD integration, and verification plans before it is theoretically buildable. I’m continuing that work now.
 
 The structure regeneration passed: 22 frame instances, the same 100.000 × 100.000 × 113.500 mm nominal envelope, and no baseline-verifier errors across 46 archived source files. I’m checking the final diff and transcript integrity now, then I’ll commit and push this milestone.
+
+The structure milestone is now committed and pushed at `fc32d3e`; local and GitHub heads match, and the working tree is clean. That gives us eleven controlled design records if the project-level standards are counted, ten physical subsystem records, and a reproducible public-source structure reference. I’m moving directly into `D1-FAB-001` to close the launch switches, remove-before-flight isolation, and service-access hardware.
+
+I’m using the spreadsheet workflow to inspect the public BIRDS FAB BOM accurately, because the exact connector and switch identities may be stored in its `.xlsx` rather than the README or schematic.
+
+The FAB BOM identifies exact RBF-board hardware: two CUI `SJ1-2535-SMT` 3.5 mm stereo jacks and two Amphenol FCI `10112690-G03-02LF` right-angle 2×2 headers. I’m now tracing those parts through the schematic and manufacturer documents; the BIRDS selection is useful precedent, but it will only enter Degen-1 if its contact logic and current/environment limits support the required isolation functions.
+
+I’m also applying the PDF review workflow because this evidence is a circuit schematic; text extraction alone cannot establish which RBF contacts interrupt which rails.
+
+DEGENERATE-1 is still at **Success Level 0**: a documented and modeled design with no physical build or test evidence.
+
+- **Controlled baseline:** 10 physical subsystem records now have traceable selections or explicit custom verification paths.
+- **Latest milestone:** the BIRDS-4-derived 1U structure package passed reproducibility and evidence checks and was pushed in commit `fc32d3e`.
+- **Current work:** `D1-FAB-001`, covering three launch switches, remove-before-flight isolation, and service access. The public BIRDS FAB record supplied exact candidate connector hardware and a flight schematic; I am checking whether its electrical ratings and contact logic are suitable for Degen-1 rather than copying it blindly.
+- **Still required:** close the flight-access board, harnesses, mounting/bonding hardware, thermal interfaces, ground station, software, integrated budgets, full CAD, analyses, and verification plans.
+
+The project is materially more coherent, but it has **not yet reached the theoretically buildable design gate**.
