@@ -1,0 +1,406 @@
+{
+  "document": "D1-FAB-LOGIC-VERIFY-001",
+  "evidence": "CALCULATED Boolean topology only; not circuit simulation or test evidence",
+  "device_count": 7,
+  "check_count": 43,
+  "errors": [],
+  "result": "PASS",
+  "checks": [
+    {
+      "case": "switch_truth_table",
+      "actuated": [
+        false,
+        false,
+        false
+      ],
+      "bus_on": true
+    },
+    {
+      "case": "switch_truth_table",
+      "actuated": [
+        false,
+        false,
+        true
+      ],
+      "bus_on": false
+    },
+    {
+      "case": "switch_truth_table",
+      "actuated": [
+        false,
+        true,
+        false
+      ],
+      "bus_on": false
+    },
+    {
+      "case": "switch_truth_table",
+      "actuated": [
+        false,
+        true,
+        true
+      ],
+      "bus_on": false
+    },
+    {
+      "case": "switch_truth_table",
+      "actuated": [
+        true,
+        false,
+        false
+      ],
+      "bus_on": false
+    },
+    {
+      "case": "switch_truth_table",
+      "actuated": [
+        true,
+        false,
+        true
+      ],
+      "bus_on": false
+    },
+    {
+      "case": "switch_truth_table",
+      "actuated": [
+        true,
+        true,
+        false
+      ],
+      "bus_on": false
+    },
+    {
+      "case": "switch_truth_table",
+      "actuated": [
+        true,
+        true,
+        true
+      ],
+      "bus_on": false
+    },
+    {
+      "case": "plug_override",
+      "service_inserted": true,
+      "rbf_inserted": false,
+      "actuated": [
+        false,
+        false,
+        false
+      ],
+      "bus_on": false
+    },
+    {
+      "case": "plug_override",
+      "service_inserted": true,
+      "rbf_inserted": false,
+      "actuated": [
+        false,
+        false,
+        true
+      ],
+      "bus_on": false
+    },
+    {
+      "case": "plug_override",
+      "service_inserted": true,
+      "rbf_inserted": false,
+      "actuated": [
+        false,
+        true,
+        false
+      ],
+      "bus_on": false
+    },
+    {
+      "case": "plug_override",
+      "service_inserted": true,
+      "rbf_inserted": false,
+      "actuated": [
+        false,
+        true,
+        true
+      ],
+      "bus_on": false
+    },
+    {
+      "case": "plug_override",
+      "service_inserted": true,
+      "rbf_inserted": false,
+      "actuated": [
+        true,
+        false,
+        false
+      ],
+      "bus_on": false
+    },
+    {
+      "case": "plug_override",
+      "service_inserted": true,
+      "rbf_inserted": false,
+      "actuated": [
+        true,
+        false,
+        true
+      ],
+      "bus_on": false
+    },
+    {
+      "case": "plug_override",
+      "service_inserted": true,
+      "rbf_inserted": false,
+      "actuated": [
+        true,
+        true,
+        false
+      ],
+      "bus_on": false
+    },
+    {
+      "case": "plug_override",
+      "service_inserted": true,
+      "rbf_inserted": false,
+      "actuated": [
+        true,
+        true,
+        true
+      ],
+      "bus_on": false
+    },
+    {
+      "case": "plug_override",
+      "service_inserted": false,
+      "rbf_inserted": true,
+      "actuated": [
+        false,
+        false,
+        false
+      ],
+      "bus_on": false
+    },
+    {
+      "case": "plug_override",
+      "service_inserted": false,
+      "rbf_inserted": true,
+      "actuated": [
+        false,
+        false,
+        true
+      ],
+      "bus_on": false
+    },
+    {
+      "case": "plug_override",
+      "service_inserted": false,
+      "rbf_inserted": true,
+      "actuated": [
+        false,
+        true,
+        false
+      ],
+      "bus_on": false
+    },
+    {
+      "case": "plug_override",
+      "service_inserted": false,
+      "rbf_inserted": true,
+      "actuated": [
+        false,
+        true,
+        true
+      ],
+      "bus_on": false
+    },
+    {
+      "case": "plug_override",
+      "service_inserted": false,
+      "rbf_inserted": true,
+      "actuated": [
+        true,
+        false,
+        false
+      ],
+      "bus_on": false
+    },
+    {
+      "case": "plug_override",
+      "service_inserted": false,
+      "rbf_inserted": true,
+      "actuated": [
+        true,
+        false,
+        true
+      ],
+      "bus_on": false
+    },
+    {
+      "case": "plug_override",
+      "service_inserted": false,
+      "rbf_inserted": true,
+      "actuated": [
+        true,
+        true,
+        false
+      ],
+      "bus_on": false
+    },
+    {
+      "case": "plug_override",
+      "service_inserted": false,
+      "rbf_inserted": true,
+      "actuated": [
+        true,
+        true,
+        true
+      ],
+      "bus_on": false
+    },
+    {
+      "case": "plug_override",
+      "service_inserted": true,
+      "rbf_inserted": true,
+      "actuated": [
+        false,
+        false,
+        false
+      ],
+      "bus_on": false
+    },
+    {
+      "case": "plug_override",
+      "service_inserted": true,
+      "rbf_inserted": true,
+      "actuated": [
+        false,
+        false,
+        true
+      ],
+      "bus_on": false
+    },
+    {
+      "case": "plug_override",
+      "service_inserted": true,
+      "rbf_inserted": true,
+      "actuated": [
+        false,
+        true,
+        false
+      ],
+      "bus_on": false
+    },
+    {
+      "case": "plug_override",
+      "service_inserted": true,
+      "rbf_inserted": true,
+      "actuated": [
+        false,
+        true,
+        true
+      ],
+      "bus_on": false
+    },
+    {
+      "case": "plug_override",
+      "service_inserted": true,
+      "rbf_inserted": true,
+      "actuated": [
+        true,
+        false,
+        false
+      ],
+      "bus_on": false
+    },
+    {
+      "case": "plug_override",
+      "service_inserted": true,
+      "rbf_inserted": true,
+      "actuated": [
+        true,
+        false,
+        true
+      ],
+      "bus_on": false
+    },
+    {
+      "case": "plug_override",
+      "service_inserted": true,
+      "rbf_inserted": true,
+      "actuated": [
+        true,
+        true,
+        false
+      ],
+      "bus_on": false
+    },
+    {
+      "case": "plug_override",
+      "service_inserted": true,
+      "rbf_inserted": true,
+      "actuated": [
+        true,
+        true,
+        true
+      ],
+      "bus_on": false
+    },
+    {
+      "case": "single_stuck_on_launch",
+      "device": "QSERV_A",
+      "bus_on": false
+    },
+    {
+      "case": "single_stuck_on_launch",
+      "device": "QSERV_B",
+      "bus_on": false
+    },
+    {
+      "case": "single_stuck_on_launch",
+      "device": "QRBF_A",
+      "bus_on": false
+    },
+    {
+      "case": "single_stuck_on_launch",
+      "device": "QRBF_B",
+      "bus_on": false
+    },
+    {
+      "case": "single_stuck_on_launch",
+      "device": "QINH_1",
+      "bus_on": false
+    },
+    {
+      "case": "single_stuck_on_launch",
+      "device": "QINH_2",
+      "bus_on": false
+    },
+    {
+      "case": "single_stuck_on_launch",
+      "device": "QINH_3",
+      "bus_on": false
+    },
+    {
+      "case": "single_stuck_on_load_rbf",
+      "device": "QRBF_A",
+      "bus_on": false
+    },
+    {
+      "case": "single_stuck_on_load_rbf",
+      "device": "QRBF_B",
+      "bus_on": false
+    },
+    {
+      "case": "single_stuck_on_service_rbf",
+      "device": "QSERV_A",
+      "bus_on": false
+    },
+    {
+      "case": "single_stuck_on_service_rbf",
+      "device": "QSERV_B",
+      "bus_on": false
+    }
+  ],
+  "limitations": [
+    "Assumes seven series devices and independent gate-control traces are implemented as specified",
+    "Does not model leakage, body-diode direction, parasitic power, contact bounce, wiring shorts, timing, radiation, thermal behavior, or common-cause failures",
+    "Does not establish compliance with a mission-specific launch-provider ICD"
+  ]
+}

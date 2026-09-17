@@ -161,3 +161,14 @@ do not control every material. Selected certified 6061-T6 and a controlled
 hard-anodized rail finish for the Degen-1 derivative. Native drawings,
 tolerances, fasteners, interfaces, analysis and verification remain open; no
 fabrication, fit check, load test or transferred qualification was claimed.
+
+DD-004 — 2026-09-17. Selected the D1-FAB-001 launch-inhibit and front-access
+architecture. Replaced the earlier `SDS002` with exact low-current-qualified
+`SDS002RULC` switches and replaced the -4.5 V-characterized `SQA403EJ` with
+`SiA4265EDJ-T1-GE3`, whose on-resistance is specified at -2.5 V and -1.8 V.
+Selected two exact Same Sky switched-jack/plug pairs, a JST ten-position service
+interface and seven independently controlled series MOSFET devices. Archived
+the pinned BIRDS FAB evidence and current manufacturer PDFs. A reproducible
+Boolean checker passes all 43 stated state/single-stuck-on cases. This is logic
+evidence only; schematic, PCB, mechanical actuation, worst-case electrical and
+thermal analysis, full fault tree and physical verification remain open.

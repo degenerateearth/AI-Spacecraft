@@ -32,3 +32,15 @@ DEGENERATE-1 is still at **Success Level 0**: a documented and modeled design wi
 - **Still required:** close the flight-access board, harnesses, mounting/bonding hardware, thermal interfaces, ground station, software, integrated budgets, full CAD, analyses, and verification plans.
 
 The project is materially more coherent, but it has **not yet reached the theoretically buildable design gate**.
+
+The previous turn made verified progress: it committed the reproducible structure baseline and began the flight-access evidence audit. I’m continuing from GitHub commit `bdf485e`, first resolving the exact RBF plug/jack pair and its circuit function, then I’ll release `D1-FAB-001` only if the public evidence supports a complete, independently checkable design.
+
+The current evidence supports a safer architecture than the original BIRDS power path: use the audio-jack contacts only in low-current MOSFET gate-control circuits, while three separate `SDS002` switches command three series high-side inhibit stages. This avoids asking a 0.3 A jack or 0.1 A deployment switch to carry spacecraft load. I’m archiving the exact manufacturer documents and will keep the circuit custom until the truth table and single-fault analysis are released.
+
+The exact-part audit produced one correction: `SDS002RULC` is a better launch-switch choice than the earlier `SDS002` because the manufacturer specifies a 10 µA minimum switching level for the ULC version. The gate network can be designed above that minimum while remaining far below the contact maximum. I’m updating the EPS record and issuing the access-board logic with a machine-checked all-state and single-fault table; this will be logical design evidence, not electrical or launch qualification.
+
+DEGENERATE-1 is at **Success Level 0**: the mission and major architecture are documented, the structure baseline is reproducible, and 11 physical subsystem records now exist. The immediate work is the launch-inhibit/flight-access board: its exact parts and Boolean safety logic are selected and checked, but the changes still need final consistency checks, archive-manifest updates, commit, and push. The complete spacecraft is **not yet a buildable theoretical design**; harnessing, full interface closure, budgets, and several subsystem verification paths remain open.
+
+The design is progressing, but the critical distinction is that we have a documented architecture rather than a finished spacecraft. I found no evidence that should raise the project above Level 0. I’m closing the current flight-access milestone now so the repository reflects a reviewed, reproducible stopping point before moving to the remaining harness and interface work.
+
+The flight-access record now passes both evidence-custody and logic checks: 11 controlled design records, 73 registered sources, 54 locally verified archive files, and 43 Boolean inhibit cases with no errors. Its mass and price remain explicitly unknown because the custom PCB/mechanical design is unfinished; I have not converted those gaps into estimates.

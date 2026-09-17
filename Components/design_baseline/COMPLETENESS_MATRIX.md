@@ -20,7 +20,7 @@ complete.
 | Five solar panels | D1-SOL-001 | CUSTOM; AZUR `81442` selected | PCB/mechanical variants, RTD, harness and panel acceptance release |
 | Battery energy storage | D1-BAT-001 | CUSTOM; Panasonic `BK120AAHU` 3S2P selected | pack drawing/BOM, protection, cell curves, screening and exact mass |
 | Power conversion/charging/distribution | D1-EPS-001 | CUSTOM; principal ICs selected | full schematic/BOM/layout/calculations and release tests |
-| Launch inhibits, RBF and service access | D1-FAB-001 | OPEN; switch element selected in EPS record | exact RBF, access board, three-actuator geometry and fault tree |
+| Launch inhibits, RBF and service access | D1-FAB-001 | CUSTOM/TO BE VERIFIED; exact switches, two RBF pairs, seven power devices, gate network and service connector selected; Boolean all-state/single-fault logic passes | release schematic/PCB, actuator/access geometry, source-to-hazard fault tree, worst-case circuit analysis and verification procedures |
 | OBC and safe-state control | D1-OBC-001 | CUSTOM; architecture under revision | freeze current MCU, memory, clocks, supervisors and full board release |
 | Passive backplane | D1-BPB-001 | CUSTOM; exact Hirose pair and logical map selected | geometry, slot tables, current/return analysis and fabrication release |
 | UHF transceiver | D1-COM-001 | CUSTOM carrier; Ebyte `E22-400M22S` selected | carrier, RF network, waveform, protocol, link and EMC closure |
@@ -48,10 +48,11 @@ complete.
 
 ## Current result
 
-Ten detailed component records exist. Exact selections now control the battery
+Eleven detailed component records exist. Exact selections now control the battery
 cell, camera, UHF module, solar-cell assembly, stack connectors, principal EPS
 parts, passive-ADCS magnet/material geometry, the principal antenna feed and
-release parts, and the nominal 1U frame geometry/material. The design is not yet
+release parts, nominal 1U frame geometry/material, and the launch-inhibit/RBF
+principal hardware and topology. The design is not yet
 buildable under D1-DES-STD-001 because structure drawings/tolerances/analysis,
 released antenna fabrication data, ADCS retainers and measured
 magnetic properties, harnesses, released avionics and the ground chain are

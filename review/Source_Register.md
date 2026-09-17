@@ -382,3 +382,50 @@ instances and a nominal frame-only bounding box of approximately
 flight-reference provenance; it does not supply a Degen-1 tolerance scheme,
 complete material/finish release, structural analysis or transferable launch
 qualification.
+
+**S69 — [BIRDS-4 Front Access Board](https://github.com/BIRDSOpenSource/BIRDS4-FAB/tree/efea2823d57298fe0f467f2fa06b1610dd27bc2c)**
+
+Official MIT-licensed BIRDS-4 repository inspected at pinned commit on
+2026-09-17. The public Rev 0.22 schematic, BOM, README and license identify a
+flown/reference front-access architecture with two switched 2.5 mm RBF jacks,
+deployer inputs, power switching, telemetry and service connectors. Exact files
+are archived with hashes. The record provides precedent and pin-level circuit
+evidence; it does not establish Degen-1 circuit independence or transfer flight
+qualification.
+
+**S70 — [Littelfuse/C&K SDS series](https://www.littelfuse.com/assetdocs/littelfuse-ck-sds-series-datasheet?assetguid=331b0ec5-b12d-44ed-90f0-fc385f315e26)**
+
+Current primary manufacturer datasheet reviewed 2026-09-17, revision
+CM.06/06/24. It defines `SDS002RULC` as the normally closed, tape-and-reel,
+ultra-low-current variant and specifies 10 µA minimum at 1.8 V, 100 mA at
+12 VDC maximum, 50,000 cycles, -40 to +85 °C, 75 gf maximum actuation force and
+the mechanical drawing. The official endpoint blocked automated local retrieval
+with HTTP 403, so the URL/revision are retained without a substituted local PDF.
+
+**S71 — [Same Sky switched jack and plug](https://www.sameskydevices.com/product/interconnect/connectors/audio-connectors/jacks/sj1-2535-smt-tr)**
+
+Primary manufacturer pages and PDFs retrieved 2026-09-17 identify exact jack
+`SJ1-2535-SMT-TR` and mating plug `SP-2501`. The jack drawing defines separate
+normally closed tip and ring switch contacts, pins, footprint, materials,
+-25 to +85 °C range and 5,000-cycle life. The plug drawing defines the 2.5 mm
+stereo geometry, 45.8 × 8 mm envelope, materials, -25 to +70 °C range and
+5,000-cycle life. The jack PDF says 1 A while the current product page says
+0.3 A; Degen-1 carries only 27–41 µA through these contacts and preserves the
+conflict rather than choosing the favorable value. Exact PDFs are archived.
+
+**S72 — [Vishay SiA4265EDJ](https://www.vishay.com/doc?63162=)**
+
+Primary manufacturer document 63162, Rev A, retrieved 2026-09-17. It defines
+orderable `SiA4265EDJ-T1-GE3`, a -20 V P-channel MOSFET with maximum RDS(on) of
+41 mΩ at -2.5 V and 67.5 mΩ at -1.8 V, -55 to +150 °C junction/storage range,
+and a 2.05 × 2.05 mm PowerPAK SC-70 package. Exact PDF is archived. Commercial
+ratings do not establish radiation or flight suitability.
+
+**S73 — [JST PA connector family](https://www.jst-mfg.com/product/pdf/eng/ePA-F.pdf)**
+
+Primary current manufacturer specification retrieved 2026-09-17. It identifies
+the exact `B10B-PASK-1(LF)(SN)` / `PAP-10V-S` / `SPHD-001T-P0.5` 10-position
+service-connector set, 2.0 mm pitch, keyed secure-lock geometry, 3 A family
+rating, -40 to +105 °C range and AWG 26–22 contact applicability. Exact PDF is
+archived. Degen-1 uses the port for target-powered logic/programming only and
+does not credit the commercial rating as vacuum or launch qualification.
