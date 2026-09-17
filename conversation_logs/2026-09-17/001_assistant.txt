@@ -44,3 +44,13 @@ DEGENERATE-1 is at **Success Level 0**: the mission and major architecture are d
 The design is progressing, but the critical distinction is that we have a documented architecture rather than a finished spacecraft. I found no evidence that should raise the project above Level 0. I’m closing the current flight-access milestone now so the repository reflects a reviewed, reproducible stopping point before moving to the remaining harness and interface work.
 
 The flight-access record now passes both evidence-custody and logic checks: 11 controlled design records, 73 registered sources, 54 locally verified archive files, and 43 Boolean inhibit cases with no errors. Its mass and price remain explicitly unknown because the custom PCB/mechanical design is unfinished; I have not converted those gaps into estimates.
+
+Still **Success Level 0**: documented/modelled, with no physical build or test evidence.
+
+- **Now closed at design-record level:** 11 physical subsystem records, including the 1U structure and the launch-inhibit/RBF/service-access architecture.
+- **Evidence:** 73 registered sources, 54 verified local archive files, and 43 passing Boolean inhibit checks.
+- **Still open:** harnesses, mounting/bonding hardware, thermal interfaces, complete interface control, integrated mass/power/link/thermal/structural closure, flight software, ground station, and full CAD regeneration.
+- **Repository:** the engineering milestone is committed and pushed at `742de30`; local and GitHub heads match.
+- **Transcripts:** the current user messages and assistant outputs are stored verbatim in the dated logs.
+
+The next engineering task is `D1-HAR-001`: define every flight and ground harness, connector, contact, wire, pin map, routing rule, and verification path. The spacecraft is becoming internally coherent, but it has **not yet reached the theoretically buildable design gate**.
