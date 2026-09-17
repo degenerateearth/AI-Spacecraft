@@ -79,3 +79,20 @@ The last turn was a status report and did not change the engineering record. I�
 The public evidence supports an exact RTD selection: YAGEO Nexensos `32208571`, a Pt1000 M222 element with published dimensions, lead construction, measurement current, tolerance, and temperature range. It is currently stocked, but the manufacturer explicitly does not recommend its standard catalog parts for aerospace use, so I will treat it as a documented component inside a custom panel qualification program—not as space-qualified hardware. That distinction preserves buildability without overstating evidence.
 
 The RTD evidence is archived and hashed, and both machine checks pass: 12 controlled design records, 79 registered sources, 61 verified archive files, and all 12 harness assemblies accounted for. I’m now reconciling the transcript, synchronizing the mirror to `D:\Degen-1`, and committing the harness milestone.
+
+The authoritative repository now reproduces the same PASS results, and the baseline verifier has been improved so future runs update its controlled JSON automatically. The harness milestone is ready to commit; after pushing it, I’ll continue into the next unresolved physical-integration package rather than stopping at the checkpoint.
+
+The harness milestone is committed and pushed at `d0089c9`. I’m continuing with `D1-MECH-HW-001`: auditing every structural joint, PCB mount, panel attachment, antenna restraint, and harness clamp against the current CAD and component records so the mechanical BOM identifies exact fasteners and retained custom pieces rather than generic “mounting hardware.”
+
+The mechanical audit has exposed a key boundary: the BIRDS structure reference contains multi-solid groups that may include hardware, but the upstream STEP labels do not identify those solids as screws, inserts, or frame bodies. I’m interrogating the native object hierarchy before assigning any fastener identity; geometry alone will not be treated as a part number or material specification.
+
+I’ll create a complete backup at `E:\projects\sattelite\Degen-1`, including the Git history, engineering files, evidence archive, CAD, and verbatim transcripts. I’ll copy without deleting anything from the destination, then verify the backup against the source by file count, byte count, and per-file SHA-256.
+
+The full repository copy has completed, including `.git`. I’m performing the content verification now across every source file and the corresponding backup file; this checks the backup itself rather than relying on Robocopy’s transfer summary.
+
+Backup complete and verified.
+
+- Location: `E:\projects\sattelite\Degen-1`
+- Included: the complete project tree, source evidence archive, CAD, engineering records, transcripts, and full `.git` history.
+- Verification: SHA-256 comparison passed with zero missing, mismatched, or extra files.
+- The transcript and backup record were also committed and pushed to GitHub.
