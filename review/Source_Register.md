@@ -371,3 +371,14 @@ record define a four-channel mechanism using 0.3 mm nylon line, Yageo
 files are retained under the upstream license. Degen-1 changes the antenna,
 battery, PCB and mechanics, so the record provides precedent rather than
 transferred deployment verification.
+
+**S68 — [BIRDS-4 CAD](https://github.com/BIRDSOpenSource/BIRDS4-CAD/tree/3bab47a0f53410ef79005d21321ff659726f0a1c)**
+
+Official MIT-licensed BIRDS-4 repository inspected at pinned commit on
+2026-09-16. The complete flight-model STEP and eleven unique frame STEP files
+were archived. A reproducible FreeCAD 1.1.3 extraction finds 22 top-level frame
+instances and a nominal frame-only bounding box of approximately
+100 × 100 × 113.5 mm. The upstream record establishes nominal geometry and
+flight-reference provenance; it does not supply a Degen-1 tolerance scheme,
+complete material/finish release, structural analysis or transferable launch
+qualification.

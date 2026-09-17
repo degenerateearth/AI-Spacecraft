@@ -150,3 +150,14 @@ interfaces, rejected alternatives and the RF/deployment verification path.
 Pinned and archived open-source evidence with license files and hashes. This
 selects a custom design direction; it does not establish integrated RF
 performance, release reliability, launch compliance or physical test evidence.
+
+DD-003 — 2026-09-16. Selected the D1-STR-001 nominal frame architecture from
+the MIT-licensed BIRDS-4 flight-model CAD at a pinned commit. Archived the full
+assembly and eleven unique frame STEP files and added a reproducible FreeCAD
+extractor. The 22 top-level frame instances occupy a nominal
+100 × 100 × 113.5 mm envelope. An all-6061 density calculation gives 152.363 g,
+but remains an assumption because grouped upstream parts include hardware and
+do not control every material. Selected certified 6061-T6 and a controlled
+hard-anodized rail finish for the Degen-1 derivative. Native drawings,
+tolerances, fasteners, interfaces, analysis and verification remain open; no
+fabrication, fit check, load test or transferred qualification was claimed.

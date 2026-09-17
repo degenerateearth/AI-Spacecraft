@@ -16,7 +16,7 @@ complete.
 
 | Function | Controlled item | Identity/state | Remaining design closure |
 |---|---|---|---|
-| 1U rails and load structure | D1-STR-001 | OPEN | release BIRDS-derived FreeCAD/native drawings, material, finish, fasteners, tolerances and mass |
+| 1U rails and load structure | D1-STR-001 | CUSTOM/TO BE VERIFIED; pinned BIRDS-4 22-instance frame geometry, 6061-T6 and controlled rail finish selected | release Degen-native parametric parts/drawings, tolerances, interfaces, fasteners, inspection plan and structural analyses |
 | Five solar panels | D1-SOL-001 | CUSTOM; AZUR `81442` selected | PCB/mechanical variants, RTD, harness and panel acceptance release |
 | Battery energy storage | D1-BAT-001 | CUSTOM; Panasonic `BK120AAHU` 3S2P selected | pack drawing/BOM, protection, cell curves, screening and exact mass |
 | Power conversion/charging/distribution | D1-EPS-001 | CUSTOM; principal ICs selected | full schematic/BOM/layout/calculations and release tests |
@@ -48,10 +48,11 @@ complete.
 
 ## Current result
 
-Nine detailed component records exist. Exact selections now control the battery
+Ten detailed component records exist. Exact selections now control the battery
 cell, camera, UHF module, solar-cell assembly, stack connectors, principal EPS
-parts, passive-ADCS magnet/material geometry, and the principal antenna feed and
-release parts. The design is not yet buildable under D1-DES-STD-001 because
-structure, released antenna fabrication data, ADCS retainers and measured
+parts, passive-ADCS magnet/material geometry, the principal antenna feed and
+release parts, and the nominal 1U frame geometry/material. The design is not yet
+buildable under D1-DES-STD-001 because structure drawings/tolerances/analysis,
+released antenna fabrication data, ADCS retainers and measured
 magnetic properties, harnesses, released avionics and the ground chain are
 incomplete. No entry in this matrix is physical test evidence.

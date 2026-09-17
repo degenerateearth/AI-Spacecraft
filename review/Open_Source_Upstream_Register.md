@@ -7,6 +7,7 @@ Upstream source is not copied into this repository by this register.
 | Project | Upstream revision inspected | Use in Degen-1 | License/evidence note |
 |---|---|---|---|
 | BIRDS General Documentation | `76cf923be9dc7e923e7397b5426c5b1e3d3f41c6` | Platform ICD and textbook | Official BIRDSOpenSource repository; public educational record |
+| BIRDS-4 CAD | `3bab47a0f53410ef79005d21321ff659726f0a1c` | Nominal 1U frame geometry and full-assembly placement reference | MIT; exact STEP subset archived; no tolerances, Degen material release or transferred qualification |
 | BIRDS-4 OBC | `490f74487d65ebfb0037bbdd9f3e7aab6aefc3a5` | OBC schematic, BOM and firmware reference | Official BIRDSOpenSource repository |
 | BIRDS-5 parts list | `c5ab9884684190afe6abd231336a7d1674d9b1cf` | Later 1U/2U parts and mission reference | Official BIRDSOpenSource repository |
 | PyCubed hardware | `d1adfd0c207dd5951ab175af53b3b7c1c72a5212` | Integrated-board implementation comparison | Official PyCubed repository; inspect repository license before reuse |

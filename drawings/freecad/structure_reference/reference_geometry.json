@@ -1,0 +1,506 @@
+{
+  "document": "D1-STR-REF-001",
+  "evidence": "MODELED extraction of MIT-licensed upstream STEP; not Degen-1 test evidence",
+  "freecad_version": [
+    "1",
+    "1",
+    "3",
+    "20260725 (Git shallow)",
+    "Unknown",
+    "2026/07/25 04:52:02",
+    "grafted,grafted",
+    "145529fe741292ff0b3977a01195bf0247425794"
+  ],
+  "upstream_repository": "https://github.com/BIRDSOpenSource/BIRDS4-CAD",
+  "upstream_commit": "3bab47a0f53410ef79005d21321ff659726f0a1c",
+  "assembly_file": "BIRDS4_FM_Final v7.step",
+  "assembly_sha256": "45db4ea98c7985e8aff2dfa3ef7ad3b5c5c950e8e981a91e8df30f1f16be89de",
+  "material_assumption": "6061-T6 at 0.00270 g/mm^3 for calculation only; upstream STEP does not control all material properties",
+  "part_instance_count": 22,
+  "parts": [
+    {
+      "object": "Part__Feature",
+      "upstream_label": "B4_frame5A v29",
+      "type": "Part::Feature",
+      "solid_count": 1,
+      "volume_mm3": 8759.036216360573,
+      "calculated_mass_if_6061_g": 23.649397784173548,
+      "center_of_volume_mm": [
+        45.350848750219825,
+        -44.97267497227998,
+        1.394417420493042
+      ],
+      "bbox_mm": [
+        31.500288827055602,
+        -50.00015690118164,
+        -56.750134082429945,
+        50.0002909836111,
+        -26.500154744625657,
+        56.7498659175701
+      ]
+    },
+    {
+      "object": "Part__Feature001",
+      "upstream_label": "B4_frame2 v6",
+      "type": "Part::Feature",
+      "solid_count": 1,
+      "volume_mm3": 2329.7628756724985,
+      "calculated_mass_if_6061_g": 6.290359764315746,
+      "center_of_volume_mm": [
+        44.96502622649528,
+        -0.00015474462603037864,
+        -45.96043683867533
+      ],
+      "bbox_mm": [
+        41.5002888270555,
+        -41.50015474462616,
+        -48.25013408243071,
+        48.40028882705602,
+        41.49984525537392,
+        -43.2501340824303
+      ]
+    },
+    {
+      "object": "B4_frame6Y_v15",
+      "upstream_label": "B4_frame6Y v15",
+      "type": "App::Part",
+      "solid_count": 1,
+      "volume_mm3": 8618.82210720347,
+      "calculated_mass_if_6061_g": 23.27081968944937,
+      "center_of_volume_mm": [
+        45.28305096691666,
+        44.95866495501065,
+        2.2466415420031467
+      ],
+      "bbox_mm": [
+        31.500288827055883,
+        26.499845255373813,
+        -54.75013408243055,
+        50.00029098361135,
+        49.99984741192987,
+        56.7498659175695
+      ]
+    },
+    {
+      "object": "Part__Feature003",
+      "upstream_label": "B4_frame1 v6",
+      "type": "Part::Feature",
+      "solid_count": 1,
+      "volume_mm3": 2534.249601549609,
+      "calculated_mass_if_6061_g": 6.8424739241839445,
+      "center_of_volume_mm": [
+        0.0002888270555985173,
+        44.94230815905881,
+        -45.85293984513264
+      ],
+      "bbox_mm": [
+        -41.49971117294424,
+        41.499845255373884,
+        -48.250134082430584,
+        41.5002888270553,
+        48.39984525537427,
+        -43.25013408243048
+      ]
+    },
+    {
+      "object": "Part__Feature004",
+      "upstream_label": "B4_frame5B v14",
+      "type": "Part::Feature",
+      "solid_count": 1,
+      "volume_mm3": 8772.862305333627,
+      "calculated_mass_if_6061_g": 23.686728224400795,
+      "center_of_volume_mm": [
+        -45.33120740896233,
+        44.97236006618553,
+        1.4380023791170657
+      ],
+      "bbox_mm": [
+        -49.999713329499706,
+        26.49984525537428,
+        -56.7501340824305,
+        -31.49971117294421,
+        49.999847411930276,
+        56.749865917569544
+      ]
+    },
+    {
+      "object": "Part__Feature005",
+      "upstream_label": "B4_frame2 v001",
+      "type": "Part::Feature",
+      "solid_count": 1,
+      "volume_mm3": 2329.762875672498,
+      "calculated_mass_if_6061_g": 6.290359764315745,
+      "center_of_volume_mm": [
+        -44.96444857238381,
+        -0.00015474462584563753,
+        -45.960436838675065
+      ],
+      "bbox_mm": [
+        -48.39971117294452,
+        -41.50015474462581,
+        -48.25013408243042,
+        -41.499711172944075,
+        41.49984525537427,
+        -43.25013408242999
+      ]
+    },
+    {
+      "object": "Part__Feature006",
+      "upstream_label": "B4_EM_frame6X v14",
+      "type": "Part::Feature",
+      "solid_count": 1,
+      "volume_mm3": 7943.371391101158,
+      "calculated_mass_if_6061_g": 21.447102755973127,
+      "center_of_volume_mm": [
+        -45.28987089963501,
+        -44.962077117961464,
+        2.3755744056678694
+      ],
+      "bbox_mm": [
+        -49.99971332950081,
+        -50.000156901181285,
+        -54.750134082429994,
+        -31.4997111729445,
+        -26.500154744625284,
+        56.749865917570105
+      ]
+    },
+    {
+      "object": "B4_frame1F_v12",
+      "upstream_label": "B4_frame1F v12",
+      "type": "App::Part",
+      "solid_count": 13,
+      "volume_mm3": 2864.6169696358747,
+      "calculated_mass_if_6061_g": 7.734465818016862,
+      "center_of_volume_mm": [
+        0.0002773704900520086,
+        -44.9348305422126,
+        -45.583401063192476
+      ],
+      "bbox_mm": [
+        -41.49971117294473,
+        -48.40015474462623,
+        -48.250134082429994,
+        41.5002888270553,
+        -41.500154744625895,
+        -42.75013408242996
+      ]
+    },
+    {
+      "object": "Part__Feature028",
+      "upstream_label": "B4_frame4 v8",
+      "type": "Part::Feature",
+      "solid_count": 1,
+      "volume_mm3": 293.8284167699351,
+      "calculated_mass_if_6061_g": 0.7933367252788247,
+      "center_of_volume_mm": [
+        38.75931628522564,
+        -44.95015474462569,
+        33.75775489547596
+      ],
+      "bbox_mm": [
+        31.0002888270556,
+        -48.40015474462574,
+        23.949865917569984,
+        41.5002888270556,
+        -41.50015474462566,
+        39.94986591757002
+      ]
+    },
+    {
+      "object": "Part__Feature029",
+      "upstream_label": "B4_frame4 v001",
+      "type": "Part::Feature",
+      "solid_count": 1,
+      "volume_mm3": 293.828416769935,
+      "calculated_mass_if_6061_g": 0.7933367252788246,
+      "center_of_volume_mm": [
+        38.75931628522564,
+        -44.950154744626005,
+        -31.258023060335862
+      ],
+      "bbox_mm": [
+        31.0002888270556,
+        -48.400154744626036,
+        -37.45013408242992,
+        41.5002888270556,
+        -41.50015474462596,
+        -21.450134082429884
+      ]
+    },
+    {
+      "object": "Part__Feature030",
+      "upstream_label": "B4_frame4 v002",
+      "type": "Part::Feature",
+      "solid_count": 1,
+      "volume_mm3": 293.828416769935,
+      "calculated_mass_if_6061_g": 0.7933367252788246,
+      "center_of_volume_mm": [
+        38.759316285225935,
+        44.949845255374306,
+        33.757754895475564
+      ],
+      "bbox_mm": [
+        31.000288827055897,
+        41.49984525537426,
+        23.949865917569582,
+        41.5002888270559,
+        48.39984525537434,
+        39.94986591756962
+      ]
+    },
+    {
+      "object": "Part__Feature031",
+      "upstream_label": "B4_frame4 v003",
+      "type": "Part::Feature",
+      "solid_count": 1,
+      "volume_mm3": 293.82841676993496,
+      "calculated_mass_if_6061_g": 0.7933367252788245,
+      "center_of_volume_mm": [
+        38.759316285225935,
+        44.949845255373994,
+        -31.258023060336456
+      ],
+      "bbox_mm": [
+        31.000288827055897,
+        41.49984525537396,
+        -37.450134082430516,
+        41.5002888270559,
+        48.39984525537404,
+        -21.45013408243048
+      ]
+    },
+    {
+      "object": "Part__Feature032",
+      "upstream_label": "B4_frame4 v004",
+      "type": "Part::Feature",
+      "solid_count": 1,
+      "volume_mm3": 293.82841676993496,
+      "calculated_mass_if_6061_g": 0.7933367252788245,
+      "center_of_volume_mm": [
+        -38.75873863111434,
+        44.94984525537468,
+        33.757754895475564
+      ],
+      "bbox_mm": [
+        -41.49971117294433,
+        41.499845255374645,
+        23.949865917569582,
+        -30.999711172944295,
+        48.399845255374736,
+        39.94986591756962
+      ]
+    },
+    {
+      "object": "Part__Feature033",
+      "upstream_label": "B4_frame4 v005",
+      "type": "Part::Feature",
+      "solid_count": 1,
+      "volume_mm3": 293.8284167699351,
+      "calculated_mass_if_6061_g": 0.7933367252788247,
+      "center_of_volume_mm": [
+        -38.758738631114035,
+        44.94984525537437,
+        -31.258023060336456
+      ],
+      "bbox_mm": [
+        -41.49971117294402,
+        41.49984525537434,
+        -37.450134082430516,
+        -30.99971117294399,
+        48.399845255374444,
+        -21.45013408243048
+      ]
+    },
+    {
+      "object": "Part__Feature034",
+      "upstream_label": "B4_frame4 v006",
+      "type": "Part::Feature",
+      "solid_count": 1,
+      "volume_mm3": 293.828416769935,
+      "calculated_mass_if_6061_g": 0.7933367252788246,
+      "center_of_volume_mm": [
+        -38.75873863111525,
+        -44.95015474462541,
+        33.75775489547608
+      ],
+      "bbox_mm": [
+        -41.49971117294529,
+        -48.40015474462545,
+        23.949865917570083,
+        -30.999711172945194,
+        -41.50015474462536,
+        39.94986591757019
+      ]
+    },
+    {
+      "object": "Part__Feature035",
+      "upstream_label": "B4_frame4 v007",
+      "type": "Part::Feature",
+      "solid_count": 1,
+      "volume_mm3": 293.828416769935,
+      "calculated_mass_if_6061_g": 0.7933367252788246,
+      "center_of_volume_mm": [
+        -38.758738631114724,
+        -44.95015474462583,
+        -31.258023060335837
+      ],
+      "bbox_mm": [
+        -41.49971117294479,
+        -48.40015474462586,
+        -37.45013408242992,
+        -30.999711172944625,
+        -41.50015474462575,
+        -21.450134082429866
+      ]
+    },
+    {
+      "object": "Part__Feature065",
+      "upstream_label": "B4_frame7_updated_after_FM v2",
+      "type": "Part::Feature",
+      "solid_count": 1,
+      "volume_mm3": 101.79049446992488,
+      "calculated_mass_if_6061_g": 0.2748343350687972,
+      "center_of_volume_mm": [
+        43.655738118910676,
+        -45.75015474462614,
+        -49.76728601311139
+      ],
+      "bbox_mm": [
+        41.900288827055576,
+        -48.35015474462617,
+        -55.05013408243006,
+        46.60028882705561,
+        -43.1501547446261,
+        -46.75013408243004
+      ]
+    },
+    {
+      "object": "B4_frame3_v15",
+      "upstream_label": "B4_frame3 v15",
+      "type": "App::Part",
+      "solid_count": 13,
+      "volume_mm3": 2864.6169696358747,
+      "calculated_mass_if_6061_g": 7.734465818016862,
+      "center_of_volume_mm": [
+        0.000265474594219405,
+        44.93403849748738,
+        46.58309808930524
+      ],
+      "bbox_mm": [
+        -41.4997111729441,
+        41.49984525537443,
+        43.74986591756967,
+        41.50028882705593,
+        48.399845255374764,
+        49.24986591756971
+      ]
+    },
+    {
+      "object": "B4_frame1F_v001",
+      "upstream_label": "B4_frame1F v001",
+      "type": "App::Part",
+      "solid_count": 13,
+      "volume_mm3": 2864.6169696358747,
+      "calculated_mass_if_6061_g": 7.734465818016862,
+      "center_of_volume_mm": [
+        0.00030028361991692393,
+        -44.934830542212,
+        46.58313289833273
+      ],
+      "bbox_mm": [
+        -41.49971117294533,
+        -48.40015474462562,
+        43.749865917570204,
+        41.5002888270547,
+        -41.50015474462529,
+        49.24986591757025
+      ]
+    },
+    {
+      "object": "Part__Feature726",
+      "upstream_label": "B4_frame2S v15",
+      "type": "Part::Feature",
+      "solid_count": 1,
+      "volume_mm3": 1997.3347039965788,
+      "calculated_mass_if_6061_g": 5.392803700790763,
+      "center_of_volume_mm": [
+        45.505155623398835,
+        -0.0001547445948517634,
+        47.01816052509461
+      ],
+      "bbox_mm": [
+        42.50028882705565,
+        -41.50015474462564,
+        44.24986591756963,
+        48.40028882705596,
+        41.49984525537443,
+        49.24986591757002
+      ]
+    },
+    {
+      "object": "Part__Feature727",
+      "upstream_label": "B4_frame2S v001",
+      "type": "Part::Feature",
+      "solid_count": 1,
+      "volume_mm3": 1997.3347039965786,
+      "calculated_mass_if_6061_g": 5.392803700790762,
+      "center_of_volume_mm": [
+        -45.504577969287446,
+        -0.00015474465605080923,
+        47.01816052509462
+      ],
+      "bbox_mm": [
+        -48.399711172944585,
+        -41.50015474462534,
+        44.24986591756963,
+        -42.499711172944245,
+        41.49984525537472,
+        49.24986591757006
+      ]
+    },
+    {
+      "object": "Part__Feature967",
+      "upstream_label": "B4_frame7_updated_after_FM v001",
+      "type": "Part::Feature",
+      "solid_count": 1,
+      "volume_mm3": 101.7904944699249,
+      "calculated_mass_if_6061_g": 0.27483433506879723,
+      "center_of_volume_mm": [
+        -43.65516046479928,
+        45.749845255374254,
+        -49.76728601311174
+      ],
+      "bbox_mm": [
+        -46.59971117294421,
+        43.149845255374224,
+        -55.05013408243043,
+        -41.89971117294418,
+        48.34984525537429,
+        -46.75013408243041
+      ]
+    }
+  ],
+  "combined_volume_mm3": 56430.596012893584,
+  "calculated_mass_if_6061_g": 152.36260923481268,
+  "center_of_volume_mm": [
+    0.5331144533884508,
+    0.2858243254466382,
+    0.8796801437038685
+  ],
+  "combined_bbox_mm": [
+    -49.99971332950081,
+    -50.00015690118164,
+    -56.7501340824305,
+    50.00029098361135,
+    49.999847411930276,
+    56.749865917570105
+  ],
+  "limitations": [
+    "STEP nominal geometry contains no Degen-1 tolerances or inspection datum scheme",
+    "material and finish are not controlled by the STEP geometry",
+    "fasteners, solar panels, deployment switches and other assembly objects are excluded",
+    "mass uses a project density assumption and is not measured",
+    "BIRDS-4 launch acceptance and flight history do not transfer to a Degen-1 derivative"
+  ]
+}
