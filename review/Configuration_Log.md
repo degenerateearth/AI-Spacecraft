@@ -172,3 +172,16 @@ the pinned BIRDS FAB evidence and current manufacturer PDFs. A reproducible
 Boolean checker passes all 43 stated state/single-stuck-on cases. This is logic
 evidence only; schematic, PCB, mechanical actuation, worst-case electrical and
 thermal analysis, full fault tree and physical verification remain open.
+
+DD-005 — 2026-09-17. Issued D1-HAR-001 as the complete connection-level harness
+baseline for the current architecture: one battery loom, five independent
+solar-panel looms, three independent deployer-switch leads, one camera cable,
+one exact 100 mm U.FL RF cable and one removable service cable. Selected exact
+TE/Raychem Spec 55 wire variants, JST PA locking connector configurations,
+Molex PicoBlade housings/carrier header, the Hirose RF assembly and Western
+Filament PTFE lacing. Selected exact YAGEO Nexensos `32208571` Pt1000 elements
+for the five solar panels, while retaining their attachment, lead transition and
+readout as custom verification work. A schedule checker accounts for all twelve
+assemblies and their preliminary conductor quantities. CAD-routed cut lengths,
+camera mating finish, panel lead transitions, strain relief, electrical/RF
+analysis and all physical workmanship/test evidence remain open.

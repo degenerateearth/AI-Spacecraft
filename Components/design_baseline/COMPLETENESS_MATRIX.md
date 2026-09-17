@@ -17,7 +17,7 @@ complete.
 | Function | Controlled item | Identity/state | Remaining design closure |
 |---|---|---|---|
 | 1U rails and load structure | D1-STR-001 | CUSTOM/TO BE VERIFIED; pinned BIRDS-4 22-instance frame geometry, 6061-T6 and controlled rail finish selected | release Degen-native parametric parts/drawings, tolerances, interfaces, fasteners, inspection plan and structural analyses |
-| Five solar panels | D1-SOL-001 | CUSTOM; AZUR `81442` selected | PCB/mechanical variants, RTD, harness and panel acceptance release |
+| Five solar panels | D1-SOL-001 | CUSTOM; AZUR `81442` cells and YAGEO Nexensos `32208571` Pt1000 sensors selected | PCB/mechanical variants, RTD attachment/readout, harness transitions and panel acceptance release |
 | Battery energy storage | D1-BAT-001 | CUSTOM; Panasonic `BK120AAHU` 3S2P selected | pack drawing/BOM, protection, cell curves, screening and exact mass |
 | Power conversion/charging/distribution | D1-EPS-001 | CUSTOM; principal ICs selected | full schematic/BOM/layout/calculations and release tests |
 | Launch inhibits, RBF and service access | D1-FAB-001 | CUSTOM/TO BE VERIFIED; exact switches, two RBF pairs, seven power devices, gate network and service connector selected; Boolean all-state/single-fault logic passes | release schematic/PCB, actuator/access geometry, source-to-hazard fault tree, worst-case circuit analysis and verification procedures |
@@ -27,7 +27,7 @@ complete.
 | UHF antenna and deployment | D1-ANT-001 | CUSTOM/TO BE VERIFIED; OreSat-derived 436.5 MHz canted turnstile and Quetzal-derived four-channel release selected | release RF/end-panel PCB, elements, pivots, line, complete BOM, harness interface, EM/structural analyses and RF/deployment verification |
 | Earth camera | D1-CAM-001 | SkyFox `piCAM/FM` selected | connector suffix, current limit, STEP/configuration and carrier release |
 | Passive attitude stabilization | D1-ADCS-001 | CUSTOM/TO BE VERIFIED; K&J `D84` plus two 95 mm × 1 mm HyMu 80 rods selected | release rod/retainer drawings; characterize magnet, rod loops and integrated residual dipole; cage test and probability/dynamics analysis |
-| Harnesses | D1-HAR-001 | OPEN | exact wire, contacts, connectors, lengths, routing and assembly/inspection data |
+| Harnesses | D1-HAR-001 | CUSTOM/TO BE VERIFIED; 11 flight and one ground harness identified; Spec 55 wire, JST PA connectors, camera connector family, exact 100 mm U.FL coax and PTFE lacing selected | release CAD-routed cut lengths, camera contact finish, solar-panel lead transitions, strain-relief drawings, voltage-drop/thermal/RF analyses and fabrication/inspection data |
 | Mounting/bonding hardware | D1-MECH-HW-001 | OPEN | itemized fasteners, locking, torque, bonding and access sequence |
 | Thermal materials/interfaces | D1-THM-001 | OPEN | exact surface finishes, interface materials, heater decision and thermal-node evidence |
 | Flight software | D1-FSW-001 | OPEN | reproducible source/build, state machine, drivers, protocol, storage and fault tests |
@@ -48,12 +48,12 @@ complete.
 
 ## Current result
 
-Eleven detailed component records exist. Exact selections now control the battery
+Twelve detailed component records exist. Exact selections now control the battery
 cell, camera, UHF module, solar-cell assembly, stack connectors, principal EPS
 parts, passive-ADCS magnet/material geometry, the principal antenna feed and
 release parts, nominal 1U frame geometry/material, and the launch-inhibit/RBF
 principal hardware and topology. The design is not yet
 buildable under D1-DES-STD-001 because structure drawings/tolerances/analysis,
 released antenna fabrication data, ADCS retainers and measured
-magnetic properties, harnesses, released avionics and the ground chain are
+magnetic properties, released harness routing/terminations, released avionics and the ground chain are
 incomplete. No entry in this matrix is physical test evidence.

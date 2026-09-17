@@ -63,7 +63,7 @@ The reasons are:
 | OBC and nonvolatile storage | Custom D1-OBC-001 derived from the BIRDS-4 PIC/flash architecture and firmware; every obsolete/ambiguous part must be replaced before schematic release | Selected direction; layout and current BOM not released |
 | Power, inhibits and distribution | Custom D1-EPS-001 derived from the BIRDS FAB/EPS safety architecture, with three independent deployment inhibits, RBF isolation, battery protection and separately switched payload/radio rails | Selected direction; schematic and current BOM not released |
 | Battery | Custom D1-BAT-001 using six exact Panasonic `BK120AAHU` NiMH cells in a 3S2P topology | Exact cell and topology selected; pack drawing, analysis and verification remain open |
-| Solar panels | Custom D1-SOL-001 body panels based on the BIRDS/OreSat public panel evidence; exact cell and panel circuit remain to be released | Open detailed design |
+| Solar panels | Custom D1-SOL-001 body panels using exact AZUR `81442` SCAs, Nexperia blocking diodes and YAGEO Nexensos `32208571` Pt1000 sensors; PCB, readout and attachment remain to be released | Open detailed design |
 | TT&C and image downlink | Custom D1-COM-001 carrier using exact Ebyte `E22-400M22S` / Semtech SX1268 module; public Degen-1 waveform and packet protocol | Exact module selected; carrier, waveform and link closure open |
 | Antenna/deployment | Custom D1-ANT-001 derived from the documented BIRDS tape-antenna mechanism and launch-inhibit logic | Selected direction; drawings and release circuit not released |
 | Camera | SkyFox Labs `piCAM/FM`, default approximately 60-degree optics, IR-cut and infinity focus | Exact payload selected; carrier, delivered connector suffix and protection release open |

@@ -86,7 +86,7 @@ architecture_trade:
   flight_heritage_transferred_to_Degen1: false
 detailed_design_baseline:
   control_register: Components/design_baseline/COMPLETENESS_MATRIX.md
-  detailed_component_records: 11
+  detailed_component_records: 12
   exact_selections_frozen:
     - Panasonic_BK120AAHU_3S2P_cells
     - SkyFox_piCAM_FM_default_60deg_IR_cut_infinity
@@ -98,8 +98,9 @@ detailed_design_baseline:
     - OreSat_derived_436_5_MHz_turnstile_and_Quetzal_derived_release_architecture
     - BIRDS4_derived_22_instance_1U_frame_geometry_and_6061T6_material
     - D1_FAB_001_SDS002RULC_dual_RBF_seven_stage_inhibit_and_JST_service_interface
+    - D1_HAR_001_Spec55_JST_PA_PicoBlade_and_100mm_UFL_harness_architecture
+    - YAGEO_Nexensos_32208571_Pt1000_panel_RTD_x5
   records_still_open:
-    - D1_HAR_001
     - D1_MECH_HW_001
     - D1_THM_001
     - D1_FSW_001
@@ -109,6 +110,7 @@ detailed_design_baseline:
     - D1_ANT_001_UHF_antenna_and_deployment_assembly
     - D1_STR_001_1U_rail_frame_and_load_structure
     - D1_FAB_001_launch_inhibit_RBF_and_front_access_assembly
+    - D1_HAR_001_flight_and_service_harness_set
   theoretical_design_complete: false
   hardware_purchased_required_for_completion: false
 next_step_proposal:

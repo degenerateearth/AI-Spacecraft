@@ -24,11 +24,12 @@ Current states:
 | D1-BPB-001 | Backplane and fixed electrical interfaces | CUSTOM/TO BE VERIFIED | [Backplane record](D1-BPB-001.md) |
 | D1-CAM-001 | SkyFox Labs piCAM/FM camera and custom carrier | SELECTED FOR DETAILED DESIGN | [Camera record](D1-CAM-001.md) |
 | D1-COM-001 | Ebyte E22-400M22S UHF radio and custom carrier | CUSTOM/TO BE VERIFIED | [Radio record](D1-COM-001.md) |
-| D1-SOL-001 | Five custom panels with ten AZUR SPACE 81442 SCAs | CUSTOM/TO BE VERIFIED | [Solar-panel record](D1-SOL-001.md) |
+| D1-SOL-001 | Five custom panels with ten AZUR SPACE 81442 SCAs and five YAGEO Nexensos 32208571 Pt1000 sensors | CUSTOM/TO BE VERIFIED | [Solar-panel record](D1-SOL-001.md) |
 | D1-ADCS-001 | K&J D84 magnet, two custom HyMu 80 rods and retainers | CUSTOM/TO BE VERIFIED | [Passive ADCS record](D1-ADCS-001.md) |
 | D1-ANT-001 | Custom 436.5 MHz canted-turnstile and four-channel release assembly | CUSTOM/TO BE VERIFIED | [Antenna/deployment record](D1-ANT-001.md) |
 | D1-STR-001 | BIRDS-4-derived custom 1U rail frame | CUSTOM/TO BE VERIFIED | [Structure record](D1-STR-001.md) |
 | D1-FAB-001 | Launch inhibits, RBF and front service access | CUSTOM/TO BE VERIFIED | [Flight-access record](D1-FAB-001.md) |
+| D1-HAR-001 | Flight and removable service harnesses | CUSTOM/TO BE VERIFIED | [Harness record](D1-HAR-001.md) |
 
 This register will replace the earlier mixed-vendor component proposal only
 after all required functions have equivalent detailed records and the generated

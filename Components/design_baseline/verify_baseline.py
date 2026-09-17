@@ -124,7 +124,9 @@ def main() -> int:
         "errors": errors,
         "result": "PASS" if not errors else "FAIL",
     }
-    print(json.dumps(result, indent=2))
+    rendered = json.dumps(result, indent=2) + "\n"
+    (HERE / "verification.json").write_text(rendered, encoding="utf-8")
+    print(rendered, end="")
     return 0 if not errors else 1
 
 

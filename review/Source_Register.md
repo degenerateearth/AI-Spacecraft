@@ -429,3 +429,59 @@ service-connector set, 2.0 mm pitch, keyed secure-lock geometry, 3 A family
 rating, -40 to +105 °C range and AWG 26–22 contact applicability. Exact PDF is
 archived. Degen-1 uses the port for target-powered logic/programming only and
 does not credit the commercial rating as vacuum or launch qualification.
+
+**S74 — [TE Connectivity/Raychem Spec 55 wire](https://www.te.com/en/product-2160283004.html)**
+
+Primary manufacturer product records and Specification 55A Issue 5 were
+reviewed and archived 2026-09-17. Exact selected variants are
+`55A0111-24-2`, `55A0111-24-0`, `55A0111-26-9` and `55A0111-26-0`. The records
+establish conductor size/stranding, tin-plated copper, radiation-crosslinked
+modified ETFE insulation, diameter, 600 V rating and -65 to +150 °C range.
+Wire-family qualification is not integrated-harness qualification.
+
+**S75 — [Molex PicoBlade connector family](https://www.molex.com/en-us/products/series-chart/51021)**
+
+Current primary manufacturer records reviewed 2026-09-17 identify exact
+six-position housing `510210600`, tin-plated right-angle carrier header
+`532610671`, and candidate tin/gold-flash AWG 26–28 contacts `500798001` and
+`500798020`. Public documents establish 1.25 mm pitch, ratings, materials,
+temperature and commercial mating-cycle limits. The piCAM record does not state
+its installed 53261 suffix or finish, so no contact is released until finishes
+are reconciled. Repeated archive downloads from Molex timed out; the official
+URLs remain the primary evidence and no third-party file is substituted.
+
+**S76 — [Hirose UFL-2LPA-068Y2T-A-100](https://www.hirose.com/product/p/CL0321-7101-0-08)**
+
+Current exact-product manufacturer page, drawing and specification reviewed and
+archived 2026-09-17. They establish a 100 mm 50-ohm two-right-angle U.FL cable
+assembly using 1.13 mm coax, -40 to +105 °C range, 0.41 g mass, 30-cycle
+commercial mating limit and 18 GHz maximum catalog frequency. Integrated loss,
+routing, retention and environmental suitability remain unverified.
+
+**S77 — [Western Filament A-A-52082 PTFE lacing](https://wfilament.com/a-a-52082/)**
+
+Primary manufacturer page archived 2026-09-17. Degen-1 selects uncoated
+`TOF15`, size 4 PTFE flat braid, with the published nominal dimensions and
+15 lbf minimum break strength. The manufacturer recommends the family for hard
+vacuum/low-outgassing applications; installed process and knot workmanship
+remain verification items.
+
+**S78 — [NASA-STD-8739.4A with Change 4](https://standards.nasa.gov/sites/default/files/standards/NASA/A/4/nasa-std-87394a_w_change_4_0.pdf)**
+
+Public NASA harness workmanship standard archived 2026-09-17. It controls the
+project's harness design, identification, lacing, strain-relief, crimp,
+inspection and test expectations. Referencing it does not certify an assembler
+or establish that any Degen-1 article meets the standard.
+
+**S79 — [YAGEO Nexensos M222 Pt1000](https://yageogroup.com/content/datasheet/asset/file/YAGEO_Nexensos_M222_Datasheet_EN)**
+
+Primary manufacturer datasheet `20002220968`, Part 001, Version 03, status
+11/2024, retrieved and archived 2026-09-17. It identifies exact Class F 0.3
+Pt1000 order number `32208571` and publishes dimensions, lead material,
+temperature range, measuring current, TCR, self-heating, insulation, vibration,
+shock and connection methods. The manufacturer does not recommend standard
+catalogue products for aerospace applications. Degen-1 therefore treats the
+part as documented input to a custom panel qualification program, not as
+space-qualified hardware. Sensor mass, radiation response, vacuum compatibility,
+panel attachment/strain relief, readout error and integrated environmental
+performance remain unverified.

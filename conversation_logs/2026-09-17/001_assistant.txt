@@ -54,3 +54,28 @@ Still **Success Level 0**: documented/modelled, with no physical build or test e
 - **Transcripts:** the current user messages and assistant outputs are stored verbatim in the dated logs.
 
 The next engineering task is `D1-HAR-001`: define every flight and ground harness, connector, contact, wire, pin map, routing rule, and verification path. The spacecraft is becoming internally coherent, but it has **not yet reached the theoretically buildable design gate**.
+
+The previous turn made verified progress: the flight-access architecture was committed and pushed, with local and GitHub heads synchronized. I’m continuing into `D1-HAR-001`, beginning with a repository-wide interface audit so every cable, PCB interconnect, connector, contact, and ground-service lead comes from the selected hardware records rather than a generic CubeSat harness.
+
+The interface audit shows a useful simplification: the five avionics boards mate through the controlled 50-pin backplane, so they do not need separate point-to-point signal harnesses. The remaining flight wiring can be reduced to a battery loom, five solar-panel looms, three independent switch leads, one six-conductor camera cable, one internal RF coax, and the removable ground-service cable. I’m selecting exact connector and wire families for those paths and will preserve cable lengths as CAD-controlled values where the present geometry cannot support an honest fixed number.
+
+The wiring selections are converging on a small, auditable set: TE/Raychem Spec 55 ETFE wire for flight conductors, JST PA locking connectors for battery/solar/switch looms, Molex PicoBlade parts matched to the camera, a documented 100 mm Hirose U.FL cable assembly for RF, and PTFE lacing. Manufacturer archive downloads are in progress; two TE specifications are already preserved, while the slower vendor endpoints are being retried rather than replaced with third-party files.
+
+`D1-HAR-001` now accounts for all 11 flight interconnects and the removable service cable, and its schedule checker passes with 2.40 m of allocated 24 AWG flight wire and 3.78 m of 26 AWG flight wire. The audit also found two real release blockers: the piCAM documentation does not identify its connector plating suffix, and the solar-panel RTD has not yet been selected. Those remain explicit evidence gaps; the harness record does not guess either value.
+
+I’m checking the repository and verification outputs so the status reflects the actual files and commit state.
+
+DEGENERATE-1 is **not yet a buildable design**.
+
+- **Committed baseline:** 11 component/design records, 78 primary sources, 60 archived documents.
+- **Completed:** mission definition, component audit, subsystem selections, preliminary CAD, launch inhibit/access architecture.
+- **In progress:** `D1-HAR-001` flight harness design—11 flight interconnects plus one ground-service cable; consistency checker passes.
+- **Open:** solar RTD/readout, camera connector contact finish, mechanical fasteners/retention, final routing, and system-level mass/power/thermal/link verification.
+- **Evidence level:** documented/modeled only—no physical validation.
+- **GitHub:** synchronized through commit `94f4603`; current harness work and current transcript entries still need finalization and commit.
+
+The last turn was a status report and did not change the engineering record. I’m resuming the harness milestone now: first I’ll close the solar-panel temperature-sensor selection with primary manufacturer evidence, then rerun the component and harness audits before committing the complete milestone and verbatim logs.
+
+The public evidence supports an exact RTD selection: YAGEO Nexensos `32208571`, a Pt1000 M222 element with published dimensions, lead construction, measurement current, tolerance, and temperature range. It is currently stocked, but the manufacturer explicitly does not recommend its standard catalog parts for aerospace use, so I will treat it as a documented component inside a custom panel qualification program—not as space-qualified hardware. That distinction preserves buildability without overstating evidence.
+
+The RTD evidence is archived and hashed, and both machine checks pass: 12 controlled design records, 79 registered sources, 61 verified archive files, and all 12 harness assemblies accounted for. I’m now reconciling the transcript, synchronizing the mirror to `D:\Degen-1`, and committing the harness milestone.

@@ -1,0 +1,17 @@
+{
+  "document": "D1-HAR-VERIFY-001",
+  "evidence": "CALCULATED schedule consistency; not fabrication or test evidence",
+  "schedule_rows": 12,
+  "flight_harnesses": 11,
+  "ground_harnesses": 1,
+  "allocated_flight_24awg_m": 2.4,
+  "allocated_flight_26awg_m": 3.78,
+  "allocated_ground_26awg_m": 10.0,
+  "errors": [],
+  "result": "PASS",
+  "limitations": [
+    "Allocated lengths are project assumptions until CAD routing and released harness drawings replace them",
+    "Camera contact finish and solar-panel RTD lead transition/attachment remain open",
+    "No voltage-drop, thermal, RF-loss, workmanship, vibration, or thermal-vacuum result is established"
+  ]
+}
