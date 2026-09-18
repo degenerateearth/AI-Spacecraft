@@ -185,3 +185,10 @@ readout as custom verification work. A schedule checker accounts for all twelve
 assemblies and their preliminary conductor quantities. CAD-routed cut lengths,
 camera mating finish, panel lead transitions, strain relief, electrical/RF
 analysis and all physical workmanship/test evidence remain open.
+
+DD-006 — 2026-09-18. Paused website work at owner request and resumed radio
+interface evidence closure. D1-COM-001 Revision B withdraws unsupported TX/RX
+current bounds and transfers the manufacturer-drawn 3.00 +/- 0.1 mm height.
+D1-COM-IF-001 records power-range and pin-direction inconsistencies, required
+TCXO evidence, carrier connections and release/verification tasks. No hardware
+testing, integrated analysis or maturity increase credited.

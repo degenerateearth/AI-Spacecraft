@@ -1,6 +1,6 @@
 project: DEGENERATE-1
 schema_version: 0.1
-updated: 2026-09-17
+updated: 2026-09-18
 mission: Capture a recognizable photograph of Earth from orbit, downlink it, reconstruct it, and ultimately print it.
 current_success_level: 0
 current_success_label: Concept; partial evidence toward Engineering Model
@@ -209,3 +209,9 @@ cad_record:
   physical_fit: not_established
   success_level_change: none
   note: Level 0 remains current; public EXOpod screening does not demonstrate physical fit or internal design closure.
+
+active_work:
+  website: paused_by_owner_2026_09_18
+  engineering: D1_COM_001_radio_interface_evidence_closure
+  latest_review: Components/design_baseline/D1-COM-001_interface_review.md
+  radio_current_bounds: withdrawn_pending_primary_evidence

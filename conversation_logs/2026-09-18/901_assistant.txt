@@ -1,0 +1,5 @@
+I’ll pause the website and return to the spacecraft engineering. I’ll check the latest design records and unresolved interfaces to identify the next evidence-backed work.
+
+The current BIRDS-derived design is still incomplete: its component choices have not yet become released boards and verified interfaces. I’m resuming with the flight radio’s interface and initialization requirements, which also determine how the matching ground modem must work. This is documentation and design work—not a physical test or a claim that the orbital link works.
+
+The radio review found a concrete error: our component record calls 105 mA a manufacturer maximum, but the archived manual lists only 100 mA typical and leaves the maximum blank. I’m correcting that claim and tracing its effect on power protection. I’m also separating confirmed pin connections from oscillator settings that still need primary-source evidence.
