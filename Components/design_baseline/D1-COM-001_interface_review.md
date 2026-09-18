@@ -79,3 +79,47 @@ cannot be issued until the corresponding source/design bounds are released.
 
 No evidence supports declaring the ground modem, orbital link, current limiter,
 radio flight suitability or full spacecraft functional at this stage.
+
+## Public-source follow-up — 2026-09-18
+
+Retrieved the demo linked directly from the exact Ebyte product download page:
+https://www.cdebyte.com/products/E22-400M22S/4 . Exact download URLs and hashes
+are in `D1-COM-001_followup_sources.json`. Local vendor archives are excluded
+from public Git pending redistribution review.
+
+The nested `sx126x-driver.zip` is a generic Semtech driver distribution for
+Nucleo boards. `src/radio/sx126x/sx126x.c` line 95 requests 1.7 V only inside
+`USE_TCXO`; `sx126x.h` line 34 defines 5 ms under that conditional. None of
+the six supplied Keil project files contains `USE_TCXO`. These values are
+**example code**, not verified E22-400M22S operating requirements. No driver
+was compiled, executed, flashed or tested. The exact-module configuration
+gap COM-C05 remains open. Chinese manual PDF p6 also describes DIO3 powering
+the TCXO without supplying the needed voltage/startup bounds in that passage.
+
+Reproduce the source inspection, from repository root:
+
+```text
+python Components/design_baseline/audit_radio_demo.py SOURCES/components/Ebyte_E22-400M22S/manufacturer_demo_2026-09-18.zip
+```
+
+Compare output with `D1-COM-001_demo_audit.json`. This checks source contents
+and hashes only; it cannot verify behavior or establish electrical ratings.
+
+### Alternative actively examined: Dorji DRF1268T
+
+Manufacturer datasheet Rev 1.00 Dec 2018 has a pin table (p2), electrical and
+absolute limits (p3), circuit schematic (p4), and mechanical drawing (p5).
+It explicitly states a +/-1 ppm TCXO (p2), but the conditions covering that
+accuracy are not established by that statement. Its operating band is
+410–460 MHz, while the power row on p3 specifies a 915 MHz condition. That
+row cannot substantiate output power in our band. Current commercial
+obtainability, exact mass, oscillator implementation/configuration, and
+condition-specific current/RF limits still require evidence review.
+
+Decision: **CANDIDATE / EVIDENCE INCOMPLETE, not a replacement selection**.
+Do not silently transfer its ppm value or circuit to Ebyte. Next engineering
+action is to examine its schematic and official example/settings alongside
+current manufacturer product evidence, then compare against Ebyte and a
+crystal-based documented alternative. If neither module meets required
+properties, a custom RF board using a fully documented transceiver/reference
+design is a trade candidate, not a released custom part by declaration.

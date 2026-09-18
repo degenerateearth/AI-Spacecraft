@@ -1,0 +1,60 @@
+{
+  "archive_sha256": "a7f020ec8fd2be1afa42e633767d6a5a2d5a63572ee794a4acaa88a781862fac",
+  "findings": [
+    {
+      "file": "src/radio/sx126x/sx126x.c",
+      "sha256": "f9a66a07ddd7f94d4b7d7d83d2b2bab987611b6d8d0ed3370a16d2c8f42c8bcf",
+      "matches": [
+        {
+          "line": 92,
+          "text": "#ifdef USE_TCXO"
+        },
+        {
+          "line": 95,
+          "text": "SX126xSetDio3AsTcxoCtrl( TCXO_CTRL_1_7V, RADIO_TCXO_SETUP_TIME << 6 ); // convert from ms to SX126x time base"
+        }
+      ]
+    },
+    {
+      "file": "src/radio/sx126x/sx126x.h",
+      "sha256": "e29e4a387f92a152f9bcab3ffdf53d5465d52606478359d44bea90c5b3b3eda3",
+      "matches": [
+        {
+          "line": 34,
+          "text": "#define RADIO_TCXO_SETUP_TIME                       5 // [ms]"
+        },
+        {
+          "line": 39,
+          "text": "#define RADIO_TCXO_SETUP_TIME                       0 // No Used"
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "file": "Keil/NucleoL053/ping-pong/Ping-Pong.uvprojx",
+      "declares_USE_TCXO": false
+    },
+    {
+      "file": "Keil/NucleoL053/tx-cw/tx-cw.uvprojx",
+      "declares_USE_TCXO": false
+    },
+    {
+      "file": "Keil/NucleoL152/ping-pong/Ping-Pong.uvprojx",
+      "declares_USE_TCXO": false
+    },
+    {
+      "file": "Keil/NucleoL152/tx-cw/tx-cw.uvprojx",
+      "declares_USE_TCXO": false
+    },
+    {
+      "file": "Keil/NucleoL476/ping-pong/Ping-Pong.uvprojx",
+      "declares_USE_TCXO": false
+    },
+    {
+      "file": "Keil/NucleoL476/tx-cw/tx-cw.uvprojx",
+      "declares_USE_TCXO": false
+    }
+  ],
+  "conclusion": "Generic conditional TCXO example; no exact-module configuration verified. No code executed or hardware tested."
+}

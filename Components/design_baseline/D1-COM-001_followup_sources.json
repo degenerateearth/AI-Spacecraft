@@ -1,0 +1,29 @@
+[
+  {
+    "path": "SOURCES/components/Ebyte_E22-400M22S/manufacturer_demo_2026-09-18.zip",
+    "url": "https://www.cdebyte.com/Uploadfiles/Files/2022-1-12/20221121320486585.zip",
+    "title": "Ebyte exact product page demo link; generic SX126x source",
+    "retrieved": "2026-09-18",
+    "sha256": "a7f020ec8fd2be1afa42e633767d6a5a2d5a63572ee794a4acaa88a781862fac",
+    "evidence": "PRIMARY_MANUFACTURER; applicability limited by review",
+    "redistribution": "local archive only; no public redistribution clearance claimed"
+  },
+  {
+    "path": "SOURCES/components/Ebyte_E22-400M22S/E22-400M22S_Chinese_2024-12-31.pdf",
+    "url": "https://www.ebyte.com/Uploadfiles/Files/2024-12-31/202412311627388791.pdf",
+    "title": "Chinese manufacturer manual; TCXO description on PDF p6",
+    "retrieved": "2026-09-18",
+    "sha256": "29321c4b62fb402845ee8ff5ab9819b75b026bedfeade7e4304676ac302cafda",
+    "evidence": "PRIMARY_MANUFACTURER; applicability limited by review",
+    "redistribution": "local archive only; no public redistribution clearance claimed"
+  },
+  {
+    "path": "SOURCES/components/Dorji_DRF1268T/DRF1268T_Rev1.pdf",
+    "url": "https://www.dorji.com/docs/data/DRF1268T.pdf",
+    "title": "DRF1268T revision 1.00 December 2018",
+    "retrieved": "2026-09-18",
+    "sha256": "e39cf48ba3070fc6cccd65015f3406fc3556bd1dd8e3377164a221536750be58",
+    "evidence": "PRIMARY_MANUFACTURER; applicability limited by review",
+    "redistribution": "local archive only; no public redistribution clearance claimed"
+  }
+]

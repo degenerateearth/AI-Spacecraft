@@ -1,0 +1,9 @@
+I’m continuing the radio evidence review and fixing the GitHub synchronization failure from the last turn. The website remains paused.
+
+GitHub is synchronized again. The manufacturer’s download includes TCXO setup code, but it is a generic SX126x example. I’m checking its build configuration before treating any of those settings as valid for our exact module.
+
+The example code does not establish a usable configuration for our module: its 1.7 V TCXO setting is conditional, and none of its six supplied project files enables that option. I also checked a Dorji alternative; its datasheet includes a circuit schematic, but contains an out-of-band power specification. Neither is being promoted to a verified selection on that evidence.
+
+Continued engineering: archived manufacturer code and datasheets, added a reproducible radio evidence audit, and assessed an alternative radio. Critical configuration gaps remain explicit; no unsupported substitution was made.
+
+Records are committed and synchronized to GitHub. Website remains paused.

@@ -192,3 +192,10 @@ current bounds and transfers the manufacturer-drawn 3.00 +/- 0.1 mm height.
 D1-COM-IF-001 records power-range and pin-direction inconsistencies, required
 TCXO evidence, carrier connections and release/verification tasks. No hardware
 testing, integrated analysis or maturity increase credited.
+
+DD-007 — 2026-09-18. Archived and audited the exact Ebyte product-page demo
+without executing vendor code. Conditional generic TCXO settings do not close
+exact-module setup. Archived the Chinese manual and Dorji DRF1268T primary
+datasheet for an alternative trade; documented its out-of-band power condition.
+No substitution or maturity increase. Restored Git HTTPS helper discovery and
+pushed prior engineering commits to the existing GitHub remote.

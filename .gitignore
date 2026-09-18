@@ -23,3 +23,6 @@ SOURCES/components/**/*.html
 
 # Manufacturer CAD retained locally pending redistribution-license review.
 SOURCES/components/KJ_D84/D84.step
+
+# Manufacturer demo retained locally pending license/redistribution review.
+SOURCES/components/Ebyte_E22-400M22S/manufacturer_demo_2026-09-18.zip
