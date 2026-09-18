@@ -1,0 +1,9 @@
+Understood. I’ll focus on the physical spacecraft: flight components, boards, power, structure, mounting, harnesses, thermal interfaces, and fit. I’ll set aside the image-transfer software work and continue resolving the onboard radio hardware.
+
+I found a physical interface conflict: the radio record connects TXEN to the radio’s own DIO2 output, while the backplane also allocates a TXEN control line. I’ll remove that ambiguity by reserving the backplane pin as unconnected at the radio carrier and issuing a complete module-to-connector pin map.
+
+Focus is now the physical spacecraft. Website and ground/image-transfer work are paused.
+
+Corrected the radio/backplane control conflict and documented all 22 radio-module pins and 50 connector pins. The connectivity checks pass; schematic, power-off isolation, and component evidence remain unfinished.
+
+Changes and verbatim updates are committed to GitHub.

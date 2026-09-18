@@ -212,6 +212,11 @@ cad_record:
 
 active_work:
   website: paused_by_owner_2026_09_18
-  engineering: D1_COM_001_radio_interface_evidence_closure
+  engineering: physical_spacecraft_radio_carrier_and_component_evidence_closure
   latest_review: Components/design_baseline/D1-COM-001_interface_review.md
   radio_current_bounds: withdrawn_pending_primary_evidence
+
+work_scope_2026_09_18:
+  priority: physical_spacecraft
+  ground_segment_and_host_image_transport: paused_by_owner
+  latest_interface: Components/design_baseline/D1-COM-001_pinmap.json

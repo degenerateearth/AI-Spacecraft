@@ -1,0 +1,264 @@
+{
+  "id": "D1-COM-IF-002",
+  "revision": "A",
+  "date": "2026-09-18",
+  "state": "PROJECT_DECISION_LOGICAL_CONNECTIVITY_ONLY",
+  "module": "Ebyte E22-400M22S",
+  "carrier_connector": "Hirose A3C-50P-2DSA(30)",
+  "backplane_connector": "Hirose A3C-50DA-2DSA(71)",
+  "module_pins": [
+    {
+      "module_pin": 1,
+      "net": "GND_SYS",
+      "connector_pins": [
+        13,
+        14,
+        47,
+        48
+      ],
+      "direction": "ground"
+    },
+    {
+      "module_pin": 2,
+      "net": "GND_SYS",
+      "connector_pins": [
+        13,
+        14,
+        47,
+        48
+      ],
+      "direction": "ground"
+    },
+    {
+      "module_pin": 3,
+      "net": "GND_SYS",
+      "connector_pins": [
+        13,
+        14,
+        47,
+        48
+      ],
+      "direction": "ground"
+    },
+    {
+      "module_pin": 4,
+      "net": "GND_SYS",
+      "connector_pins": [
+        13,
+        14,
+        47,
+        48
+      ],
+      "direction": "ground"
+    },
+    {
+      "module_pin": 5,
+      "net": "GND_SYS",
+      "connector_pins": [
+        13,
+        14,
+        47,
+        48
+      ],
+      "direction": "ground"
+    },
+    {
+      "module_pin": 6,
+      "net": "RADIO_RXEN",
+      "connector_pins": [
+        46
+      ],
+      "direction": "input"
+    },
+    {
+      "module_pin": 7,
+      "net": "TXEN_LOCAL",
+      "connector_pins": [],
+      "direction": "input"
+    },
+    {
+      "module_pin": 8,
+      "net": "TXEN_LOCAL",
+      "connector_pins": [],
+      "direction": "output_when_configured"
+    },
+    {
+      "module_pin": 9,
+      "net": "+3V3_RF",
+      "connector_pins": [
+        15,
+        16
+      ],
+      "direction": "power_input"
+    },
+    {
+      "module_pin": 10,
+      "net": "GND_SYS",
+      "connector_pins": [
+        13,
+        14,
+        47,
+        48
+      ],
+      "direction": "ground"
+    },
+    {
+      "module_pin": 11,
+      "net": "GND_SYS",
+      "connector_pins": [
+        13,
+        14,
+        47,
+        48
+      ],
+      "direction": "ground"
+    },
+    {
+      "module_pin": 12,
+      "net": "GND_SYS",
+      "connector_pins": [
+        13,
+        14,
+        47,
+        48
+      ],
+      "direction": "ground"
+    },
+    {
+      "module_pin": 13,
+      "net": "RADIO_DIO1",
+      "connector_pins": [
+        44
+      ],
+      "direction": "output_when_configured"
+    },
+    {
+      "module_pin": 14,
+      "net": "RADIO_BUSY",
+      "connector_pins": [
+        43
+      ],
+      "direction": "output"
+    },
+    {
+      "module_pin": 15,
+      "net": "RESET_N",
+      "connector_pins": [
+        9
+      ],
+      "direction": "input"
+    },
+    {
+      "module_pin": 16,
+      "net": "SPI_MISO",
+      "connector_pins": [
+        7
+      ],
+      "direction": "output"
+    },
+    {
+      "module_pin": 17,
+      "net": "SPI_MOSI",
+      "connector_pins": [
+        6
+      ],
+      "direction": "input"
+    },
+    {
+      "module_pin": 18,
+      "net": "SPI_SCK",
+      "connector_pins": [
+        5
+      ],
+      "direction": "input"
+    },
+    {
+      "module_pin": 19,
+      "net": "SPI_CS_N",
+      "connector_pins": [
+        8
+      ],
+      "direction": "input"
+    },
+    {
+      "module_pin": 20,
+      "net": "GND_SYS",
+      "connector_pins": [
+        13,
+        14,
+        47,
+        48
+      ],
+      "direction": "ground"
+    },
+    {
+      "module_pin": 21,
+      "net": "RF_50OHM",
+      "connector_pins": [],
+      "direction": "rf_bidirectional"
+    },
+    {
+      "module_pin": 22,
+      "net": "GND_SYS",
+      "connector_pins": [
+        13,
+        14,
+        47,
+        48
+      ],
+      "direction": "ground"
+    }
+  ],
+  "carrier_no_connect_pins": [
+    1,
+    2,
+    3,
+    4,
+    10,
+    11,
+    12,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    45,
+    49,
+    50
+  ],
+  "physical_implementation_open": [
+    "Power-off digital isolation and exact parts",
+    "OBC physical MCU pins",
+    "Decoupling parts and layout",
+    "Input current envelope and current limiter resistor",
+    "RF launch/filter/component geometry",
+    "Reset/default pulls and timing",
+    "TCXO initialization applicability"
+  ],
+  "evidence": [
+    "Ebyte manual v1.5 PDF p7 pin functions and p8-9 DIO2/TXEN topology",
+    "D1-BPB-001 Revision B project allocation"
+  ],
+  "claim": "Defines intended signal paths, not a direct-wire fabrication netlist; isolation may interpose unreleased devices."
+}

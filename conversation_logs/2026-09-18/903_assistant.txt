@@ -1,0 +1,5 @@
+I’ll continue comparing the radio candidates against the properties we actually need: oscillator setup, electrical limits, RF performance, and mechanical interfaces. I’ll use the manufacturer schematics to determine whether an alternative resolves the Ebyte gaps.
+
+I’m using the PDF skill to inspect the circuit drawings directly; text extraction alone can miss the connections that determine whether a radio can be initialized safely.
+
+The radio alternatives still need evidence work. In parallel with that review, I can implement a necessary part of the mission that does not depend on the final radio: fragmenting an image, rejecting damaged packets, recovering missing fragments, and reconstructing identical bytes on the ground. I’ll label this as a host-side protocol reference, not flight firmware or an RF test.

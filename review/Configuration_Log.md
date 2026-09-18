@@ -199,3 +199,10 @@ exact-module setup. Archived the Chinese manual and Dorji DRF1268T primary
 datasheet for an alternative trade; documented its out-of-band power condition.
 No substitution or maturity increase. Restored Git HTTPS helper discovery and
 pushed prior engineering commits to the existing GitHub remote.
+
+DD-008 — 2026-09-18. Owner directed focus to physical spacecraft. Paused
+ground/image-transport work; exploratory host code was not added to baseline.
+Reconciled radio DIO2/TXEN with backplane pin 45 now reserved NC at carrier.
+Issued complete logical 22-pin module/50-pin carrier mapping; physical isolation
+and schematic remain unreleased. Screened Dorji schematic and HopeRF primary
+datasheet without promoting incomplete evidence to a replacement selection.
