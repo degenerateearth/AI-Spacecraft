@@ -1,6 +1,6 @@
 {
   "id": "D1-COM-IF-002",
-  "revision": "A",
+  "revision": "B",
   "date": "2026-09-18",
   "state": "PROJECT_DECISION_LOGICAL_CONNECTIVITY_ONLY",
   "module": "Ebyte E22-400M22S",
@@ -217,7 +217,6 @@
     10,
     11,
     12,
-    17,
     18,
     19,
     20,
@@ -243,12 +242,10 @@
     40,
     41,
     42,
-    45,
-    49,
-    50
+    45
   ],
   "physical_implementation_open": [
-    "Power-off digital isolation and exact parts",
+    "Selected isolation circuit requires electrical compatibility, rail discharge and schematic release",
     "OBC physical MCU pins",
     "Decoupling parts and layout",
     "Input current envelope and current limiter resistor",
@@ -260,5 +257,11 @@
     "Ebyte manual v1.5 PDF p7 pin functions and p8-9 DIO2/TXEN topology",
     "D1-BPB-001 Revision B project allocation"
   ],
-  "claim": "Defines intended signal paths, not a direct-wire fabrication netlist; isolation may interpose unreleased devices."
+  "claim": "Defines intended signal paths, not a direct-wire fabrication netlist; isolation may interpose unreleased devices.",
+  "carrier_auxiliary_pins": {
+    "17": "ISO_OE_N",
+    "49": "+3V3_A",
+    "50": "+3V3_A"
+  },
+  "isolation_subcircuit": "D1-COM-001_isolation_netlist.json"
 }

@@ -2,7 +2,7 @@
   "result": "PASS",
   "module_pins_covered": 22,
   "connector_pins_covered": 50,
-  "connected_connector_pins": 14,
-  "no_connect_pins": 36,
+  "connected_connector_pins": 17,
+  "no_connect_pins": 33,
   "scope": "Logical pin coverage, net conflicts, local TXEN single driver and RF exclusion only. Not schematic ERC, isolation verification, firmware test or physical test."
 }

@@ -1,0 +1,282 @@
+{
+  "id": "D1-COM-ISO-001",
+  "revision": "A",
+  "state": "PROPOSED_CUSTOM_SUBCIRCUIT_NOT_FABRICATION_RELEASED",
+  "channels": [
+    {
+      "ref": "U1",
+      "channel": 1,
+      "signal": "SPI_SCK",
+      "module_pin": 18,
+      "connector_pin": 5,
+      "direction": "A_TO_B",
+      "A_pin": 3,
+      "B_pin": 14,
+      "DIR_pin": 1
+    },
+    {
+      "ref": "U1",
+      "channel": 2,
+      "signal": "SPI_MOSI",
+      "module_pin": 17,
+      "connector_pin": 6,
+      "direction": "A_TO_B",
+      "A_pin": 4,
+      "B_pin": 13,
+      "DIR_pin": 2
+    },
+    {
+      "ref": "U1",
+      "channel": 3,
+      "signal": "SPI_MISO",
+      "module_pin": 16,
+      "connector_pin": 7,
+      "direction": "B_TO_A",
+      "A_pin": 5,
+      "B_pin": 12,
+      "DIR_pin": 7
+    },
+    {
+      "ref": "U1",
+      "channel": 4,
+      "signal": "SPI_CS_N",
+      "module_pin": 19,
+      "connector_pin": 8,
+      "direction": "A_TO_B",
+      "A_pin": 6,
+      "B_pin": 11,
+      "DIR_pin": 8
+    },
+    {
+      "ref": "U2",
+      "channel": 1,
+      "signal": "RESET_N",
+      "module_pin": 15,
+      "connector_pin": 9,
+      "direction": "A_TO_B",
+      "A_pin": 3,
+      "B_pin": 14,
+      "DIR_pin": 1
+    },
+    {
+      "ref": "U2",
+      "channel": 2,
+      "signal": "RADIO_RXEN",
+      "module_pin": 6,
+      "connector_pin": 46,
+      "direction": "A_TO_B",
+      "A_pin": 4,
+      "B_pin": 13,
+      "DIR_pin": 2
+    },
+    {
+      "ref": "U2",
+      "channel": 3,
+      "signal": "RADIO_BUSY",
+      "module_pin": 14,
+      "connector_pin": 43,
+      "direction": "B_TO_A",
+      "A_pin": 5,
+      "B_pin": 12,
+      "DIR_pin": 7
+    },
+    {
+      "ref": "U2",
+      "channel": 4,
+      "signal": "RADIO_DIO1",
+      "module_pin": 13,
+      "connector_pin": 44,
+      "direction": "B_TO_A",
+      "A_pin": 6,
+      "B_pin": 11,
+      "DIR_pin": 8
+    }
+  ],
+  "parts": {
+    "U1": {
+      "manufacturer": "Texas Instruments",
+      "mpn": "SN74AXC4T774PWR",
+      "pins": {
+        "9": "ISO_OE_N",
+        "10": "GND_SYS",
+        "15": "+3V3_RF",
+        "16": "+3V3_A",
+        "3": "HOST_SPI_SCK",
+        "14": "RF_SPI_SCK",
+        "1": "+3V3_A",
+        "4": "HOST_SPI_MOSI",
+        "13": "RF_SPI_MOSI",
+        "2": "+3V3_A",
+        "5": "HOST_SPI_MISO",
+        "12": "RF_SPI_MISO",
+        "7": "GND_SYS",
+        "6": "HOST_SPI_CS_N",
+        "11": "RF_SPI_CS_N",
+        "8": "+3V3_A"
+      }
+    },
+    "U2": {
+      "manufacturer": "Texas Instruments",
+      "mpn": "SN74AXC4T774PWR",
+      "pins": {
+        "9": "ISO_OE_N",
+        "10": "GND_SYS",
+        "15": "+3V3_RF",
+        "16": "+3V3_A",
+        "3": "HOST_RESET_N",
+        "14": "RF_RESET_N",
+        "1": "+3V3_A",
+        "4": "HOST_RADIO_RXEN",
+        "13": "RF_RADIO_RXEN",
+        "2": "+3V3_A",
+        "5": "HOST_RADIO_BUSY",
+        "12": "RF_RADIO_BUSY",
+        "7": "GND_SYS",
+        "6": "HOST_RADIO_DIO1",
+        "11": "RF_RADIO_DIO1",
+        "8": "GND_SYS"
+      }
+    },
+    "C1": {
+      "manufacturer": "KEMET",
+      "mpn": "C0603C104K5RACTU",
+      "pins": {
+        "1": "+3V3_A",
+        "2": "GND_SYS"
+      },
+      "placement": "U1",
+      "value": "100 nF nominal"
+    },
+    "C2": {
+      "manufacturer": "KEMET",
+      "mpn": "C0603C104K5RACTU",
+      "pins": {
+        "1": "+3V3_RF",
+        "2": "GND_SYS"
+      },
+      "placement": "U1",
+      "value": "100 nF nominal"
+    },
+    "C3": {
+      "manufacturer": "KEMET",
+      "mpn": "C0603C104K5RACTU",
+      "pins": {
+        "1": "+3V3_A",
+        "2": "GND_SYS"
+      },
+      "placement": "U2",
+      "value": "100 nF nominal"
+    },
+    "C4": {
+      "manufacturer": "KEMET",
+      "mpn": "C0603C104K5RACTU",
+      "pins": {
+        "1": "+3V3_RF",
+        "2": "GND_SYS"
+      },
+      "placement": "U2",
+      "value": "100 nF nominal"
+    },
+    "R1": {
+      "manufacturer": "Yageo",
+      "mpn": "RC0603FR-074K7L",
+      "pins": {
+        "1": "ISO_OE_N",
+        "2": "+3V3_A"
+      },
+      "value": "4.7 kohm 1%"
+    },
+    "R2": {
+      "manufacturer": "Yageo",
+      "mpn": "RC0603FR-074K7L",
+      "pins": {
+        "1": "ISO_OE_N",
+        "2": "+3V3_A"
+      },
+      "value": "4.7 kohm 1%"
+    },
+    "R3": {
+      "manufacturer": "Yageo",
+      "mpn": "RC0603FR-074K7L",
+      "pins": {
+        "1": "RF_SPI_SCK",
+        "2": "GND_SYS"
+      },
+      "value": "4.7 kohm 1%"
+    },
+    "R4": {
+      "manufacturer": "Yageo",
+      "mpn": "RC0603FR-074K7L",
+      "pins": {
+        "1": "RF_SPI_MOSI",
+        "2": "GND_SYS"
+      },
+      "value": "4.7 kohm 1%"
+    },
+    "R5": {
+      "manufacturer": "Yageo",
+      "mpn": "RC0603FR-074K7L",
+      "pins": {
+        "1": "RF_SPI_MISO",
+        "2": "GND_SYS"
+      },
+      "value": "4.7 kohm 1%"
+    },
+    "R6": {
+      "manufacturer": "Yageo",
+      "mpn": "RC0603FR-074K7L",
+      "pins": {
+        "1": "RF_SPI_CS_N",
+        "2": "+3V3_RF"
+      },
+      "value": "4.7 kohm 1%"
+    },
+    "R7": {
+      "manufacturer": "Yageo",
+      "mpn": "RC0603FR-074K7L",
+      "pins": {
+        "1": "RF_RESET_N",
+        "2": "GND_SYS"
+      },
+      "value": "4.7 kohm 1%"
+    },
+    "R8": {
+      "manufacturer": "Yageo",
+      "mpn": "RC0603FR-074K7L",
+      "pins": {
+        "1": "RF_RADIO_RXEN",
+        "2": "GND_SYS"
+      },
+      "value": "4.7 kohm 1%"
+    },
+    "R9": {
+      "manufacturer": "Yageo",
+      "mpn": "RC0603FR-074K7L",
+      "pins": {
+        "1": "RF_RADIO_BUSY",
+        "2": "GND_SYS"
+      },
+      "value": "4.7 kohm 1%"
+    },
+    "R10": {
+      "manufacturer": "Yageo",
+      "mpn": "RC0603FR-074K7L",
+      "pins": {
+        "1": "RF_RADIO_DIO1",
+        "2": "GND_SYS"
+      },
+      "value": "4.7 kohm 1%"
+    }
+  },
+  "connector_additions": {
+    "17": "ISO_OE_N",
+    "49": "+3V3_A",
+    "50": "+3V3_A"
+  },
+  "notes": [
+    "Both OE pins share one control; two pullups are in parallel, effective nominal 2.35 kohm.",
+    "Output-enable input is active low; high isolates.",
+    "Pin 45 stays NC; module TXEN/DIO2 remains local.",
+    "No clock-rate, worst-case rail-discharge, module input/output threshold or PCB timing closure claimed."
+  ]
+}

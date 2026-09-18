@@ -1,0 +1,9 @@
+I’m continuing with the radio carrier’s power-off isolation: selecting documented hardware to prevent the flight computer’s signal pins from feeding an unpowered radio.
+
+TI’s SN74AXC4T774 provides independently directed channels and specified power-off isolation. Two devices can cover the radio’s eight digital signals. I’m defining their pin connections and disabled states, while keeping leakage, rail discharge, and signal timing as explicit circuit checks.
+
+The proposed isolation circuit now has exact parts and pin assignments for all eight signals. It adds 16 components to the radio carrier. Connectivity checks pass; the remaining checks include signal-level compatibility and whether the switched rail discharges far enough for the specified isolation behavior.
+
+Added the spacecraft radio’s proposed power-off isolation circuit: exact components, pin connections, manufacturer evidence, and verification requirements.
+
+Connectivity checks pass. Electrical compatibility, rail discharge, and PCB implementation remain open. Records and verbatim updates are committed to GitHub.

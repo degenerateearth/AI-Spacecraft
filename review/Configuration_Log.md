@@ -206,3 +206,10 @@ Reconciled radio DIO2/TXEN with backplane pin 45 now reserved NC at carrier.
 Issued complete logical 22-pin module/50-pin carrier mapping; physical isolation
 and schematic remain unreleased. Screened Dorji schematic and HopeRF primary
 datasheet without promoting incomplete evidence to a replacement selection.
+
+DD-009 — 2026-09-18. Defined proposed onboard radio isolation subcircuit
+using two exact SN74AXC4T774PWR, four exact KEMET bypass capacitors and ten
+Yageo resistors. Issued 32-pin IC connectivity and eight-channel direction
+map; assigned carrier J2.17 enable and J2.49/50 host-side supply. Datasheets
+archived and hashed. Leakage/discharge, level/timing compatibility, mass and
+schematic/layout remain release work; no hardware test or evidence-gate closure.

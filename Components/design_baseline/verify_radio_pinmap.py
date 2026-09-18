@@ -10,6 +10,8 @@ for x in rows:
         assert 1<=n<=50
         if n in used: assert used[n]==x['net'],(n,used[n],x['net'])
         used[n]=x['net']
+for pin,net in d.get('carrier_auxiliary_pins',{}).items():
+    pin=int(pin);assert pin not in used;used[pin]=net
 nc=d['carrier_no_connect_pins']
 assert len(nc)==len(set(nc))
 assert not(set(nc)&set(used))

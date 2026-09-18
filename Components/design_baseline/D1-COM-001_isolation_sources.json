@@ -1,0 +1,26 @@
+[
+  {
+    "path": "SOURCES/components/Radio_Isolation/radio-isolation.pdf",
+    "url": "https://www.ti.com/lit/ds/symlink/sn74axc4t774.pdf",
+    "title": "TI SCES898C; revised May 2022, current archive includes later package addenda",
+    "retrieved": "2026-09-18",
+    "sha256": "f45cd62a9675b9f6071519d149a060d4124f49944f3c3af44160a76796f3bf20",
+    "classification": "manufacturer_primary; local archive only"
+  },
+  {
+    "path": "SOURCES/components/Radio_Isolation/radio-pull.pdf",
+    "url": "https://yageogroup.com/component-documentation/download/specsheet/RC0603FR-074K7L",
+    "title": "Yageo exact resistor specification",
+    "retrieved": "2026-09-18",
+    "sha256": "8b585c4b55b91eadcfed27dd8be86fdba3bae9a23b009ec1e13499178f75a0b9",
+    "classification": "manufacturer_primary; local archive only"
+  },
+  {
+    "path": "SOURCES/components/Radio_Isolation/radio-cap.pdf",
+    "url": "https://search.kemet.com/component-documentation/download/specsheet/C0603C104K5RACTU",
+    "title": "KEMET exact capacitor specification",
+    "retrieved": "2026-09-18",
+    "sha256": "e23e54bd0e11a6bcbbc073713bf4f0675bd22d83a239996fe38e2befa543bd16",
+    "classification": "manufacturer_primary; local archive only"
+  }
+]
